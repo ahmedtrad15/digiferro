@@ -21,3 +21,5 @@ AddType image/webp .webp
 AddType video/webm .webm
 AddType image/svg+xml .svg
 AddDefaultCharset utf-8
+
+ErrorDocument 404 /404.html

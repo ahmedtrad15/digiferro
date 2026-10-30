@@ -52,6 +52,7 @@
       if (v.valueMissing || (el.required && !el.value.trim())) msg = m.valueMissing || 'Ce champ est obligatoire.';
       else if (v.badInput) msg = m.badInput || 'Valeur non valide.';
       else if (v.typeMismatch) msg = m.typeMismatch || 'Valeur non valide.';
+      else if (el.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(el.value.trim())) msg = m.typeMismatch;
       else if (v.rangeUnderflow) msg = m.rangeUnderflow;
       else if (v.rangeOverflow) msg = m.rangeOverflow;
       else if (v.stepMismatch) msg = m.stepMismatch;
@@ -91,7 +92,19 @@
       const fields = [...form.querySelectorAll('.field input, .field select, .field textarea')];
       const invalid = fields.filter((el) => !check(el));
       if (invalid.length) {
-        status.textContent = invalid.length > 1 ? `${invalid.length} champs sont à corriger.` : 'Un champ est à corriger.';
+        const label = (el) => (form.querySelector(`label[for="${el.id}"]`) || {}).textContent.replace('*', '').trim();
+        status.textContent = invalid.length > 1 ? `${invalid.length} champs sont à corriger : ` : 'Un champ est à corriger : ';
+        invalid.forEach((el, i) => {
+          const a = document.createElement('a');
+          a.href = `#${el.id}`;
+          a.textContent = label(el);
+          a.addEventListener('click', (ev) => {
+            ev.preventDefault();
+            el.focus();
+          });
+          status.append(i ? ', ' : '', a);
+        });
+        status.append('.');
         invalid[0].focus();
         return;
       }
@@ -100,7 +113,11 @@
       if (trap && trap.value) return done();
 
       const endpoint = form.dataset.endpoint;
+      const btn = form.querySelector('button[type="submit"]');
+      const btnLabel = btn.firstChild.textContent;
       form.classList.add('is-sending');
+      form.setAttribute('aria-busy', 'true');
+      btn.firstChild.textContent = 'Envoi en cours…';
       try {
         if (endpoint) {
           const res = await fetch(endpoint, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
@@ -114,6 +131,8 @@
         status.textContent = `L’envoi a échoué. Réessayez dans un instant${phoneLabel ? `, ou appelez le ${phoneLabel.trim()}` : ''}.`;
       } finally {
         form.classList.remove('is-sending');
+        form.removeAttribute('aria-busy');
+        btn.firstChild.textContent = btnLabel;
       }
     });
   });

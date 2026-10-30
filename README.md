@@ -3,10 +3,18 @@
 Site vitrine et de génération de demandes pour les formations à la sécurité ferroviaire dispensées par DIGIVODA.
 HTML, CSS et JavaScript natifs, sans framework ni dépendance. Seules les polices Barlow et Barlow Condensed viennent de Google Fonts.
 
-## État actuel : point de validation
+## État actuel
 
-Sont livrés l'accueil, une fiche formation (`formations/tcs-m-annonceur-sentinelle-asp.html`) et une fiche pack (`packs/pack-sentinelle-complet.html`).
-Les autres pages (10 formations, 3 packs, catalogue, à propos, FAQ, contact, pages légales) suivent après validation. D'ici là, les liens vers ces pages renvoient une erreur 404.
+Les 25 pages sont en place :
+
+- accueil ;
+- catalogue filtrable ;
+- 12 fiches formation et 4 fiches pack ;
+- à propos, contact, FAQ ;
+- mentions légales, CGV, politique de confidentialité ;
+- page 404.
+
+Les informations encore manquantes apparaissent sur le site dans des encadrés `[À COMPLÉTER: …]`. Leur liste, page par page, est dans `A-COMPLETER.md`, régénéré à chaque build.
 
 ## Arborescence
 
@@ -14,9 +22,10 @@ Les autres pages (10 formations, 3 packs, catalogue, à propos, FAQ, contact, pa
 data/formations.json   source unique : formations, packs, organisme, textes de page
 tools/                 générateur Node (aucune dépendance) qui produit les pages HTML
 css/                   base (jetons, typo) · layout (en-tête, méga-menu, pied) · components · pages
-js/                    nav · megamenu · reveal · video · map · form  (filter arrivera avec le catalogue)
+js/                    nav · megamenu · reveal · video · map · form · filter
 assets/                img · video · svg · favicon · CREDITS.md
-index.html, formations/, packs/   pages générées (ne pas modifier à la main)
+*.html, formations/, packs/       pages générées (ne pas modifier à la main)
+A-COMPLETER.md                    liste des contenus manquants, générée
 sitemap.xml, robots.txt           générés avec les pages
 ```
 
@@ -51,7 +60,7 @@ Puis ouvrez http://localhost:8080.
 
 ## Formulaire de devis
 
-Le formulaire valide les champs en français, contient un champ piège anti-robot et se pré-remplit avec `?formation=<id>`. Sans point d'envoi configuré, **rien n'est envoyé** : le message de succès est simulé.
+Le formulaire valide les champs en français, à la volée. En cas d’erreur, un résumé en tête de formulaire renvoie à chaque champ fautif, et le bouton indique « Envoi en cours… » pendant l’envoi. Un champ piège bloque les robots, et la formation est pré-sélectionnée via `?formation=<id>`. Sans point d'envoi configuré, **rien n'est envoyé** : le message de succès est simulé.
 
 Pour le brancher, renseignez `data-endpoint` sur la balise `<form>` dans `tools/item.mjs` (fonction `devisForm`), puis régénérez :
 
@@ -59,12 +68,17 @@ Pour le brancher, renseignez `data-endpoint` sur la balise `<form>` dans `tools/
 - **Netlify Forms** : ajoutez `name="devis" data-netlify="true"` au `<form>` et `data-endpoint="/"`.
 - **Backend maison** : toute URL qui accepte un POST `multipart/form-data` et répond 2xx.
 
+## Catalogue
+
+`formations/index.html` se filtre par type, thème et durée, avec une recherche par nom qui ignore les accents. Les filtres sont repris dans l’adresse, par exemple `formations/index.html?type=pack` ou `?theme=catenaire`. Une vue filtrée peut donc être partagée, et le lien « Packs » du menu y mène directement. Sans JavaScript, tout le catalogue reste affiché.
+
 ## Mise en ligne
 
 Le site est statique : il suffit de copier le dossier tel quel.
 
 - **Netlify / Cloudflare Pages** : glissez le dossier dans l'interface, ou reliez le dépôt sans commande de build et avec `/` comme dossier publié. `_headers` règle le cache.
 - **Hébergement Apache (OVH, o2switch…)** : envoyez les fichiers par FTP. `.htaccess` active la compression et le cache.
+- **Page 404** : `404.html` est reconnue automatiquement par Netlify et Cloudflare Pages. Sur Apache, ajoutez `ErrorDocument 404 /404.html` dans `.htaccess`.
 - **Avant la mise en ligne** : remplacez `site.base_url` dans `data/formations.json` par le domaine définitif, régénérez, puis déclarez `sitemap.xml` dans la Search Console.
 
 La compression gzip ou brotli compte beaucoup. Mesuré sur mobile avec Lighthouse, le site obtient 100 / 100 / 100 / 100 (performance, accessibilité, bonnes pratiques, SEO) avec compression, et 84 à 88 en performance sans.

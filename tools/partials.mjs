@@ -133,10 +133,10 @@ ${SPRITE}
     <nav class="nav" aria-label="Navigation principale">
       <ul class="nav__list">
         <li class="nav__item nav__item--mega" data-mega>
-          <button class="nav__link nav__toggle" type="button" aria-expanded="false" aria-controls="mega-formations">Formations${icon('chevron', 'icon icon--xs')}</button>
+          <button class="nav__link nav__toggle${/^(formations|packs)\//.test(ctx.path) ? ' is-section' : ''}" type="button" aria-expanded="false" aria-controls="mega-formations">Formations${icon('chevron', 'icon icon--xs')}</button>
           ${mega}
         </li>
-        <li class="nav__item"><a class="nav__link" href="${p}index.html#packs">Packs</a></li>
+        <li class="nav__item"><a class="nav__link" href="${p}formations/index.html?type=pack">Packs</a></li>
         <li class="nav__item"><a class="nav__link" href="${p}a-propos.html"${cur('a-propos.html')}>À propos</a></li>
         <li class="nav__item"><a class="nav__link" href="${p}faq.html"${cur('faq.html')}>FAQ</a></li>
         <li class="nav__item"><a class="nav__link" href="${p}contact.html"${cur('contact.html')}>Contact</a></li>
@@ -229,7 +229,7 @@ export function head(ctx, data) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(ctx.title)}</title>
-<meta name="description" content="${esc(ctx.description)}">
+<meta name="description" content="${esc(ctx.description)}">${ctx.noindex ? '\n<meta name="robots" content="noindex">' : ''}
 <link rel="canonical" href="${url}">
 <meta property="og:type" content="${ctx.ogType || 'website'}">
 <meta property="og:locale" content="fr_FR">

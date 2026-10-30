@@ -20,9 +20,9 @@
   letter-spacing: 0.05em;
   text-decoration: none;
   text-align: center;
-  transition: background 0.15s, color 0.15s, border-color 0.15s, transform 0.15s;
+  transition: background var(--dur-1), color var(--dur-1), border-color var(--dur-1), transform var(--dur-1);
 }
-.btn .icon { transition: transform 0.2s var(--ease); }
+.btn .icon { transition: transform var(--dur-2) var(--ease); }
 .btn:hover .icon { transform: translateX(3px); }
 .btn:active { transform: translateY(1px); }
 .btn--sm { min-height: 44px; padding: 0.35rem 1rem; font-size: 1rem; }
@@ -34,7 +34,7 @@
   border-color: var(--signal);
   box-shadow: inset 0 -3px 0 rgb(0 0 0 / 0.18);
 }
-.btn--signal:hover { background: #ffc642; border-color: #ffc642; }
+.btn--signal:hover { background: var(--signal-hover); border-color: var(--signal-hover); }
 .btn--ghost { border-color: currentColor; color: var(--night); background: transparent; }
 .btn--ghost:hover { background: var(--night); color: var(--white); border-color: var(--night); }
 .btn--ghost-light { border-color: rgb(255 255 255 / 0.75); color: var(--white); background: rgb(13 21 30 / 0.35); }
@@ -54,7 +54,7 @@
   color: var(--teal);
   text-decoration: none;
 }
-.link-arrow .icon { transition: transform 0.2s var(--ease); }
+.link-arrow .icon { transition: transform var(--dur-2) var(--ease); }
 .link-arrow:hover .icon { transform: translateX(4px); }
 .link-arrow:hover { text-decoration: underline; }
 
@@ -243,12 +243,12 @@
   background: var(--white);
   border: 1px solid var(--line);
   border-bottom: 4px solid var(--night);
-  transition: border-color 0.2s, transform 0.2s var(--ease), box-shadow 0.2s;
+  transition: border-color var(--dur-2), transform var(--dur-2) var(--ease), box-shadow var(--dur-2);
 }
 .fcard:hover { border-bottom-color: var(--signal); transform: translateY(-3px); box-shadow: var(--shadow-plate); }
 .fcard:focus-within { border-bottom-color: var(--signal); }
 .fcard__media { overflow: hidden; background: var(--steel-900); }
-.fcard__media img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; transition: transform 0.5s var(--ease); }
+.fcard__media img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; transition: transform var(--dur-4) var(--ease); }
 .fcard:hover .fcard__media img { transform: scale(1.04); }
 .fcard__type {
   position: absolute;
@@ -293,7 +293,7 @@
   color: var(--teal);
 }
 .fcard:hover .fcard__more .icon { transform: translateX(3px); }
-.fcard__more .icon { transition: transform 0.2s; }
+.fcard__more .icon { transition: transform var(--dur-2); }
 
 /* Billet de pack ---------------------------------------------------------- */
 .tickets { display: grid; gap: 1.5rem; }
@@ -427,7 +427,7 @@
   width: 0.8rem; height: 2.5px;
   background: var(--night);
   transform: translate(-50%, -50%);
-  transition: transform 0.2s;
+  transition: transform var(--dur-2);
 }
 .accordion__sign::after { transform: translate(-50%, -50%) rotate(90deg); }
 .accordion__item[open] .accordion__sign { background: var(--signal); border-color: var(--signal-ink); }
@@ -490,7 +490,7 @@
 
 /* Animation de la carte : les lignes se tracent, puis les trains roulent */
 .js .map__line { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.6s var(--ease); }
-.js .map__ties, .js .map__trains, .js .map__stops { opacity: 0; transition: opacity 0.8s 0.9s; }
+.js .map__ties, .js .map__trains, .js .map__stops { opacity: 0; transition: opacity var(--dur-4) 0.9s; }
 .js .map.is-visible .map__line { stroke-dashoffset: 0; }
 .js .map.is-visible .map__ties, .js .map.is-visible .map__trains, .js .map.is-visible .map__stops { opacity: 1; }
 .map.is-visible .map__ring { animation: ring 2.4s var(--ease) infinite; }
@@ -545,7 +545,7 @@
 .field select:focus-visible,
 .field textarea:focus-visible { outline: 3px solid var(--signal); outline-offset: 1px; border-color: var(--night); }
 .field.is-invalid input,
-.field.is-invalid select { border-color: var(--rail-red); background: #fff6f5; }
+.field.is-invalid select { border-color: var(--rail-red); background: var(--error-bg); }
 .field__err { min-height: 0; color: var(--rail-red); font-size: var(--fs-sm); font-weight: 600; }
 .field__err:empty { display: none; }
 .form__hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
@@ -559,8 +559,96 @@
 .form-success__title { font-family: var(--font-display); font-size: var(--fs-lg); font-weight: 700; }
 
 /* Apparition au défilement ------------------------------------------------ */
-.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s var(--ease) var(--d, 0ms), transform 0.6s var(--ease) var(--d, 0ms); }
+.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity var(--dur-4) var(--ease) var(--d, 0ms), transform var(--dur-4) var(--ease) var(--d, 0ms); }
 .js .reveal.is-visible { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   .js .reveal { opacity: 1; transform: none; }
 }
+
+/* Panneau de règle (recyclage, e-learning) : plaque signal ------------------- */
+.rule-plate {
+  margin-top: 1.5rem;
+  max-width: 40rem;
+  padding: 1rem 1.25rem 1.1rem;
+  background: var(--white);
+  border: 2px solid var(--night);
+  border-left: 8px solid var(--signal);
+  box-shadow: var(--shadow-plate);
+}
+.rule-plate__title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.15;
+  --accent: var(--signal-600);
+}
+.rule-plate ul { list-style: none; display: grid; gap: 0.4rem; }
+.rule-plate li { position: relative; padding-left: 1.4rem; }
+.rule-plate li::before { content: ''; position: absolute; left: 0; top: 0.65em; width: 0.75rem; height: 3px; background: var(--night); }
+.rule-plate__note { margin-top: 0.75rem; padding-top: 0.6rem; border-top: 1px dashed var(--line); font-size: var(--fs-sm); color: var(--text-muted); }
+
+/* Aide sous un champ */
+.field__hint { font-size: var(--fs-xs); color: var(--text-muted); }
+
+/* Filtres en puces (boutons radio stylés) ------------------------------------ */
+.chips-select { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.chip-opt { position: relative; display: inline-flex; }
+.chip-opt input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+.chip-opt span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 44px;
+  padding: 0.35rem 0.85rem;
+  border: 2px solid var(--steel-300);
+  border-radius: var(--radius);
+  background: var(--white);
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  line-height: 1.2;
+  transition: background var(--dur-1), border-color var(--dur-1), color var(--dur-1);
+}
+.chip-opt small {
+  min-width: 1.4rem;
+  padding: 0 0.3rem;
+  border-radius: 2px;
+  background: var(--steel-100);
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  text-align: center;
+}
+.chip-opt:hover span { border-color: var(--night); }
+.chip-opt input:checked + span { background: var(--night); border-color: var(--night); color: var(--white); }
+.chip-opt input:checked + span small { background: var(--signal); color: var(--signal-ink); }
+.chip-opt input:focus-visible + span { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+/* Carte pack (catalogue) */
+.fcard--pack { background: var(--night); color: var(--steel-200); border-color: var(--steel-800); border-bottom-color: var(--signal); --focus: var(--signal); }
+.fcard--pack .fcard__type { background: var(--signal); color: var(--signal-ink); }
+.fcard--pack .fcard__title a { color: var(--white); }
+.fcard--pack .fcard__meta, .fcard--pack .fcard__sum { color: var(--steel-300); }
+.fcard--pack .fcard__foot { border-top-color: var(--steel-700); }
+.fcard--pack .fcard__more { color: var(--signal); }
+.fcard--pack .price__old, .fcard--pack .price__tax { color: var(--steel-300); }
+.fcard--pack:hover { border-bottom-color: var(--white); }
+.fcard__sub { margin-top: -0.3rem; font-weight: 600; font-size: var(--fs-sm); color: var(--signal); }
+
+/* Bandeau « à faire relire » */
+.review-banner {
+  margin-bottom: 2.5rem;
+  padding: 1rem 1.25rem;
+  background: repeating-linear-gradient(-45deg, var(--todo-bg-1) 0 10px, var(--white) 10px 20px);
+  border: 2px dashed var(--todo-border);
+  color: var(--todo-ink);
+}
+.review-banner__title { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.3rem; font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; --accent: var(--rail-red); }
+
+/* Texte long (pages légales) */
+.prose { max-width: 70ch; }
+.prose section + section { margin-top: 2.75rem; }
+.prose h2 { display: flex; align-items: baseline; gap: 0.75rem; font-size: var(--fs-lg); padding-bottom: 0.6rem; margin-bottom: 1rem; border-bottom: 2px solid var(--night); }
+.prose p + p, .prose p + dl, .prose dl + p { margin-top: 0.85rem; }

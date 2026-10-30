@@ -129,7 +129,9 @@
         "[À COMPLÉTER: prérequis]"
       ],
       "programme": [
-        "[À COMPLÉTER: programme / contenu]"
+        "Cadre réglementaire : décret n° 2017-694",
+        "Identification des risques ferroviaires",
+        "QCM de validation"
       ],
       "duree": {
         "heures": null,
@@ -150,7 +152,8 @@
         "intra": null,
         "e_learning": null,
         "lieux": [
-          "[À COMPLÉTER: lieux]"
+          "Centres Digivoda partout en France",
+          "Sur site client en intra"
         ],
         "dates": "[À COMPLÉTER: dates]"
       },
@@ -159,7 +162,7 @@
         "[À COMPLÉTER: méthodes pédagogiques]"
       ],
       "evaluation": "[À COMPLÉTER: modalités d'évaluation]",
-      "validite": "[À COMPLÉTER: validité / recyclage]",
+      "validite": "Attestation valable 3 ans, renouvelable par le recyclage SECUFER.",
       "accessibilite_pmr": "[À COMPLÉTER: accessibilité PMR]",
       "delai_acces": "[À COMPLÉTER: délai d'accès]",
       "financement": [
@@ -178,9 +181,38 @@
       ],
       "a_verifier": [
         "Page Digivoda dédiée non identifiée : URL à confirmer.",
-        "Seule trace publiée : la journée SECUFER de 7 h intégrée au programme TCS M (décret n° 2017-694, risques, QCM). Durée et tarif de la SECUFER vendue seule à confirmer."
+        "Seule trace publiée : la journée SECUFER de 7 h intégrée au programme TCS M (décret n° 2017-694, risques, QCM). Durée et tarif de la SECUFER vendue seule à confirmer.",
+        "Validité de 3 ans déduite de l'intitulé du recyclage (« Renouvellement de votre attestation pour 3 ans »)."
       ],
-      "resume_source": "editorial (dérivé de l'intitulé)"
+      "resume_source": "editorial (dérivé de l'intitulé)",
+      "editorial": {
+        "seo_title": "Formation SECUFER sécurité ferroviaire | Digiferro",
+        "seo_description": "Formation SECUFER : les règles de sécurité ferroviaire à connaître avant d'accéder aux voies. Contenu, validité de 3 ans, recyclage et devis.",
+        "titre_h1": "SECUFER : la sécurité ferroviaire de base",
+        "lead": "Avant de poser un pied sur les emprises, chaque intervenant doit connaître les règles qui le protègent des circulations. La SECUFER pose ce socle. Elle ouvre aussi la TCS M et le Pack RSO.",
+        "programme_intro": "Le contenu ci-dessous est celui de la journée SECUFER publiée en ouverture du programme TCS M.",
+        "validite_texte": "L'attestation se renouvelle par un recyclage d'une demi-journée, ouvert jusqu'à 6 mois après son expiration.",
+        "devis_titre": "Demander un devis pour la SECUFER",
+        "devis_texte": "Un agent ou toute une équipe : indiquez le nombre de participants et le format souhaité, en centre, en intra ou à distance.",
+        "faq_titre": "Questions sur la SECUFER",
+        "faq": [
+          {
+            "q": "Combien de temps l'attestation SECUFER est-elle valable ?",
+            "a": "Trois ans. Elle se renouvelle ensuite par le recyclage SECUFER, une demi-journée de 3 h 30."
+          },
+          {
+            "q": "Peut-on suivre la SECUFER à distance ?",
+            "a": "Oui, une version en e-learning existe. Le recyclage SECUFER peut lui aussi se suivre à distance."
+          },
+          {
+            "q": "La SECUFER fait-elle partie d'un pack ?",
+            "a": "Oui, du Pack RSO, avec la TCS M / ASP et la RSO. Elle ouvre aussi le programme de la TCS M, au jour 1."
+          }
+        ],
+        "illustration": "rails"
+      },
+      "programme_note": "Contenu de la journée SECUFER publié dans le programme TCS M (jour 1, 7 h).",
+      "validite_court": "3 ans"
     },
     {
       "id": "recyclage-secufer",
@@ -201,14 +233,16 @@
         "Valider ses acquis par un QCM"
       ],
       "public": [
-        "[À COMPLÉTER: public concerné]"
+        "Titulaires d'une attestation SECUFER à renouveler"
       ],
       "prerequis": [
         "Attestation SECUFER initiale en cours de validité, ou expirée depuis moins de 6 mois",
         "Aptitude médicale en cours de validité"
       ],
       "programme": [
-        "[À COMPLÉTER: programme / contenu]"
+        "Reprise des fondamentaux du décret n° 2017-694",
+        "Point sur les évolutions réglementaires récentes",
+        "QCM final de 15 questions"
       ],
       "duree": {
         "heures": 3.5,
@@ -258,7 +292,42 @@
         "Validité de 3 ans indiquée dans le titre du brief : à confirmer sur la page.",
         "Les résultats de recherche suggèrent un tarif affiché à la fois en HT et en TTC : vérifier le régime de TVA."
       ],
-      "validite_court": "3 ans"
+      "validite_court": "3 ans",
+      "editorial": {
+        "seo_title": "Recyclage SECUFER : attestation renouvelée | Digiferro",
+        "seo_description": "Recyclage SECUFER en 3 h 30 : votre attestation renouvelée pour 3 ans. Conditions d'accès, QCM, 130 € TTC, en centre, en intra ou à distance.",
+        "titre_h1": "Recyclage SECUFER : renouveler votre attestation pour 3 ans",
+        "lead": "Votre attestation SECUFER arrive à échéance ? Une demi-journée suffit pour la remettre à jour : reprise des fondamentaux, point sur les évolutions récentes, QCM final. L'attestation repart pour trois ans.",
+        "regle": {
+          "titre": "Qui peut suivre ce recyclage",
+          "points": [
+            "Les titulaires d'une attestation SECUFER initiale en cours de validité, ou expirée depuis moins de 6 mois",
+            "Avec une aptitude médicale en cours de validité",
+            "Attestation renouvelée pour 3 ans après réussite au QCM"
+          ],
+          "note": "Attestation expirée depuis plus de 6 mois : le recyclage n'est plus ouvert, il faut repasser la SECUFER."
+        },
+        "modalites_intro": "Le format le plus souple du catalogue : en salle, chez vous ou à distance.",
+        "validite_texte": "Notez la date d'expiration de vos attestations : passé 6 mois, le recyclage n'est plus possible.",
+        "devis_titre": "Demander un devis pour le recyclage SECUFER",
+        "devis_texte": "Précisez le nombre d'agents à recycler et leurs dates d'expiration : la session sera calée en conséquence.",
+        "faq_titre": "Questions sur le recyclage SECUFER",
+        "faq": [
+          {
+            "q": "Mon attestation a expiré il y a trois mois. Puis-je faire le recyclage ?",
+            "a": "Oui. Le recyclage reste ouvert jusqu'à 6 mois après l'expiration de l'attestation initiale, avec une aptitude médicale en cours de validité."
+          },
+          {
+            "q": "Comment se passe l'évaluation ?",
+            "a": "Par un QCM final de 15 questions. Il faut 11 bonnes réponses sur 15. L'attestation est délivrée sous 48 h."
+          },
+          {
+            "q": "Faut-il se déplacer ?",
+            "a": "Pas forcément : le recyclage se suit en présentiel (inter ou intra), à distance ou en e-learning."
+          }
+        ],
+        "illustration": "shield"
+      }
     },
     {
       "id": "secufer-e-learning",
@@ -300,13 +369,14 @@
         "libelle": "[À COMPLÉTER: tarif]"
       },
       "modalites": {
-        "centre": null,
-        "intra": null,
-        "e_learning": null,
+        "centre": false,
+        "intra": false,
+        "e_learning": true,
         "lieux": [
-          "[À COMPLÉTER: lieux]"
+          "En ligne (e-learning)"
         ],
-        "dates": "[À COMPLÉTER: dates]"
+        "dates": "[À COMPLÉTER: dates ou accès permanent]",
+        "libelle": "E-learning"
       },
       "effectif": "[À COMPLÉTER: effectif]",
       "methodes": [
@@ -331,7 +401,36 @@
         "Page Digivoda dédiée non identifiée.",
         "Préciser s'il s'agit de la formation initiale, du recyclage, ou des deux, à distance."
       ],
-      "resume_source": "editorial (dérivé de l'intitulé)"
+      "resume_source": "editorial (dérivé de l'intitulé)",
+      "editorial": {
+        "seo_title": "SECUFER en e-learning, à distance | Digiferro",
+        "seo_description": "La formation SECUFER en e-learning : se former à la sécurité ferroviaire à distance. Public, accès, validité et demande de devis auprès de Digivoda.",
+        "titre_h1": "SECUFER en e-learning",
+        "lead": "Le socle de sécurité ferroviaire, suivi depuis un ordinateur. Une option pour les agents éloignés d'un centre, ou difficiles à libérer une journée entière sur le chantier.",
+        "regle": {
+          "titre": "Pour qui, et quelle validité",
+          "points": [
+            "[À COMPLÉTER: public visé par la version e-learning]",
+            "[À COMPLÉTER: validité de l'attestation obtenue en e-learning]",
+            "Pour un renouvellement, le recyclage SECUFER existe aussi à distance"
+          ]
+        },
+        "modalites_intro": "Une formation suivie en ligne : pas de salle à réserver, pas de déplacement.",
+        "devis_titre": "Demander un accès à la SECUFER en e-learning",
+        "devis_texte": "Indiquez le nombre d'agents à inscrire : Digivoda revient vers vous avec les modalités d'accès.",
+        "faq_titre": "Questions sur la SECUFER en e-learning",
+        "faq": [
+          {
+            "q": "Le recyclage SECUFER existe-t-il aussi à distance ?",
+            "a": "Oui. Le recyclage SECUFER se suit en présentiel, à distance ou en e-learning."
+          },
+          {
+            "q": "Comment obtenir un accès ?",
+            "a": "Faites une demande de devis en indiquant le nombre d'agents. Digivoda revient vers vous avec les modalités d'accès."
+          }
+        ],
+        "illustration": "laptop"
+      }
     },
     {
       "id": "tcs-m",
@@ -511,10 +610,11 @@
         "[À COMPLÉTER: objectifs]"
       ],
       "public": [
-        "[À COMPLÉTER: public concerné]"
+        "Annonceurs Sentinelles et Agents Sécurité du Personnel déjà habilités"
       ],
       "prerequis": [
-        "[À COMPLÉTER: prérequis]"
+        "Être habilité Annonceur Sentinelle et/ou ASP par son employeur",
+        "[À COMPLÉTER: autres prérequis]"
       ],
       "programme": [
         "[À COMPLÉTER: programme / contenu]"
@@ -538,7 +638,8 @@
         "intra": null,
         "e_learning": null,
         "lieux": [
-          "[À COMPLÉTER: lieux]"
+          "Centres Digivoda partout en France",
+          "Sur site client en intra"
         ],
         "dates": "[À COMPLÉTER: dates]"
       },
@@ -547,7 +648,7 @@
         "[À COMPLÉTER: méthodes pédagogiques]"
       ],
       "evaluation": "[À COMPLÉTER: modalités d'évaluation]",
-      "validite": "[À COMPLÉTER: validité / recyclage]",
+      "validite": "Évaluation annuelle des compétences obligatoire pour le maintien de l'habilitation par l'employeur.",
       "accessibilite_pmr": "[À COMPLÉTER: accessibilité PMR]",
       "delai_acces": "[À COMPLÉTER: délai d'accès]",
       "financement": [
@@ -565,7 +666,37 @@
         "Même question d'intitulé TCS M / TES M.",
         "Contradiction sur Digivoda : évaluation annuelle (titre) ou tous les 3 ans (autre page)."
       ],
-      "resume_source": "editorial (dérivé de l'intitulé)"
+      "resume_source": "editorial (dérivé de l'intitulé)",
+      "editorial": {
+        "seo_title": "Recyclage TCS M, évaluation annuelle | Digiferro",
+        "seo_description": "Recyclage TCS M : l'évaluation annuelle des compétences d'Annonceur Sentinelle et d'ASP, exigée pour que l'employeur maintienne l'habilitation.",
+        "titre_h1": "Recyclage TCS M : l'évaluation annuelle Annonceur Sentinelle / ASP",
+        "lead": "Tenir un poste d'annonce, c'est aussi garder ses réflexes à jour. Chaque année, l'Annonceur Sentinelle et l'ASP repassent une évaluation de leurs compétences. Sans elle, l'employeur ne peut pas maintenir l'habilitation.",
+        "regle": {
+          "titre": "Qui est concerné",
+          "points": [
+            "Les agents déjà habilités Annonceur Sentinelle et/ou Agent Sécurité du Personnel",
+            "Une évaluation des compétences chaque année",
+            "[À COMPLÉTER: confirmer la périodicité annuelle (une page Digivoda évoque 3 ans)]"
+          ]
+        },
+        "validite_texte": "Planifiez l'évaluation avant la date anniversaire de l'habilitation, pour ne pas immobiliser un agent.",
+        "devis_titre": "Planifier un recyclage TCS M",
+        "devis_texte": "Indiquez le nombre d'annonceurs et d'ASP à évaluer, et les dates d'échéance de leurs habilitations.",
+        "faq_titre": "Questions sur le recyclage TCS M",
+        "faq": [
+          {
+            "q": "Que se passe-t-il sans évaluation annuelle ?",
+            "a": "L'évaluation annuelle des compétences conditionne le maintien de l'habilitation par l'employeur. Sans elle, l'habilitation ne peut pas être maintenue."
+          },
+          {
+            "q": "Où se déroule l'évaluation ?",
+            "a": "Dans les centres Digivoda partout en France, ou sur votre site en intra si vous formez un groupe d'agents."
+          }
+        ],
+        "illustration": "worker"
+      },
+      "validite_court": "Chaque année"
     },
     {
       "id": "tsae-prestations-connexes",
@@ -611,7 +742,8 @@
         "intra": null,
         "e_learning": null,
         "lieux": [
-          "[À COMPLÉTER: lieux]"
+          "Centres Digivoda partout en France",
+          "Sur site client en intra"
         ],
         "dates": "[À COMPLÉTER: dates]"
       },
@@ -642,7 +774,31 @@
         "Les résultats de recherche placent cet intitulé dans une liste e-learning : confirmer la modalité.",
         "Préciser si C0, AP LAM et AP S9 sont réservables séparément."
       ],
-      "resume_source": "editorial (dérivé de l'intitulé)"
+      "resume_source": "editorial (dérivé de l'intitulé)",
+      "editorial": {
+        "seo_title": "Formation TSAE prestations connexes C0, LAM, S9 | Digiferro",
+        "seo_description": "TSAE prestations connexes : risques électriques C0, Agent prestataire LAM et S9 dans une même formation. Contenu, packs associés et devis Digivoda.",
+        "titre_h1": "TSAE prestations connexes : C0, Agent prestataire LAM et S9",
+        "lead": "Trois compétences réunies dans une même formation : le risque électrique C0, l'Agent prestataire LAM et le S9. De quoi préparer une équipe de prestations connexes sans multiplier les inscriptions.",
+        "devis_titre": "Demander un devis pour la TSAE",
+        "devis_texte": "Précisez si vos agents ont besoin des trois modules ou seulement du C0, et combien ils sont.",
+        "faq_titre": "Questions sur la TSAE",
+        "faq": [
+          {
+            "q": "La TSAE fait-elle partie d'un pack ?",
+            "a": "Ses modules LAM et S9 figurent dans le Pack Prestations Connexes et dans le Pack Ferroviaire Premium, avec la TCS M."
+          },
+          {
+            "q": "Peut-on suivre seulement le module C0 ?",
+            "a": "Oui : la formation Risques électriques C0 existe aussi seule."
+          },
+          {
+            "q": "Où se déroule la formation ?",
+            "a": "Dans les centres Digivoda partout en France, ou sur votre site en intra si vous formez un groupe d'agents."
+          }
+        ],
+        "illustration": "train"
+      }
     },
     {
       "id": "risques-electriques-c0",
@@ -688,7 +844,8 @@
         "intra": null,
         "e_learning": null,
         "lieux": [
-          "[À COMPLÉTER: lieux]"
+          "Centres Digivoda partout en France",
+          "Sur site client en intra"
         ],
         "dates": "[À COMPLÉTER: dates]"
       },
@@ -719,7 +876,32 @@
         "Vérifier la mention sur l'habilitation délivrée par l'employeur.",
         "Une page Digivoda précise : « nous délivrons l'attestation de formation, l'habilitation reste à la charge de l'employeur ». À reprendre si confirmé."
       ],
-      "resume_source": "editorial (dérivé de l'intitulé)"
+      "resume_source": "editorial (dérivé de l'intitulé)",
+      "editorial": {
+        "seo_title": "Formation risques électriques C0 ferroviaire | Digiferro",
+        "seo_description": "Formation risques électriques C0 : travailler en sécurité près de la caténaire, des sous-stations et du rail conducteur. Packs associés et devis.",
+        "titre_h1": "Risques électriques C0",
+        "lead": "Une caténaire sous tension ne prévient pas. La formation C0 apprend à repérer les installations électriques de traction et à travailler à leur proximité en sécurité : caténaire, sous-stations, rail conducteur.",
+        "validite_texte": "L'organisme délivre l'attestation de formation ; l'habilitation reste à la charge de l'employeur.",
+        "devis_titre": "Demander un devis pour le C0",
+        "devis_texte": "Seul, en complément de la TCS M ou dans un pack : dites-nous ce que vos agents ont déjà suivi.",
+        "faq_titre": "Questions sur le C0",
+        "faq": [
+          {
+            "q": "Le C0 donne-t-il une habilitation ?",
+            "a": "La formation donne lieu à une attestation. L'habilitation, elle, est délivrée par l'employeur."
+          },
+          {
+            "q": "Existe-t-il un pack avec le C0 ?",
+            "a": "Oui : le Pack Sentinelle Complet (C0 + TCS M, 5 jours, 1 080 € TTC) et le Pack Prestations Connexes, qui réunit TCS M, C0, LAM et S9."
+          },
+          {
+            "q": "Où se déroule la formation ?",
+            "a": "Dans les centres Digivoda partout en France, ou sur votre site en intra si vous formez un groupe d'agents."
+          }
+        ],
+        "illustration": "signal"
+      }
     },
     {
       "id": "rso",
@@ -765,7 +947,8 @@
         "intra": null,
         "e_learning": null,
         "lieux": [
-          "[À COMPLÉTER: lieux]"
+          "Centres Digivoda partout en France",
+          "Sur site client en intra"
         ],
         "dates": "[À COMPLÉTER: dates]"
       },
@@ -794,7 +977,27 @@
       "a_verifier": [
         "Page Digivoda dédiée non identifiée."
       ],
-      "resume_source": "editorial (dérivé de l'intitulé)"
+      "resume_source": "editorial (dérivé de l'intitulé)",
+      "editorial": {
+        "seo_title": "Formation RSO, sécurité opérationnelle | Digiferro",
+        "seo_description": "RSO, Représentant Sécurité Opérationnelle : coordonner la sécurité des opérations sur les chantiers ferroviaires. Aussi en Pack RSO avec SECUFER et TCS M.",
+        "titre_h1": "RSO : Représentant Sécurité Opérationnelle",
+        "lead": "Sur un chantier ferroviaire, quelqu'un doit tenir le fil de la sécurité d'un bout à l'autre des opérations. C'est le rôle du RSO, au contact des équipes et des autres intervenants.",
+        "devis_titre": "Demander un devis pour la RSO",
+        "devis_texte": "Formation seule ou parcours complet avec le Pack RSO : précisez le profil de vos agents.",
+        "faq_titre": "Questions sur la RSO",
+        "faq": [
+          {
+            "q": "Existe-t-il un parcours complet vers le poste de RSO ?",
+            "a": "Oui. Le Pack RSO enchaîne SECUFER, TCS M / ASP et RSO, à 1 900 € TTC au lieu de 2 290 €."
+          },
+          {
+            "q": "Où se déroule la formation ?",
+            "a": "Dans les centres Digivoda partout en France, ou sur votre site en intra si vous formez un groupe d'agents."
+          }
+        ],
+        "illustration": "vest"
+      }
     },
     {
       "id": "aipr",
@@ -840,7 +1043,8 @@
         "intra": null,
         "e_learning": null,
         "lieux": [
-          "[À COMPLÉTER: lieux]"
+          "Centres Digivoda partout en France",
+          "Sur site client en intra"
         ],
         "dates": "[À COMPLÉTER: dates]"
       },
@@ -866,7 +1070,27 @@
       "a_verifier": [
         "Page Digivoda dédiée non identifiée. Préciser le niveau (opérateur, encadrant, concepteur)."
       ],
-      "resume_source": "editorial (dérivé de l'intitulé)"
+      "resume_source": "editorial (dérivé de l'intitulé)",
+      "editorial": {
+        "seo_title": "Formation AIPR, intervention près des réseaux | Digiferro",
+        "seo_description": "AIPR, Autorisation d'Intervention à Proximité des Réseaux : se former pour travailler près des réseaux enterrés ou aériens. Devis auprès de Digivoda.",
+        "titre_h1": "AIPR : Autorisation d'Intervention à Proximité des Réseaux",
+        "lead": "Un câble ou une canalisation touchés pendant des travaux, et c'est tout le chantier qui s'arrête. L'AIPR atteste que l'intervenant sait travailler à proximité des réseaux sans les endommager.",
+        "devis_titre": "Demander un devis pour l'AIPR",
+        "devis_texte": "Indiquez le nombre d'agents et le rôle de chacun sur vos chantiers.",
+        "faq_titre": "Questions sur l'AIPR",
+        "faq": [
+          {
+            "q": "L'AIPR concerne-t-elle les chantiers ferroviaires ?",
+            "a": "Oui, dès que des travaux ont lieu près de réseaux enterrés ou aériens, sur les emprises ferroviaires comme ailleurs."
+          },
+          {
+            "q": "Où se déroule la formation ?",
+            "a": "Dans les centres Digivoda partout en France, ou sur votre site en intra si vous formez un groupe d'agents."
+          }
+        ],
+        "illustration": "network"
+      }
     },
     {
       "id": "tes-f",
@@ -912,7 +1136,8 @@
         "intra": null,
         "e_learning": null,
         "lieux": [
-          "[À COMPLÉTER: lieux]"
+          "Centres Digivoda partout en France",
+          "Sur site client en intra"
         ],
         "dates": "[À COMPLÉTER: dates]"
       },
@@ -938,7 +1163,27 @@
       "a_verifier": [
         "Page Digivoda dédiée non identifiée."
       ],
-      "resume_source": "editorial (dérivé de l'intitulé)"
+      "resume_source": "editorial (dérivé de l'intitulé)",
+      "editorial": {
+        "seo_title": "TES F : protection des passages à niveau | Digiferro",
+        "seo_description": "Formation TES F : assurer la protection des passages à niveau pendant les travaux ferroviaires. Modalités, lieux et demande de devis auprès de Digivoda.",
+        "titre_h1": "TES F : protection des passages à niveau",
+        "lead": "Un passage à niveau en travaux reste un point de croisement entre la route et le rail. La TES F prépare les agents chargés d'en assurer la protection tant que le chantier est ouvert.",
+        "devis_titre": "Demander un devis pour la TES F",
+        "devis_texte": "Précisez le nombre d'agents et la période de vos travaux sur passage à niveau.",
+        "faq_titre": "Questions sur la TES F",
+        "faq": [
+          {
+            "q": "Quelle différence entre la TES F et la TCS M ?",
+            "a": "La TCS M porte sur l'annonce des circulations et la sécurité du personnel. La TES F porte sur la protection des passages à niveau."
+          },
+          {
+            "q": "Où se déroule la formation ?",
+            "a": "Dans les centres Digivoda partout en France, ou sur votre site en intra si vous formez un groupe d'agents."
+          }
+        ],
+        "illustration": "pn"
+      }
     },
     {
       "id": "agent-s9a3",
@@ -984,7 +1229,8 @@
         "intra": null,
         "e_learning": null,
         "lieux": [
-          "[À COMPLÉTER: lieux]"
+          "Centres Digivoda partout en France",
+          "Sur site client en intra"
         ],
         "dates": "[À COMPLÉTER: dates]"
       },
@@ -1010,7 +1256,27 @@
       "a_verifier": [
         "Page Digivoda dédiée non identifiée."
       ],
-      "resume_source": "editorial (dérivé de l'intitulé)"
+      "resume_source": "editorial (dérivé de l'intitulé)",
+      "editorial": {
+        "seo_title": "Formation Agent S9A3 : RZT, AGEC/R et APN | Digiferro",
+        "seo_description": "Formation Agent S9A3 couvrant les fonctions RZT, AGEC/R et APN. Modalités en centre Digivoda ou en intra sur votre site, et demande de devis.",
+        "titre_h1": "Agent S9A3 : RZT, AGEC/R et APN",
+        "lead": "Une seule formation pour les trois fonctions de l'agent S9A3 : RZT, AGEC/R et APN. Pratique quand un même agent doit pouvoir tenir plusieurs rôles d'un chantier à l'autre.",
+        "devis_titre": "Demander un devis pour l'Agent S9A3",
+        "devis_texte": "Indiquez les fonctions visées (RZT, AGEC/R, APN) et le nombre d'agents.",
+        "faq_titre": "Questions sur l'Agent S9A3",
+        "faq": [
+          {
+            "q": "Peut-on former plusieurs agents en même temps ?",
+            "a": "Oui, en intra sur votre site ou en inter dans un centre Digivoda. Indiquez le nombre de participants dans votre demande."
+          },
+          {
+            "q": "Où se déroule la formation ?",
+            "a": "Dans les centres Digivoda partout en France, ou sur votre site en intra si vous formez un groupe d'agents."
+          }
+        ],
+        "illustration": "helmet"
+      }
     },
     {
       "id": "percheur-catenaire",
@@ -1056,7 +1322,8 @@
         "intra": null,
         "e_learning": null,
         "lieux": [
-          "[À COMPLÉTER: lieux]"
+          "Centres Digivoda partout en France",
+          "Sur site client en intra"
         ],
         "dates": "[À COMPLÉTER: dates]"
       },
@@ -1084,7 +1351,28 @@
       "a_verifier": [
         "Le Pack Premium cite « APEC CH1-CB1 » : confirmer s'il s'agit de cette formation."
       ],
-      "resume_source": "editorial (dérivé de l'intitulé)"
+      "resume_source": "editorial (dérivé de l'intitulé)",
+      "editorial": {
+        "seo_title": "Percheur / aide monteur caténaire CH1-CB1 | Digiferro",
+        "seo_description": "Formation percheur et aide monteur caténaire, niveau CH1-CB1 : intervenir en sécurité sur les chantiers caténaire. Pack Premium et devis Digivoda.",
+        "titre_h1": "Percheur / Aide Monteur Caténaire CH1-CB1",
+        "lead": "Sur un chantier caténaire, le percheur et l'aide monteur travaillent au plus près des installations électriques. Une fonction exposée, qui se prépare avant de monter sur le chantier.",
+        "validite_texte": "L'organisme délivre l'attestation de formation ; l'habilitation reste délivrée par l'employeur.",
+        "devis_titre": "Demander un devis : percheur CH1-CB1",
+        "devis_texte": "Précisez le nombre d'agents et la nature de vos chantiers caténaire.",
+        "faq_titre": "Questions sur la formation caténaire",
+        "faq": [
+          {
+            "q": "Existe-t-il un pack autour de la caténaire ?",
+            "a": "Le Pack Ferroviaire Premium, en 10 jours, inclut l'Agent de Protection Électrique Caténaire (APEC) CH1-CB1, avec la TCS M, LAM et S9."
+          },
+          {
+            "q": "Où se déroule la formation ?",
+            "a": "Dans les centres Digivoda partout en France, ou sur votre site en intra si vous formez un groupe d'agents."
+          }
+        ],
+        "illustration": "pylon"
+      }
     }
   ],
   "packs": [
@@ -1113,10 +1401,17 @@
         "[À COMPLÉTER: objectifs]"
       ],
       "public": [
-        "[À COMPLÉTER: public concerné]"
+        "Demandeurs d'emploi en reconversion",
+        "Salariés du BTP et des travaux publics qui visent les chantiers du Réseau Ferré National",
+        "Sous-traitants ferroviaires",
+        "Nouveaux entrants dans les grands groupes d'infrastructure"
       ],
       "prerequis": [
-        "[À COMPLÉTER: prérequis]"
+        "Aptitude médicale et psychotechnique délivrée par un médecin du travail",
+        "Français niveau B1 minimum, à l'oral et à l'écrit",
+        "Être majeur (18 ans minimum)",
+        "Aucun diplôme requis ; permis B recommandé pour les déplacements sur chantier",
+        "[À COMPLÉTER: prérequis propres aux autres modules]"
       ],
       "parcours": [
         "[À COMPLÉTER: déroulé jour par jour]"
@@ -1135,10 +1430,11 @@
       },
       "somme_prix_individuels": null,
       "modalites": {
-        "centre": null,
-        "intra": null,
+        "centre": true,
+        "intra": true,
         "lieux": [
-          "[À COMPLÉTER: lieux]"
+          "Centres Digivoda partout en France",
+          "Sur site client en intra"
         ],
         "dates": "[À COMPLÉTER: dates]"
       },
@@ -1160,7 +1456,33 @@
       "a_verifier": [
         "Correspondance modules → formations à confirmer (C0/LAM/S9 = formation TSAE n°6 ?).",
         "Prix barré 2 250 € relevé dans l'index (non lisible sur la capture)."
-      ]
+      ],
+      "editorial": {
+        "seo_title": "Pack Prestations Connexes TCS M, C0, LAM, S9 | Digiferro",
+        "seo_description": "Pack Prestations Connexes : TCS M Annonceur Sentinelle + ASP, risques électriques C0, Agent prestataire LAM et S9. 1 800 € TTC au lieu de 2 250 €.",
+        "titre_h1": "Pack Prestations Connexes : TCS M + C0 / LAM / S9",
+        "illustration": "worker",
+        "lead": "Pour une entreprise de prestations connexes qui part sur un chantier du Réseau Ferré National, ce pack réunit l'essentiel : la TCS M complète, le risque électrique C0, et les fonctions d'Agent prestataire LAM et S9.",
+        "incluses_intro": "Les quatre modules du pack, et les fiches où retrouver le détail de chacun.",
+        "parcours_intro": "L'ordre reprend celui de la présentation du pack.",
+        "devis_texte": "Indiquez le nombre d'agents et la date de démarrage de votre chantier : Digivoda vous répond avec un devis et les prochaines sessions.",
+        "faq": [
+          {
+            "q": "Combien coûte le pack ?",
+            "a": "1 800 € TTC par personne, au lieu de 2 250 € : une remise de 450 €."
+          },
+          {
+            "q": "Pour quels chantiers ?",
+            "a": "Le pack est présenté pour les chantiers du Réseau Ferré National."
+          },
+          {
+            "q": "Peut-on suivre le pack en intra ?",
+            "a": "Oui, sur votre site, ou dans un centre Digivoda."
+          }
+        ]
+      },
+      "public_note": "Le pack inclut la TCS M : public repris de sa fiche.",
+      "prerequis_note": "Le pack inclut la TCS M : ses prérequis publiés s'appliquent."
     },
     {
       "id": "pack-sentinelle-complet",
@@ -1302,10 +1624,17 @@
         "[À COMPLÉTER: objectifs]"
       ],
       "public": [
-        "[À COMPLÉTER: public concerné]"
+        "Demandeurs d'emploi en reconversion",
+        "Salariés du BTP et des travaux publics qui visent les chantiers du Réseau Ferré National",
+        "Sous-traitants ferroviaires",
+        "Nouveaux entrants dans les grands groupes d'infrastructure"
       ],
       "prerequis": [
-        "[À COMPLÉTER: prérequis]"
+        "Aptitude médicale et psychotechnique délivrée par un médecin du travail",
+        "Français niveau B1 minimum, à l'oral et à l'écrit",
+        "Être majeur (18 ans minimum)",
+        "Aucun diplôme requis ; permis B recommandé pour les déplacements sur chantier",
+        "[À COMPLÉTER: prérequis propres aux autres modules]"
       ],
       "parcours": [
         "[À COMPLÉTER: déroulé jour par jour]"
@@ -1324,10 +1653,11 @@
       },
       "somme_prix_individuels": null,
       "modalites": {
-        "centre": null,
-        "intra": null,
+        "centre": true,
+        "intra": true,
         "lieux": [
-          "[À COMPLÉTER: lieux]"
+          "Centres Digivoda partout en France",
+          "Sur site client en intra"
         ],
         "dates": "[À COMPLÉTER: dates]"
       },
@@ -1349,7 +1679,33 @@
       "a_verifier": [
         "Prix barré 2 290 € relevé dans l'index (non lisible sur la capture).",
         "Durée totale non publiée."
-      ]
+      ],
+      "editorial": {
+        "seo_title": "Pack RSO : SECUFER, TCS M / ASP et RSO | Digiferro",
+        "seo_description": "Pack RSO : SECUFER, TCS M / ASP et Représentant Sécurité Opérationnelle en un parcours. 1 900 € TTC au lieu de 2 290 €, en centre ou en intra.",
+        "titre_h1": "Pack RSO : vers le poste de Représentant Sécurité Opérationnelle",
+        "illustration": "vest",
+        "lead": "De la SECUFER au poste de RSO, sans changer d'organisme ni refaire d'inscription. Le pack enchaîne les trois formations qui mènent aux métiers de la sécurité ferroviaire et à la coordination des opérations sur chantier.",
+        "incluses_intro": "Trois formations, du socle de sécurité jusqu'à la coordination des opérations.",
+        "parcours_intro": "Le parcours part de la SECUFER et se termine par la RSO.",
+        "devis_texte": "Indiquez le nombre de futurs RSO et la période visée.",
+        "faq": [
+          {
+            "q": "Combien coûte le pack ?",
+            "a": "1 900 € TTC par personne, au lieu de 2 290 € : une remise de 390 €."
+          },
+          {
+            "q": "Faut-il déjà avoir la SECUFER ?",
+            "a": "Non. Elle fait partie du pack, c'est la première étape du parcours."
+          },
+          {
+            "q": "Peut-on suivre le pack en intra ?",
+            "a": "Oui, sur votre site, ou dans un centre Digivoda."
+          }
+        ]
+      },
+      "public_note": "Le pack inclut la TCS M : public repris de sa fiche.",
+      "prerequis_note": "Le pack inclut la TCS M : ses prérequis publiés s'appliquent."
     },
     {
       "id": "pack-ferroviaire-premium",
@@ -1377,10 +1733,17 @@
         "[À COMPLÉTER: objectifs]"
       ],
       "public": [
-        "[À COMPLÉTER: public concerné]"
+        "Demandeurs d'emploi en reconversion",
+        "Salariés du BTP et des travaux publics qui visent les chantiers du Réseau Ferré National",
+        "Sous-traitants ferroviaires",
+        "Nouveaux entrants dans les grands groupes d'infrastructure"
       ],
       "prerequis": [
-        "[À COMPLÉTER: prérequis]"
+        "Aptitude médicale et psychotechnique délivrée par un médecin du travail",
+        "Français niveau B1 minimum, à l'oral et à l'écrit",
+        "Être majeur (18 ans minimum)",
+        "Aucun diplôme requis ; permis B recommandé pour les déplacements sur chantier",
+        "[À COMPLÉTER: prérequis propres aux autres modules]"
       ],
       "parcours": [
         "[À COMPLÉTER: déroulé jour par jour]"
@@ -1399,10 +1762,11 @@
       },
       "somme_prix_individuels": null,
       "modalites": {
-        "centre": null,
-        "intra": null,
+        "centre": true,
+        "intra": true,
         "lieux": [
-          "[À COMPLÉTER: lieux]"
+          "Centres Digivoda partout en France",
+          "Sur site client en intra"
         ],
         "dates": "[À COMPLÉTER: dates]"
       },
@@ -1426,7 +1790,33 @@
         "APEC CH1-CB1 = formation « Percheur / Aide Monteur Caténaire CH1-CB1 » ? À confirmer.",
         "Le pack cite LAM et S9 mais pas C0 : la référence à la formation TSAE (qui inclut C0) est-elle exacte ?",
         "Prix barré 2 900 € relevé dans l'index (non lisible sur la capture)."
-      ]
+      ],
+      "editorial": {
+        "seo_title": "Pack Ferroviaire Premium, 10 jours | Digiferro",
+        "seo_description": "Pack Ferroviaire Premium en 10 jours : TCS M + ASP, Agent prestataire LAM et S9, APEC CH1-CB1 caténaire. 2 500 € TTC au lieu de 2 900 €.",
+        "titre_h1": "Pack Ferroviaire Premium : 10 jours, quatre compétences",
+        "illustration": "pylon",
+        "lead": "Le parcours le plus complet du catalogue. En dix jours, l'agent apprend à protéger les équipes des circulations, à appliquer les procédures LAM et S9, et à assurer la protection électrique d'un chantier caténaire.",
+        "incluses_intro": "Les modules du pack et les fiches formation correspondantes.",
+        "parcours_intro": "L'ordre reprend celui de la présentation du pack : circulations d'abord, caténaire en fin de parcours.",
+        "devis_texte": "Dix jours se préparent : indiquez le nombre d'agents et la fenêtre de dates possible.",
+        "faq": [
+          {
+            "q": "Combien coûte le pack ?",
+            "a": "2 500 € TTC par personne, au lieu de 2 900 € : une remise de 400 €."
+          },
+          {
+            "q": "Que couvre la partie caténaire ?",
+            "a": "L'Agent de Protection Électrique Caténaire (APEC) CH1-CB1 : la protection électrique des chantiers caténaire."
+          },
+          {
+            "q": "Peut-on suivre le pack en intra ?",
+            "a": "Oui, sur votre site, ou dans un centre Digivoda."
+          }
+        ]
+      },
+      "public_note": "Le pack inclut la TCS M : public repris de sa fiche.",
+      "prerequis_note": "Le pack inclut la TCS M : ses prérequis publiés s'appliquent."
     }
   ],
   "site": {

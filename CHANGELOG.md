@@ -1,5 +1,33 @@
 # Changelog Digiferro
 
+## 0.3.0 — 2026-10-30 · Site complet
+
+- **Pages** : 25 au total.
+  - Les 11 fiches formation et 3 fiches pack restantes, chacune avec son propre texte.
+  - Le catalogue filtrable : type, thème, durée, recherche sans accents, filtres repris dans l’URL, état vide, repli sans JavaScript.
+  - À propos, contact (formulaire complet, emplacement pour le plan d’accès), FAQ par thème (JSON-LD FAQPage).
+  - Mentions légales, CGV, politique de confidentialité, avec un bandeau « à faire relire ».
+  - Une page 404.
+- **Recyclages et e-learning** : encadré « qui peut s’inscrire, quelle validité » repris des règles publiées par Digivoda (6 mois après expiration pour le recyclage SECUFER, évaluation annuelle pour la TCS M).
+- **Données** : textes de page pour les 16 fiches ; prérequis et public de la TCS M repris dans les packs, avec mention de l’origine. Les lieux confirmés s’appliquent à toutes les fiches.
+- **Retouches de design** (liste de contrôle ui-ux-pro-max, sans sa base de données, absente de l’environnement) :
+  - durées d’animation en jetons, fermeture plus rapide que l’ouverture ;
+  - couleurs codées en dur remplacées par des jetons nommés ;
+  - aucun texte utile sous 12 px ;
+  - focus jamais masqué par l’en-tête et la sous-navigation collants ;
+  - rubrique active dans l’en-tête ;
+  - fil d’Ariane vers le catalogue filtré ;
+  - formulaire avec aide sous les champs, résumé d’erreurs cliquable, état « Envoi en cours… » et e-mail exigeant un domaine complet ;
+  - fils de caténaire en tête de toutes les pages intérieures.
+- **Outillage** : le générateur produit aussi `A-COMPLETER.md`, la liste des contenus manquants page par page.
+- **Contrôles** :
+  - 2 459 liens et fichiers valides, 0 ancre cassée ;
+  - aucun défilement horizontal de 360 à 1536 px sur les 25 pages ;
+  - axe sans erreur sur 50 combinaisons page × largeur ;
+  - Lighthouse mobile entre 99 et 100 sur 8 pages représentatives (avec gzip) ;
+  - titres, descriptions et accroches uniques ;
+  - aucun mot interdit.
+
 ## 0.2.0 — 2026-10-30 · Point de validation
 
 - **Données** (`data/formations.json` v0.2.0) :

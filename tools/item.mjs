@@ -4,6 +4,7 @@ import { breadcrumb, devisHref, groupsOf } from './partials.mjs';
 import { img, formationCard, packTicket, faqHTML, faqLD, mapFigure, IMG_ALT } from './home.mjs';
 
 const P = '../';
+const WIRES = `<svg class="page-hero__wires" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 18 Q360 58 720 18 T1440 18"/><path d="M0 42 H1440"/><path d="M180 34 V42 M360 38 V42 M540 34 V42 M900 34 V42 M1080 38 V42 M1260 34 V42"/></svg>`;
 
 const illus = (name) =>
   `<svg class="illus" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><use href="#i-${name}"></use></svg>`;
@@ -14,16 +15,56 @@ const secHead = (n, id, title, intro) =>
 const lieuxHTML = (m, data) =>
   isMissing(m?.lieux) ? todo('lieux') : m.lieux.map((l) => `<span class="facts__line">${esc(l)}</span>`).join('');
 
+const regleHTML = (r) => `<div class="rule-plate">
+  <p class="rule-plate__title">${icon('signal', 'icon icon--sm')}${esc(r.titre)}</p>
+  <ul>${r.points.map((x) => `<li>${show(x, x.replace(/^\[À COMPLÉTER: |\]$/g, ''))}</li>`).join('')}</ul>
+  ${r.note ? `<p class="rule-plate__note">${esc(r.note)}</p>` : ''}
+</div>`;
+
 function facts(rows) {
   return `<dl class="facts">${rows
     .map(([ic, dt, dd]) => `<div class="facts__item"><dt>${icon(ic, 'icon icon--sm')}${dt}</dt><dd>${dd}</dd></div>`)
     .join('')}</dl>`;
 }
 
-export function devisForm(data, selectedId, { title, text } = {}) {
+export function formBox(data, selectedId, p = P) {
   const groups = groupsOf(data);
   const packs = data.packs.slice().sort((a, b) => a.ordre - b.ordre);
   const opt = (x) => `<option value="${x.id}"${x.id === selectedId ? ' selected' : ''}>${esc(x.titre_court)}</option>`;
+  return `<div class="devis__box">
+      <form class="form" action="#" method="post" data-form data-endpoint="">
+        <div class="form__hp" aria-hidden="true"><label for="f-site">Laissez ce champ vide</label><input id="f-site" name="site_web" type="text" tabindex="-1" autocomplete="off"></div>
+        <div class="form__row">
+          <div class="field"><label for="f-nom">Nom et prénom <span class="field__req" aria-hidden="true">*</span></label><input id="f-nom" name="nom" type="text" autocomplete="name" required aria-describedby="f-nom-err"><p class="field__err" id="f-nom-err"></p></div>
+          <div class="field"><label for="f-entreprise">Entreprise</label><input id="f-entreprise" name="entreprise" type="text" autocomplete="organization"></div>
+        </div>
+        <div class="form__row">
+          <div class="field"><label for="f-email">E-mail <span class="field__req" aria-hidden="true">*</span></label><input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="f-email-err"><p class="field__err" id="f-email-err"></p></div>
+          <div class="field"><label for="f-tel">Téléphone <span class="field__req" aria-hidden="true">*</span></label><input id="f-tel" name="telephone" type="tel" autocomplete="tel" required inputmode="tel" aria-describedby="f-tel-hint f-tel-err"><p class="field__hint" id="f-tel-hint">Pour vous rappeler au sujet du devis.</p><p class="field__err" id="f-tel-err"></p></div>
+        </div>
+        <div class="form__row form__row--wide">
+          <div class="field"><label for="f-formation">Formation ou pack <span class="field__req" aria-hidden="true">*</span></label>
+            <select id="f-formation" name="formation" required aria-describedby="f-formation-err">
+              <option value="">Choisir dans la liste</option>
+              ${groups.map((g) => `<optgroup label="${esc(g.label)}">${g.items.map(opt).join('')}</optgroup>`).join('')}
+              <optgroup label="Packs">${packs.map(opt).join('')}</optgroup>
+            </select><p class="field__err" id="f-formation-err"></p></div>
+          <div class="field field--short"><label for="f-nb">Participants <span class="field__req" aria-hidden="true">*</span></label><input id="f-nb" name="participants" type="number" min="1" max="500" step="1" value="1" required inputmode="numeric" aria-describedby="f-nb-hint f-nb-err"><p class="field__hint" id="f-nb-hint">Nombre d’agents</p><p class="field__err" id="f-nb-err"></p></div>
+        </div>
+        <div class="field"><label for="f-msg">Votre message</label><textarea id="f-msg" name="message" rows="4" placeholder="Période souhaitée, lieu, centre ou intra…"></textarea></div>
+        <p class="form__legal"><span aria-hidden="true">*</span> Champs obligatoires. Vos données servent uniquement à répondre à votre demande : voir la <a href="${p}politique-confidentialite.html">politique de confidentialité</a>.</p>
+        <button class="btn btn--signal btn--lg" type="submit">Envoyer la demande${icon('arrow', 'icon icon--sm')}</button>
+        <p class="form__status" role="status" aria-live="polite"></p>
+      </form>
+      <div class="form-success" tabindex="-1" hidden>
+        ${icon('check', 'icon icon--lg')}
+        <p class="form-success__title">Demande envoyée</p>
+        <p>Merci. Votre demande est bien partie : Digivoda vous recontacte par e-mail ou par téléphone.</p>
+      </div>
+    </div>`;
+}
+
+export function devisForm(data, selectedId, { title, text, p = P } = {}) {
   const o = data.organisme;
   return `<section class="section band band--night devis" id="devis" aria-labelledby="devis-title">
   <div class="wrap devis__grid">
@@ -36,37 +77,7 @@ export function devisForm(data, selectedId, { title, text } = {}) {
         <li><a href="mailto:${esc(o.email)}">${icon('mail', 'icon icon--sm')}${esc(o.email)}</a></li>
       </ul>
     </div>
-    <div class="devis__box">
-      <form class="form" action="#" method="post" data-form data-endpoint="">
-        <div class="form__hp" aria-hidden="true"><label for="f-site">Laissez ce champ vide</label><input id="f-site" name="site_web" type="text" tabindex="-1" autocomplete="off"></div>
-        <div class="form__row">
-          <div class="field"><label for="f-nom">Nom et prénom <span class="field__req" aria-hidden="true">*</span></label><input id="f-nom" name="nom" type="text" autocomplete="name" required aria-describedby="f-nom-err"><p class="field__err" id="f-nom-err"></p></div>
-          <div class="field"><label for="f-entreprise">Entreprise</label><input id="f-entreprise" name="entreprise" type="text" autocomplete="organization"></div>
-        </div>
-        <div class="form__row">
-          <div class="field"><label for="f-email">E-mail <span class="field__req" aria-hidden="true">*</span></label><input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="f-email-err"><p class="field__err" id="f-email-err"></p></div>
-          <div class="field"><label for="f-tel">Téléphone <span class="field__req" aria-hidden="true">*</span></label><input id="f-tel" name="telephone" type="tel" autocomplete="tel" required inputmode="tel" aria-describedby="f-tel-err"><p class="field__err" id="f-tel-err"></p></div>
-        </div>
-        <div class="form__row form__row--wide">
-          <div class="field"><label for="f-formation">Formation ou pack <span class="field__req" aria-hidden="true">*</span></label>
-            <select id="f-formation" name="formation" required aria-describedby="f-formation-err">
-              <option value="">Choisir dans la liste</option>
-              ${groups.map((g) => `<optgroup label="${esc(g.label)}">${g.items.map(opt).join('')}</optgroup>`).join('')}
-              <optgroup label="Packs">${packs.map(opt).join('')}</optgroup>
-            </select><p class="field__err" id="f-formation-err"></p></div>
-          <div class="field field--short"><label for="f-nb">Participants <span class="field__req" aria-hidden="true">*</span></label><input id="f-nb" name="participants" type="number" min="1" max="500" step="1" value="1" required inputmode="numeric" aria-describedby="f-nb-err"><p class="field__err" id="f-nb-err"></p></div>
-        </div>
-        <div class="field"><label for="f-msg">Votre message</label><textarea id="f-msg" name="message" rows="4" placeholder="Période souhaitée, lieu, centre ou intra…"></textarea></div>
-        <p class="form__legal"><span aria-hidden="true">*</span> Champs obligatoires. Vos données servent uniquement à répondre à votre demande : voir la <a href="${P}politique-confidentialite.html">politique de confidentialité</a>.</p>
-        <button class="btn btn--signal btn--lg" type="submit">Envoyer la demande${icon('arrow', 'icon icon--sm')}</button>
-        <p class="form__status" role="status" aria-live="polite"></p>
-      </form>
-      <div class="form-success" tabindex="-1" hidden>
-        ${icon('check', 'icon icon--lg')}
-        <p class="form-success__title">Demande envoyée</p>
-        <p>Merci. Votre demande est bien partie : Digivoda vous recontacte par e-mail ou par téléphone.</p>
-      </div>
-    </div>
+    ${formBox(data, selectedId, p)}
   </div>
 </section>`;
 }
@@ -99,8 +110,9 @@ const crumbs = (data, f, kind) => {
   const theme = data.themes.find((t) => t.id === f.theme);
   return [
     { label: 'Accueil', href: 'index.html' },
-    { label: kind === 'pack' ? 'Packs' : 'Formations', href: kind === 'pack' ? 'index.html#packs' : 'formations/index.html' },
-    ...(theme ? [{ label: theme.label, href: `index.html#theme-${theme.id}` }] : []),
+    { label: 'Catalogue', href: 'formations/index.html' },
+    ...(kind === 'pack' ? [{ label: 'Packs', href: 'formations/index.html?type=pack' }] : []),
+    ...(theme ? [{ label: theme.label, href: `formations/index.html?theme=${theme.id}` }] : []),
     { label: f.titre_court },
   ];
 };
@@ -146,6 +158,7 @@ export function formationPage(data, f) {
   const recy = related.find((x) => x.type === 'recyclage');
 
   const hero = `<div class="item-hero">
+  ${WIRES}
   <div class="wrap">
     ${breadcrumb(P, trail)}
     <div class="item-hero__grid">
@@ -153,6 +166,7 @@ export function formationPage(data, f) {
         <p class="station">${esc(theme?.label || '')}</p>
         <h1>${esc(e.titre_h1 || f.titre)}</h1>
         <p class="item-hero__lead">${esc(e.lead || f.resume)}</p>
+        ${e.regle ? regleHTML(e.regle) : ''}
         <div class="item-hero__cta">
           <a class="btn btn--signal btn--lg" href="#devis">Demander un devis</a>
           <a class="link-arrow" href="#programme">Voir le programme${icon('arrow', 'icon icon--sm')}</a>
@@ -200,6 +214,7 @@ export function formationPage(data, f) {
   <section class="item-sec" aria-labelledby="programme">
     ${secHead('03', 'programme', 'Programme', e.programme_intro)}
     ${prog}
+    ${f.programme_note ? `<p class="sec-note">${esc(f.programme_note)}</p>` : ''}
   </section>
   <section class="item-sec" aria-labelledby="modalites">
     ${secHead('04', 'modalites', 'Modalités et lieux', e.modalites_intro)}
@@ -303,6 +318,7 @@ export function packPage(data, k) {
   ];
 
   const hero = `<div class="item-hero item-hero--pack">
+  ${WIRES}
   <div class="wrap">
     ${breadcrumb(P, trail)}
     <div class="item-hero__grid">
@@ -370,7 +386,7 @@ export function packPage(data, k) {
         .map((x) => `<tr><th scope="row"><a href="${P}${x.page}">${esc(x.titre_court)}</a></th><td>${dureeHTML(x.duree, 'todo--xs')}</td><td>${priceHTML(x.tarif)}</td></tr>`)
         .join('')}</tbody>
       <tfoot>
-        <tr><th scope="row">Somme des tarifs à l’unité</th><td></td><td>${sum != null ? `<strong>${eur(sum)}</strong> TTC` : todo('somme, tarif C0 manquant')}</td></tr>
+        <tr><th scope="row">Somme des tarifs à l’unité</th><td></td><td>${sum != null ? `<strong>${eur(sum)}</strong> TTC` : todo('somme, tarifs à l’unité manquants')}</td></tr>
         <tr class="price-table__pack"><th scope="row">${esc(k.titre_court)}</th><td>${dureeHTML(k.duree)}</td><td>${priceHTML(k.tarif, { size: 'lg' })}</td></tr>
         ${k.tarif?.remise ? `<tr><th scope="row">Économie affichée</th><td></td><td>${savingBadge(k.tarif)}</td></tr>` : diff != null ? `<tr><th scope="row">Écart avec l’achat à l’unité</th><td></td><td>${eur(diff)}</td></tr>` : ''}
       </tfoot>
