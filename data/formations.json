@@ -1,0 +1,1233 @@
+{
+  "meta": {
+    "version": "0.1.0-squelette",
+    "statut": "SQUELETTE NON VÉRIFIÉ. digivoda.com n'est pas joignable depuis la session de génération et les deux captures d'écran n'ont pas été fournies. Aucune valeur factuelle n'est encore extraite.",
+    "source_principale": "https://digivoda.com/",
+    "derniere_extraction": null,
+    "convention_placeholder": "Toute chaîne commençant par « [À COMPLÉTER: » est affichée telle quelle sur le site et listée dans le rapport final.",
+    "convention_null": "null = valeur non encore extraite (traitée comme [À COMPLÉTER] à la génération).",
+    "champ_constat_capture": "Valeurs lues dans les captures d'écran, recopiées du brief. Elles ne sont jamais affichées : seule la valeur publiée sur digivoda.com fait foi."
+  },
+  "organisme": {
+    "nom": "DIGIVODA",
+    "site": "https://digivoda.com/",
+    "telephone": "[À COMPLÉTER: téléphone]",
+    "email": "[À COMPLÉTER: email de contact]",
+    "adresse_siege": "[À COMPLÉTER: adresse du siège]",
+    "adresse_centre": "[À COMPLÉTER: adresse du centre de formation]",
+    "forme_juridique": "[À COMPLÉTER: forme juridique et capital]",
+    "rcs": "[À COMPLÉTER: RCS]",
+    "siret": "[À COMPLÉTER: SIRET]",
+    "numero_declaration_activite": "[À COMPLÉTER: numéro de déclaration d'activité]",
+    "tva": "[À COMPLÉTER: régime de TVA]",
+    "hebergeur": "[À COMPLÉTER: hébergeur du site]",
+    "directeur_publication": "[À COMPLÉTER: directeur de la publication]",
+    "qualiopi": {
+      "mention": "[À COMPLÉTER: mention Qualiopi exacte publiée par Digivoda]",
+      "categories": [
+        "[À COMPLÉTER: catégories d'actions certifiées]"
+      ],
+      "certificateur": "[À COMPLÉTER: organisme certificateur]",
+      "logo": "assets/img/qualiopi.svg",
+      "logo_statut": "à fournir par le client (logo officiel, non modifié)"
+    },
+    "sources": {
+      "accueil": "https://digivoda.com/",
+      "catalogue": "https://digivoda.com/formations/",
+      "packs": "https://digivoda.com/packs-formations-ferroviaires/",
+      "centre": "https://digivoda.com/notre-centre-de-formation/",
+      "contact": "https://digivoda.com/contact/",
+      "mentions_legales": "https://digivoda.com/mentions-legales/",
+      "cgv": "[À COMPLÉTER: URL des CGV]",
+      "politique_confidentialite": "[À COMPLÉTER: URL de la politique de confidentialité]",
+      "qualiopi": "[À COMPLÉTER: URL ou document du certificat Qualiopi]"
+    }
+  },
+  "themes": [
+    {
+      "id": "securite-ferroviaire",
+      "label": "Sécurité ferroviaire",
+      "ordre": 1
+    },
+    {
+      "id": "sentinelle-personnel",
+      "label": "Sentinelle & personnel",
+      "ordre": 2
+    },
+    {
+      "id": "prestations-electrique",
+      "label": "Prestations connexes & électrique",
+      "ordre": 3
+    },
+    {
+      "id": "representation-reseaux",
+      "label": "Représentation & réseaux",
+      "ordre": 4
+    },
+    {
+      "id": "catenaire",
+      "label": "Caténaire",
+      "ordre": 5
+    }
+  ],
+  "types": [
+    {
+      "id": "formation",
+      "label": "Formation initiale"
+    },
+    {
+      "id": "recyclage",
+      "label": "Recyclage"
+    },
+    {
+      "id": "e-learning",
+      "label": "E-learning"
+    },
+    {
+      "id": "pack",
+      "label": "Pack"
+    }
+  ],
+  "formations": [
+    {
+      "id": "secufer",
+      "ordre": 1,
+      "slug": "secufer-securite-ferroviaire",
+      "page": "formations/secufer-securite-ferroviaire.html",
+      "titre": "SECUFER – Sécurité ferroviaire",
+      "titre_court": "SECUFER",
+      "code": "SECUFER",
+      "theme": "securite-ferroviaire",
+      "type": "formation",
+      "source_url": "[À COMPLÉTER: URL de la page Digivoda]",
+      "statut_verification": "non_verifie",
+      "resume": "[À COMPLÉTER: résumé]",
+      "objectifs": [
+        "[À COMPLÉTER: objectifs]"
+      ],
+      "public": [
+        "[À COMPLÉTER: public concerné]"
+      ],
+      "prerequis": [
+        "[À COMPLÉTER: prérequis]"
+      ],
+      "programme": [
+        "[À COMPLÉTER: programme / contenu]"
+      ],
+      "duree": {
+        "heures": null,
+        "jours": null,
+        "libelle": "[À COMPLÉTER: durée]"
+      },
+      "tarif": {
+        "montant": null,
+        "regime": null,
+        "ancien_prix": null,
+        "remise": null,
+        "inter": null,
+        "intra": null,
+        "libelle": "[À COMPLÉTER: tarif]"
+      },
+      "modalites": {
+        "centre": null,
+        "intra": null,
+        "e_learning": null,
+        "lieux": [
+          "[À COMPLÉTER: lieux]"
+        ],
+        "dates": "[À COMPLÉTER: dates]"
+      },
+      "effectif": "[À COMPLÉTER: effectif]",
+      "methodes": [
+        "[À COMPLÉTER: méthodes pédagogiques]"
+      ],
+      "evaluation": "[À COMPLÉTER: modalités d'évaluation]",
+      "validite": "[À COMPLÉTER: validité / recyclage]",
+      "accessibilite_pmr": "[À COMPLÉTER: accessibilité PMR]",
+      "delai_acces": "[À COMPLÉTER: délai d'accès]",
+      "financement": [
+        "[À COMPLÉTER: financement]"
+      ],
+      "images": [],
+      "formations_liees": [
+        "recyclage-secufer",
+        "secufer-e-learning",
+        "tcs-m"
+      ],
+      "packs": [
+        "pack-rso"
+      ],
+      "a_verifier": [
+        "Page Digivoda dédiée non identifiée : URL à confirmer."
+      ]
+    },
+    {
+      "id": "recyclage-secufer",
+      "ordre": 2,
+      "slug": "recyclage-secufer",
+      "page": "formations/recyclage-secufer.html",
+      "titre": "Recyclage SECUFER – Renouvellement de votre attestation pour 3 ans",
+      "titre_court": "Recyclage SECUFER",
+      "code": "SECUFER",
+      "theme": "securite-ferroviaire",
+      "type": "recyclage",
+      "source_url": "https://digivoda.com/ferroviaire/formation-recyclage-secufer/",
+      "statut_verification": "non_verifie",
+      "resume": "[À COMPLÉTER: résumé]",
+      "objectifs": [
+        "[À COMPLÉTER: objectifs]"
+      ],
+      "public": [
+        "[À COMPLÉTER: public concerné]"
+      ],
+      "prerequis": [
+        "[À COMPLÉTER: prérequis]"
+      ],
+      "programme": [
+        "[À COMPLÉTER: programme / contenu]"
+      ],
+      "duree": {
+        "heures": null,
+        "jours": null,
+        "libelle": "[À COMPLÉTER: durée]"
+      },
+      "tarif": {
+        "montant": null,
+        "regime": null,
+        "ancien_prix": null,
+        "remise": null,
+        "inter": null,
+        "intra": null,
+        "libelle": "[À COMPLÉTER: tarif]"
+      },
+      "modalites": {
+        "centre": null,
+        "intra": null,
+        "e_learning": null,
+        "lieux": [
+          "[À COMPLÉTER: lieux]"
+        ],
+        "dates": "[À COMPLÉTER: dates]"
+      },
+      "effectif": "[À COMPLÉTER: effectif]",
+      "methodes": [
+        "[À COMPLÉTER: méthodes pédagogiques]"
+      ],
+      "evaluation": "[À COMPLÉTER: modalités d'évaluation]",
+      "validite": "[À COMPLÉTER: validité / recyclage]",
+      "accessibilite_pmr": "[À COMPLÉTER: accessibilité PMR]",
+      "delai_acces": "[À COMPLÉTER: délai d'accès]",
+      "financement": [
+        "[À COMPLÉTER: financement]"
+      ],
+      "images": [],
+      "formations_liees": [
+        "secufer",
+        "secufer-e-learning"
+      ],
+      "packs": [],
+      "a_verifier": [
+        "Validité de 3 ans indiquée dans le titre du brief : à confirmer sur la page.",
+        "Les résultats de recherche suggèrent un tarif affiché à la fois en HT et en TTC : vérifier le régime de TVA."
+      ]
+    },
+    {
+      "id": "secufer-e-learning",
+      "ordre": 3,
+      "slug": "secufer-e-learning",
+      "page": "formations/secufer-e-learning.html",
+      "titre": "SECUFER en E-learning",
+      "titre_court": "SECUFER e-learning",
+      "code": "SECUFER",
+      "theme": "securite-ferroviaire",
+      "type": "e-learning",
+      "source_url": "[À COMPLÉTER: URL de la page Digivoda]",
+      "statut_verification": "non_verifie",
+      "resume": "[À COMPLÉTER: résumé]",
+      "objectifs": [
+        "[À COMPLÉTER: objectifs]"
+      ],
+      "public": [
+        "[À COMPLÉTER: public concerné]"
+      ],
+      "prerequis": [
+        "[À COMPLÉTER: prérequis]"
+      ],
+      "programme": [
+        "[À COMPLÉTER: programme / contenu]"
+      ],
+      "duree": {
+        "heures": null,
+        "jours": null,
+        "libelle": "[À COMPLÉTER: durée]"
+      },
+      "tarif": {
+        "montant": null,
+        "regime": null,
+        "ancien_prix": null,
+        "remise": null,
+        "inter": null,
+        "intra": null,
+        "libelle": "[À COMPLÉTER: tarif]"
+      },
+      "modalites": {
+        "centre": null,
+        "intra": null,
+        "e_learning": null,
+        "lieux": [
+          "[À COMPLÉTER: lieux]"
+        ],
+        "dates": "[À COMPLÉTER: dates]"
+      },
+      "effectif": "[À COMPLÉTER: effectif]",
+      "methodes": [
+        "[À COMPLÉTER: méthodes pédagogiques]"
+      ],
+      "evaluation": "[À COMPLÉTER: modalités d'évaluation]",
+      "validite": "[À COMPLÉTER: validité / recyclage]",
+      "accessibilite_pmr": "[À COMPLÉTER: accessibilité PMR]",
+      "delai_acces": "[À COMPLÉTER: délai d'accès]",
+      "financement": [
+        "[À COMPLÉTER: financement]"
+      ],
+      "images": [],
+      "formations_liees": [
+        "secufer",
+        "recyclage-secufer"
+      ],
+      "packs": [],
+      "a_verifier": [
+        "Page Digivoda dédiée non identifiée.",
+        "Préciser s'il s'agit de la formation initiale, du recyclage, ou des deux, à distance."
+      ]
+    },
+    {
+      "id": "tcs-m",
+      "ordre": 4,
+      "slug": "tcs-m-annonceur-sentinelle-asp",
+      "page": "formations/tcs-m-annonceur-sentinelle-asp.html",
+      "titre": "TCS M – Annonceur Sentinelle et Agent Sécurité du Personnel (ASP)",
+      "titre_court": "TCS M",
+      "code": "TCS M",
+      "theme": "sentinelle-personnel",
+      "type": "formation",
+      "source_url": "https://digivoda.com/formation-tes-m-annonceur-sentinelle-asp/",
+      "statut_verification": "non_verifie",
+      "resume": "[À COMPLÉTER: résumé]",
+      "objectifs": [
+        "[À COMPLÉTER: objectifs]"
+      ],
+      "public": [
+        "[À COMPLÉTER: public concerné]"
+      ],
+      "prerequis": [
+        "[À COMPLÉTER: prérequis]"
+      ],
+      "programme": [
+        "[À COMPLÉTER: programme / contenu]"
+      ],
+      "duree": {
+        "heures": null,
+        "jours": null,
+        "libelle": "[À COMPLÉTER: durée]"
+      },
+      "tarif": {
+        "montant": null,
+        "regime": null,
+        "ancien_prix": null,
+        "remise": null,
+        "inter": null,
+        "intra": null,
+        "libelle": "[À COMPLÉTER: tarif]"
+      },
+      "modalites": {
+        "centre": null,
+        "intra": null,
+        "e_learning": null,
+        "lieux": [
+          "[À COMPLÉTER: lieux]"
+        ],
+        "dates": "[À COMPLÉTER: dates]"
+      },
+      "effectif": "[À COMPLÉTER: effectif]",
+      "methodes": [
+        "[À COMPLÉTER: méthodes pédagogiques]"
+      ],
+      "evaluation": "[À COMPLÉTER: modalités d'évaluation]",
+      "validite": "[À COMPLÉTER: validité / recyclage]",
+      "accessibilite_pmr": "[À COMPLÉTER: accessibilité PMR]",
+      "delai_acces": "[À COMPLÉTER: délai d'accès]",
+      "financement": [
+        "[À COMPLÉTER: financement]"
+      ],
+      "images": [],
+      "formations_liees": [
+        "recyclage-tcs-m",
+        "risques-electriques-c0",
+        "secufer"
+      ],
+      "packs": [
+        "pack-prestations-connexes",
+        "pack-sentinelle-complet",
+        "pack-rso",
+        "pack-ferroviaire-premium"
+      ],
+      "a_verifier": [
+        "La page Digivoda trouvée s'intitule « TES M », le brief dit « TCS M » : choisir l'intitulé exact."
+      ]
+    },
+    {
+      "id": "recyclage-tcs-m",
+      "ordre": 5,
+      "slug": "recyclage-tcs-m",
+      "page": "formations/recyclage-tcs-m.html",
+      "titre": "Recyclage TCS M – Évaluation annuelle Annonceur Sentinelle / ASP",
+      "titre_court": "Recyclage TCS M",
+      "code": "TCS M",
+      "theme": "sentinelle-personnel",
+      "type": "recyclage",
+      "source_url": "[À COMPLÉTER: URL de la page Digivoda]",
+      "statut_verification": "non_verifie",
+      "resume": "[À COMPLÉTER: résumé]",
+      "objectifs": [
+        "[À COMPLÉTER: objectifs]"
+      ],
+      "public": [
+        "[À COMPLÉTER: public concerné]"
+      ],
+      "prerequis": [
+        "[À COMPLÉTER: prérequis]"
+      ],
+      "programme": [
+        "[À COMPLÉTER: programme / contenu]"
+      ],
+      "duree": {
+        "heures": null,
+        "jours": null,
+        "libelle": "[À COMPLÉTER: durée]"
+      },
+      "tarif": {
+        "montant": null,
+        "regime": null,
+        "ancien_prix": null,
+        "remise": null,
+        "inter": null,
+        "intra": null,
+        "libelle": "[À COMPLÉTER: tarif]"
+      },
+      "modalites": {
+        "centre": null,
+        "intra": null,
+        "e_learning": null,
+        "lieux": [
+          "[À COMPLÉTER: lieux]"
+        ],
+        "dates": "[À COMPLÉTER: dates]"
+      },
+      "effectif": "[À COMPLÉTER: effectif]",
+      "methodes": [
+        "[À COMPLÉTER: méthodes pédagogiques]"
+      ],
+      "evaluation": "[À COMPLÉTER: modalités d'évaluation]",
+      "validite": "[À COMPLÉTER: validité / recyclage]",
+      "accessibilite_pmr": "[À COMPLÉTER: accessibilité PMR]",
+      "delai_acces": "[À COMPLÉTER: délai d'accès]",
+      "financement": [
+        "[À COMPLÉTER: financement]"
+      ],
+      "images": [],
+      "formations_liees": [
+        "tcs-m"
+      ],
+      "packs": [],
+      "a_verifier": [
+        "Périodicité annuelle indiquée dans le titre du brief : à confirmer.",
+        "Même question d'intitulé TCS M / TES M."
+      ]
+    },
+    {
+      "id": "tsae-prestations-connexes",
+      "ordre": 6,
+      "slug": "tsae-prestations-connexes-c0-lam-s9",
+      "page": "formations/tsae-prestations-connexes-c0-lam-s9.html",
+      "titre": "TSAE prestations connexes : C0, Agent prestataire LAM (AP LAM) et S9",
+      "titre_court": "TSAE C0 / LAM / S9",
+      "code": "TSAE",
+      "theme": "prestations-electrique",
+      "type": "formation",
+      "source_url": "[À COMPLÉTER: URL de la page Digivoda]",
+      "statut_verification": "non_verifie",
+      "resume": "[À COMPLÉTER: résumé]",
+      "objectifs": [
+        "[À COMPLÉTER: objectifs]"
+      ],
+      "public": [
+        "[À COMPLÉTER: public concerné]"
+      ],
+      "prerequis": [
+        "[À COMPLÉTER: prérequis]"
+      ],
+      "programme": [
+        "[À COMPLÉTER: programme / contenu]"
+      ],
+      "duree": {
+        "heures": null,
+        "jours": null,
+        "libelle": "[À COMPLÉTER: durée]"
+      },
+      "tarif": {
+        "montant": null,
+        "regime": null,
+        "ancien_prix": null,
+        "remise": null,
+        "inter": null,
+        "intra": null,
+        "libelle": "[À COMPLÉTER: tarif]"
+      },
+      "modalites": {
+        "centre": null,
+        "intra": null,
+        "e_learning": null,
+        "lieux": [
+          "[À COMPLÉTER: lieux]"
+        ],
+        "dates": "[À COMPLÉTER: dates]"
+      },
+      "effectif": "[À COMPLÉTER: effectif]",
+      "methodes": [
+        "[À COMPLÉTER: méthodes pédagogiques]"
+      ],
+      "evaluation": "[À COMPLÉTER: modalités d'évaluation]",
+      "validite": "[À COMPLÉTER: validité / recyclage]",
+      "accessibilite_pmr": "[À COMPLÉTER: accessibilité PMR]",
+      "delai_acces": "[À COMPLÉTER: délai d'accès]",
+      "financement": [
+        "[À COMPLÉTER: financement]"
+      ],
+      "images": [],
+      "formations_liees": [
+        "risques-electriques-c0",
+        "agent-s9a3",
+        "tcs-m"
+      ],
+      "packs": [
+        "pack-prestations-connexes",
+        "pack-ferroviaire-premium"
+      ],
+      "a_verifier": [
+        "Les résultats de recherche placent cet intitulé dans une liste e-learning : confirmer la modalité.",
+        "Préciser si C0, AP LAM et AP S9 sont réservables séparément."
+      ]
+    },
+    {
+      "id": "risques-electriques-c0",
+      "ordre": 7,
+      "slug": "risques-electriques-c0",
+      "page": "formations/risques-electriques-c0.html",
+      "titre": "Risques Électriques C0",
+      "titre_court": "Risques électriques C0",
+      "code": "C0",
+      "theme": "prestations-electrique",
+      "type": "formation",
+      "source_url": "[À COMPLÉTER: URL de la page Digivoda]",
+      "statut_verification": "non_verifie",
+      "resume": "[À COMPLÉTER: résumé]",
+      "objectifs": [
+        "[À COMPLÉTER: objectifs]"
+      ],
+      "public": [
+        "[À COMPLÉTER: public concerné]"
+      ],
+      "prerequis": [
+        "[À COMPLÉTER: prérequis]"
+      ],
+      "programme": [
+        "[À COMPLÉTER: programme / contenu]"
+      ],
+      "duree": {
+        "heures": null,
+        "jours": null,
+        "libelle": "[À COMPLÉTER: durée]"
+      },
+      "tarif": {
+        "montant": null,
+        "regime": null,
+        "ancien_prix": null,
+        "remise": null,
+        "inter": null,
+        "intra": null,
+        "libelle": "[À COMPLÉTER: tarif]"
+      },
+      "modalites": {
+        "centre": null,
+        "intra": null,
+        "e_learning": null,
+        "lieux": [
+          "[À COMPLÉTER: lieux]"
+        ],
+        "dates": "[À COMPLÉTER: dates]"
+      },
+      "effectif": "[À COMPLÉTER: effectif]",
+      "methodes": [
+        "[À COMPLÉTER: méthodes pédagogiques]"
+      ],
+      "evaluation": "[À COMPLÉTER: modalités d'évaluation]",
+      "validite": "[À COMPLÉTER: validité / recyclage]",
+      "accessibilite_pmr": "[À COMPLÉTER: accessibilité PMR]",
+      "delai_acces": "[À COMPLÉTER: délai d'accès]",
+      "financement": [
+        "[À COMPLÉTER: financement]"
+      ],
+      "images": [],
+      "formations_liees": [
+        "tsae-prestations-connexes",
+        "percheur-catenaire",
+        "tcs-m"
+      ],
+      "packs": [
+        "pack-sentinelle-complet"
+      ],
+      "a_verifier": [
+        "Vérifier le lien avec la page « Formations Habilitation Électrique » (https://digivoda.com/formations-habilitation-electrique/).",
+        "Vérifier la mention sur l'habilitation délivrée par l'employeur."
+      ]
+    },
+    {
+      "id": "rso",
+      "ordre": 8,
+      "slug": "rso-representant-securite-operationnelle",
+      "page": "formations/rso-representant-securite-operationnelle.html",
+      "titre": "RSO – Représentant Sécurité Opérationnelle",
+      "titre_court": "RSO",
+      "code": "RSO",
+      "theme": "representation-reseaux",
+      "type": "formation",
+      "source_url": "[À COMPLÉTER: URL de la page Digivoda]",
+      "statut_verification": "non_verifie",
+      "resume": "[À COMPLÉTER: résumé]",
+      "objectifs": [
+        "[À COMPLÉTER: objectifs]"
+      ],
+      "public": [
+        "[À COMPLÉTER: public concerné]"
+      ],
+      "prerequis": [
+        "[À COMPLÉTER: prérequis]"
+      ],
+      "programme": [
+        "[À COMPLÉTER: programme / contenu]"
+      ],
+      "duree": {
+        "heures": null,
+        "jours": null,
+        "libelle": "[À COMPLÉTER: durée]"
+      },
+      "tarif": {
+        "montant": null,
+        "regime": null,
+        "ancien_prix": null,
+        "remise": null,
+        "inter": null,
+        "intra": null,
+        "libelle": "[À COMPLÉTER: tarif]"
+      },
+      "modalites": {
+        "centre": null,
+        "intra": null,
+        "e_learning": null,
+        "lieux": [
+          "[À COMPLÉTER: lieux]"
+        ],
+        "dates": "[À COMPLÉTER: dates]"
+      },
+      "effectif": "[À COMPLÉTER: effectif]",
+      "methodes": [
+        "[À COMPLÉTER: méthodes pédagogiques]"
+      ],
+      "evaluation": "[À COMPLÉTER: modalités d'évaluation]",
+      "validite": "[À COMPLÉTER: validité / recyclage]",
+      "accessibilite_pmr": "[À COMPLÉTER: accessibilité PMR]",
+      "delai_acces": "[À COMPLÉTER: délai d'accès]",
+      "financement": [
+        "[À COMPLÉTER: financement]"
+      ],
+      "images": [],
+      "formations_liees": [
+        "secufer",
+        "tcs-m",
+        "aipr"
+      ],
+      "packs": [
+        "pack-rso"
+      ],
+      "a_verifier": [
+        "Page Digivoda dédiée non identifiée."
+      ]
+    },
+    {
+      "id": "aipr",
+      "ordre": 9,
+      "slug": "aipr-intervention-proximite-reseaux",
+      "page": "formations/aipr-intervention-proximite-reseaux.html",
+      "titre": "AIPR – Autorisation d'Intervention à Proximité des Réseaux",
+      "titre_court": "AIPR",
+      "code": "AIPR",
+      "theme": "representation-reseaux",
+      "type": "formation",
+      "source_url": "[À COMPLÉTER: URL de la page Digivoda]",
+      "statut_verification": "non_verifie",
+      "resume": "[À COMPLÉTER: résumé]",
+      "objectifs": [
+        "[À COMPLÉTER: objectifs]"
+      ],
+      "public": [
+        "[À COMPLÉTER: public concerné]"
+      ],
+      "prerequis": [
+        "[À COMPLÉTER: prérequis]"
+      ],
+      "programme": [
+        "[À COMPLÉTER: programme / contenu]"
+      ],
+      "duree": {
+        "heures": null,
+        "jours": null,
+        "libelle": "[À COMPLÉTER: durée]"
+      },
+      "tarif": {
+        "montant": null,
+        "regime": null,
+        "ancien_prix": null,
+        "remise": null,
+        "inter": null,
+        "intra": null,
+        "libelle": "[À COMPLÉTER: tarif]"
+      },
+      "modalites": {
+        "centre": null,
+        "intra": null,
+        "e_learning": null,
+        "lieux": [
+          "[À COMPLÉTER: lieux]"
+        ],
+        "dates": "[À COMPLÉTER: dates]"
+      },
+      "effectif": "[À COMPLÉTER: effectif]",
+      "methodes": [
+        "[À COMPLÉTER: méthodes pédagogiques]"
+      ],
+      "evaluation": "[À COMPLÉTER: modalités d'évaluation]",
+      "validite": "[À COMPLÉTER: validité / recyclage]",
+      "accessibilite_pmr": "[À COMPLÉTER: accessibilité PMR]",
+      "delai_acces": "[À COMPLÉTER: délai d'accès]",
+      "financement": [
+        "[À COMPLÉTER: financement]"
+      ],
+      "images": [],
+      "formations_liees": [
+        "rso",
+        "tes-f"
+      ],
+      "packs": [],
+      "a_verifier": [
+        "Page Digivoda dédiée non identifiée. Préciser le niveau (opérateur, encadrant, concepteur)."
+      ]
+    },
+    {
+      "id": "tes-f",
+      "ordre": 10,
+      "slug": "tes-f-protection-passages-a-niveau",
+      "page": "formations/tes-f-protection-passages-a-niveau.html",
+      "titre": "TES F – Protection des Passages à Niveau",
+      "titre_court": "TES F",
+      "code": "TES F",
+      "theme": "representation-reseaux",
+      "type": "formation",
+      "source_url": "[À COMPLÉTER: URL de la page Digivoda]",
+      "statut_verification": "non_verifie",
+      "resume": "[À COMPLÉTER: résumé]",
+      "objectifs": [
+        "[À COMPLÉTER: objectifs]"
+      ],
+      "public": [
+        "[À COMPLÉTER: public concerné]"
+      ],
+      "prerequis": [
+        "[À COMPLÉTER: prérequis]"
+      ],
+      "programme": [
+        "[À COMPLÉTER: programme / contenu]"
+      ],
+      "duree": {
+        "heures": null,
+        "jours": null,
+        "libelle": "[À COMPLÉTER: durée]"
+      },
+      "tarif": {
+        "montant": null,
+        "regime": null,
+        "ancien_prix": null,
+        "remise": null,
+        "inter": null,
+        "intra": null,
+        "libelle": "[À COMPLÉTER: tarif]"
+      },
+      "modalites": {
+        "centre": null,
+        "intra": null,
+        "e_learning": null,
+        "lieux": [
+          "[À COMPLÉTER: lieux]"
+        ],
+        "dates": "[À COMPLÉTER: dates]"
+      },
+      "effectif": "[À COMPLÉTER: effectif]",
+      "methodes": [
+        "[À COMPLÉTER: méthodes pédagogiques]"
+      ],
+      "evaluation": "[À COMPLÉTER: modalités d'évaluation]",
+      "validite": "[À COMPLÉTER: validité / recyclage]",
+      "accessibilite_pmr": "[À COMPLÉTER: accessibilité PMR]",
+      "delai_acces": "[À COMPLÉTER: délai d'accès]",
+      "financement": [
+        "[À COMPLÉTER: financement]"
+      ],
+      "images": [],
+      "formations_liees": [
+        "tcs-m",
+        "aipr"
+      ],
+      "packs": [],
+      "a_verifier": [
+        "Page Digivoda dédiée non identifiée."
+      ]
+    },
+    {
+      "id": "agent-s9a3",
+      "ordre": 11,
+      "slug": "agent-s9a3-rzt-agec-apn",
+      "page": "formations/agent-s9a3-rzt-agec-apn.html",
+      "titre": "Agent S9A3 : RZT, AGEC/R et APN",
+      "titre_court": "Agent S9A3",
+      "code": "S9A3",
+      "theme": "prestations-electrique",
+      "type": "formation",
+      "source_url": "[À COMPLÉTER: URL de la page Digivoda]",
+      "statut_verification": "non_verifie",
+      "resume": "[À COMPLÉTER: résumé]",
+      "objectifs": [
+        "[À COMPLÉTER: objectifs]"
+      ],
+      "public": [
+        "[À COMPLÉTER: public concerné]"
+      ],
+      "prerequis": [
+        "[À COMPLÉTER: prérequis]"
+      ],
+      "programme": [
+        "[À COMPLÉTER: programme / contenu]"
+      ],
+      "duree": {
+        "heures": null,
+        "jours": null,
+        "libelle": "[À COMPLÉTER: durée]"
+      },
+      "tarif": {
+        "montant": null,
+        "regime": null,
+        "ancien_prix": null,
+        "remise": null,
+        "inter": null,
+        "intra": null,
+        "libelle": "[À COMPLÉTER: tarif]"
+      },
+      "modalites": {
+        "centre": null,
+        "intra": null,
+        "e_learning": null,
+        "lieux": [
+          "[À COMPLÉTER: lieux]"
+        ],
+        "dates": "[À COMPLÉTER: dates]"
+      },
+      "effectif": "[À COMPLÉTER: effectif]",
+      "methodes": [
+        "[À COMPLÉTER: méthodes pédagogiques]"
+      ],
+      "evaluation": "[À COMPLÉTER: modalités d'évaluation]",
+      "validite": "[À COMPLÉTER: validité / recyclage]",
+      "accessibilite_pmr": "[À COMPLÉTER: accessibilité PMR]",
+      "delai_acces": "[À COMPLÉTER: délai d'accès]",
+      "financement": [
+        "[À COMPLÉTER: financement]"
+      ],
+      "images": [],
+      "formations_liees": [
+        "tsae-prestations-connexes",
+        "risques-electriques-c0"
+      ],
+      "packs": [],
+      "a_verifier": [
+        "Page Digivoda dédiée non identifiée."
+      ]
+    },
+    {
+      "id": "percheur-catenaire",
+      "ordre": 12,
+      "slug": "percheur-aide-monteur-catenaire-ch1-cb1",
+      "page": "formations/percheur-aide-monteur-catenaire-ch1-cb1.html",
+      "titre": "Percheur / Aide Monteur Caténaire CH1-CB1",
+      "titre_court": "Percheur CH1-CB1",
+      "code": "CH1-CB1",
+      "theme": "catenaire",
+      "type": "formation",
+      "source_url": "[À COMPLÉTER: URL de la page Digivoda]",
+      "statut_verification": "non_verifie",
+      "resume": "[À COMPLÉTER: résumé]",
+      "objectifs": [
+        "[À COMPLÉTER: objectifs]"
+      ],
+      "public": [
+        "[À COMPLÉTER: public concerné]"
+      ],
+      "prerequis": [
+        "[À COMPLÉTER: prérequis]"
+      ],
+      "programme": [
+        "[À COMPLÉTER: programme / contenu]"
+      ],
+      "duree": {
+        "heures": null,
+        "jours": null,
+        "libelle": "[À COMPLÉTER: durée]"
+      },
+      "tarif": {
+        "montant": null,
+        "regime": null,
+        "ancien_prix": null,
+        "remise": null,
+        "inter": null,
+        "intra": null,
+        "libelle": "[À COMPLÉTER: tarif]"
+      },
+      "modalites": {
+        "centre": null,
+        "intra": null,
+        "e_learning": null,
+        "lieux": [
+          "[À COMPLÉTER: lieux]"
+        ],
+        "dates": "[À COMPLÉTER: dates]"
+      },
+      "effectif": "[À COMPLÉTER: effectif]",
+      "methodes": [
+        "[À COMPLÉTER: méthodes pédagogiques]"
+      ],
+      "evaluation": "[À COMPLÉTER: modalités d'évaluation]",
+      "validite": "[À COMPLÉTER: validité / recyclage]",
+      "accessibilite_pmr": "[À COMPLÉTER: accessibilité PMR]",
+      "delai_acces": "[À COMPLÉTER: délai d'accès]",
+      "financement": [
+        "[À COMPLÉTER: financement]"
+      ],
+      "images": [],
+      "formations_liees": [
+        "risques-electriques-c0",
+        "tsae-prestations-connexes"
+      ],
+      "packs": [
+        "pack-ferroviaire-premium"
+      ],
+      "a_verifier": [
+        "Le Pack Premium cite « APEC CH1-CB1 » : confirmer s'il s'agit de cette formation."
+      ]
+    }
+  ],
+  "packs": [
+    {
+      "id": "pack-prestations-connexes",
+      "ordre": 1,
+      "slug": "pack-prestations-connexes",
+      "page": "packs/pack-prestations-connexes.html",
+      "titre": "Pack Prestations Connexes – TCS M + C0 / LAM / S9",
+      "titre_court": "Pack Prestations Connexes",
+      "type": "pack",
+      "source_url": "https://digivoda.com/packs-formations-ferroviaires/",
+      "statut_verification": "non_verifie",
+      "formations_incluses": [
+        "tcs-m",
+        "tsae-prestations-connexes"
+      ],
+      "modules_publies": [
+        "TCS M Annonceur Sentinelle + ASP",
+        "Risques électriques C0",
+        "Agent Prestataire LAM",
+        "Agent Prestataire S9"
+      ],
+      "resume": "[À COMPLÉTER: résumé]",
+      "objectifs": [
+        "[À COMPLÉTER: objectifs]"
+      ],
+      "public": [
+        "[À COMPLÉTER: public concerné]"
+      ],
+      "prerequis": [
+        "[À COMPLÉTER: prérequis]"
+      ],
+      "parcours": [
+        "[À COMPLÉTER: déroulé jour par jour]"
+      ],
+      "duree": {
+        "heures": null,
+        "jours": null,
+        "libelle": "[À COMPLÉTER: durée totale]"
+      },
+      "tarif": {
+        "montant": null,
+        "regime": null,
+        "ancien_prix": null,
+        "remise": null,
+        "libelle": "[À COMPLÉTER: tarif]"
+      },
+      "somme_prix_individuels": null,
+      "modalites": {
+        "centre": null,
+        "intra": null,
+        "lieux": [
+          "[À COMPLÉTER: lieux]"
+        ],
+        "dates": "[À COMPLÉTER: dates]"
+      },
+      "effectif": "[À COMPLÉTER: effectif]",
+      "validite": "[À COMPLÉTER: validité des attestations]",
+      "financement": [
+        "[À COMPLÉTER: financement]"
+      ],
+      "images": [],
+      "constat_capture": {
+        "prix": "1 800 €",
+        "regime": "non lisible",
+        "ancien_prix": "barré, montant non lisible",
+        "remise": "-450 €",
+        "description": "Chantiers du Réseau Ferré National."
+      },
+      "a_verifier": [
+        "Correspondance modules → formations à confirmer (C0/LAM/S9 = formation TSAE n°6 ?)."
+      ]
+    },
+    {
+      "id": "pack-sentinelle-complet",
+      "ordre": 2,
+      "slug": "pack-sentinelle-complet",
+      "page": "packs/pack-sentinelle-complet.html",
+      "titre": "Pack Sentinelle Complet – C0 + TCS M",
+      "titre_court": "Pack Sentinelle Complet",
+      "type": "pack",
+      "source_url": "https://digivoda.com/packs-formations-ferroviaires/",
+      "statut_verification": "non_verifie",
+      "formations_incluses": [
+        "risques-electriques-c0",
+        "tcs-m"
+      ],
+      "modules_publies": [
+        "Risques électriques C0",
+        "TCS M complet (Annonceur + ASP)"
+      ],
+      "resume": "[À COMPLÉTER: résumé]",
+      "objectifs": [
+        "[À COMPLÉTER: objectifs]"
+      ],
+      "public": [
+        "[À COMPLÉTER: public concerné]"
+      ],
+      "prerequis": [
+        "[À COMPLÉTER: prérequis]"
+      ],
+      "parcours": [
+        "[À COMPLÉTER: déroulé jour par jour]"
+      ],
+      "duree": {
+        "heures": null,
+        "jours": null,
+        "libelle": "[À COMPLÉTER: durée totale]"
+      },
+      "tarif": {
+        "montant": null,
+        "regime": null,
+        "ancien_prix": null,
+        "remise": null,
+        "libelle": "[À COMPLÉTER: tarif]"
+      },
+      "somme_prix_individuels": null,
+      "modalites": {
+        "centre": null,
+        "intra": null,
+        "lieux": [
+          "[À COMPLÉTER: lieux]"
+        ],
+        "dates": "[À COMPLÉTER: dates]"
+      },
+      "effectif": "[À COMPLÉTER: effectif]",
+      "validite": "[À COMPLÉTER: validité des attestations]",
+      "financement": [
+        "[À COMPLÉTER: financement]"
+      ],
+      "images": [],
+      "constat_capture": {
+        "prix": "1 080 € TTC",
+        "regime": "TTC",
+        "ancien_prix": null,
+        "remise": null,
+        "duree": "5 jours",
+        "description": "Protéger les équipes contre le risque ferroviaire et travailler en sécurité à proximité des installations électriques de traction (caténaire, sous-stations, rail conducteur)."
+      },
+      "a_verifier": [
+        "Pas d'ancien prix ni de remise sur la capture : à confirmer.",
+        "Les résultats de recherche évoquent aussi un pack 5 jours SECUFER + TES M (prix différent) : vérifier qu'il ne s'agit pas d'un 5e pack ou d'une ancienne version."
+      ]
+    },
+    {
+      "id": "pack-rso",
+      "ordre": 3,
+      "slug": "pack-rso",
+      "page": "packs/pack-rso.html",
+      "titre": "Pack RSO – Représentant Sécurité Opérationnelle",
+      "titre_court": "Pack RSO",
+      "type": "pack",
+      "source_url": "https://digivoda.com/packs-formations-ferroviaires/",
+      "statut_verification": "non_verifie",
+      "formations_incluses": [
+        "secufer",
+        "tcs-m",
+        "rso"
+      ],
+      "modules_publies": [
+        "SECUFER",
+        "TCS M / ASP",
+        "RSO"
+      ],
+      "resume": "[À COMPLÉTER: résumé]",
+      "objectifs": [
+        "[À COMPLÉTER: objectifs]"
+      ],
+      "public": [
+        "[À COMPLÉTER: public concerné]"
+      ],
+      "prerequis": [
+        "[À COMPLÉTER: prérequis]"
+      ],
+      "parcours": [
+        "[À COMPLÉTER: déroulé jour par jour]"
+      ],
+      "duree": {
+        "heures": null,
+        "jours": null,
+        "libelle": "[À COMPLÉTER: durée totale]"
+      },
+      "tarif": {
+        "montant": null,
+        "regime": null,
+        "ancien_prix": null,
+        "remise": null,
+        "libelle": "[À COMPLÉTER: tarif]"
+      },
+      "somme_prix_individuels": null,
+      "modalites": {
+        "centre": null,
+        "intra": null,
+        "lieux": [
+          "[À COMPLÉTER: lieux]"
+        ],
+        "dates": "[À COMPLÉTER: dates]"
+      },
+      "effectif": "[À COMPLÉTER: effectif]",
+      "validite": "[À COMPLÉTER: validité des attestations]",
+      "financement": [
+        "[À COMPLÉTER: financement]"
+      ],
+      "images": [],
+      "constat_capture": {
+        "prix": "1 900 € TTC",
+        "regime": "TTC",
+        "ancien_prix": "barré, montant non lisible",
+        "remise": "-390 €",
+        "description": "Parcours complet vers les métiers de la sécurité ferroviaire et la coordination des opérations sur chantier."
+      },
+      "a_verifier": []
+    },
+    {
+      "id": "pack-ferroviaire-premium",
+      "ordre": 4,
+      "slug": "pack-ferroviaire-premium",
+      "page": "packs/pack-ferroviaire-premium.html",
+      "titre": "Pack Ferroviaire Premium",
+      "titre_court": "Pack Premium",
+      "type": "pack",
+      "source_url": "https://digivoda.com/packs-formations-ferroviaires/",
+      "statut_verification": "non_verifie",
+      "formations_incluses": [
+        "tcs-m",
+        "tsae-prestations-connexes",
+        "percheur-catenaire"
+      ],
+      "modules_publies": [
+        "TCS M Annonceur Sentinelle + ASP",
+        "Agent Prestataire LAM",
+        "Agent Prestataire S9",
+        "Agent de Protection Électrique Caténaire (APEC) CH1-CB1"
+      ],
+      "resume": "[À COMPLÉTER: résumé]",
+      "objectifs": [
+        "[À COMPLÉTER: objectifs]"
+      ],
+      "public": [
+        "[À COMPLÉTER: public concerné]"
+      ],
+      "prerequis": [
+        "[À COMPLÉTER: prérequis]"
+      ],
+      "parcours": [
+        "[À COMPLÉTER: déroulé jour par jour]"
+      ],
+      "duree": {
+        "heures": null,
+        "jours": null,
+        "libelle": "[À COMPLÉTER: durée totale]"
+      },
+      "tarif": {
+        "montant": null,
+        "regime": null,
+        "ancien_prix": null,
+        "remise": null,
+        "libelle": "[À COMPLÉTER: tarif]"
+      },
+      "somme_prix_individuels": null,
+      "modalites": {
+        "centre": null,
+        "intra": null,
+        "lieux": [
+          "[À COMPLÉTER: lieux]"
+        ],
+        "dates": "[À COMPLÉTER: dates]"
+      },
+      "effectif": "[À COMPLÉTER: effectif]",
+      "validite": "[À COMPLÉTER: validité des attestations]",
+      "financement": [
+        "[À COMPLÉTER: financement]"
+      ],
+      "images": [],
+      "constat_capture": {
+        "prix": "2 500 € TTC",
+        "regime": "TTC",
+        "ancien_prix": "barré, montant non lisible",
+        "remise": "-400 €",
+        "duree": "10 jours",
+        "description": "Protection des équipes contre les circulations, procédures LAM et S9, protection électrique des chantiers caténaire."
+      },
+      "a_verifier": [
+        "APEC CH1-CB1 = formation « Percheur / Aide Monteur Caténaire CH1-CB1 » ? À confirmer.",
+        "Le pack cite LAM et S9 mais pas C0 : la référence à la formation TSAE (qui inclut C0) est-elle exacte ?"
+      ]
+    }
+  ]
+}
