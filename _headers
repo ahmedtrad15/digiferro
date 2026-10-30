@@ -1,0 +1,10 @@
+# Netlify / Cloudflare Pages : cache long pour les ressources statiques.
+# (La compression gzip/brotli est automatique sur ces hébergeurs.)
+/css/*
+  Cache-Control: public, max-age=604800
+/js/*
+  Cache-Control: public, max-age=604800
+/assets/*
+  Cache-Control: public, max-age=2592000
+/*.html
+  Cache-Control: no-cache

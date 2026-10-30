@@ -1,0 +1,566 @@
+/* ==========================================================================
+   Digiferro · composants
+   ========================================================================== */
+
+/* Boutons ----------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 48px;
+  padding: 0.5rem 1.35rem;
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.15s, color 0.15s, border-color 0.15s, transform 0.15s;
+}
+.btn .icon { transition: transform 0.2s var(--ease); }
+.btn:hover .icon { transform: translateX(3px); }
+.btn:active { transform: translateY(1px); }
+.btn--sm { min-height: 44px; padding: 0.35rem 1rem; font-size: 1rem; }
+.btn--lg { min-height: 54px; padding: 0.6rem 1.6rem; font-size: 1.1875rem; }
+.btn--block { width: 100%; }
+.btn--signal {
+  background: var(--signal);
+  color: var(--signal-ink);
+  border-color: var(--signal);
+  box-shadow: inset 0 -3px 0 rgb(0 0 0 / 0.18);
+}
+.btn--signal:hover { background: #ffc642; border-color: #ffc642; }
+.btn--ghost { border-color: currentColor; color: var(--night); background: transparent; }
+.btn--ghost:hover { background: var(--night); color: var(--white); border-color: var(--night); }
+.btn--ghost-light { border-color: rgb(255 255 255 / 0.75); color: var(--white); background: rgb(13 21 30 / 0.35); }
+.btn--ghost-light:hover { background: var(--white); color: var(--night); border-color: var(--white); }
+.drawer .btn--ghost { color: var(--white); }
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 44px;
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--teal);
+  text-decoration: none;
+}
+.link-arrow .icon { transition: transform 0.2s var(--ease); }
+.link-arrow:hover .icon { transform: translateX(4px); }
+.link-arrow:hover { text-decoration: underline; }
+
+/* Panneau de gare --------------------------------------------------------- */
+.station {
+  display: inline-block;
+  align-self: flex-start;
+  justify-self: start;
+  max-width: 100%;
+  padding: 0.3em 0.8em 0.25em;
+  background: var(--steel-900);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 2px var(--steel-900), inset 0 0 0 3.5px rgb(255 255 255 / 0.85);
+}
+.station--light { background: var(--white); color: var(--night); box-shadow: inset 0 0 0 2px var(--white), inset 0 0 0 3.5px var(--night); }
+.station--signal { background: var(--signal); color: var(--signal-ink); box-shadow: inset 0 0 0 2px var(--signal), inset 0 0 0 3.5px var(--signal-ink); }
+
+/* Borne PK (point kilométrique) ------------------------------------------- */
+.pk {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 3.25rem;
+  padding: 0.3rem 0.5rem 0.25rem;
+  background: var(--white);
+  color: var(--night);
+  border: 2px solid var(--night);
+  border-radius: 3px 3px 0 0;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: 0 4px 0 -2px var(--night);
+}
+.pk small {
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--steel-700);
+}
+.pk--night { background: var(--night); color: var(--signal); border-color: var(--steel-500); box-shadow: 0 4px 0 -2px var(--steel-500); }
+.pk--night small { color: var(--steel-300); }
+.pk--steel { background: var(--steel-100); }
+.pk--inline { flex-direction: row; gap: 0.25rem; min-width: 0; padding: 0.1rem 0.4rem; font-size: 1rem; box-shadow: none; border-width: 1.5px; vertical-align: middle; }
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--steel-700);
+}
+
+/* Code formation, badges, puces ------------------------------------------- */
+.code {
+  display: inline-block;
+  padding: 0.1em 0.45em;
+  border: 1.5px solid currentColor;
+  border-radius: var(--radius);
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.3;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Badge d'économie : plaque signal à bords chanfreinés */
+.saving {
+  display: inline-block;
+  padding: 0.2em 0.65em;
+  background: var(--signal);
+  color: var(--signal-ink);
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  clip-path: polygon(6px 0, calc(100% - 6px) 0, 100% 50%, calc(100% - 6px) 100%, 6px 100%, 0 50%);
+}
+
+.chips { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; }
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 36px;
+  padding: 0.25rem 0.75rem 0.25rem 0.6rem;
+  border-left: 4px solid var(--signal);
+  background: rgb(13 21 30 / 0.72);
+  color: var(--white);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+}
+.chip .icon { color: var(--signal); }
+
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; }
+.tags li {
+  padding: 0.35rem 0.85rem;
+  background: var(--white);
+  border: 1.5px solid var(--night);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.0625rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Prix ------------------------------------------------------------------- */
+.price { display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: 0.15rem 0.45rem; white-space: nowrap; }
+.price__old { color: var(--text-muted); font-size: 0.85em; text-decoration-color: var(--rail-red); text-decoration-thickness: 2px; }
+.price__now { font-family: var(--font-display); font-weight: 700; font-size: 1.375em; line-height: 1; }
+.price__tax { font-size: 0.75em; font-weight: 600; letter-spacing: 0.06em; color: var(--text-muted); }
+.price--lg .price__now { font-size: 2.25rem; }
+.band--night .price__old, .band--night .price__tax { color: var(--steel-300); }
+
+/* Listes ------------------------------------------------------------------ */
+.list { list-style: none; display: grid; gap: 0.6rem; }
+.list li { position: relative; padding-left: 1.5rem; }
+.list--dash li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0.72em;
+  width: 0.9rem; height: 3px;
+  background: var(--signal-600);
+}
+.list--check li::before {
+  content: '';
+  position: absolute;
+  left: 0.1rem; top: 0.35em;
+  width: 0.55rem; height: 0.95rem;
+  border: solid var(--teal);
+  border-width: 0 3px 3px 0;
+  transform: rotate(40deg);
+}
+.ticks { list-style: none; display: grid; gap: 0.75rem; }
+.ticks li { display: flex; gap: 0.6rem; align-items: flex-start; }
+.ticks .icon { margin-top: 0.25em; color: var(--signal); }
+
+/* Médias et placeholders photo ------------------------------------------- */
+[data-ph] { position: relative; }
+[data-ph]::after {
+  content: 'Photo à fournir';
+  position: absolute;
+  right: 0.5rem; bottom: 0.5rem;
+  padding: 0.1rem 0.45rem;
+  background: rgb(13 21 30 / 0.78);
+  color: var(--steel-200);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+.offset-media { position: relative; margin-top: 2.5rem; margin-right: 1.25rem; }
+.offset-media::before {
+  content: '';
+  position: absolute;
+  inset: 1.25rem -1.25rem -1.25rem 1.25rem;
+  border: 2px solid var(--signal-600);
+  z-index: -1;
+}
+.offset-media img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+
+/* Carte formation -------------------------------------------------------- */
+.cards { display: grid; gap: 1.25rem; }
+.fcard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-bottom: 4px solid var(--night);
+  transition: border-color 0.2s, transform 0.2s var(--ease), box-shadow 0.2s;
+}
+.fcard:hover { border-bottom-color: var(--signal); transform: translateY(-3px); box-shadow: var(--shadow-plate); }
+.fcard:focus-within { border-bottom-color: var(--signal); }
+.fcard__media { overflow: hidden; background: var(--steel-900); }
+.fcard__media img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; transition: transform 0.5s var(--ease); }
+.fcard:hover .fcard__media img { transform: scale(1.04); }
+.fcard__type {
+  position: absolute;
+  left: 0; top: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  background: var(--teal);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.fcard--e-learning .fcard__type { background: var(--signal); color: var(--signal-ink); }
+.fcard__body { display: flex; flex-direction: column; gap: 0.55rem; flex: 1; padding: 1rem 1.1rem 1.1rem; }
+.fcard__meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; font-size: var(--fs-sm); color: var(--text-muted); }
+.fcard__meta .code { color: var(--night); }
+.fcard__dur { display: inline-flex; align-items: center; gap: 0.3rem; }
+.fcard__title { font-size: 1.375rem; line-height: 1.1; }
+.fcard__title a { color: var(--night); text-decoration: none; }
+.fcard__title a::after { content: ''; position: absolute; inset: 0; z-index: 1; }
+.fcard__title a:focus-visible { outline: none; }
+.fcard:has(.fcard__title a:focus-visible) { outline: 3px solid var(--focus); outline-offset: 3px; }
+.fcard__sum {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.fcard__foot { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 0.5rem; margin-top: auto; padding-top: 0.6rem; border-top: 1px dashed var(--line); }
+.fcard__more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+.fcard:hover .fcard__more .icon { transform: translateX(3px); }
+.fcard__more .icon { transition: transform 0.2s; }
+
+/* Billet de pack ---------------------------------------------------------- */
+.tickets { display: grid; gap: 1.5rem; }
+@media (min-width: 64em) { .tickets { grid-template-columns: 1fr 1fr; } }
+.ticket {
+  --notch: 14px;
+  position: relative;
+  display: grid;
+  background: var(--paper);
+  color: var(--text);
+  border-top: 6px solid var(--signal);
+  --focus: var(--teal);
+}
+.ticket__main { padding: 1.4rem 1.4rem 1.2rem; }
+.ticket__kicker {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--steel-700);
+}
+.ticket__title { margin-top: 0.4rem; font-size: 1.75rem; line-height: 1.05; }
+.ticket__title a { display: inline-block; padding-block: 0.45rem; margin-block: -0.45rem; color: var(--night); text-decoration: none; }
+.ticket__title a:hover { text-decoration: underline; text-decoration-thickness: 2px; }
+.band--night .ticket h3, .band--night .ticket h2 { color: var(--night); }
+.band--night .ticket a:not(.btn) { color: var(--night); }
+.ticket__sub { margin-top: 0.2rem; font-weight: 600; color: var(--steel-700); }
+.ticket__line {
+  position: relative;
+  list-style: none;
+  margin-top: 1rem;
+  padding-left: 1.6rem;
+  display: grid;
+  gap: 0.55rem;
+  font-size: var(--fs-sm);
+}
+.ticket__line::before {
+  content: '';
+  position: absolute;
+  left: 0.45rem; top: 0.5rem; bottom: 0.5rem;
+  width: 4px;
+  background: var(--night);
+}
+.ticket__line li { position: relative; line-height: 1.35; }
+.ticket__line li::before {
+  content: '';
+  position: absolute;
+  left: -1.6rem; top: 0.15rem;
+  width: 0.9rem; height: 0.9rem;
+  margin-left: 0.07rem;
+  border: 3px solid var(--night);
+  border-radius: 50%;
+  background: var(--white);
+}
+.ticket__stub {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.4rem;
+  background: var(--white);
+  border-top: 2px dashed var(--steel-300);
+}
+.ticket__stub::before,
+.ticket__stub::after {
+  content: '';
+  position: absolute;
+  top: calc(var(--notch) / -2 - 1px);
+  width: var(--notch); height: var(--notch);
+  border-radius: 50%;
+  background: var(--night);
+}
+.ticket__stub::before { left: calc(var(--notch) / -2); }
+.ticket__stub::after { right: calc(var(--notch) / -2); }
+.tickets--light .ticket__stub::before, .tickets--light .ticket__stub::after { background: var(--paper); }
+.tickets--light .ticket { border: 1px solid var(--line); border-top: 6px solid var(--signal); }
+.ticket__stub .saving { align-self: flex-start; }
+.ticket__nosave { display: none; }
+.ticket__price { margin-block: 0.1rem 0.4rem; }
+@media (min-width: 40em) {
+  .ticket { grid-template-columns: minmax(0, 1fr) 15rem; }
+  .ticket__stub { border-top: 0; border-left: 2px dashed var(--steel-300); justify-content: flex-end; }
+  .ticket__stub::before, .ticket__stub::after { left: calc(var(--notch) / -2 - 1px); right: auto; }
+  .ticket__stub::before { top: calc(var(--notch) / -2); }
+  .ticket__stub::after { top: auto; bottom: calc(var(--notch) / -2); }
+}
+@media (min-width: 64em) and (max-width: 79.99em) {
+  .ticket { grid-template-columns: 1fr; }
+  .ticket__stub { border-left: 0; border-top: 2px dashed var(--steel-300); }
+  .ticket__stub::before { left: calc(var(--notch) / -2); top: calc(var(--notch) / -2 - 1px); }
+  .ticket__stub::after { left: auto; right: calc(var(--notch) / -2); top: calc(var(--notch) / -2 - 1px); bottom: auto; }
+}
+
+/* Accordéon ---------------------------------------------------------------- */
+.accordion { border-top: 2px solid var(--night); }
+.accordion__item { border-bottom: 1px solid var(--line); }
+.accordion__item summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  min-height: 56px;
+  padding: 0.85rem 0;
+  font-family: var(--font-display);
+  font-size: 1.3125rem;
+  font-weight: 600;
+  line-height: 1.2;
+  list-style: none;
+  cursor: pointer;
+}
+.accordion__item summary::-webkit-details-marker { display: none; }
+.accordion__item summary:hover { color: var(--teal); }
+.accordion__sign {
+  position: relative;
+  flex: none;
+  width: 2rem; height: 2rem;
+  border: 2px solid var(--night);
+  border-radius: 50%;
+  background: var(--white);
+}
+.accordion__sign::before,
+.accordion__sign::after {
+  content: '';
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 0.8rem; height: 2.5px;
+  background: var(--night);
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s;
+}
+.accordion__sign::after { transform: translate(-50%, -50%) rotate(90deg); }
+.accordion__item[open] .accordion__sign { background: var(--signal); border-color: var(--signal-ink); }
+.accordion__item[open] .accordion__sign::after { transform: translate(-50%, -50%) rotate(0deg); }
+.accordion__body { padding: 0 3rem 1.25rem 0; color: var(--text-muted); max-width: 62ch; }
+
+/* Faits clés ---------------------------------------------------------------- */
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11.5rem), 1fr));
+  margin-top: 2rem;
+  background: var(--night);
+  color: var(--white);
+  border-left: 6px solid var(--signal);
+}
+.facts__item { padding: 0.9rem 1.1rem; border-bottom: 1px solid var(--steel-800); }
+.facts__item + .facts__item { border-left: 1px solid var(--steel-800); }
+.facts dt {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--steel-300);
+}
+.facts dt .icon { color: var(--signal); }
+.facts dd { margin: 0.3rem 0 0; font-family: var(--font-display); font-size: 1.3125rem; font-weight: 600; line-height: 1.2; }
+.facts dd .price__now { font-size: 1.5rem; }
+.facts dd .price__old, .facts dd .price__tax { color: var(--steel-300); }
+.facts dd a { color: var(--white); }
+.facts__line { display: block; font-size: 1.0625rem; }
+.facts__line + .facts__line { margin-top: 0.15rem; }
+
+.spec { display: grid; border-top: 2px solid var(--night); }
+.spec > div { display: grid; grid-template-columns: 8.5rem 1fr; gap: 1rem; padding: 0.7rem 0; border-bottom: 1px solid var(--line); }
+.spec dt { font-family: var(--font-display); font-weight: 700; font-size: 1rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--steel-700); }
+.spec dd { margin: 0; }
+.spec .facts__line { font-size: inherit; }
+@media (max-width: 29.99em) { .spec > div { grid-template-columns: 1fr; gap: 0.15rem; } }
+
+/* Carte de France ------------------------------------------------------- */
+.map-figure { position: relative; }
+.map { width: 100%; height: auto; overflow: visible; }
+.map__land { fill: var(--steel-900); stroke: var(--steel-700); stroke-width: 1.5; stroke-linejoin: round; }
+.map__ties { fill: none; stroke: var(--steel-700); stroke-width: 7; stroke-dasharray: 1.6 5; }
+.map__line { fill: none; stroke: var(--steel-300); stroke-width: 2; stroke-linecap: round; }
+.map__stop { fill: var(--night); stroke: var(--steel-300); stroke-width: 2; }
+.map__stop--hub { fill: var(--white); stroke: var(--night); stroke-width: 3; }
+.map__label { fill: var(--steel-300); font-family: var(--font-display); font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+.map__train rect { fill: var(--signal); }
+.map__train .map__train-nose { fill: var(--white); }
+.map__pin { fill: var(--signal); stroke: var(--night); stroke-width: 2.5; }
+.map__ring { fill: none; stroke: var(--signal); stroke-width: 2; transform-box: fill-box; transform-origin: center; }
+.map__callout { fill: none; stroke: var(--signal); stroke-width: 1.5; }
+.map__tag { fill: var(--signal); }
+.map__tag-t { fill: var(--signal-ink); font-family: var(--font-display); font-weight: 700; font-size: 13px; letter-spacing: 0.1em; }
+.map__tag-s { fill: var(--signal-ink); font-family: var(--font-body); font-weight: 600; font-size: 13px; }
+
+/* Animation de la carte : les lignes se tracent, puis les trains roulent */
+.js .map__line { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.6s var(--ease); }
+.js .map__ties, .js .map__trains, .js .map__stops { opacity: 0; transition: opacity 0.8s 0.9s; }
+.js .map.is-visible .map__line { stroke-dashoffset: 0; }
+.js .map.is-visible .map__ties, .js .map.is-visible .map__trains, .js .map.is-visible .map__stops { opacity: 1; }
+.map.is-visible .map__ring { animation: ring 2.4s var(--ease) infinite; }
+@keyframes ring {
+  0% { transform: scale(0.6); opacity: 1; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .map__line { stroke-dashoffset: 0; transition: none; }
+  .js .map__ties, .js .map__stops { opacity: 1; transition: none; }
+  .map__trains { display: none; }
+}
+.map--compact .map__label { display: none; }
+@media (max-width: 29.99em) { .map__label { display: none; } }
+
+.map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin-top: 1rem;
+  font-size: var(--fs-sm);
+}
+.map-legend__item { display: inline-flex; align-items: center; gap: 0.5rem; }
+.map-legend__pin { width: 0.85rem; height: 0.85rem; border-radius: 50%; background: var(--signal); box-shadow: 0 0 0 2px var(--night), 0 0 0 4px var(--signal); }
+.map-legend__line { width: 1.6rem; height: 4px; background: var(--steel-500); box-shadow: 0 -4px 0 -1px var(--steel-300); }
+.map-legend__train { width: 1.2rem; height: 0.5rem; border-radius: 2px; background: var(--signal); border-right: 4px solid var(--white); outline: 1px solid var(--steel-500); }
+
+/* Formulaire --------------------------------------------------------------- */
+.form { display: grid; gap: 1rem; }
+.form__row { display: grid; gap: 1rem; }
+@media (min-width: 40em) {
+  .form__row { grid-template-columns: 1fr 1fr; }
+  .form__row--wide { grid-template-columns: 1fr 9rem; }
+}
+.field { display: grid; gap: 0.35rem; align-content: start; }
+.field label { font-weight: 600; font-size: var(--fs-sm); }
+.field__req { color: var(--rail-red); }
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.6rem 0.75rem;
+  border: 2px solid var(--steel-400);
+  border-radius: var(--radius);
+  background: var(--white);
+  color: var(--text);
+  font-size: 1rem;
+}
+.field textarea { resize: vertical; min-height: 7rem; }
+.field input:focus-visible,
+.field select:focus-visible,
+.field textarea:focus-visible { outline: 3px solid var(--signal); outline-offset: 1px; border-color: var(--night); }
+.field.is-invalid input,
+.field.is-invalid select { border-color: var(--rail-red); background: #fff6f5; }
+.field__err { min-height: 0; color: var(--rail-red); font-size: var(--fs-sm); font-weight: 600; }
+.field__err:empty { display: none; }
+.form__hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.form__legal { font-size: var(--fs-xs); color: var(--text-muted); }
+.form button[type='submit'] { justify-self: start; }
+.form__status:empty { display: none; }
+.form__status { font-weight: 600; color: var(--rail-red); }
+.form.is-sending button[type='submit'] { opacity: 0.6; pointer-events: none; }
+.form-success { display: grid; gap: 0.6rem; justify-items: start; padding: 1rem 0; }
+.form-success .icon { color: var(--teal); }
+.form-success__title { font-family: var(--font-display); font-size: var(--fs-lg); font-weight: 700; }
+
+/* Apparition au défilement ------------------------------------------------ */
+.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s var(--ease) var(--d, 0ms), transform 0.6s var(--ease) var(--d, 0ms); }
+.js .reveal.is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal { opacity: 1; transform: none; }
+}

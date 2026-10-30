@@ -1,20 +1,26 @@
 {
   "meta": {
-    "version": "0.1.0-squelette",
-    "statut": "SQUELETTE NON VÉRIFIÉ. digivoda.com n'est pas joignable depuis la session de génération et les deux captures d'écran n'ont pas été fournies. Aucune valeur factuelle n'est encore extraite.",
+    "version": "0.2.0",
+    "statut": "Données relevées via l'index de recherche (digivoda.com non joignable en direct depuis la session) et réponses client du 30/10/2026. Chaque fiche porte un statut_verification.",
     "source_principale": "https://digivoda.com/",
-    "derniere_extraction": null,
+    "derniere_extraction": "2026-10-30",
     "convention_placeholder": "Toute chaîne commençant par « [À COMPLÉTER: » est affichée telle quelle sur le site et listée dans le rapport final.",
     "convention_null": "null = valeur non encore extraite (traitée comme [À COMPLÉTER] à la génération).",
-    "champ_constat_capture": "Valeurs lues dans les captures d'écran, recopiées du brief. Elles ne sont jamais affichées : seule la valeur publiée sur digivoda.com fait foi."
+    "champ_constat_capture": "Valeurs lues dans les captures d'écran, recopiées du brief. Elles ne sont jamais affichées : seule la valeur publiée sur digivoda.com fait foi.",
+    "statuts_verification": {
+      "non_verifie": "Aucune donnée publiée retrouvée : tout est en [À COMPLÉTER].",
+      "index_recherche": "Valeurs relevées dans l'index de recherche de digivoda.com. À relire sur la page en ligne.",
+      "capture_et_index": "Valeur identique sur la capture d'écran et dans l'index de recherche.",
+      "confirme_client": "Confirmé par le client."
+    }
   },
   "organisme": {
     "nom": "DIGIVODA",
     "site": "https://digivoda.com/",
-    "telephone": "[À COMPLÉTER: téléphone]",
-    "email": "[À COMPLÉTER: email de contact]",
-    "adresse_siege": "[À COMPLÉTER: adresse du siège]",
-    "adresse_centre": "[À COMPLÉTER: adresse du centre de formation]",
+    "telephone": "01 89 70 55 70",
+    "email": "contact@digivoda.com",
+    "adresse_siege": "5 rue Jules Barbier, 92290 Châtenay-Malabry",
+    "adresse_centre": "4 allée des Garays, 91120 Palaiseau",
     "forme_juridique": "[À COMPLÉTER: forme juridique et capital]",
     "rcs": "[À COMPLÉTER: RCS]",
     "siret": "[À COMPLÉTER: SIRET]",
@@ -23,13 +29,15 @@
     "hebergeur": "[À COMPLÉTER: hébergeur du site]",
     "directeur_publication": "[À COMPLÉTER: directeur de la publication]",
     "qualiopi": {
-      "mention": "[À COMPLÉTER: mention Qualiopi exacte publiée par Digivoda]",
+      "mention": "La certification qualité a été délivrée au titre des catégories d'actions suivantes : actions de formation ; actions de formation par apprentissage.",
       "categories": [
-        "[À COMPLÉTER: catégories d'actions certifiées]"
+        "Actions de formation",
+        "Actions de formation par apprentissage"
       ],
       "certificateur": "[À COMPLÉTER: organisme certificateur]",
-      "logo": "assets/img/qualiopi.svg",
-      "logo_statut": "à fournir par le client (logo officiel, non modifié)"
+      "logo": "assets/img/qualiopi-logo-a-fournir.svg",
+      "logo_statut": "à fournir par le client (logo officiel, non modifié)",
+      "mention_statut": "index_recherche"
     },
     "sources": {
       "accueil": "https://digivoda.com/",
@@ -40,8 +48,17 @@
       "mentions_legales": "https://digivoda.com/mentions-legales/",
       "cgv": "[À COMPLÉTER: URL des CGV]",
       "politique_confidentialite": "[À COMPLÉTER: URL de la politique de confidentialité]",
-      "qualiopi": "[À COMPLÉTER: URL ou document du certificat Qualiopi]"
-    }
+      "qualiopi": "[À COMPLÉTER: URL ou document du certificat Qualiopi]",
+      "referent_handicap": "https://digivoda.com/referent-handicap-registre-public-daccessibilite/"
+    },
+    "telephone_e164": "+33189705570",
+    "telephone_statut": "index_recherche",
+    "a_verifier": [
+      "Deux numéros publiés : 01 89 70 55 70 (page contact, mentions légales) et 01 87 65 34 43 (autres pages). Lequel afficher ?",
+      "Liste des autres centres Digivoda à placer sur la carte (un campus à Noisy-le-Sec est cité).",
+      "Identifiants légaux (SIREN/SIRET, NDA, UAI) à recopier depuis la page Mentions légales en ligne.",
+      "Référent handicap : coordonnées publiées sur la page « Référent handicap & Registre public d'accessibilité »."
+    ]
   },
   "themes": [
     {
@@ -99,9 +116,9 @@
       "code": "SECUFER",
       "theme": "securite-ferroviaire",
       "type": "formation",
-      "source_url": "[À COMPLÉTER: URL de la page Digivoda]",
+      "source_url": null,
       "statut_verification": "non_verifie",
-      "resume": "[À COMPLÉTER: résumé]",
+      "resume": "Les règles de sécurité ferroviaire à maîtriser avant d'accéder aux emprises du réseau.",
       "objectifs": [
         "[À COMPLÉTER: objectifs]"
       ],
@@ -148,7 +165,9 @@
       "financement": [
         "[À COMPLÉTER: financement]"
       ],
-      "images": [],
+      "images": [
+        "ph-voie-perspective"
+      ],
       "formations_liees": [
         "recyclage-secufer",
         "secufer-e-learning",
@@ -158,8 +177,10 @@
         "pack-rso"
       ],
       "a_verifier": [
-        "Page Digivoda dédiée non identifiée : URL à confirmer."
-      ]
+        "Page Digivoda dédiée non identifiée : URL à confirmer.",
+        "Seule trace publiée : la journée SECUFER de 7 h intégrée au programme TCS M (décret n° 2017-694, risques, QCM). Durée et tarif de la SECUFER vendue seule à confirmer."
+      ],
+      "resume_source": "editorial (dérivé de l'intitulé)"
     },
     {
       "id": "recyclage-secufer",
@@ -172,55 +193,62 @@
       "theme": "securite-ferroviaire",
       "type": "recyclage",
       "source_url": "https://digivoda.com/ferroviaire/formation-recyclage-secufer/",
-      "statut_verification": "non_verifie",
-      "resume": "[À COMPLÉTER: résumé]",
+      "statut_verification": "index_recherche",
+      "resume": "Une demi-journée pour remettre à jour vos connaissances SECUFER et renouveler votre attestation pour 3 ans.",
       "objectifs": [
-        "[À COMPLÉTER: objectifs]"
+        "Actualiser ses connaissances sur le cadre réglementaire SECUFER (décret n° 2017-694)",
+        "Repérer les évolutions réglementaires récentes",
+        "Valider ses acquis par un QCM"
       ],
       "public": [
         "[À COMPLÉTER: public concerné]"
       ],
       "prerequis": [
-        "[À COMPLÉTER: prérequis]"
+        "Attestation SECUFER initiale en cours de validité, ou expirée depuis moins de 6 mois",
+        "Aptitude médicale en cours de validité"
       ],
       "programme": [
         "[À COMPLÉTER: programme / contenu]"
       ],
       "duree": {
-        "heures": null,
-        "jours": null,
-        "libelle": "[À COMPLÉTER: durée]"
+        "heures": 3.5,
+        "jours": 0.5,
+        "libelle": "3 h 30 (demi-journée)"
       },
       "tarif": {
-        "montant": null,
-        "regime": null,
+        "montant": 130,
+        "regime": "TTC",
         "ancien_prix": null,
         "remise": null,
         "inter": null,
         "intra": null,
-        "libelle": "[À COMPLÉTER: tarif]"
+        "libelle": "130 € TTC / pers."
       },
       "modalites": {
-        "centre": null,
-        "intra": null,
-        "e_learning": null,
+        "centre": true,
+        "intra": true,
+        "e_learning": true,
         "lieux": [
-          "[À COMPLÉTER: lieux]"
+          "Centres Digivoda partout en France",
+          "Sur site client en intra"
         ],
-        "dates": "[À COMPLÉTER: dates]"
+        "dates": "[À COMPLÉTER: dates]",
+        "libelle": "Présentiel inter ou intra, à distance ou en e-learning"
       },
-      "effectif": "[À COMPLÉTER: effectif]",
+      "effectif": "4 à 12 stagiaires",
       "methodes": [
         "[À COMPLÉTER: méthodes pédagogiques]"
       ],
-      "evaluation": "[À COMPLÉTER: modalités d'évaluation]",
-      "validite": "[À COMPLÉTER: validité / recyclage]",
+      "evaluation": "QCM final de 15 questions, réussite à 11/15. Attestation délivrée sous 48 h.",
+      "validite": "Renouvellement de l'attestation pour 3 ans.",
       "accessibilite_pmr": "[À COMPLÉTER: accessibilité PMR]",
-      "delai_acces": "[À COMPLÉTER: délai d'accès]",
+      "delai_acces": "Inscription au moins 11 jours ouvrés avant la session.",
       "financement": [
         "[À COMPLÉTER: financement]"
       ],
-      "images": [],
+      "images": [
+        "ph-salle-formation"
+      ],
       "formations_liees": [
         "secufer",
         "secufer-e-learning"
@@ -229,7 +257,8 @@
       "a_verifier": [
         "Validité de 3 ans indiquée dans le titre du brief : à confirmer sur la page.",
         "Les résultats de recherche suggèrent un tarif affiché à la fois en HT et en TTC : vérifier le régime de TVA."
-      ]
+      ],
+      "validite_court": "3 ans"
     },
     {
       "id": "secufer-e-learning",
@@ -241,9 +270,9 @@
       "code": "SECUFER",
       "theme": "securite-ferroviaire",
       "type": "e-learning",
-      "source_url": "[À COMPLÉTER: URL de la page Digivoda]",
+      "source_url": null,
       "statut_verification": "non_verifie",
-      "resume": "[À COMPLÉTER: résumé]",
+      "resume": "La formation SECUFER suivie à distance, en e-learning.",
       "objectifs": [
         "[À COMPLÉTER: objectifs]"
       ],
@@ -290,7 +319,9 @@
       "financement": [
         "[À COMPLÉTER: financement]"
       ],
-      "images": [],
+      "images": [
+        "ph-e-learning"
+      ],
       "formations_liees": [
         "secufer",
         "recyclage-secufer"
@@ -299,7 +330,8 @@
       "a_verifier": [
         "Page Digivoda dédiée non identifiée.",
         "Préciser s'il s'agit de la formation initiale, du recyclage, ou des deux, à distance."
-      ]
+      ],
+      "resume_source": "editorial (dérivé de l'intitulé)"
     },
     {
       "id": "tcs-m",
@@ -312,55 +344,96 @@
       "theme": "sentinelle-personnel",
       "type": "formation",
       "source_url": "https://digivoda.com/formation-tes-m-annonceur-sentinelle-asp/",
-      "statut_verification": "non_verifie",
-      "resume": "[À COMPLÉTER: résumé]",
+      "statut_verification": "index_recherche",
+      "resume": "Cinq jours pour tenir le poste d'Annonceur Sentinelle et d'Agent Sécurité du Personnel sur les chantiers du réseau ferré.",
       "objectifs": [
-        "[À COMPLÉTER: objectifs]"
+        "Connaître le cadre réglementaire et les missions de l'Annonceur Sentinelle et de l'ASP (arrêté du 7 mai 2015)",
+        "Appliquer les procédures d'annonce et calculer la distance d'annonce (CADA)",
+        "Surveiller les circulations et alerter les équipes à temps",
+        "Mener un briefing sécurité et gérer la coactivité sur le chantier"
       ],
       "public": [
-        "[À COMPLÉTER: public concerné]"
+        "Demandeurs d'emploi en reconversion",
+        "Salariés du BTP et des travaux publics qui visent les chantiers du Réseau Ferré National",
+        "Sous-traitants ferroviaires",
+        "Nouveaux entrants dans les grands groupes d'infrastructure"
       ],
       "prerequis": [
-        "[À COMPLÉTER: prérequis]"
+        "Aptitude médicale et psychotechnique délivrée par un médecin du travail",
+        "Français niveau B1 minimum, à l'oral et à l'écrit",
+        "Être majeur (18 ans minimum)",
+        "Aucun diplôme requis ; permis B recommandé pour les déplacements sur chantier"
       ],
       "programme": [
-        "[À COMPLÉTER: programme / contenu]"
+        {
+          "etape": "Jour 1",
+          "titre": "SECUFER",
+          "duree": "7 h",
+          "contenu": "Cadre réglementaire (décret n° 2017-694), identification des risques ferroviaires, QCM de validation."
+        },
+        {
+          "etape": "Jour 2",
+          "titre": "Cadre réglementaire et missions",
+          "contenu": "Rôle de l'Annonceur Sentinelle et de l'ASP, textes applicables (arrêté du 7 mai 2015)."
+        },
+        {
+          "etape": "Jour 3",
+          "titre": "Procédures d'annonce",
+          "contenu": "Calcul de la distance d'annonce (CADA), surveillance des circulations, signaux d'alerte."
+        },
+        {
+          "etape": "Jour 4",
+          "titre": "Mise en œuvre opérationnelle",
+          "contenu": "Briefing sécurité, organisation de la protection, coactivité sur le chantier."
+        },
+        {
+          "etape": "Jour 5",
+          "titre": "Mise en situation et évaluations",
+          "contenu": "Exercices sur chantier pédagogique, évaluations théorique et pratique."
+        }
       ],
       "duree": {
-        "heures": null,
-        "jours": null,
-        "libelle": "[À COMPLÉTER: durée]"
+        "heures": 35,
+        "jours": 5,
+        "libelle": "5 jours (35 h)"
       },
       "tarif": {
-        "montant": null,
-        "regime": null,
-        "ancien_prix": null,
-        "remise": null,
-        "inter": null,
+        "montant": 1390,
+        "regime": "TTC",
+        "ancien_prix": 1450,
+        "remise": 60,
+        "inter": 1390,
         "intra": null,
-        "libelle": "[À COMPLÉTER: tarif]"
+        "libelle": "1 390 € TTC / pers. en inter"
       },
       "modalites": {
-        "centre": null,
-        "intra": null,
-        "e_learning": null,
+        "centre": true,
+        "intra": true,
+        "e_learning": false,
         "lieux": [
-          "[À COMPLÉTER: lieux]"
+          "Centres Digivoda partout en France",
+          "Sur site client en intra"
         ],
-        "dates": "[À COMPLÉTER: dates]"
+        "dates": "[À COMPLÉTER: dates]",
+        "libelle": "Présentiel, en inter-entreprises ou en intra sur votre site"
       },
-      "effectif": "[À COMPLÉTER: effectif]",
+      "effectif": "Environ 12 stagiaires (effectif moyen)",
       "methodes": [
-        "[À COMPLÉTER: méthodes pédagogiques]"
+        "Apports réglementaires en salle",
+        "Exercices de calcul de distance d'annonce",
+        "Mise en situation sur chantier pédagogique"
       ],
-      "evaluation": "[À COMPLÉTER: modalités d'évaluation]",
-      "validite": "[À COMPLÉTER: validité / recyclage]",
+      "evaluation": "Évaluation continue et formative sur les 5 jours, puis 3 modules certificatifs : connaissances réglementaires, mission Annonceur, mission ASP. Note minimale de 12/20 par module. Un rattrapage possible sous 30 jours, sur un module au maximum.",
+      "validite": "Évaluation annuelle des compétences obligatoire pour le maintien de l'habilitation par l'employeur.",
       "accessibilite_pmr": "[À COMPLÉTER: accessibilité PMR]",
-      "delai_acces": "[À COMPLÉTER: délai d'accès]",
+      "delai_acces": "Inter-entreprises : inscription au moins 11 jours ouvrés avant la session. Intra : 30 à 45 jours d'organisation.",
       "financement": [
-        "[À COMPLÉTER: financement]"
+        "OPCO",
+        "France Travail"
       ],
-      "images": [],
+      "images": [
+        "ph-sentinelle-annonce"
+      ],
       "formations_liees": [
         "recyclage-tcs-m",
         "risques-electriques-c0",
@@ -373,8 +446,53 @@
         "pack-ferroviaire-premium"
       ],
       "a_verifier": [
-        "La page Digivoda trouvée s'intitule « TES M », le brief dit « TCS M » : choisir l'intitulé exact."
-      ]
+        "Intitulé « TCS M » confirmé par le client (la page Digivoda dit encore « TES M »).",
+        "Le programme publié intègre une journée SECUFER (jour 1) : confirmer qu'elle fait partie de la formation TCS M vendue seule.",
+        "Tarif publié : 1 390 € (barré 1 450 €), affiché TTC selon le client ; une autre mention dit HT.",
+        "Périodicité du recyclage : « annuelle » sur une page, « tous les 3 ans » sur une autre.",
+        "Méthodes pédagogiques non publiées en tant que telles : déduites du programme."
+      ],
+      "objectifs_note": "Reformulés à partir du programme publié.",
+      "methodes_note": "Déduites du programme publié : à confirmer.",
+      "editorial": {
+        "seo_title": "Formation TCS M Annonceur Sentinelle et ASP | Digiferro",
+        "seo_description": "TCS M en 5 jours (35 h) : Annonceur Sentinelle et Agent Sécurité du Personnel. Programme, prérequis, évaluation, 1 390 € TTC, en centre ou en intra.",
+        "titre_h1": "TCS M : Annonceur Sentinelle et Agent Sécurité du Personnel",
+        "illustration": "horn",
+        "lead": "Sur un chantier ferroviaire, l'annonceur voit arriver le train avant tout le monde. En cinq jours, vous apprenez à calculer la distance d'annonce, à donner l'alerte au bon moment et à tenir le rôle d'Agent Sécurité du Personnel auprès de l'équipe.",
+        "objectifs_intro": "À la fin de la semaine, le stagiaire sait tenir un poste d'annonce et veiller à la sécurité du personnel pendant les travaux.",
+        "public_intro": "Pas besoin d'avoir déjà travaillé sur les voies : pour beaucoup de stagiaires, la TCS M est la porte d'entrée dans le ferroviaire.",
+        "programme_intro": "Le premier jour pose le socle SECUFER. Les quatre suivants portent sur le métier d'annonceur et d'ASP, jusqu'à la mise en situation sur chantier pédagogique.",
+        "modalites_intro": "La TCS M se suit en présentiel, parce que l'annonce s'apprend sur le terrain. Deux formules : en centre avec d'autres entreprises, ou chez vous avec vos seuls agents.",
+        "evaluation_intro": "L'évaluation ne se joue pas sur un seul examen : elle suit le stagiaire pendant les cinq jours.",
+        "validite_texte": "L'habilitation n'est pas acquise une fois pour toutes. L'employeur ne peut la maintenir qu'après une évaluation annuelle des compétences : c'est le rôle du recyclage TCS M.",
+        "devis_texte": "Une personne ou une équipe entière, en centre ou sur votre site : précisez le nombre d'agents et la période visée.",
+        "faq": [
+          {
+            "q": "Faut-il déjà avoir la SECUFER pour suivre la TCS M ?",
+            "a": "Le programme publié commence par une journée SECUFER de 7 heures, le jour 1. Elle est validée par un QCM avant d'aborder les missions d'annonceur et d'ASP."
+          },
+          {
+            "q": "Quel niveau de français est demandé ?",
+            "a": "Le niveau B1 minimum, à l'oral comme à l'écrit. L'annonceur doit comprendre les consignes et se faire comprendre sans ambiguïté."
+          },
+          {
+            "q": "Comment se passe l'évaluation finale ?",
+            "a": "Trois modules certificatifs : connaissances réglementaires, mission Annonceur, mission ASP. Il faut au moins 12/20 à chacun. Un rattrapage est possible sous 30 jours, sur un seul module."
+          },
+          {
+            "q": "Faut-il repasser une évaluation ensuite ?",
+            "a": "Oui, chaque année. L'évaluation annuelle des compétences est obligatoire pour que l'employeur maintienne l'habilitation."
+          },
+          {
+            "q": "Peut-on organiser la TCS M dans nos locaux ?",
+            "a": "Oui, en intra sur votre site. Comptez 30 à 45 jours pour organiser la session."
+          }
+        ],
+        "faq_titre": "Questions sur la TCS M",
+        "devis_titre": "Demander un devis pour la TCS M"
+      },
+      "validite_court": "Évaluation annuelle"
     },
     {
       "id": "recyclage-tcs-m",
@@ -386,9 +504,9 @@
       "code": "TCS M",
       "theme": "sentinelle-personnel",
       "type": "recyclage",
-      "source_url": "[À COMPLÉTER: URL de la page Digivoda]",
+      "source_url": null,
       "statut_verification": "non_verifie",
-      "resume": "[À COMPLÉTER: résumé]",
+      "resume": "L'évaluation annuelle qui permet à l'employeur de maintenir l'habilitation Annonceur Sentinelle / ASP.",
       "objectifs": [
         "[À COMPLÉTER: objectifs]"
       ],
@@ -435,15 +553,19 @@
       "financement": [
         "[À COMPLÉTER: financement]"
       ],
-      "images": [],
+      "images": [
+        "ph-agent-epi"
+      ],
       "formations_liees": [
         "tcs-m"
       ],
       "packs": [],
       "a_verifier": [
         "Périodicité annuelle indiquée dans le titre du brief : à confirmer.",
-        "Même question d'intitulé TCS M / TES M."
-      ]
+        "Même question d'intitulé TCS M / TES M.",
+        "Contradiction sur Digivoda : évaluation annuelle (titre) ou tous les 3 ans (autre page)."
+      ],
+      "resume_source": "editorial (dérivé de l'intitulé)"
     },
     {
       "id": "tsae-prestations-connexes",
@@ -455,9 +577,9 @@
       "code": "TSAE",
       "theme": "prestations-electrique",
       "type": "formation",
-      "source_url": "[À COMPLÉTER: URL de la page Digivoda]",
+      "source_url": null,
       "statut_verification": "non_verifie",
-      "resume": "[À COMPLÉTER: résumé]",
+      "resume": "Les prestations connexes C0, Agent prestataire LAM et S9, réunies dans une même formation TSAE.",
       "objectifs": [
         "[À COMPLÉTER: objectifs]"
       ],
@@ -504,7 +626,9 @@
       "financement": [
         "[À COMPLÉTER: financement]"
       ],
-      "images": [],
+      "images": [
+        "ph-catenaire"
+      ],
       "formations_liees": [
         "risques-electriques-c0",
         "agent-s9a3",
@@ -517,7 +641,8 @@
       "a_verifier": [
         "Les résultats de recherche placent cet intitulé dans une liste e-learning : confirmer la modalité.",
         "Préciser si C0, AP LAM et AP S9 sont réservables séparément."
-      ]
+      ],
+      "resume_source": "editorial (dérivé de l'intitulé)"
     },
     {
       "id": "risques-electriques-c0",
@@ -529,9 +654,9 @@
       "code": "C0",
       "theme": "prestations-electrique",
       "type": "formation",
-      "source_url": "[À COMPLÉTER: URL de la page Digivoda]",
+      "source_url": null,
       "statut_verification": "non_verifie",
-      "resume": "[À COMPLÉTER: résumé]",
+      "resume": "Le risque électrique des installations de traction, à connaître avant de travailler aux abords des voies.",
       "objectifs": [
         "[À COMPLÉTER: objectifs]"
       ],
@@ -578,7 +703,9 @@
       "financement": [
         "[À COMPLÉTER: financement]"
       ],
-      "images": [],
+      "images": [
+        "ph-signal-electrique"
+      ],
       "formations_liees": [
         "tsae-prestations-connexes",
         "percheur-catenaire",
@@ -589,8 +716,10 @@
       ],
       "a_verifier": [
         "Vérifier le lien avec la page « Formations Habilitation Électrique » (https://digivoda.com/formations-habilitation-electrique/).",
-        "Vérifier la mention sur l'habilitation délivrée par l'employeur."
-      ]
+        "Vérifier la mention sur l'habilitation délivrée par l'employeur.",
+        "Une page Digivoda précise : « nous délivrons l'attestation de formation, l'habilitation reste à la charge de l'employeur ». À reprendre si confirmé."
+      ],
+      "resume_source": "editorial (dérivé de l'intitulé)"
     },
     {
       "id": "rso",
@@ -602,9 +731,9 @@
       "code": "RSO",
       "theme": "representation-reseaux",
       "type": "formation",
-      "source_url": "[À COMPLÉTER: URL de la page Digivoda]",
+      "source_url": null,
       "statut_verification": "non_verifie",
-      "resume": "[À COMPLÉTER: résumé]",
+      "resume": "Représenter la sécurité opérationnelle et coordonner les opérations sur un chantier ferroviaire.",
       "objectifs": [
         "[À COMPLÉTER: objectifs]"
       ],
@@ -651,7 +780,9 @@
       "financement": [
         "[À COMPLÉTER: financement]"
       ],
-      "images": [],
+      "images": [
+        "ph-chantier-coordination"
+      ],
       "formations_liees": [
         "secufer",
         "tcs-m",
@@ -662,7 +793,8 @@
       ],
       "a_verifier": [
         "Page Digivoda dédiée non identifiée."
-      ]
+      ],
+      "resume_source": "editorial (dérivé de l'intitulé)"
     },
     {
       "id": "aipr",
@@ -674,9 +806,9 @@
       "code": "AIPR",
       "theme": "representation-reseaux",
       "type": "formation",
-      "source_url": "[À COMPLÉTER: URL de la page Digivoda]",
+      "source_url": null,
       "statut_verification": "non_verifie",
-      "resume": "[À COMPLÉTER: résumé]",
+      "resume": "L'autorisation exigée pour intervenir à proximité des réseaux enterrés ou aériens.",
       "objectifs": [
         "[À COMPLÉTER: objectifs]"
       ],
@@ -723,7 +855,9 @@
       "financement": [
         "[À COMPLÉTER: financement]"
       ],
-      "images": [],
+      "images": [
+        "ph-reseaux"
+      ],
       "formations_liees": [
         "rso",
         "tes-f"
@@ -731,7 +865,8 @@
       "packs": [],
       "a_verifier": [
         "Page Digivoda dédiée non identifiée. Préciser le niveau (opérateur, encadrant, concepteur)."
-      ]
+      ],
+      "resume_source": "editorial (dérivé de l'intitulé)"
     },
     {
       "id": "tes-f",
@@ -743,9 +878,9 @@
       "code": "TES F",
       "theme": "representation-reseaux",
       "type": "formation",
-      "source_url": "[À COMPLÉTER: URL de la page Digivoda]",
+      "source_url": null,
       "statut_verification": "non_verifie",
-      "resume": "[À COMPLÉTER: résumé]",
+      "resume": "Assurer la protection des passages à niveau pendant les travaux.",
       "objectifs": [
         "[À COMPLÉTER: objectifs]"
       ],
@@ -792,7 +927,9 @@
       "financement": [
         "[À COMPLÉTER: financement]"
       ],
-      "images": [],
+      "images": [
+        "ph-passage-niveau"
+      ],
       "formations_liees": [
         "tcs-m",
         "aipr"
@@ -800,7 +937,8 @@
       "packs": [],
       "a_verifier": [
         "Page Digivoda dédiée non identifiée."
-      ]
+      ],
+      "resume_source": "editorial (dérivé de l'intitulé)"
     },
     {
       "id": "agent-s9a3",
@@ -812,9 +950,9 @@
       "code": "S9A3",
       "theme": "prestations-electrique",
       "type": "formation",
-      "source_url": "[À COMPLÉTER: URL de la page Digivoda]",
+      "source_url": null,
       "statut_verification": "non_verifie",
-      "resume": "[À COMPLÉTER: résumé]",
+      "resume": "La formation d'agent S9A3, avec les fonctions RZT, AGEC/R et APN.",
       "objectifs": [
         "[À COMPLÉTER: objectifs]"
       ],
@@ -861,7 +999,9 @@
       "financement": [
         "[À COMPLÉTER: financement]"
       ],
-      "images": [],
+      "images": [
+        "ph-train-face"
+      ],
       "formations_liees": [
         "tsae-prestations-connexes",
         "risques-electriques-c0"
@@ -869,7 +1009,8 @@
       "packs": [],
       "a_verifier": [
         "Page Digivoda dédiée non identifiée."
-      ]
+      ],
+      "resume_source": "editorial (dérivé de l'intitulé)"
     },
     {
       "id": "percheur-catenaire",
@@ -881,9 +1022,9 @@
       "code": "CH1-CB1",
       "theme": "catenaire",
       "type": "formation",
-      "source_url": "[À COMPLÉTER: URL de la page Digivoda]",
+      "source_url": null,
       "statut_verification": "non_verifie",
-      "resume": "[À COMPLÉTER: résumé]",
+      "resume": "Intervenir comme percheur ou aide monteur sur les chantiers caténaire, niveau CH1-CB1.",
       "objectifs": [
         "[À COMPLÉTER: objectifs]"
       ],
@@ -930,7 +1071,9 @@
       "financement": [
         "[À COMPLÉTER: financement]"
       ],
-      "images": [],
+      "images": [
+        "ph-catenaire-perche"
+      ],
       "formations_liees": [
         "risques-electriques-c0",
         "tsae-prestations-connexes"
@@ -940,7 +1083,8 @@
       ],
       "a_verifier": [
         "Le Pack Premium cite « APEC CH1-CB1 » : confirmer s'il s'agit de cette formation."
-      ]
+      ],
+      "resume_source": "editorial (dérivé de l'intitulé)"
     }
   ],
   "packs": [
@@ -953,7 +1097,7 @@
       "titre_court": "Pack Prestations Connexes",
       "type": "pack",
       "source_url": "https://digivoda.com/packs-formations-ferroviaires/",
-      "statut_verification": "non_verifie",
+      "statut_verification": "capture_et_index",
       "formations_incluses": [
         "tcs-m",
         "tsae-prestations-connexes"
@@ -964,7 +1108,7 @@
         "Agent Prestataire LAM",
         "Agent Prestataire S9"
       ],
-      "resume": "[À COMPLÉTER: résumé]",
+      "resume": "TCS M et les prestations connexes C0, LAM et S9 réunies pour intervenir sur les chantiers du Réseau Ferré National.",
       "objectifs": [
         "[À COMPLÉTER: objectifs]"
       ],
@@ -983,11 +1127,11 @@
         "libelle": "[À COMPLÉTER: durée totale]"
       },
       "tarif": {
-        "montant": null,
-        "regime": null,
-        "ancien_prix": null,
-        "remise": null,
-        "libelle": "[À COMPLÉTER: tarif]"
+        "montant": 1800,
+        "regime": "TTC",
+        "ancien_prix": 2250,
+        "remise": 450,
+        "libelle": "1 800 € TTC"
       },
       "somme_prix_individuels": null,
       "modalites": {
@@ -1003,7 +1147,9 @@
       "financement": [
         "[À COMPLÉTER: financement]"
       ],
-      "images": [],
+      "images": [
+        "ph-catenaire"
+      ],
       "constat_capture": {
         "prix": "1 800 €",
         "regime": "non lisible",
@@ -1012,7 +1158,8 @@
         "description": "Chantiers du Réseau Ferré National."
       },
       "a_verifier": [
-        "Correspondance modules → formations à confirmer (C0/LAM/S9 = formation TSAE n°6 ?)."
+        "Correspondance modules → formations à confirmer (C0/LAM/S9 = formation TSAE n°6 ?).",
+        "Prix barré 2 250 € relevé dans l'index (non lisible sur la capture)."
       ]
     },
     {
@@ -1024,7 +1171,7 @@
       "titre_court": "Pack Sentinelle Complet",
       "type": "pack",
       "source_url": "https://digivoda.com/packs-formations-ferroviaires/",
-      "statut_verification": "non_verifie",
+      "statut_verification": "confirme_client",
       "formations_incluses": [
         "risques-electriques-c0",
         "tcs-m"
@@ -1033,37 +1180,46 @@
         "Risques électriques C0",
         "TCS M complet (Annonceur + ASP)"
       ],
-      "resume": "[À COMPLÉTER: résumé]",
+      "resume": "Risques électriques C0 et TCS M complet (Annonceur + ASP) : protéger les équipes des circulations et travailler près des installations électriques de traction.",
       "objectifs": [
-        "[À COMPLÉTER: objectifs]"
+        "Protéger les équipes contre le risque ferroviaire lié aux circulations",
+        "Travailler en sécurité à proximité des installations électriques de traction : caténaire, sous-stations, rail conducteur",
+        "Tenir les missions d'Annonceur Sentinelle et d'Agent Sécurité du Personnel"
       ],
       "public": [
-        "[À COMPLÉTER: public concerné]"
+        "Demandeurs d'emploi en reconversion",
+        "Salariés du BTP et des travaux publics qui visent les chantiers du Réseau Ferré National",
+        "Sous-traitants ferroviaires",
+        "Nouveaux entrants dans les grands groupes d'infrastructure"
       ],
       "prerequis": [
-        "[À COMPLÉTER: prérequis]"
+        "Aptitude médicale et psychotechnique délivrée par un médecin du travail",
+        "Français niveau B1 minimum, à l'oral et à l'écrit",
+        "Être majeur (18 ans minimum)",
+        "Aucun diplôme requis ; permis B recommandé pour les déplacements sur chantier"
       ],
       "parcours": [
         "[À COMPLÉTER: déroulé jour par jour]"
       ],
       "duree": {
         "heures": null,
-        "jours": null,
-        "libelle": "[À COMPLÉTER: durée totale]"
+        "jours": 5,
+        "libelle": "5 jours"
       },
       "tarif": {
-        "montant": null,
-        "regime": null,
+        "montant": 1080,
+        "regime": "TTC",
         "ancien_prix": null,
         "remise": null,
-        "libelle": "[À COMPLÉTER: tarif]"
+        "libelle": "1 080 € TTC"
       },
       "somme_prix_individuels": null,
       "modalites": {
-        "centre": null,
-        "intra": null,
+        "centre": true,
+        "intra": true,
         "lieux": [
-          "[À COMPLÉTER: lieux]"
+          "Centres Digivoda partout en France",
+          "Sur site client en intra"
         ],
         "dates": "[À COMPLÉTER: dates]"
       },
@@ -1072,7 +1228,9 @@
       "financement": [
         "[À COMPLÉTER: financement]"
       ],
-      "images": [],
+      "images": [
+        "ph-sentinelle-annonce"
+      ],
       "constat_capture": {
         "prix": "1 080 € TTC",
         "regime": "TTC",
@@ -1082,9 +1240,42 @@
         "description": "Protéger les équipes contre le risque ferroviaire et travailler en sécurité à proximité des installations électriques de traction (caténaire, sous-stations, rail conducteur)."
       },
       "a_verifier": [
-        "Pas d'ancien prix ni de remise sur la capture : à confirmer.",
-        "Les résultats de recherche évoquent aussi un pack 5 jours SECUFER + TES M (prix différent) : vérifier qu'il ne s'agit pas d'un 5e pack ou d'une ancienne version."
-      ]
+        "Composition C0 + TCS M confirmée par le client.",
+        "Le pack (1 080 €, 5 jours, C0 inclus) coûte moins cher que la fiche TCS M seule (1 390 €, 5 jours) : vérifier les deux tarifs.",
+        "Répartition des journées entre C0 et TCS M non publiée.",
+        "Aucun prix barré ni remise publiés pour ce pack : pas de badge d'économie."
+      ],
+      "prerequis_note": "Le pack inclut la TCS M : ses prérequis publiés s'appliquent.",
+      "editorial": {
+        "seo_title": "Pack Sentinelle Complet C0 + TCS M, 5 jours | Digiferro",
+        "seo_description": "Risques électriques C0 et TCS M complet (Annonceur + ASP) en un pack de 5 jours à 1 080 € TTC. Formations incluses, parcours, prérequis et réservation.",
+        "titre_h1": "Pack Sentinelle Complet : C0 + TCS M",
+        "illustration": "signal",
+        "lead": "La sentinelle se tient au bord des voies, souvent sous la caténaire. Ce pack réunit en cinq jours la formation aux risques électriques C0 et la TCS M complète, Annonceur et ASP. L'agent repart formé aux deux risques : les circulations et la traction électrique.",
+        "incluses_intro": "Deux formations, un seul groupe, une seule inscription. Chacune a sa fiche détaillée.",
+        "parcours_intro": "L'ordre suit l'intitulé du pack : le risque électrique d'abord, puis la protection contre les circulations.",
+        "prix_intro": "Le pack est facturé 1 080 € TTC par personne. Voici ce que coûtent les mêmes formations prises séparément.",
+        "devis_texte": "Pour réserver le pack, indiquez le nombre d'agents et la période souhaitée. Digivoda revient vers vous avec un devis et les prochaines dates.",
+        "faq": [
+          {
+            "q": "À qui s'adresse ce pack ?",
+            "a": "Aux agents qui tiendront un poste de sentinelle ou d'ASP près d'installations électriques de traction : caténaire, sous-stations, rail conducteur."
+          },
+          {
+            "q": "Faut-il remplir des conditions pour s'inscrire ?",
+            "a": "Le pack inclut la TCS M : ses prérequis s'appliquent. Aptitude médicale et psychotechnique, français niveau B1, être majeur."
+          },
+          {
+            "q": "Peut-on suivre le pack en intra ?",
+            "a": "Oui. Le pack peut être organisé sur le site du client, en intra, ou suivi dans un centre Digivoda."
+          },
+          {
+            "q": "Le prix est-il HT ou TTC ?",
+            "a": "TTC, par personne : 1 080 €."
+          }
+        ]
+      },
+      "public_note": "Le pack inclut la TCS M : public repris de sa fiche."
     },
     {
       "id": "pack-rso",
@@ -1095,7 +1286,7 @@
       "titre_court": "Pack RSO",
       "type": "pack",
       "source_url": "https://digivoda.com/packs-formations-ferroviaires/",
-      "statut_verification": "non_verifie",
+      "statut_verification": "capture_et_index",
       "formations_incluses": [
         "secufer",
         "tcs-m",
@@ -1106,7 +1297,7 @@
         "TCS M / ASP",
         "RSO"
       ],
-      "resume": "[À COMPLÉTER: résumé]",
+      "resume": "SECUFER, TCS M / ASP et RSO : un parcours complet vers les métiers de la sécurité ferroviaire et la coordination des opérations sur chantier.",
       "objectifs": [
         "[À COMPLÉTER: objectifs]"
       ],
@@ -1125,11 +1316,11 @@
         "libelle": "[À COMPLÉTER: durée totale]"
       },
       "tarif": {
-        "montant": null,
-        "regime": null,
-        "ancien_prix": null,
-        "remise": null,
-        "libelle": "[À COMPLÉTER: tarif]"
+        "montant": 1900,
+        "regime": "TTC",
+        "ancien_prix": 2290,
+        "remise": 390,
+        "libelle": "1 900 € TTC"
       },
       "somme_prix_individuels": null,
       "modalites": {
@@ -1145,7 +1336,9 @@
       "financement": [
         "[À COMPLÉTER: financement]"
       ],
-      "images": [],
+      "images": [
+        "ph-chantier-coordination"
+      ],
       "constat_capture": {
         "prix": "1 900 € TTC",
         "regime": "TTC",
@@ -1153,7 +1346,10 @@
         "remise": "-390 €",
         "description": "Parcours complet vers les métiers de la sécurité ferroviaire et la coordination des opérations sur chantier."
       },
-      "a_verifier": []
+      "a_verifier": [
+        "Prix barré 2 290 € relevé dans l'index (non lisible sur la capture).",
+        "Durée totale non publiée."
+      ]
     },
     {
       "id": "pack-ferroviaire-premium",
@@ -1164,7 +1360,7 @@
       "titre_court": "Pack Premium",
       "type": "pack",
       "source_url": "https://digivoda.com/packs-formations-ferroviaires/",
-      "statut_verification": "non_verifie",
+      "statut_verification": "capture_et_index",
       "formations_incluses": [
         "tcs-m",
         "tsae-prestations-connexes",
@@ -1176,7 +1372,7 @@
         "Agent Prestataire S9",
         "Agent de Protection Électrique Caténaire (APEC) CH1-CB1"
       ],
-      "resume": "[À COMPLÉTER: résumé]",
+      "resume": "Dix jours pour protéger les équipes des circulations, appliquer les procédures LAM et S9 et assurer la protection électrique des chantiers caténaire.",
       "objectifs": [
         "[À COMPLÉTER: objectifs]"
       ],
@@ -1191,15 +1387,15 @@
       ],
       "duree": {
         "heures": null,
-        "jours": null,
-        "libelle": "[À COMPLÉTER: durée totale]"
+        "jours": 10,
+        "libelle": "10 jours"
       },
       "tarif": {
-        "montant": null,
-        "regime": null,
-        "ancien_prix": null,
-        "remise": null,
-        "libelle": "[À COMPLÉTER: tarif]"
+        "montant": 2500,
+        "regime": "TTC",
+        "ancien_prix": 2900,
+        "remise": 400,
+        "libelle": "2 500 € TTC"
       },
       "somme_prix_individuels": null,
       "modalites": {
@@ -1215,7 +1411,9 @@
       "financement": [
         "[À COMPLÉTER: financement]"
       ],
-      "images": [],
+      "images": [
+        "ph-train-face"
+      ],
       "constat_capture": {
         "prix": "2 500 € TTC",
         "regime": "TTC",
@@ -1226,8 +1424,21 @@
       },
       "a_verifier": [
         "APEC CH1-CB1 = formation « Percheur / Aide Monteur Caténaire CH1-CB1 » ? À confirmer.",
-        "Le pack cite LAM et S9 mais pas C0 : la référence à la formation TSAE (qui inclut C0) est-elle exacte ?"
+        "Le pack cite LAM et S9 mais pas C0 : la référence à la formation TSAE (qui inclut C0) est-elle exacte ?",
+        "Prix barré 2 900 € relevé dans l'index (non lisible sur la capture)."
       ]
     }
-  ]
+  ],
+  "site": {
+    "nom": "Digiferro",
+    "base_url": "https://www.digiferro.fr",
+    "base_url_statut": "[À COMPLÉTER: domaine définitif]",
+    "regime_prix": "TTC",
+    "regime_prix_statut": "confirme_client",
+    "lieux": [
+      "Centres Digivoda partout en France",
+      "Sur site client en intra"
+    ],
+    "lieux_statut": "confirme_client"
+  }
 }
