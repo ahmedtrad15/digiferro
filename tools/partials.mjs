@@ -216,7 +216,7 @@ export function footer(ctx, data) {
 <button class="to-top" type="button" data-to-top hidden>${icon('up')}<span class="sr-only">Revenir en haut de la page</span></button>`;
 }
 
-const FONTS = 'https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap';
+const FONTS = 'https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap';
 
 export function head(ctx, data) {
   const { p } = ctx;

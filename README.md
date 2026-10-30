@@ -1,7 +1,7 @@
 # Digiferro
 
 Site vitrine et de génération de demandes pour les formations à la sécurité ferroviaire dispensées par DIGIVODA.
-HTML, CSS et JavaScript natifs, sans framework ni dépendance. Seules les polices Barlow et Barlow Condensed viennent de Google Fonts.
+HTML, CSS et JavaScript natifs, sans framework ni dépendance. Seules les polices Lexend (titres, interface) et Source Sans 3 (texte courant) viennent de Google Fonts.
 
 ## État actuel
 
@@ -14,7 +14,12 @@ Les 25 pages sont en place :
 - mentions légales, CGV, politique de confidentialité ;
 - page 404.
 
-Les informations encore manquantes apparaissent sur le site dans des encadrés `[À COMPLÉTER: …]`. Leur liste, page par page, est dans `A-COMPLETER.md`, régénéré à chaque build.
+Les 16 fiches formation et pack sont entièrement remplies. Une partie de leur contenu est provisoire (durées, « Sur devis » à la place des tarifs non publiés, programmes détaillés…) et s’affiche normalement sur le site. Chaque fiche liste ses champs provisoires dans le champ `provisoire` de `data/formations.json`.
+
+`A-COMPLETER.md`, régénéré à chaque build, récapitule :
+
+- les encadrés `[À COMPLÉTER: …]` qui restent sur les autres pages (mentions légales, CGV, coordonnées…) ;
+- les valeurs provisoires des fiches.
 
 ## Arborescence
 
@@ -71,6 +76,20 @@ Pour le brancher, renseignez `data-endpoint` sur la balise `<form>` dans `tools/
 ## Catalogue
 
 `formations/index.html` se filtre par type, thème et durée, avec une recherche par nom qui ignore les accents. Les filtres sont repris dans l’adresse, par exemple `formations/index.html?type=pack` ou `?theme=catenaire`. Une vue filtrée peut donc être partagée, et le lien « Packs » du menu y mène directement. Sans JavaScript, tout le catalogue reste affiché.
+
+## Contrôle qualité
+
+Les outils de test sont dans `tools/qa/` (ils ne sont pas publiés avec le site). Installez d'abord leurs dépendances :
+
+```bash
+cd tools/qa && npm install
+```
+
+Ensuite, depuis la racine du projet :
+
+- `node tools/qa/serve.cjs` : serveur local avec compression gzip, sur http://localhost:8081 ;
+- `node tools/qa/qa.cjs` : liens et ancres, débordement horizontal à 6 largeurs, accessibilité (axe), sous-navigation des fiches. Il faut qu'un serveur tourne sur le port 8080 (`python3 -m http.server 8080`) ;
+- `node tools/qa/shots.cjs "page@largeur@nom"` : captures d'écran dans `tools/qa/out/`.
 
 ## Mise en ligne
 

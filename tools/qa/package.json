@@ -1,0 +1,16 @@
+{
+  "name": "digiferro-qa",
+  "version": "1.0.0",
+  "description": "Outils de contrôle qualité du site (non publiés)",
+  "scripts": {
+    "qa": "node qa.cjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axe-core": "^4.10.2",
+    "lighthouse": "^12.2.1"
+  },
+  "private": true
+}

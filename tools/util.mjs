@@ -28,6 +28,7 @@ export const eur = (n) =>
   Number(n).toLocaleString('fr-FR', { maximumFractionDigits: 2 }).replace(/\u202f/g, nbsp) + nbsp + '€';
 
 export function priceHTML(t, { size = '' } = {}) {
+  if (t?.sur_devis && t.montant == null) return `<span class="price price--devis${size ? ' price--' + size : ''}"><strong class="price__now">Sur devis</strong></span>`;
   if (!t || t.montant == null) return todo('tarif');
   const old = t.ancien_prix
     ? `<span class="sr-only">Au lieu de </span><del class="price__old">${eur(t.ancien_prix)}</del> <span class="sr-only">, désormais </span>`

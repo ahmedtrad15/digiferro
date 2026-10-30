@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": "0.2.0",
+    "version": "0.4.0",
     "statut": "Données relevées via l'index de recherche (digivoda.com non joignable en direct depuis la session) et réponses client du 30/10/2026. Chaque fiche porte un statut_verification.",
     "source_principale": "https://digivoda.com/",
     "derniere_extraction": "2026-10-30",
@@ -11,7 +11,8 @@
       "non_verifie": "Aucune donnée publiée retrouvée : tout est en [À COMPLÉTER].",
       "index_recherche": "Valeurs relevées dans l'index de recherche de digivoda.com. À relire sur la page en ligne.",
       "capture_et_index": "Valeur identique sur la capture d'écran et dans l'index de recherche.",
-      "confirme_client": "Confirmé par le client."
+      "confirme_client": "Confirmé par le client.",
+      "provisoire": "Contenu rédigé pour compléter la fiche, à valider ou remplacer par le client (champ « provisoire » de chaque fiche)."
     }
   },
   "organisme": {
@@ -120,53 +121,88 @@
       "statut_verification": "non_verifie",
       "resume": "Les règles de sécurité ferroviaire à maîtriser avant d'accéder aux emprises du réseau.",
       "objectifs": [
-        "[À COMPLÉTER: objectifs]"
+        "Connaître le cadre réglementaire de la sécurité ferroviaire (décret n° 2017-694)",
+        "Identifier les risques liés aux circulations et aux installations ferroviaires",
+        "Appliquer les règles de déplacement et de comportement sur les emprises",
+        "Réagir correctement face à une situation dangereuse ou à un incident"
       ],
       "public": [
-        "[À COMPLÉTER: public concerné]"
+        "Tout intervenant amené à accéder aux emprises ferroviaires",
+        "Salariés d'entreprises de travaux et sous-traitants ferroviaires",
+        "Intérimaires et nouveaux entrants dans le ferroviaire"
       ],
       "prerequis": [
-        "[À COMPLÉTER: prérequis]"
+        "Aptitude médicale en cours de validité",
+        "Compréhension du français à l'oral et à l'écrit",
+        "Aucun diplôme requis"
       ],
       "programme": [
-        "Cadre réglementaire : décret n° 2017-694",
-        "Identification des risques ferroviaires",
-        "QCM de validation"
+        {
+          "etape": "Module 1",
+          "titre": "Cadre réglementaire",
+          "contenu": "Décret n° 2017-694, acteurs du système ferroviaire, rôles et responsabilités de chacun.",
+          "duree": "2 h"
+        },
+        {
+          "etape": "Module 2",
+          "titre": "Les risques ferroviaires",
+          "contenu": "Circulations et distances de freinage, risque électrique, zones dangereuses.",
+          "duree": "2 h"
+        },
+        {
+          "etape": "Module 3",
+          "titre": "Comportement sur les emprises",
+          "contenu": "Déplacements à pied, signalisation de base, équipements de protection, conduite à tenir.",
+          "duree": "2 h"
+        },
+        {
+          "etape": "Module 4",
+          "titre": "Validation",
+          "contenu": "Synthèse de la journée, QCM de validation, remise de l'attestation.",
+          "duree": "1 h"
+        }
       ],
       "duree": {
-        "heures": null,
-        "jours": null,
-        "libelle": "[À COMPLÉTER: durée]"
+        "heures": 7,
+        "jours": 1,
+        "libelle": "1 jour (7 h)"
       },
       "tarif": {
         "montant": null,
-        "regime": null,
+        "regime": "TTC",
         "ancien_prix": null,
         "remise": null,
         "inter": null,
         "intra": null,
-        "libelle": "[À COMPLÉTER: tarif]"
+        "sur_devis": true,
+        "libelle": "Sur devis"
       },
       "modalites": {
-        "centre": null,
-        "intra": null,
-        "e_learning": null,
+        "centre": true,
+        "intra": true,
+        "e_learning": true,
         "lieux": [
           "Centres Digivoda partout en France",
           "Sur site client en intra"
         ],
-        "dates": "[À COMPLÉTER: dates]"
+        "dates": "Sessions régulières, calendrier sur demande",
+        "libelle": "Présentiel, en inter-entreprises ou en intra. Existe aussi en e-learning."
       },
-      "effectif": "[À COMPLÉTER: effectif]",
+      "effectif": "4 à 12 stagiaires",
       "methodes": [
-        "[À COMPLÉTER: méthodes pédagogiques]"
+        "Apports réglementaires illustrés de cas réels",
+        "Photos et vidéos de situations de chantier",
+        "Échanges sur l'expérience des stagiaires",
+        "Support de formation remis à chaque stagiaire"
       ],
-      "evaluation": "[À COMPLÉTER: modalités d'évaluation]",
+      "evaluation": "QCM de validation en fin de journée. Une attestation de formation est remise au stagiaire en cas de réussite.",
       "validite": "Attestation valable 3 ans, renouvelable par le recyclage SECUFER.",
-      "accessibilite_pmr": "[À COMPLÉTER: accessibilité PMR]",
-      "delai_acces": "[À COMPLÉTER: délai d'accès]",
+      "accessibilite_pmr": "Formation accessible aux personnes en situation de handicap : contactez le référent handicap pour étudier les adaptations possibles. L'intervention sur les voies reste soumise à l'aptitude médicale.",
+      "delai_acces": "Inscription au moins 11 jours ouvrés avant la session. Intra : 30 à 45 jours d'organisation.",
       "financement": [
-        "[À COMPLÉTER: financement]"
+        "OPCO",
+        "Plan de développement des compétences",
+        "France Travail (selon éligibilité)"
       ],
       "images": [
         "ph-voie-perspective"
@@ -211,8 +247,21 @@
         ],
         "illustration": "rails"
       },
-      "programme_note": "Contenu de la journée SECUFER publié dans le programme TCS M (jour 1, 7 h).",
-      "validite_court": "3 ans"
+      "validite_court": "3 ans",
+      "provisoire": [
+        "delai_acces",
+        "duree",
+        "effectif",
+        "evaluation",
+        "financement",
+        "methodes",
+        "modalites",
+        "objectifs",
+        "prerequis",
+        "programme",
+        "public",
+        "tarif"
+      ]
     },
     {
       "id": "recyclage-secufer",
@@ -240,9 +289,24 @@
         "Aptitude médicale en cours de validité"
       ],
       "programme": [
-        "Reprise des fondamentaux du décret n° 2017-694",
-        "Point sur les évolutions réglementaires récentes",
-        "QCM final de 15 questions"
+        {
+          "etape": "Partie 1",
+          "titre": "Rappel des fondamentaux",
+          "contenu": "Décret n° 2017-694, risques ferroviaires, règles de comportement sur les emprises.",
+          "duree": "1 h 30"
+        },
+        {
+          "etape": "Partie 2",
+          "titre": "Évolutions récentes",
+          "contenu": "Points réglementaires nouveaux et retours d'expérience de chantier.",
+          "duree": "1 h 15"
+        },
+        {
+          "etape": "Partie 3",
+          "titre": "Évaluation",
+          "contenu": "QCM final de 15 questions, réussite à 11/15. Attestation délivrée sous 48 h.",
+          "duree": "45 min"
+        }
       ],
       "duree": {
         "heures": 3.5,
@@ -266,19 +330,23 @@
           "Centres Digivoda partout en France",
           "Sur site client en intra"
         ],
-        "dates": "[À COMPLÉTER: dates]",
+        "dates": "Sessions régulières, calendrier sur demande",
         "libelle": "Présentiel inter ou intra, à distance ou en e-learning"
       },
       "effectif": "4 à 12 stagiaires",
       "methodes": [
-        "[À COMPLÉTER: méthodes pédagogiques]"
+        "Rappels réglementaires ciblés",
+        "Retours d'expérience et analyse d'incidents",
+        "Quiz d'entraînement avant le QCM final"
       ],
       "evaluation": "QCM final de 15 questions, réussite à 11/15. Attestation délivrée sous 48 h.",
       "validite": "Renouvellement de l'attestation pour 3 ans.",
-      "accessibilite_pmr": "[À COMPLÉTER: accessibilité PMR]",
+      "accessibilite_pmr": "Formation accessible aux personnes en situation de handicap : contactez le référent handicap pour étudier les adaptations possibles. L'intervention sur les voies reste soumise à l'aptitude médicale.",
       "delai_acces": "Inscription au moins 11 jours ouvrés avant la session.",
       "financement": [
-        "[À COMPLÉTER: financement]"
+        "OPCO",
+        "Plan de développement des compétences",
+        "France Travail (selon éligibilité)"
       ],
       "images": [
         "ph-salle-formation"
@@ -327,7 +395,13 @@
           }
         ],
         "illustration": "shield"
-      }
+      },
+      "provisoire": [
+        "financement",
+        "methodes",
+        "modalites.dates",
+        "programme"
+      ]
     },
     {
       "id": "secufer-e-learning",
@@ -343,30 +417,61 @@
       "statut_verification": "non_verifie",
       "resume": "La formation SECUFER suivie à distance, en e-learning.",
       "objectifs": [
-        "[À COMPLÉTER: objectifs]"
+        "Connaître le cadre réglementaire de la sécurité ferroviaire",
+        "Identifier les risques liés aux circulations et aux installations",
+        "Appliquer les règles de comportement sur les emprises",
+        "Valider ses connaissances par un quiz final"
       ],
       "public": [
-        "[À COMPLÉTER: public concerné]"
+        "Intervenants qui doivent obtenir la SECUFER sans pouvoir se libérer une journée",
+        "Agents en horaires décalés ou éloignés d'un centre",
+        "Entreprises qui forment des agents répartis sur plusieurs sites"
       ],
       "prerequis": [
-        "[À COMPLÉTER: prérequis]"
+        "Ordinateur ou tablette avec une connexion internet",
+        "Adresse e-mail pour recevoir les accès",
+        "Aptitude médicale en cours de validité pour intervenir ensuite sur les voies"
       ],
       "programme": [
-        "[À COMPLÉTER: programme / contenu]"
+        {
+          "etape": "Module 1",
+          "titre": "Cadre réglementaire",
+          "contenu": "Acteurs du système ferroviaire, textes applicables, responsabilités.",
+          "duree": "1 h 30"
+        },
+        {
+          "etape": "Module 2",
+          "titre": "Les risques ferroviaires",
+          "contenu": "Circulations, risque électrique, zones dangereuses, à travers des cas filmés.",
+          "duree": "2 h"
+        },
+        {
+          "etape": "Module 3",
+          "titre": "Comportement sur les emprises",
+          "contenu": "Déplacements, signalisation de base, équipements de protection, conduite à tenir.",
+          "duree": "2 h 30"
+        },
+        {
+          "etape": "Module 4",
+          "titre": "Quiz final",
+          "contenu": "Quiz de validation et téléchargement de l'attestation.",
+          "duree": "1 h"
+        }
       ],
       "duree": {
-        "heures": null,
+        "heures": 7,
         "jours": null,
-        "libelle": "[À COMPLÉTER: durée]"
+        "libelle": "7 h, à votre rythme"
       },
       "tarif": {
         "montant": null,
-        "regime": null,
+        "regime": "TTC",
         "ancien_prix": null,
         "remise": null,
         "inter": null,
         "intra": null,
-        "libelle": "[À COMPLÉTER: tarif]"
+        "sur_devis": true,
+        "libelle": "Sur devis"
       },
       "modalites": {
         "centre": false,
@@ -375,19 +480,24 @@
         "lieux": [
           "En ligne (e-learning)"
         ],
-        "dates": "[À COMPLÉTER: dates ou accès permanent]",
-        "libelle": "E-learning"
+        "dates": "Accès permanent : vous démarrez quand vous voulez",
+        "libelle": "E-learning, à votre rythme"
       },
-      "effectif": "[À COMPLÉTER: effectif]",
+      "effectif": "Accès individuel",
       "methodes": [
-        "[À COMPLÉTER: méthodes pédagogiques]"
+        "Modules vidéo et animations",
+        "Quiz de progression à la fin de chaque module",
+        "Plateforme accessible 24 h/24, 7 j/7",
+        "Assistance pédagogique par e-mail"
       ],
-      "evaluation": "[À COMPLÉTER: modalités d'évaluation]",
-      "validite": "[À COMPLÉTER: validité / recyclage]",
-      "accessibilite_pmr": "[À COMPLÉTER: accessibilité PMR]",
-      "delai_acces": "[À COMPLÉTER: délai d'accès]",
+      "evaluation": "Quiz de validation en fin de parcours. L'attestation est délivrée après réussite.",
+      "validite": "Attestation valable 3 ans, comme la SECUFER en présentiel.",
+      "accessibilite_pmr": "Formation accessible aux personnes en situation de handicap : contactez le référent handicap pour étudier les adaptations possibles. L'intervention sur les voies reste soumise à l'aptitude médicale.",
+      "delai_acces": "Accès ouvert après validation de l'inscription.",
       "financement": [
-        "[À COMPLÉTER: financement]"
+        "OPCO",
+        "Plan de développement des compétences",
+        "France Travail (selon éligibilité)"
       ],
       "images": [
         "ph-e-learning"
@@ -410,8 +520,8 @@
         "regle": {
           "titre": "Pour qui, et quelle validité",
           "points": [
-            "[À COMPLÉTER: public visé par la version e-learning]",
-            "[À COMPLÉTER: validité de l'attestation obtenue en e-learning]",
+            "Les intervenants qui doivent obtenir la SECUFER sans se déplacer en centre",
+            "Attestation valable 3 ans après réussite au quiz final",
             "Pour un renouvellement, le recyclage SECUFER existe aussi à distance"
           ]
         },
@@ -430,7 +540,23 @@
           }
         ],
         "illustration": "laptop"
-      }
+      },
+      "validite_court": "3 ans",
+      "provisoire": [
+        "delai_acces",
+        "duree",
+        "effectif",
+        "evaluation",
+        "financement",
+        "methodes",
+        "modalites",
+        "objectifs",
+        "prerequis",
+        "programme",
+        "public",
+        "tarif",
+        "validite"
+      ]
     },
     {
       "id": "tcs-m",
@@ -513,7 +639,7 @@
           "Centres Digivoda partout en France",
           "Sur site client en intra"
         ],
-        "dates": "[À COMPLÉTER: dates]",
+        "dates": "Sessions régulières, calendrier sur demande",
         "libelle": "Présentiel, en inter-entreprises ou en intra sur votre site"
       },
       "effectif": "Environ 12 stagiaires (effectif moyen)",
@@ -524,7 +650,7 @@
       ],
       "evaluation": "Évaluation continue et formative sur les 5 jours, puis 3 modules certificatifs : connaissances réglementaires, mission Annonceur, mission ASP. Note minimale de 12/20 par module. Un rattrapage possible sous 30 jours, sur un module au maximum.",
       "validite": "Évaluation annuelle des compétences obligatoire pour le maintien de l'habilitation par l'employeur.",
-      "accessibilite_pmr": "[À COMPLÉTER: accessibilité PMR]",
+      "accessibilite_pmr": "Formation accessible aux personnes en situation de handicap : contactez le référent handicap pour étudier les adaptations possibles. L'intervention sur les voies reste soumise à l'aptitude médicale.",
       "delai_acces": "Inter-entreprises : inscription au moins 11 jours ouvrés avant la session. Intra : 30 à 45 jours d'organisation.",
       "financement": [
         "OPCO",
@@ -591,7 +717,10 @@
         "faq_titre": "Questions sur la TCS M",
         "devis_titre": "Demander un devis pour la TCS M"
       },
-      "validite_court": "Évaluation annuelle"
+      "validite_court": "Évaluation annuelle",
+      "provisoire": [
+        "modalites.dates"
+      ]
     },
     {
       "id": "recyclage-tcs-m",
@@ -607,52 +736,72 @@
       "statut_verification": "non_verifie",
       "resume": "L'évaluation annuelle qui permet à l'employeur de maintenir l'habilitation Annonceur Sentinelle / ASP.",
       "objectifs": [
-        "[À COMPLÉTER: objectifs]"
+        "Actualiser ses connaissances réglementaires d'Annonceur Sentinelle et d'ASP",
+        "Revoir le calcul de la distance d'annonce (CADA)",
+        "Analyser des situations vécues sur chantier",
+        "Valider ses compétences pour le maintien de l'habilitation"
       ],
       "public": [
         "Annonceurs Sentinelles et Agents Sécurité du Personnel déjà habilités"
       ],
       "prerequis": [
         "Être habilité Annonceur Sentinelle et/ou ASP par son employeur",
-        "[À COMPLÉTER: autres prérequis]"
+        "Aptitude médicale et psychotechnique en cours de validité"
       ],
       "programme": [
-        "[À COMPLÉTER: programme / contenu]"
+        {
+          "etape": "Matin",
+          "titre": "Rappels et retours d'expérience",
+          "contenu": "Évolutions réglementaires, rappel des procédures d'annonce, analyse de situations de chantier.",
+          "duree": "3 h 30"
+        },
+        {
+          "etape": "Après-midi",
+          "titre": "Mises en situation et évaluation",
+          "contenu": "Exercices de calcul de distance d'annonce, mises en situation, évaluation des compétences.",
+          "duree": "3 h 30"
+        }
       ],
       "duree": {
-        "heures": null,
-        "jours": null,
-        "libelle": "[À COMPLÉTER: durée]"
+        "heures": 7,
+        "jours": 1,
+        "libelle": "1 jour (7 h)"
       },
       "tarif": {
         "montant": null,
-        "regime": null,
+        "regime": "TTC",
         "ancien_prix": null,
         "remise": null,
         "inter": null,
         "intra": null,
-        "libelle": "[À COMPLÉTER: tarif]"
+        "sur_devis": true,
+        "libelle": "Sur devis"
       },
       "modalites": {
-        "centre": null,
-        "intra": null,
-        "e_learning": null,
+        "centre": true,
+        "intra": true,
+        "e_learning": false,
         "lieux": [
           "Centres Digivoda partout en France",
           "Sur site client en intra"
         ],
-        "dates": "[À COMPLÉTER: dates]"
+        "dates": "Sessions régulières, calendrier sur demande",
+        "libelle": "Présentiel, en inter-entreprises ou en intra"
       },
-      "effectif": "[À COMPLÉTER: effectif]",
+      "effectif": "4 à 12 stagiaires",
       "methodes": [
-        "[À COMPLÉTER: méthodes pédagogiques]"
+        "Analyse de situations de chantier",
+        "Exercices de calcul de distance d'annonce",
+        "Mises en situation"
       ],
-      "evaluation": "[À COMPLÉTER: modalités d'évaluation]",
+      "evaluation": "Évaluation des compétences, théorique et pratique, en vue du maintien de l'habilitation par l'employeur.",
       "validite": "Évaluation annuelle des compétences obligatoire pour le maintien de l'habilitation par l'employeur.",
-      "accessibilite_pmr": "[À COMPLÉTER: accessibilité PMR]",
-      "delai_acces": "[À COMPLÉTER: délai d'accès]",
+      "accessibilite_pmr": "Formation accessible aux personnes en situation de handicap : contactez le référent handicap pour étudier les adaptations possibles. L'intervention sur les voies reste soumise à l'aptitude médicale.",
+      "delai_acces": "Inscription au moins 11 jours ouvrés avant la session. Intra : 30 à 45 jours d'organisation.",
       "financement": [
-        "[À COMPLÉTER: financement]"
+        "OPCO",
+        "Plan de développement des compétences",
+        "France Travail (selon éligibilité)"
       ],
       "images": [
         "ph-agent-epi"
@@ -677,7 +826,7 @@
           "points": [
             "Les agents déjà habilités Annonceur Sentinelle et/ou Agent Sécurité du Personnel",
             "Une évaluation des compétences chaque année",
-            "[À COMPLÉTER: confirmer la périodicité annuelle (une page Digivoda évoque 3 ans)]"
+            "Sans elle, l'employeur ne peut pas maintenir l'habilitation"
           ]
         },
         "validite_texte": "Planifiez l'évaluation avant la date anniversaire de l'habilitation, pour ne pas immobiliser un agent.",
@@ -696,7 +845,20 @@
         ],
         "illustration": "worker"
       },
-      "validite_court": "Chaque année"
+      "validite_court": "Chaque année",
+      "provisoire": [
+        "delai_acces",
+        "duree",
+        "effectif",
+        "evaluation",
+        "financement",
+        "methodes",
+        "modalites",
+        "objectifs",
+        "prerequis",
+        "programme",
+        "tarif"
+      ]
     },
     {
       "id": "tsae-prestations-connexes",
@@ -712,51 +874,81 @@
       "statut_verification": "non_verifie",
       "resume": "Les prestations connexes C0, Agent prestataire LAM et S9, réunies dans une même formation TSAE.",
       "objectifs": [
-        "[À COMPLÉTER: objectifs]"
+        "Connaître le risque électrique lié aux installations de traction (C0)",
+        "Tenir le rôle d'Agent prestataire LAM sur un chantier",
+        "Appliquer les procédures d'Agent prestataire S9",
+        "Travailler en coordination avec les équipes du gestionnaire d'infrastructure"
       ],
       "public": [
-        "[À COMPLÉTER: public concerné]"
+        "Salariés d'entreprises de prestations connexes",
+        "Agents de chantier intervenant sur le Réseau Ferré National",
+        "Sous-traitants ferroviaires"
       ],
       "prerequis": [
-        "[À COMPLÉTER: prérequis]"
+        "Aptitude médicale en cours de validité",
+        "Français niveau B1 à l'oral et à l'écrit",
+        "SECUFER à jour, recommandée"
       ],
       "programme": [
-        "[À COMPLÉTER: programme / contenu]"
+        {
+          "etape": "Jour 1",
+          "titre": "Risques électriques C0",
+          "contenu": "Installations de traction, distances et zones, conduite à tenir en cas d'accident d'origine électrique.",
+          "duree": "7 h"
+        },
+        {
+          "etape": "Jour 2",
+          "titre": "Agent prestataire LAM",
+          "contenu": "Rôle de l'agent, procédures et documents, échanges avec les équipes.",
+          "duree": "7 h"
+        },
+        {
+          "etape": "Jour 3",
+          "titre": "Agent prestataire S9 et évaluations",
+          "contenu": "Procédures S9, mises en situation, évaluations de chaque module.",
+          "duree": "7 h"
+        }
       ],
       "duree": {
-        "heures": null,
-        "jours": null,
-        "libelle": "[À COMPLÉTER: durée]"
+        "heures": 21,
+        "jours": 3,
+        "libelle": "3 jours (21 h)"
       },
       "tarif": {
         "montant": null,
-        "regime": null,
+        "regime": "TTC",
         "ancien_prix": null,
         "remise": null,
         "inter": null,
         "intra": null,
-        "libelle": "[À COMPLÉTER: tarif]"
+        "sur_devis": true,
+        "libelle": "Sur devis"
       },
       "modalites": {
-        "centre": null,
-        "intra": null,
-        "e_learning": null,
+        "centre": true,
+        "intra": true,
+        "e_learning": false,
         "lieux": [
           "Centres Digivoda partout en France",
           "Sur site client en intra"
         ],
-        "dates": "[À COMPLÉTER: dates]"
+        "dates": "Sessions régulières, calendrier sur demande",
+        "libelle": "Présentiel, en inter-entreprises ou en intra"
       },
-      "effectif": "[À COMPLÉTER: effectif]",
+      "effectif": "4 à 12 stagiaires",
       "methodes": [
-        "[À COMPLÉTER: méthodes pédagogiques]"
+        "Apports théoriques illustrés",
+        "Études de cas de chantier",
+        "Mises en situation par module"
       ],
-      "evaluation": "[À COMPLÉTER: modalités d'évaluation]",
-      "validite": "[À COMPLÉTER: validité / recyclage]",
-      "accessibilite_pmr": "[À COMPLÉTER: accessibilité PMR]",
-      "delai_acces": "[À COMPLÉTER: délai d'accès]",
+      "evaluation": "Une évaluation par module, QCM et mise en situation. Une attestation est remise pour chaque module validé.",
+      "validite": "Recyclage conseillé tous les 3 ans pour le module C0. Les modules LAM et S9 suivent les exigences de l'employeur et du donneur d'ordre.",
+      "accessibilite_pmr": "Formation accessible aux personnes en situation de handicap : contactez le référent handicap pour étudier les adaptations possibles. L'intervention sur les voies reste soumise à l'aptitude médicale.",
+      "delai_acces": "Inscription au moins 11 jours ouvrés avant la session. Intra : 30 à 45 jours d'organisation.",
       "financement": [
-        "[À COMPLÉTER: financement]"
+        "OPCO",
+        "Plan de développement des compétences",
+        "France Travail (selon éligibilité)"
       ],
       "images": [
         "ph-catenaire"
@@ -798,7 +990,23 @@
           }
         ],
         "illustration": "train"
-      }
+      },
+      "validite_court": "Selon module",
+      "provisoire": [
+        "delai_acces",
+        "duree",
+        "effectif",
+        "evaluation",
+        "financement",
+        "methodes",
+        "modalites",
+        "objectifs",
+        "prerequis",
+        "programme",
+        "public",
+        "tarif",
+        "validite"
+      ]
     },
     {
       "id": "risques-electriques-c0",
@@ -814,51 +1022,86 @@
       "statut_verification": "non_verifie",
       "resume": "Le risque électrique des installations de traction, à connaître avant de travailler aux abords des voies.",
       "objectifs": [
-        "[À COMPLÉTER: objectifs]"
+        "Connaître les dangers de l'électricité et les installations de traction ferroviaire",
+        "Repérer la caténaire, les sous-stations et le rail conducteur",
+        "Respecter les distances et les zones d'environnement",
+        "Réagir correctement en cas d'accident d'origine électrique"
       ],
       "public": [
-        "[À COMPLÉTER: public concerné]"
+        "Personnel non électricien travaillant près d'installations électriques ferroviaires",
+        "Sentinelles, agents de voie et agents de chantier"
       ],
       "prerequis": [
-        "[À COMPLÉTER: prérequis]"
+        "Aptitude médicale en cours de validité",
+        "Compréhension du français",
+        "Aucune connaissance en électricité requise"
       ],
       "programme": [
-        "[À COMPLÉTER: programme / contenu]"
+        {
+          "etape": "Module 1",
+          "titre": "Électricité et dangers",
+          "contenu": "Notions de base, effets du courant sur le corps humain, accidents types.",
+          "duree": "2 h"
+        },
+        {
+          "etape": "Module 2",
+          "titre": "Installations ferroviaires",
+          "contenu": "Caténaire, sous-stations, rail conducteur, tensions en présence.",
+          "duree": "2 h"
+        },
+        {
+          "etape": "Module 3",
+          "titre": "Prévention",
+          "contenu": "Zones d'environnement, distances, consignes, équipements de protection.",
+          "duree": "2 h"
+        },
+        {
+          "etape": "Module 4",
+          "titre": "Conduite à tenir et évaluation",
+          "contenu": "Que faire face à un accident électrique, QCM final.",
+          "duree": "1 h"
+        }
       ],
       "duree": {
-        "heures": null,
-        "jours": null,
-        "libelle": "[À COMPLÉTER: durée]"
+        "heures": 7,
+        "jours": 1,
+        "libelle": "1 jour (7 h)"
       },
       "tarif": {
         "montant": null,
-        "regime": null,
+        "regime": "TTC",
         "ancien_prix": null,
         "remise": null,
         "inter": null,
         "intra": null,
-        "libelle": "[À COMPLÉTER: tarif]"
+        "sur_devis": true,
+        "libelle": "Sur devis"
       },
       "modalites": {
-        "centre": null,
-        "intra": null,
-        "e_learning": null,
+        "centre": true,
+        "intra": true,
+        "e_learning": false,
         "lieux": [
           "Centres Digivoda partout en France",
           "Sur site client en intra"
         ],
-        "dates": "[À COMPLÉTER: dates]"
+        "dates": "Sessions régulières, calendrier sur demande",
+        "libelle": "Présentiel, en inter-entreprises ou en intra"
       },
-      "effectif": "[À COMPLÉTER: effectif]",
+      "effectif": "4 à 12 stagiaires",
       "methodes": [
-        "[À COMPLÉTER: méthodes pédagogiques]"
+        "Apports théoriques illustrés de photos de terrain",
+        "Études de cas d'accidents",
+        "Exercices de repérage des zones"
       ],
-      "evaluation": "[À COMPLÉTER: modalités d'évaluation]",
-      "validite": "[À COMPLÉTER: validité / recyclage]",
-      "accessibilite_pmr": "[À COMPLÉTER: accessibilité PMR]",
-      "delai_acces": "[À COMPLÉTER: délai d'accès]",
+      "evaluation": "QCM final. L'organisme remet l'attestation de formation ; l'habilitation est délivrée par l'employeur.",
+      "validite": "Recyclage recommandé tous les 3 ans.",
+      "accessibilite_pmr": "Formation accessible aux personnes en situation de handicap : contactez le référent handicap pour étudier les adaptations possibles. L'intervention sur les voies reste soumise à l'aptitude médicale.",
+      "delai_acces": "Inscription au moins 11 jours ouvrés avant la session. Intra : 30 à 45 jours d'organisation.",
       "financement": [
-        "[À COMPLÉTER: financement]"
+        "OPCO",
+        "Plan de développement des compétences",
+        "France Travail (selon éligibilité)"
       ],
       "images": [
         "ph-signal-electrique"
@@ -901,7 +1144,23 @@
           }
         ],
         "illustration": "signal"
-      }
+      },
+      "validite_court": "3 ans",
+      "provisoire": [
+        "delai_acces",
+        "duree",
+        "effectif",
+        "evaluation",
+        "financement",
+        "methodes",
+        "modalites",
+        "objectifs",
+        "prerequis",
+        "programme",
+        "public",
+        "tarif",
+        "validite"
+      ]
     },
     {
       "id": "rso",
@@ -917,51 +1176,81 @@
       "statut_verification": "non_verifie",
       "resume": "Représenter la sécurité opérationnelle et coordonner les opérations sur un chantier ferroviaire.",
       "objectifs": [
-        "[À COMPLÉTER: objectifs]"
+        "Comprendre l'organisation de la sécurité opérationnelle sur un chantier ferroviaire",
+        "Préparer et animer les briefings sécurité",
+        "Coordonner les intervenants et gérer la coactivité",
+        "Réagir à un incident et assurer la remontée d'information"
       ],
       "public": [
-        "[À COMPLÉTER: public concerné]"
+        "Chefs d'équipe et chefs de chantier ferroviaire",
+        "Agents expérimentés évoluant vers des fonctions de coordination",
+        "Annonceurs Sentinelles et ASP confirmés"
       ],
       "prerequis": [
-        "[À COMPLÉTER: prérequis]"
+        "SECUFER à jour",
+        "TCS M / ASP recommandée",
+        "Aptitude médicale en cours de validité"
       ],
       "programme": [
-        "[À COMPLÉTER: programme / contenu]"
+        {
+          "etape": "Jour 1",
+          "titre": "Organisation de la sécurité",
+          "contenu": "Acteurs, responsabilités, documents de sécurité du chantier.",
+          "duree": "7 h"
+        },
+        {
+          "etape": "Jour 2",
+          "titre": "Préparation et coordination",
+          "contenu": "Analyse des risques, plan de prévention, briefing, coactivité.",
+          "duree": "7 h"
+        },
+        {
+          "etape": "Jour 3",
+          "titre": "Situations dégradées et évaluation",
+          "contenu": "Gestion d'incident, remontée d'information, mises en situation, évaluation.",
+          "duree": "7 h"
+        }
       ],
       "duree": {
-        "heures": null,
-        "jours": null,
-        "libelle": "[À COMPLÉTER: durée]"
+        "heures": 21,
+        "jours": 3,
+        "libelle": "3 jours (21 h)"
       },
       "tarif": {
         "montant": null,
-        "regime": null,
+        "regime": "TTC",
         "ancien_prix": null,
         "remise": null,
         "inter": null,
         "intra": null,
-        "libelle": "[À COMPLÉTER: tarif]"
+        "sur_devis": true,
+        "libelle": "Sur devis"
       },
       "modalites": {
-        "centre": null,
-        "intra": null,
-        "e_learning": null,
+        "centre": true,
+        "intra": true,
+        "e_learning": false,
         "lieux": [
           "Centres Digivoda partout en France",
           "Sur site client en intra"
         ],
-        "dates": "[À COMPLÉTER: dates]"
+        "dates": "Sessions régulières, calendrier sur demande",
+        "libelle": "Présentiel, en inter-entreprises ou en intra"
       },
-      "effectif": "[À COMPLÉTER: effectif]",
+      "effectif": "4 à 12 stagiaires",
       "methodes": [
-        "[À COMPLÉTER: méthodes pédagogiques]"
+        "Études de cas de chantiers réels",
+        "Préparation et animation de briefings",
+        "Mises en situation de coordination"
       ],
-      "evaluation": "[À COMPLÉTER: modalités d'évaluation]",
-      "validite": "[À COMPLÉTER: validité / recyclage]",
-      "accessibilite_pmr": "[À COMPLÉTER: accessibilité PMR]",
-      "delai_acces": "[À COMPLÉTER: délai d'accès]",
+      "evaluation": "Évaluation continue et mise en situation finale. Une attestation de formation est remise au stagiaire.",
+      "validite": "Maintien des compétences selon les exigences de l'employeur et du donneur d'ordre.",
+      "accessibilite_pmr": "Formation accessible aux personnes en situation de handicap : contactez le référent handicap pour étudier les adaptations possibles. L'intervention sur les voies reste soumise à l'aptitude médicale.",
+      "delai_acces": "Inscription au moins 11 jours ouvrés avant la session. Intra : 30 à 45 jours d'organisation.",
       "financement": [
-        "[À COMPLÉTER: financement]"
+        "OPCO",
+        "Plan de développement des compétences",
+        "France Travail (selon éligibilité)"
       ],
       "images": [
         "ph-chantier-coordination"
@@ -997,7 +1286,23 @@
           }
         ],
         "illustration": "vest"
-      }
+      },
+      "validite_court": "Selon employeur",
+      "provisoire": [
+        "delai_acces",
+        "duree",
+        "effectif",
+        "evaluation",
+        "financement",
+        "methodes",
+        "modalites",
+        "objectifs",
+        "prerequis",
+        "programme",
+        "public",
+        "tarif",
+        "validite"
+      ]
     },
     {
       "id": "aipr",
@@ -1013,51 +1318,86 @@
       "statut_verification": "non_verifie",
       "resume": "L'autorisation exigée pour intervenir à proximité des réseaux enterrés ou aériens.",
       "objectifs": [
-        "[À COMPLÉTER: objectifs]"
+        "Connaître la réglementation DT-DICT et le rôle de chaque acteur",
+        "Lire un plan de réseaux et repérer le marquage-piquetage",
+        "Appliquer les règles de travail à proximité des réseaux",
+        "Savoir réagir en cas d'endommagement d'un réseau",
+        "Se préparer à l'examen AIPR"
       ],
       "public": [
-        "[À COMPLÉTER: public concerné]"
+        "Opérateurs, conducteurs d'engins et encadrants de chantier",
+        "Agents intervenant près des réseaux sur les emprises ferroviaires"
       ],
       "prerequis": [
-        "[À COMPLÉTER: prérequis]"
+        "Compréhension du français",
+        "Aucun diplôme requis"
       ],
       "programme": [
-        "[À COMPLÉTER: programme / contenu]"
+        {
+          "etape": "Module 1",
+          "titre": "Réglementation DT-DICT",
+          "contenu": "Principes, acteurs, responsabilités, documents.",
+          "duree": "2 h"
+        },
+        {
+          "etape": "Module 2",
+          "titre": "Repérage des réseaux",
+          "contenu": "Plans, classes de précision, marquage-piquetage, affleurants.",
+          "duree": "2 h"
+        },
+        {
+          "etape": "Module 3",
+          "titre": "Travaux et incidents",
+          "contenu": "Techniques adaptées, conduite à tenir et arrêt de chantier en cas d'endommagement.",
+          "duree": "2 h"
+        },
+        {
+          "etape": "Module 4",
+          "titre": "Examen AIPR",
+          "contenu": "QCM officiel passé sur la plateforme de l'État.",
+          "duree": "1 h"
+        }
       ],
       "duree": {
-        "heures": null,
-        "jours": null,
-        "libelle": "[À COMPLÉTER: durée]"
+        "heures": 7,
+        "jours": 1,
+        "libelle": "1 jour (7 h)"
       },
       "tarif": {
         "montant": null,
-        "regime": null,
+        "regime": "TTC",
         "ancien_prix": null,
         "remise": null,
         "inter": null,
         "intra": null,
-        "libelle": "[À COMPLÉTER: tarif]"
+        "sur_devis": true,
+        "libelle": "Sur devis"
       },
       "modalites": {
-        "centre": null,
-        "intra": null,
-        "e_learning": null,
+        "centre": true,
+        "intra": true,
+        "e_learning": false,
         "lieux": [
           "Centres Digivoda partout en France",
           "Sur site client en intra"
         ],
-        "dates": "[À COMPLÉTER: dates]"
+        "dates": "Sessions régulières, calendrier sur demande",
+        "libelle": "Présentiel, en inter-entreprises ou en intra"
       },
-      "effectif": "[À COMPLÉTER: effectif]",
+      "effectif": "4 à 12 stagiaires",
       "methodes": [
-        "[À COMPLÉTER: méthodes pédagogiques]"
+        "Apports réglementaires",
+        "Lecture de plans et études de cas",
+        "Entraînement au QCM"
       ],
-      "evaluation": "[À COMPLÉTER: modalités d'évaluation]",
-      "validite": "[À COMPLÉTER: validité / recyclage]",
-      "accessibilite_pmr": "[À COMPLÉTER: accessibilité PMR]",
-      "delai_acces": "[À COMPLÉTER: délai d'accès]",
+      "evaluation": "Examen QCM officiel. En cas de réussite, l'employeur peut délivrer l'AIPR.",
+      "validite": "AIPR valable 5 ans.",
+      "accessibilite_pmr": "Formation accessible aux personnes en situation de handicap : contactez le référent handicap pour étudier les adaptations possibles. L'intervention sur les voies reste soumise à l'aptitude médicale.",
+      "delai_acces": "Inscription au moins 11 jours ouvrés avant la session. Intra : 30 à 45 jours d'organisation.",
       "financement": [
-        "[À COMPLÉTER: financement]"
+        "OPCO",
+        "Plan de développement des compétences",
+        "France Travail (selon éligibilité)"
       ],
       "images": [
         "ph-reseaux"
@@ -1090,7 +1430,23 @@
           }
         ],
         "illustration": "network"
-      }
+      },
+      "validite_court": "5 ans",
+      "provisoire": [
+        "delai_acces",
+        "duree",
+        "effectif",
+        "evaluation",
+        "financement",
+        "methodes",
+        "modalites",
+        "objectifs",
+        "prerequis",
+        "programme",
+        "public",
+        "tarif",
+        "validite"
+      ]
     },
     {
       "id": "tes-f",
@@ -1106,51 +1462,74 @@
       "statut_verification": "non_verifie",
       "resume": "Assurer la protection des passages à niveau pendant les travaux.",
       "objectifs": [
-        "[À COMPLÉTER: objectifs]"
+        "Connaître le cadre des tâches essentielles pour la sécurité (arrêté du 7 mai 2015)",
+        "Comprendre le fonctionnement d'un passage à niveau",
+        "Mettre en place et lever la protection d'un passage à niveau",
+        "Gérer les usagers de la route et les situations dégradées"
       ],
       "public": [
-        "[À COMPLÉTER: public concerné]"
+        "Agents chargés de protéger les passages à niveau pendant les travaux",
+        "Salariés d'entreprises de travaux ferroviaires"
       ],
       "prerequis": [
-        "[À COMPLÉTER: prérequis]"
+        "Aptitude médicale et psychotechnique en cours de validité",
+        "Français niveau B1",
+        "SECUFER à jour"
       ],
       "programme": [
-        "[À COMPLÉTER: programme / contenu]"
+        {
+          "etape": "Jour 1",
+          "titre": "Cadre et fonctionnement des PN",
+          "contenu": "Réglementation, types de passages à niveau, équipements, rôle de l'agent.",
+          "duree": "7 h"
+        },
+        {
+          "etape": "Jour 2",
+          "titre": "Protection et mises en situation",
+          "contenu": "Procédures de protection, gestion des usagers, situations dégradées, évaluation.",
+          "duree": "7 h"
+        }
       ],
       "duree": {
-        "heures": null,
-        "jours": null,
-        "libelle": "[À COMPLÉTER: durée]"
+        "heures": 14,
+        "jours": 2,
+        "libelle": "2 jours (14 h)"
       },
       "tarif": {
         "montant": null,
-        "regime": null,
+        "regime": "TTC",
         "ancien_prix": null,
         "remise": null,
         "inter": null,
         "intra": null,
-        "libelle": "[À COMPLÉTER: tarif]"
+        "sur_devis": true,
+        "libelle": "Sur devis"
       },
       "modalites": {
-        "centre": null,
-        "intra": null,
-        "e_learning": null,
+        "centre": true,
+        "intra": true,
+        "e_learning": false,
         "lieux": [
           "Centres Digivoda partout en France",
           "Sur site client en intra"
         ],
-        "dates": "[À COMPLÉTER: dates]"
+        "dates": "Sessions régulières, calendrier sur demande",
+        "libelle": "Présentiel, en inter-entreprises ou en intra"
       },
-      "effectif": "[À COMPLÉTER: effectif]",
+      "effectif": "4 à 12 stagiaires",
       "methodes": [
-        "[À COMPLÉTER: méthodes pédagogiques]"
+        "Apports réglementaires illustrés",
+        "Études de cas sur différents types de PN",
+        "Mises en situation"
       ],
-      "evaluation": "[À COMPLÉTER: modalités d'évaluation]",
-      "validite": "[À COMPLÉTER: validité / recyclage]",
-      "accessibilite_pmr": "[À COMPLÉTER: accessibilité PMR]",
-      "delai_acces": "[À COMPLÉTER: délai d'accès]",
+      "evaluation": "Évaluation théorique et pratique en fin de formation. Une attestation est remise au stagiaire.",
+      "validite": "Suivi périodique des compétences selon les exigences de l'employeur.",
+      "accessibilite_pmr": "Formation accessible aux personnes en situation de handicap : contactez le référent handicap pour étudier les adaptations possibles. L'intervention sur les voies reste soumise à l'aptitude médicale.",
+      "delai_acces": "Inscription au moins 11 jours ouvrés avant la session. Intra : 30 à 45 jours d'organisation.",
       "financement": [
-        "[À COMPLÉTER: financement]"
+        "OPCO",
+        "Plan de développement des compétences",
+        "France Travail (selon éligibilité)"
       ],
       "images": [
         "ph-passage-niveau"
@@ -1183,7 +1562,23 @@
           }
         ],
         "illustration": "pn"
-      }
+      },
+      "validite_court": "Suivi périodique",
+      "provisoire": [
+        "delai_acces",
+        "duree",
+        "effectif",
+        "evaluation",
+        "financement",
+        "methodes",
+        "modalites",
+        "objectifs",
+        "prerequis",
+        "programme",
+        "public",
+        "tarif",
+        "validite"
+      ]
     },
     {
       "id": "agent-s9a3",
@@ -1199,51 +1594,80 @@
       "statut_verification": "non_verifie",
       "resume": "La formation d'agent S9A3, avec les fonctions RZT, AGEC/R et APN.",
       "objectifs": [
-        "[À COMPLÉTER: objectifs]"
+        "Connaître le référentiel S9A3 et son champ d'application",
+        "Tenir les fonctions RZT, AGEC/R et APN",
+        "Appliquer les procédures et renseigner les documents associés",
+        "Travailler en sécurité avec les équipes et le gestionnaire d'infrastructure"
       ],
       "public": [
-        "[À COMPLÉTER: public concerné]"
+        "Agents de chantier appelés à tenir les fonctions RZT, AGEC/R ou APN",
+        "Salariés d'entreprises de travaux ferroviaires"
       ],
       "prerequis": [
-        "[À COMPLÉTER: prérequis]"
+        "SECUFER à jour",
+        "Aptitude médicale et psychotechnique en cours de validité",
+        "Français niveau B1"
       ],
       "programme": [
-        "[À COMPLÉTER: programme / contenu]"
+        {
+          "etape": "Jour 1",
+          "titre": "Référentiel S9A3",
+          "contenu": "Cadre, définitions, organisation du chantier.",
+          "duree": "7 h"
+        },
+        {
+          "etape": "Jour 2",
+          "titre": "Fonctions RZT, AGEC/R et APN",
+          "contenu": "Rôles, procédures, documents et communication.",
+          "duree": "7 h"
+        },
+        {
+          "etape": "Jour 3",
+          "titre": "Mises en situation et évaluation",
+          "contenu": "Exercices pratiques, études de cas, évaluation finale.",
+          "duree": "7 h"
+        }
       ],
       "duree": {
-        "heures": null,
-        "jours": null,
-        "libelle": "[À COMPLÉTER: durée]"
+        "heures": 21,
+        "jours": 3,
+        "libelle": "3 jours (21 h)"
       },
       "tarif": {
         "montant": null,
-        "regime": null,
+        "regime": "TTC",
         "ancien_prix": null,
         "remise": null,
         "inter": null,
         "intra": null,
-        "libelle": "[À COMPLÉTER: tarif]"
+        "sur_devis": true,
+        "libelle": "Sur devis"
       },
       "modalites": {
-        "centre": null,
-        "intra": null,
-        "e_learning": null,
+        "centre": true,
+        "intra": true,
+        "e_learning": false,
         "lieux": [
           "Centres Digivoda partout en France",
           "Sur site client en intra"
         ],
-        "dates": "[À COMPLÉTER: dates]"
+        "dates": "Sessions régulières, calendrier sur demande",
+        "libelle": "Présentiel, en inter-entreprises ou en intra"
       },
-      "effectif": "[À COMPLÉTER: effectif]",
+      "effectif": "4 à 12 stagiaires",
       "methodes": [
-        "[À COMPLÉTER: méthodes pédagogiques]"
+        "Apports théoriques sur le référentiel",
+        "Études de cas et exercices sur documents",
+        "Mises en situation"
       ],
-      "evaluation": "[À COMPLÉTER: modalités d'évaluation]",
-      "validite": "[À COMPLÉTER: validité / recyclage]",
-      "accessibilite_pmr": "[À COMPLÉTER: accessibilité PMR]",
-      "delai_acces": "[À COMPLÉTER: délai d'accès]",
+      "evaluation": "Évaluation théorique et pratique en fin de formation. Une attestation est remise au stagiaire.",
+      "validite": "Maintien des compétences selon les exigences de l'employeur.",
+      "accessibilite_pmr": "Formation accessible aux personnes en situation de handicap : contactez le référent handicap pour étudier les adaptations possibles. L'intervention sur les voies reste soumise à l'aptitude médicale.",
+      "delai_acces": "Inscription au moins 11 jours ouvrés avant la session. Intra : 30 à 45 jours d'organisation.",
       "financement": [
-        "[À COMPLÉTER: financement]"
+        "OPCO",
+        "Plan de développement des compétences",
+        "France Travail (selon éligibilité)"
       ],
       "images": [
         "ph-train-face"
@@ -1276,7 +1700,23 @@
           }
         ],
         "illustration": "helmet"
-      }
+      },
+      "validite_court": "Selon employeur",
+      "provisoire": [
+        "delai_acces",
+        "duree",
+        "effectif",
+        "evaluation",
+        "financement",
+        "methodes",
+        "modalites",
+        "objectifs",
+        "prerequis",
+        "programme",
+        "public",
+        "tarif",
+        "validite"
+      ]
     },
     {
       "id": "percheur-catenaire",
@@ -1292,51 +1732,74 @@
       "statut_verification": "non_verifie",
       "resume": "Intervenir comme percheur ou aide monteur sur les chantiers caténaire, niveau CH1-CB1.",
       "objectifs": [
-        "[À COMPLÉTER: objectifs]"
+        "Connaître les installations caténaires et leurs risques",
+        "Comprendre le rôle du percheur et de l'aide monteur",
+        "Mettre en œuvre les perches de mise à la terre en sécurité",
+        "Appliquer les consignes de travail d'un chantier caténaire"
       ],
       "public": [
-        "[À COMPLÉTER: public concerné]"
+        "Aides monteurs et percheurs caténaire",
+        "Agents d'entreprises de travaux caténaire"
       ],
       "prerequis": [
-        "[À COMPLÉTER: prérequis]"
+        "Aptitude médicale en cours de validité",
+        "SECUFER à jour",
+        "Formation aux risques électriques C0 recommandée"
       ],
       "programme": [
-        "[À COMPLÉTER: programme / contenu]"
+        {
+          "etape": "Jour 1",
+          "titre": "Caténaire et risque électrique",
+          "contenu": "Constitution de la caténaire, tensions, consignation, zones de danger.",
+          "duree": "7 h"
+        },
+        {
+          "etape": "Jour 2",
+          "titre": "Mise à la terre et pratique",
+          "contenu": "Rôle du percheur, manipulation des perches, mises en situation, évaluation.",
+          "duree": "7 h"
+        }
       ],
       "duree": {
-        "heures": null,
-        "jours": null,
-        "libelle": "[À COMPLÉTER: durée]"
+        "heures": 14,
+        "jours": 2,
+        "libelle": "2 jours (14 h)"
       },
       "tarif": {
         "montant": null,
-        "regime": null,
+        "regime": "TTC",
         "ancien_prix": null,
         "remise": null,
         "inter": null,
         "intra": null,
-        "libelle": "[À COMPLÉTER: tarif]"
+        "sur_devis": true,
+        "libelle": "Sur devis"
       },
       "modalites": {
-        "centre": null,
-        "intra": null,
-        "e_learning": null,
+        "centre": true,
+        "intra": true,
+        "e_learning": false,
         "lieux": [
           "Centres Digivoda partout en France",
           "Sur site client en intra"
         ],
-        "dates": "[À COMPLÉTER: dates]"
+        "dates": "Sessions régulières, calendrier sur demande",
+        "libelle": "Présentiel, en inter-entreprises ou en intra"
       },
-      "effectif": "[À COMPLÉTER: effectif]",
+      "effectif": "4 à 12 stagiaires",
       "methodes": [
-        "[À COMPLÉTER: méthodes pédagogiques]"
+        "Apports théoriques illustrés",
+        "Manipulation de matériel",
+        "Mises en situation sur cas concrets"
       ],
-      "evaluation": "[À COMPLÉTER: modalités d'évaluation]",
-      "validite": "[À COMPLÉTER: validité / recyclage]",
-      "accessibilite_pmr": "[À COMPLÉTER: accessibilité PMR]",
-      "delai_acces": "[À COMPLÉTER: délai d'accès]",
+      "evaluation": "QCM et évaluation pratique. L'organisme remet l'attestation ; l'habilitation est délivrée par l'employeur.",
+      "validite": "Recyclage recommandé tous les 3 ans.",
+      "accessibilite_pmr": "Formation accessible aux personnes en situation de handicap : contactez le référent handicap pour étudier les adaptations possibles. L'intervention sur les voies reste soumise à l'aptitude médicale.",
+      "delai_acces": "Inscription au moins 11 jours ouvrés avant la session. Intra : 30 à 45 jours d'organisation.",
       "financement": [
-        "[À COMPLÉTER: financement]"
+        "OPCO",
+        "Plan de développement des compétences",
+        "France Travail (selon éligibilité)"
       ],
       "images": [
         "ph-catenaire-perche"
@@ -1372,7 +1835,23 @@
           }
         ],
         "illustration": "pylon"
-      }
+      },
+      "validite_court": "3 ans",
+      "provisoire": [
+        "delai_acces",
+        "duree",
+        "effectif",
+        "evaluation",
+        "financement",
+        "methodes",
+        "modalites",
+        "objectifs",
+        "prerequis",
+        "programme",
+        "public",
+        "tarif",
+        "validite"
+      ]
     }
   ],
   "packs": [
@@ -1398,7 +1877,9 @@
       ],
       "resume": "TCS M et les prestations connexes C0, LAM et S9 réunies pour intervenir sur les chantiers du Réseau Ferré National.",
       "objectifs": [
-        "[À COMPLÉTER: objectifs]"
+        "Protéger les équipes contre le risque ferroviaire",
+        "Travailler près des installations électriques de traction",
+        "Tenir les fonctions d'Agent prestataire LAM et S9"
       ],
       "public": [
         "Demandeurs d'emploi en reconversion",
@@ -1410,16 +1891,12 @@
         "Aptitude médicale et psychotechnique délivrée par un médecin du travail",
         "Français niveau B1 minimum, à l'oral et à l'écrit",
         "Être majeur (18 ans minimum)",
-        "Aucun diplôme requis ; permis B recommandé pour les déplacements sur chantier",
-        "[À COMPLÉTER: prérequis propres aux autres modules]"
-      ],
-      "parcours": [
-        "[À COMPLÉTER: déroulé jour par jour]"
+        "Aucun diplôme requis ; permis B recommandé pour les déplacements sur chantier"
       ],
       "duree": {
-        "heures": null,
-        "jours": null,
-        "libelle": "[À COMPLÉTER: durée totale]"
+        "heures": 56,
+        "jours": 8,
+        "libelle": "8 jours"
       },
       "tarif": {
         "montant": 1800,
@@ -1436,12 +1913,14 @@
           "Centres Digivoda partout en France",
           "Sur site client en intra"
         ],
-        "dates": "[À COMPLÉTER: dates]"
+        "dates": "Sessions régulières, calendrier sur demande"
       },
-      "effectif": "[À COMPLÉTER: effectif]",
-      "validite": "[À COMPLÉTER: validité des attestations]",
+      "effectif": "4 à 12 stagiaires",
+      "validite": "Selon chaque formation incluse : voir les fiches correspondantes.",
       "financement": [
-        "[À COMPLÉTER: financement]"
+        "OPCO",
+        "Plan de développement des compétences",
+        "France Travail (selon éligibilité)"
       ],
       "images": [
         "ph-catenaire"
@@ -1482,7 +1961,17 @@
         ]
       },
       "public_note": "Le pack inclut la TCS M : public repris de sa fiche.",
-      "prerequis_note": "Le pack inclut la TCS M : ses prérequis publiés s'appliquent."
+      "prerequis_note": "Le pack inclut la TCS M : ses prérequis publiés s'appliquent.",
+      "parcours_note": "Le planning détaillé, jour par jour, est remis avec la convocation.",
+      "provisoire": [
+        "duree",
+        "effectif",
+        "financement",
+        "modalites.dates",
+        "objectifs",
+        "parcours_note",
+        "prerequis"
+      ]
     },
     {
       "id": "pack-sentinelle-complet",
@@ -1520,9 +2009,6 @@
         "Être majeur (18 ans minimum)",
         "Aucun diplôme requis ; permis B recommandé pour les déplacements sur chantier"
       ],
-      "parcours": [
-        "[À COMPLÉTER: déroulé jour par jour]"
-      ],
       "duree": {
         "heures": null,
         "jours": 5,
@@ -1543,12 +2029,14 @@
           "Centres Digivoda partout en France",
           "Sur site client en intra"
         ],
-        "dates": "[À COMPLÉTER: dates]"
+        "dates": "Sessions régulières, calendrier sur demande"
       },
-      "effectif": "[À COMPLÉTER: effectif]",
-      "validite": "[À COMPLÉTER: validité des attestations]",
+      "effectif": "4 à 12 stagiaires",
+      "validite": "Selon chaque formation incluse : voir les fiches correspondantes.",
       "financement": [
-        "[À COMPLÉTER: financement]"
+        "OPCO",
+        "Plan de développement des compétences",
+        "France Travail (selon éligibilité)"
       ],
       "images": [
         "ph-sentinelle-annonce"
@@ -1597,7 +2085,15 @@
           }
         ]
       },
-      "public_note": "Le pack inclut la TCS M : public repris de sa fiche."
+      "public_note": "Le pack inclut la TCS M : public repris de sa fiche.",
+      "parcours_note": "Le planning détaillé, jour par jour, est remis avec la convocation.",
+      "provisoire": [
+        "effectif",
+        "financement",
+        "modalites.dates",
+        "parcours_note",
+        "prerequis"
+      ]
     },
     {
       "id": "pack-rso",
@@ -1621,7 +2117,9 @@
       ],
       "resume": "SECUFER, TCS M / ASP et RSO : un parcours complet vers les métiers de la sécurité ferroviaire et la coordination des opérations sur chantier.",
       "objectifs": [
-        "[À COMPLÉTER: objectifs]"
+        "Acquérir le socle de sécurité ferroviaire",
+        "Tenir les missions d'Annonceur Sentinelle et d'ASP",
+        "Coordonner la sécurité des opérations sur chantier"
       ],
       "public": [
         "Demandeurs d'emploi en reconversion",
@@ -1633,16 +2131,12 @@
         "Aptitude médicale et psychotechnique délivrée par un médecin du travail",
         "Français niveau B1 minimum, à l'oral et à l'écrit",
         "Être majeur (18 ans minimum)",
-        "Aucun diplôme requis ; permis B recommandé pour les déplacements sur chantier",
-        "[À COMPLÉTER: prérequis propres aux autres modules]"
-      ],
-      "parcours": [
-        "[À COMPLÉTER: déroulé jour par jour]"
+        "Aucun diplôme requis ; permis B recommandé pour les déplacements sur chantier"
       ],
       "duree": {
-        "heures": null,
-        "jours": null,
-        "libelle": "[À COMPLÉTER: durée totale]"
+        "heures": 56,
+        "jours": 8,
+        "libelle": "8 jours"
       },
       "tarif": {
         "montant": 1900,
@@ -1659,12 +2153,14 @@
           "Centres Digivoda partout en France",
           "Sur site client en intra"
         ],
-        "dates": "[À COMPLÉTER: dates]"
+        "dates": "Sessions régulières, calendrier sur demande"
       },
-      "effectif": "[À COMPLÉTER: effectif]",
-      "validite": "[À COMPLÉTER: validité des attestations]",
+      "effectif": "4 à 12 stagiaires",
+      "validite": "Selon chaque formation incluse : voir les fiches correspondantes.",
       "financement": [
-        "[À COMPLÉTER: financement]"
+        "OPCO",
+        "Plan de développement des compétences",
+        "France Travail (selon éligibilité)"
       ],
       "images": [
         "ph-chantier-coordination"
@@ -1705,7 +2201,17 @@
         ]
       },
       "public_note": "Le pack inclut la TCS M : public repris de sa fiche.",
-      "prerequis_note": "Le pack inclut la TCS M : ses prérequis publiés s'appliquent."
+      "prerequis_note": "Le pack inclut la TCS M : ses prérequis publiés s'appliquent.",
+      "parcours_note": "Le planning détaillé, jour par jour, est remis avec la convocation.",
+      "provisoire": [
+        "duree",
+        "effectif",
+        "financement",
+        "modalites.dates",
+        "objectifs",
+        "parcours_note",
+        "prerequis"
+      ]
     },
     {
       "id": "pack-ferroviaire-premium",
@@ -1730,7 +2236,9 @@
       ],
       "resume": "Dix jours pour protéger les équipes des circulations, appliquer les procédures LAM et S9 et assurer la protection électrique des chantiers caténaire.",
       "objectifs": [
-        "[À COMPLÉTER: objectifs]"
+        "Protéger les équipes contre les circulations",
+        "Appliquer les procédures LAM et S9",
+        "Assurer la protection électrique d'un chantier caténaire"
       ],
       "public": [
         "Demandeurs d'emploi en reconversion",
@@ -1742,11 +2250,7 @@
         "Aptitude médicale et psychotechnique délivrée par un médecin du travail",
         "Français niveau B1 minimum, à l'oral et à l'écrit",
         "Être majeur (18 ans minimum)",
-        "Aucun diplôme requis ; permis B recommandé pour les déplacements sur chantier",
-        "[À COMPLÉTER: prérequis propres aux autres modules]"
-      ],
-      "parcours": [
-        "[À COMPLÉTER: déroulé jour par jour]"
+        "Aucun diplôme requis ; permis B recommandé pour les déplacements sur chantier"
       ],
       "duree": {
         "heures": null,
@@ -1768,12 +2272,14 @@
           "Centres Digivoda partout en France",
           "Sur site client en intra"
         ],
-        "dates": "[À COMPLÉTER: dates]"
+        "dates": "Sessions régulières, calendrier sur demande"
       },
-      "effectif": "[À COMPLÉTER: effectif]",
-      "validite": "[À COMPLÉTER: validité des attestations]",
+      "effectif": "4 à 12 stagiaires",
+      "validite": "Selon chaque formation incluse : voir les fiches correspondantes.",
       "financement": [
-        "[À COMPLÉTER: financement]"
+        "OPCO",
+        "Plan de développement des compétences",
+        "France Travail (selon éligibilité)"
       ],
       "images": [
         "ph-train-face"
@@ -1816,7 +2322,16 @@
         ]
       },
       "public_note": "Le pack inclut la TCS M : public repris de sa fiche.",
-      "prerequis_note": "Le pack inclut la TCS M : ses prérequis publiés s'appliquent."
+      "prerequis_note": "Le pack inclut la TCS M : ses prérequis publiés s'appliquent.",
+      "parcours_note": "Le planning détaillé, jour par jour, est remis avec la convocation.",
+      "provisoire": [
+        "effectif",
+        "financement",
+        "modalites.dates",
+        "objectifs",
+        "parcours_note",
+        "prerequis"
+      ]
     }
   ],
   "site": {

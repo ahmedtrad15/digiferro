@@ -48,6 +48,12 @@ for (const path of [...out, '404.html']) {
 }
 const shared = [...new Set([...readFileSync(join(ROOT, 'index.html'), 'utf8').split('<main')[0].matchAll(todoRe)].map((m) => m[1]))];
 lines.push('## En-tête (méga-menu) et pied de page, communs à toutes les pages', '', ...shared.map((l) => `- ${l} (durées non publiées dans le méga-menu)`), '');
+const LABELS = { duree: 'durée', tarif: 'tarif (« Sur devis »)', objectifs: 'objectifs', public: 'public', prerequis: 'prérequis', programme: 'programme', methodes: 'méthodes pédagogiques', evaluation: 'évaluation', validite: 'validité', effectif: 'effectif', modalites: 'modalités et lieux', 'modalites.dates': 'dates', delai_acces: 'délai d’accès', financement: 'financement', parcours_note: 'note de planning du parcours' };
+lines.push('# Valeurs provisoires à confirmer', '', 'Rédigées pour compléter les fiches en attendant les informations de Digivoda. Elles s’affichent normalement sur le site : à vérifier et corriger dans `data/formations.json` (champ `provisoire` de chaque fiche).', '');
+for (const x of [...data.formations, ...data.packs]) {
+  if (x.provisoire?.length) lines.push(`- **${x.titre_court}** (\`${x.page}\`) : ${x.provisoire.map((k) => LABELS[k] || k).join(', ')}`);
+}
+lines.push('');
 writeFileSync(join(ROOT, 'A-COMPLETER.md'), lines.join('\n'));
 
 // Pictogrammes : copie autonome du sprite, réutilisable hors du site

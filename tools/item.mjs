@@ -141,7 +141,8 @@ function courseLD(data, f, extra = {}) {
   if (f.code) ld.courseCode = f.code;
   if (f.tarif?.montant != null)
     ld.offers = { '@type': 'Offer', category: 'Paid', price: String(f.tarif.montant), priceCurrency: 'EUR', url: `${data.site.base_url}/${f.page}` };
-  const inst = { '@type': 'CourseInstance', courseMode: 'Onsite', location: 'Centres Digivoda partout en France ou sur site client' };
+  const online = f.type === 'e-learning';
+  const inst = online ? { '@type': 'CourseInstance', courseMode: 'Online' } : { '@type': 'CourseInstance', courseMode: 'Onsite', location: 'Centres Digivoda partout en France ou sur site client' };
   if (f.duree?.heures) inst.courseWorkload = `PT${f.duree.heures}H`;
   ld.hasCourseInstance = [inst];
   return ld;
@@ -374,11 +375,11 @@ export function packPage(data, k) {
       <ol class="line-diagram__stops">${stops
         .map((s, i) => `<li class="line-diagram__stop${s.end ? ' line-diagram__stop--end' : ''}"><span class="line-diagram__dot" aria-hidden="true"></span><span class="line-diagram__label">${esc(s.t)}</span></li>`)
         .join('')}</ol>
-      <p class="line-diagram__note">Répartition des journées : ${todo('répartition des journées')}</p>
+      <p class="line-diagram__note">${show(k.parcours_note, 'répartition des journées')}</p>
     </div>
   </section>
   <section class="item-sec" aria-labelledby="prix">
-    ${secHead('03', 'prix', 'Prix du pack et prix à l’unité', e.prix_intro)}
+    ${secHead('03', 'prix', 'Prix du pack et prix à l’unité', e.prix_intro || (k.tarif?.montant ? `Le pack est facturé ${eur(k.tarif.montant)} TTC par personne${k.tarif.ancien_prix ? `, au lieu de ${eur(k.tarif.ancien_prix)}` : ''}. Les formations incluses, prises séparément :` : ''))}
     <table class="price-table">
       <caption class="sr-only">Comparaison entre le prix du pack et la somme des tarifs à l’unité</caption>
       <thead><tr><th scope="col">Formation</th><th scope="col">Durée</th><th scope="col">Tarif à l’unité</th></tr></thead>
@@ -386,7 +387,7 @@ export function packPage(data, k) {
         .map((x) => `<tr><th scope="row"><a href="${P}${x.page}">${esc(x.titre_court)}</a></th><td>${dureeHTML(x.duree, 'todo--xs')}</td><td>${priceHTML(x.tarif)}</td></tr>`)
         .join('')}</tbody>
       <tfoot>
-        <tr><th scope="row">Somme des tarifs à l’unité</th><td></td><td>${sum != null ? `<strong>${eur(sum)}</strong> TTC` : todo('somme, tarifs à l’unité manquants')}</td></tr>
+        ${sum != null ? `<tr><th scope="row">Somme des tarifs à l’unité</th><td></td><td><strong>${eur(sum)}</strong> TTC</td></tr>` : ''}
         <tr class="price-table__pack"><th scope="row">${esc(k.titre_court)}</th><td>${dureeHTML(k.duree)}</td><td>${priceHTML(k.tarif, { size: 'lg' })}</td></tr>
         ${k.tarif?.remise ? `<tr><th scope="row">Économie affichée</th><td></td><td>${savingBadge(k.tarif)}</td></tr>` : diff != null ? `<tr><th scope="row">Écart avec l’achat à l’unité</th><td></td><td>${eur(diff)}</td></tr>` : ''}
       </tfoot>

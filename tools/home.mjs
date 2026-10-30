@@ -22,7 +22,7 @@ export const img = (p, key, { w = 600, h = 400, cls = '', eager = false, alt } =
 
 export function formationCard(p, f, { heading = 'h4' } = {}) {
   const key = f.images?.[0] || 'ph-voie-perspective';
-  return `<article class="fcard${f.type !== 'formation' ? ' fcard--' + f.type : ''}">
+  return `<article class="fcard reveal${f.type !== 'formation' ? ' fcard--' + f.type : ''}">
   <div class="fcard__media" data-ph>${img(p, key)}${f.type !== 'formation' ? `<span class="fcard__type">${f.type === 'recyclage' ? 'Recyclage' : 'E-learning'}</span>` : ''}</div>
   <div class="fcard__body">
     <p class="fcard__meta"><span class="code">${esc(f.code)}</span><span class="fcard__dur">${icon('clock', 'icon icon--xs')}${dureeHTML(f.duree, 'todo--xs')}</span></p>
@@ -35,7 +35,7 @@ export function formationCard(p, f, { heading = 'h4' } = {}) {
 
 export function packTicket(p, k, data, { heading = 'h3' } = {}) {
   const [name, sub] = k.titre.split(' – ');
-  return `<article class="ticket">
+  return `<article class="ticket reveal">
   <div class="ticket__main">
     <p class="ticket__kicker"><span>Pack</span><span>${dureeHTML(k.duree, 'todo--xs')}</span></p>
     <${heading} class="ticket__title"><a href="${p}${k.page}">${esc(name)}</a></${heading}>

@@ -64,7 +64,7 @@ const TYPES = [
 
 function packCard(p, k) {
   const [name, sub] = k.titre.split(' – ');
-  return `<article class="fcard fcard--pack">
+  return `<article class="fcard fcard--pack reveal">
   <div class="fcard__media" data-ph>${img(p, k.images?.[0] || 'ph-train-face')}<span class="fcard__type">Pack</span></div>
   <div class="fcard__body">
     <p class="fcard__meta"><span class="fcard__dur">${icon('clock', 'icon icon--xs')}${dureeHTML(k.duree, 'todo--xs')}</span>${savingBadge(k.tarif)}</p>

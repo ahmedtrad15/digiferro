@@ -1,5 +1,14 @@
 # Changelog Digiferro
 
+## 0.4.0 — 2026-10-30 · Fiches complètes, typographie lisible
+
+- **Fiches formation et pack** : les 16 fiches sont entièrement remplies (objectifs, public, prérequis, programme jour par jour ou par module, méthodes, évaluation, validité, effectif, accessibilité, délais, financement). Les durées et les contenus non publiés par Digivoda sont **provisoires** ; les tarifs inconnus s’affichent « Sur devis ». Chaque fiche liste ses champs provisoires (`provisoire` dans les données), récapitulés dans `A-COMPLETER.md`.
+- **Sous-navigation des fiches corrigée** : un clic arrêtait le défilement en cours de route. Le repérage de section faisait défiler la page (`scrollIntoView`) et interrompait le défilement doux. Désormais, seule la barre défile horizontalement. Le repérage est suspendu pendant le défilement vers l’ancre, et un recalage final compense les décalages dus au chargement des polices. Ajouts : fondu sur les bords quand des liens dépassent, ancrage des liens, barre de défilement fine à la souris. Résultat : 64 clics testés sur les 16 fiches, à 375 et 1 280 px, tous au bon endroit.
+- **Typographie** (ui-ux-pro-max, paire « Corporate Trust ») : Lexend pour les titres et l’interface, Source Sans 3 pour le texte courant, à 18 px. Échelle des titres resserrée, majuscules réservées aux petites étiquettes de signalétique, boutons et menus en casse normale.
+- **Mouvement** (ui-ux-pro-max, « Stagger list ») : les cartes apparaissent avec un léger décalage par colonne (400 ms, pas de 60 ms), désactivé si le mouvement réduit est demandé.
+- **Divers** : bandeau du héros sur mobile (libellés sur toute la largeur), JSON-LD « Online » pour l’e-learning, tableau de prix des packs sans total incomplet.
+- **Outils** : `tools/qa/` (contrôles automatiques, serveur gzip, captures). Lighthouse mobile à 100 sur les 5 pages testées (avec gzip).
+
 ## 0.3.0 — 2026-10-30 · Site complet
 
 - **Pages** : 25 au total.

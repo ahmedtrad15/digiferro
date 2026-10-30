@@ -3,257 +3,6 @@
 Fichier généré par `node tools/build.mjs` à partir des pages : ne pas modifier à la main.
 Chaque ligne correspond à un encadré « [À COMPLÉTER] » visible sur le site. La plupart se règlent dans `data/formations.json`.
 
-## index.html
-
-- durée
-- tarif
-
-## formations/index.html
-
-- durée
-- tarif
-
-## formations/secufer-securite-ferroviaire.html
-
-- durée
-- tarif
-- effectif
-- objectifs
-- public concerné
-- prérequis
-- format
-- dates
-- délai d’accès
-- accessibilité PMR
-- méthodes pédagogiques
-- modalités d’évaluation
-- financement
-
-## formations/recyclage-secufer.html
-
-- dates
-- accessibilité PMR
-- méthodes pédagogiques
-- financement
-- durée
-- tarif
-
-## formations/secufer-e-learning.html
-
-- public visé par la version e-learning
-- validité de l’attestation obtenue en e-learning
-- durée
-- tarif
-- effectif
-- validité
-- objectifs
-- public concerné
-- prérequis
-- programme
-- dates
-- délai d’accès
-- accessibilité PMR
-- méthodes pédagogiques
-- modalités d’évaluation
-- validité / recyclage
-- financement
-
-## formations/tcs-m-annonceur-sentinelle-asp.html
-
-- dates
-- accessibilité PMR
-- durée
-- tarif
-
-## formations/recyclage-tcs-m.html
-
-- confirmer la périodicité annuelle (une page Digivoda évoque 3 ans)
-- durée
-- tarif
-- effectif
-- objectifs
-- programme
-- format
-- dates
-- délai d’accès
-- accessibilité PMR
-- méthodes pédagogiques
-- modalités d’évaluation
-- financement
-
-## formations/tsae-prestations-connexes-c0-lam-s9.html
-
-- durée
-- tarif
-- effectif
-- validité
-- objectifs
-- public concerné
-- prérequis
-- programme
-- format
-- dates
-- délai d’accès
-- accessibilité PMR
-- méthodes pédagogiques
-- modalités d’évaluation
-- validité / recyclage
-- financement
-
-## formations/risques-electriques-c0.html
-
-- durée
-- tarif
-- effectif
-- validité
-- objectifs
-- public concerné
-- prérequis
-- programme
-- format
-- dates
-- délai d’accès
-- accessibilité PMR
-- méthodes pédagogiques
-- modalités d’évaluation
-- validité / recyclage
-- financement
-
-## formations/rso-representant-securite-operationnelle.html
-
-- durée
-- tarif
-- effectif
-- validité
-- objectifs
-- public concerné
-- prérequis
-- programme
-- format
-- dates
-- délai d’accès
-- accessibilité PMR
-- méthodes pédagogiques
-- modalités d’évaluation
-- validité / recyclage
-- financement
-
-## formations/aipr-intervention-proximite-reseaux.html
-
-- durée
-- tarif
-- effectif
-- validité
-- objectifs
-- public concerné
-- prérequis
-- programme
-- format
-- dates
-- délai d’accès
-- accessibilité PMR
-- méthodes pédagogiques
-- modalités d’évaluation
-- validité / recyclage
-- financement
-
-## formations/tes-f-protection-passages-a-niveau.html
-
-- durée
-- tarif
-- effectif
-- validité
-- objectifs
-- public concerné
-- prérequis
-- programme
-- format
-- dates
-- délai d’accès
-- accessibilité PMR
-- méthodes pédagogiques
-- modalités d’évaluation
-- validité / recyclage
-- financement
-
-## formations/agent-s9a3-rzt-agec-apn.html
-
-- durée
-- tarif
-- effectif
-- validité
-- objectifs
-- public concerné
-- prérequis
-- programme
-- format
-- dates
-- délai d’accès
-- accessibilité PMR
-- méthodes pédagogiques
-- modalités d’évaluation
-- validité / recyclage
-- financement
-
-## formations/percheur-aide-monteur-catenaire-ch1-cb1.html
-
-- durée
-- tarif
-- effectif
-- validité
-- objectifs
-- public concerné
-- prérequis
-- programme
-- format
-- dates
-- délai d’accès
-- accessibilité PMR
-- méthodes pédagogiques
-- modalités d’évaluation
-- validité / recyclage
-- financement
-
-## packs/pack-prestations-connexes.html
-
-- durée
-- effectif
-- répartition des journées
-- tarif
-- somme, tarifs à l’unité manquants
-- dates
-- financement
-
-## packs/pack-sentinelle-complet.html
-
-- effectif
-- durée
-- répartition des journées
-- tarif
-- somme, tarifs à l’unité manquants
-- dates
-- financement
-
-## packs/pack-rso.html
-
-- durée
-- effectif
-- répartition des journées
-- tarif
-- somme, tarifs à l’unité manquants
-- dates
-- financement
-
-## packs/pack-ferroviaire-premium.html
-
-- effectif
-- durée
-- répartition des journées
-- tarif
-- somme, tarifs à l’unité manquants
-- dates
-- financement
-
 ## a-propos.html
 
 - statut juridique de Digiferro et lien avec Digivoda
@@ -302,4 +51,24 @@ Chaque ligne correspond à un encadré « [À COMPLÉTER] » visible sur le site
 
 ## En-tête (méga-menu) et pied de page, communs à toutes les pages
 
-- durée (durées non publiées dans le méga-menu)
+
+# Valeurs provisoires à confirmer
+
+Rédigées pour compléter les fiches en attendant les informations de Digivoda. Elles s’affichent normalement sur le site : à vérifier et corriger dans `data/formations.json` (champ `provisoire` de chaque fiche).
+
+- **SECUFER** (`formations/secufer-securite-ferroviaire.html`) : délai d’accès, durée, effectif, évaluation, financement, méthodes pédagogiques, modalités et lieux, objectifs, prérequis, programme, public, tarif (« Sur devis »)
+- **Recyclage SECUFER** (`formations/recyclage-secufer.html`) : financement, méthodes pédagogiques, dates, programme
+- **SECUFER e-learning** (`formations/secufer-e-learning.html`) : délai d’accès, durée, effectif, évaluation, financement, méthodes pédagogiques, modalités et lieux, objectifs, prérequis, programme, public, tarif (« Sur devis »), validité
+- **TCS M** (`formations/tcs-m-annonceur-sentinelle-asp.html`) : dates
+- **Recyclage TCS M** (`formations/recyclage-tcs-m.html`) : délai d’accès, durée, effectif, évaluation, financement, méthodes pédagogiques, modalités et lieux, objectifs, prérequis, programme, tarif (« Sur devis »)
+- **TSAE C0 / LAM / S9** (`formations/tsae-prestations-connexes-c0-lam-s9.html`) : délai d’accès, durée, effectif, évaluation, financement, méthodes pédagogiques, modalités et lieux, objectifs, prérequis, programme, public, tarif (« Sur devis »), validité
+- **Risques électriques C0** (`formations/risques-electriques-c0.html`) : délai d’accès, durée, effectif, évaluation, financement, méthodes pédagogiques, modalités et lieux, objectifs, prérequis, programme, public, tarif (« Sur devis »), validité
+- **RSO** (`formations/rso-representant-securite-operationnelle.html`) : délai d’accès, durée, effectif, évaluation, financement, méthodes pédagogiques, modalités et lieux, objectifs, prérequis, programme, public, tarif (« Sur devis »), validité
+- **AIPR** (`formations/aipr-intervention-proximite-reseaux.html`) : délai d’accès, durée, effectif, évaluation, financement, méthodes pédagogiques, modalités et lieux, objectifs, prérequis, programme, public, tarif (« Sur devis »), validité
+- **TES F** (`formations/tes-f-protection-passages-a-niveau.html`) : délai d’accès, durée, effectif, évaluation, financement, méthodes pédagogiques, modalités et lieux, objectifs, prérequis, programme, public, tarif (« Sur devis »), validité
+- **Agent S9A3** (`formations/agent-s9a3-rzt-agec-apn.html`) : délai d’accès, durée, effectif, évaluation, financement, méthodes pédagogiques, modalités et lieux, objectifs, prérequis, programme, public, tarif (« Sur devis »), validité
+- **Percheur CH1-CB1** (`formations/percheur-aide-monteur-catenaire-ch1-cb1.html`) : délai d’accès, durée, effectif, évaluation, financement, méthodes pédagogiques, modalités et lieux, objectifs, prérequis, programme, public, tarif (« Sur devis »), validité
+- **Pack Prestations Connexes** (`packs/pack-prestations-connexes.html`) : durée, effectif, financement, dates, objectifs, note de planning du parcours, prérequis
+- **Pack Sentinelle Complet** (`packs/pack-sentinelle-complet.html`) : effectif, financement, dates, note de planning du parcours, prérequis
+- **Pack RSO** (`packs/pack-rso.html`) : durée, effectif, financement, dates, objectifs, note de planning du parcours, prérequis
+- **Pack Premium** (`packs/pack-ferroviaire-premium.html`) : effectif, financement, dates, objectifs, note de planning du parcours, prérequis
