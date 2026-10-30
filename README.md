@@ -62,7 +62,7 @@ Puis ouvrez http://localhost:8080.
 
 Le formulaire valide les champs en français, à la volée. En cas d’erreur, un résumé en tête de formulaire renvoie à chaque champ fautif, et le bouton indique « Envoi en cours… » pendant l’envoi. Un champ piège bloque les robots, et la formation est pré-sélectionnée via `?formation=<id>`. Sans point d'envoi configuré, **rien n'est envoyé** : le message de succès est simulé.
 
-Pour le brancher, renseignez `data-endpoint` sur la balise `<form>` dans `tools/item.mjs` (fonction `devisForm`), puis régénérez :
+Pour le brancher, renseignez `data-endpoint` sur la balise `<form>` dans `tools/item.mjs` (fonction `formBox`, utilisée par toutes les pages), puis régénérez :
 
 - **Formspree** : `data-endpoint="https://formspree.io/f/VOTRE_ID"` et `action` identique.
 - **Netlify Forms** : ajoutez `name="devis" data-netlify="true"` au `<form>` et `data-endpoint="/"`.
@@ -78,7 +78,7 @@ Le site est statique : il suffit de copier le dossier tel quel.
 
 - **Netlify / Cloudflare Pages** : glissez le dossier dans l'interface, ou reliez le dépôt sans commande de build et avec `/` comme dossier publié. `_headers` règle le cache.
 - **Hébergement Apache (OVH, o2switch…)** : envoyez les fichiers par FTP. `.htaccess` active la compression et le cache.
-- **Page 404** : `404.html` est reconnue automatiquement par Netlify et Cloudflare Pages. Sur Apache, ajoutez `ErrorDocument 404 /404.html` dans `.htaccess`.
+- **Page 404** : `404.html` est reconnue automatiquement par Netlify et Cloudflare Pages. Sur Apache, `.htaccess` la déclare déjà (`ErrorDocument 404 /404.html`).
 - **Avant la mise en ligne** : remplacez `site.base_url` dans `data/formations.json` par le domaine définitif, régénérez, puis déclarez `sitemap.xml` dans la Search Console.
 
-La compression gzip ou brotli compte beaucoup. Mesuré sur mobile avec Lighthouse, le site obtient 100 / 100 / 100 / 100 (performance, accessibilité, bonnes pratiques, SEO) avec compression, et 84 à 88 en performance sans.
+La compression gzip ou brotli compte beaucoup. Mesuré sur mobile avec Lighthouse, le site obtient 99 à 100 dans les quatre catégories (performance, accessibilité, bonnes pratiques, SEO) avec compression, contre 84 à 88 en performance sans.
