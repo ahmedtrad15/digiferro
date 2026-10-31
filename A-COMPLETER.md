@@ -9,7 +9,6 @@ Aucun encadré « [À COMPLÉTER] » n’apparaît sur le site.
 - Éditeur du site : DIGIVODA, par défaut. À changer si Digiferro est édité par une autre entité.
 - Hébergeur : coordonnées à ajouter dans les mentions légales une fois l'hébergement choisi (obligation LCEN).
 - Numéro de déclaration d'activité (DRIEETS) à ajouter s'il doit apparaître.
-- Deux numéros publiés : 01 89 70 55 70 (utilisé) et 01 87 65 34 43.
 
 # Valeurs provisoires à confirmer
 

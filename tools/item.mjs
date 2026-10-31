@@ -1,5 +1,5 @@
 // Pages formation et pack.
-import { esc, icon, todo, isMissing, show, priceHTML, dureeHTML, savingBadge, listHTML, jsonld, eur, tarifNote } from './util.mjs';
+import { esc, icon, todo, isMissing, show, priceHTML, dureeHTML, listHTML, jsonld, eur, tarifNote, phoneLinks } from './util.mjs';
 import { breadcrumb, devisHref, groupsOf } from './partials.mjs';
 import { img, visual, formationCard, packTicket, faqHTML, faqLD, mapFigure, IMG_ALT, HERO_SIZES } from './home.mjs';
 import { photoTag } from './media.mjs';
@@ -79,7 +79,7 @@ export function devisForm(data, selectedId, { title, text, p = P } = {}) {
       <h2 id="devis-title">${esc(title)}</h2>
       <p>${esc(text)}</p>
       <ul class="devis__contact">
-        <li><a href="tel:${o.telephone_e164}">${icon('phone', 'icon icon--sm')}${esc(o.telephone)}</a></li>
+        ${(o.telephones || []).map((t, i) => `<li><a href="tel:${t.e164}">${icon('phone', 'icon icon--sm')}${i ? `<span class="devis__label">${esc(t.label)} :</span>` : ''}${esc(t.affichage)}</a></li>`).join('')}
         <li><a href="mailto:${esc(o.email)}">${icon('mail', 'icon icon--sm')}${esc(o.email)}</a></li>
       </ul>
     </div>
@@ -93,7 +93,7 @@ function aside(f, data, { packIds = [], devisLabel = 'Demander un devis' } = {})
   const packs = packIds.map((id) => data.packs.find((k) => k.id === id)).filter(Boolean);
   return `<aside class="item-aside" aria-label="Réserver">
   <div class="devis-panel">
-    <p class="devis-panel__kicker"><span class="code">${esc(f.code || 'Pack')}</span>${savingBadge(f.tarif)}</p>
+    <p class="devis-panel__kicker"><span class="code">${esc(f.code || 'Pack')}</span></p>
     <p class="devis-panel__price">${priceHTML(f.tarif, { size: 'lg' })}${tarifNote(f.tarif)}</p>
     <ul class="devis-panel__facts">
       <li>${icon('clock', 'icon icon--sm')}${dureeHTML(f.duree)}</li>
@@ -101,10 +101,11 @@ function aside(f, data, { packIds = [], devisLabel = 'Demander un devis' } = {})
     </ul>
     <a class="btn btn--signal btn--block" href="#devis">${devisLabel}</a>
     <a class="devis-panel__phone" href="tel:${o.telephone_e164}">${icon('phone', 'icon icon--sm')}${esc(o.telephone)}</a>
+    ${phoneLinks(o, { cls: 'phones phones--compact', skipFirst: true })}
     ${
       packs.length
         ? `<div class="devis-panel__packs"><p>Aussi dans ${packs.length > 1 ? `${packs.length} packs` : 'un pack'} :</p><ul>${packs
-            .map((k) => `<li><a href="${P}${k.page}">${esc(k.titre_court)}</a>${savingBadge(k.tarif)}</li>`)
+            .map((k) => `<li><a href="${P}${k.page}">${esc(k.titre_court)}</a></li>`)
             .join('')}</ul></div>`
         : ''
     }
@@ -390,7 +391,7 @@ export function packPage(data, k) {
       <tfoot>
         ${sum != null && diff > 0 ? `<tr><th scope="row">Somme des tarifs à l’unité</th><td></td><td><strong>${eur(sum)}</strong> TTC</td></tr>` : ''}
         <tr class="price-table__pack"><th scope="row">${esc(k.titre_court)}</th><td>${dureeHTML(k.duree)}</td><td>${priceHTML(k.tarif, { size: 'lg' })}</td></tr>
-        ${diff > 0 ? `<tr><th scope="row">Économie par rapport à l’achat à l’unité</th><td></td><td><span class="saving">−${eur(diff)}</span></td></tr>` : k.tarif?.remise ? `<tr><th scope="row">Remise sur le prix initial</th><td></td><td>${savingBadge(k.tarif)}</td></tr>` : ''}
+        ${diff > 0 ? `<tr><th scope="row">Économie par rapport à l’achat à l’unité</th><td></td><td><strong>${eur(diff)}</strong></td></tr>` : ''}
       </tfoot>
     </table>
   </section>

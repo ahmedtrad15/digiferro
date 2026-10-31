@@ -38,11 +38,6 @@ export function priceHTML(t, { size = '' } = {}) {
 
 export const dureeHTML = (d, cls = '') => (d && !isMissing(d.libelle) ? esc(d.libelle) : todo('durée', cls));
 
-export const savingBadge = (t) =>
-  t && t.remise
-    ? `<span class="saving" aria-label="Économie de ${t.remise} euros">−${eur(t.remise)}</span>`
-    : '';
-
 export const listHTML = (arr, label, cls = 'list') =>
   isMissing(arr) ? `<p>${todo(label)}</p>` : `<ul class="${cls}">${arr.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>`;
 
@@ -62,4 +57,12 @@ export const jsonld = (obj) =>
 export const tarifNote = (t) => {
   const parts = [t?.mention, t?.intra === 'Sur devis' ? 'Intra : sur devis' : null].filter(Boolean);
   return parts.length ? `<span class="price-note">${parts.map(esc).join(' · ')}</span>` : '';
+};
+
+// Numéros de contact (organisme.telephones) : liste avec libellé
+export const phoneLinks = (o, { cls = 'phones', iconCls = 'icon icon--sm', skipFirst = false } = {}) => {
+  const list = (o.telephones || []).slice(skipFirst ? 1 : 0);
+  return `<ul class="${cls}">${list
+    .map((t) => `<li><a href="tel:${t.e164}"><svg class="${iconCls}" aria-hidden="true" focusable="false"><use href="#i-phone"></use></svg><span><small>${esc(t.label)}</small>${esc(t.affichage)}</span></a></li>`)
+    .join('')}</ul>`;
 };

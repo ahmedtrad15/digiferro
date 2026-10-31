@@ -1,4 +1,4 @@
-import { esc, icon, priceHTML, dureeHTML, savingBadge, jsonld, isMissing } from './util.mjs';
+import { esc, icon, priceHTML, dureeHTML, jsonld, isMissing, phoneLinks } from './util.mjs';
 import { groupsOf, devisHref } from './partials.mjs';
 import { franceMap } from './map.mjs';
 import { mediaFor, centreImages, photoTag } from './media.mjs';
@@ -67,7 +67,6 @@ export function packTicket(p, k, data, { heading = 'h3' } = {}) {
     <ol class="ticket__line" aria-label="Formations incluses">${k.modules_publies.map((m) => `<li>${esc(m)}</li>`).join('')}</ol>
   </div>
   <div class="ticket__stub">
-    ${savingBadge(k.tarif) || '<span class="ticket__nosave" aria-hidden="true"></span>'}
     <p class="ticket__price">${priceHTML(k.tarif, { size: 'lg' })}</p>
     <a class="btn btn--signal btn--block" href="${devisHref(p, k.id)}">Réserver ce pack</a>
     <a class="btn btn--ghost btn--block" href="${p}${k.page}">Voir la formation</a>
@@ -130,7 +129,6 @@ export function home(data) {
   const o = data.organisme;
   const groups = groupsOf(data);
   const packs = data.packs.slice().sort((a, b) => a.ordre - b.ordre);
-  const nbRemises = packs.filter((k) => k.tarif?.remise).length;
 
   const hero = `<section class="hero" aria-labelledby="hero-title">
   <div class="hero__media" aria-hidden="true">
@@ -207,7 +205,7 @@ export function home(data) {
         <span class="pk pk--night" aria-hidden="true"><small>PK</small>02</span>
         <h2 id="packs-title">Les packs : plusieurs habilitations, une seule inscription</h2>
       </div>
-      <p>Un nouvel agent à habiliter de A à Z, ou une équipe qui part sur un chantier RFN ? Les packs enchaînent les formations dans un même parcours. ${nbRemises} d’entre eux affichent une remise sur le prix initial.</p>
+      <p>Un nouvel agent à habiliter de A à Z, ou une équipe qui part sur un chantier RFN ? Les packs enchaînent les formations dans un même parcours.</p>
     </header>
     <div class="tickets">${packs.map((k) => packTicket(p, k, data)).join('')}</div>
   </div>
@@ -344,6 +342,7 @@ export function home(data) {
       brand: { '@type': 'Brand', name: 'Digiferro' },
       email: o.email,
       telephone: o.telephone_e164,
+      contactPoint: (o.telephones || []).map((t) => ({ '@type': 'ContactPoint', telephone: t.e164, contactType: t.label, areaServed: 'FR', availableLanguage: 'French' })),
       address: { '@type': 'PostalAddress', streetAddress: '5 rue Jules Barbier', postalCode: '92290', addressLocality: 'Châtenay-Malabry', addressCountry: 'FR' },
       logo: `${data.site.base_url}/assets/favicon/apple-touch-icon.png`,
     }),
@@ -378,6 +377,7 @@ export function ctaBand(p, o, { title = 'Un démarrage de chantier approche ?', 
     <div class="cta-band__actions">
       <a class="btn btn--signal btn--lg" href="${href || devisHref(p)}">Demander un devis</a>
       <a class="cta-band__phone" href="tel:${o.telephone_e164}">${icon('phone', 'icon')}<span><small>Par téléphone</small>${esc(o.telephone)}</span></a>
+      ${(o.telephones || []).slice(2).map((t) => `<a class="cta-band__phone" href="tel:${t.e164}">${icon('phone', 'icon')}<span><small>${esc(t.label)}</small>${esc(t.affichage)}</span></a>`).join('')}
     </div>
   </div>
 </section>`;

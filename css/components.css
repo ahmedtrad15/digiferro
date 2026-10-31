@@ -132,20 +132,6 @@
   white-space: nowrap;
 }
 
-/* Badge d'économie : plaque signal à bords chanfreinés */
-.saving {
-  display: inline-block;
-  padding: 0.2em 0.65em;
-  background: var(--signal);
-  color: var(--signal-ink);
-  font-family: var(--font-display);
-  font-size: 0.8063rem;
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: 0.01em;
-  white-space: nowrap;
-  clip-path: polygon(6px 0, calc(100% - 6px) 0, 100% 50%, calc(100% - 6px) 100%, 6px 100%, 0 50%);
-}
 
 .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; }
 .chip {
@@ -369,8 +355,6 @@
 .ticket__stub::after { right: calc(var(--notch) / -2); }
 .tickets--light .ticket__stub::before, .tickets--light .ticket__stub::after { background: var(--paper); }
 .tickets--light .ticket { border: 1px solid var(--line); border-top: 6px solid var(--signal); }
-.ticket__stub .saving { align-self: flex-start; }
-.ticket__nosave { display: none; }
 .ticket__price { margin-block: 0.1rem 0.4rem; }
 @media (min-width: 40em) {
   .ticket { grid-template-columns: minmax(0, 1fr) 15rem; }
@@ -656,3 +640,15 @@
 /* Précision sous un prix (format, intra sur devis) */
 .price-note { display: block; margin-top: 0.25rem; font-family: var(--font-body); font-size: var(--fs-xs); font-weight: 600; color: var(--text-muted); letter-spacing: 0; }
 .facts .price-note, .band--night .price-note { color: var(--steel-300); }
+
+/* Numéros de contact (standard, mobile, gestionnaire de formations) */
+.phones { list-style: none; display: grid; gap: 0.35rem; margin: 0.4rem 0 0.6rem; }
+.phones a { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 44px; text-decoration: none; }
+.phones a span { display: flex; flex-direction: column; line-height: 1.2; font-weight: 600; }
+.phones small { font-size: var(--fs-xs); font-weight: 400; color: var(--text-muted); }
+.phones .icon { color: var(--teal); }
+.phones--dark a { color: var(--white); }
+.phones--dark small { color: var(--steel-300); }
+.phones--dark .icon { color: var(--signal); }
+.phones--compact { margin: 0; gap: 0; }
+.phones--compact a { min-height: 40px; font-size: var(--fs-sm); color: var(--text); }

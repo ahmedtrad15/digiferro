@@ -491,3 +491,5 @@ body { padding-bottom: 56px; }
 }
 /* Le bouton « retour en haut » ne recouvre pas les liens légaux */
 @media (min-width: 68.75em) { .site-footer__legal-in { padding-right: 4.5rem; } }
+
+.topbar__label { color: var(--steel-300); margin-right: 0.3rem; }

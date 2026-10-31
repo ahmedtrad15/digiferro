@@ -1,5 +1,5 @@
 // Pages transverses : catalogue filtrable, à propos, contact, FAQ, pages légales, 404.
-import { esc, icon, todo, show, priceHTML, dureeHTML, savingBadge, jsonld } from './util.mjs';
+import { esc, icon, todo, show, priceHTML, dureeHTML, jsonld, phoneLinks } from './util.mjs';
 import { breadcrumb, devisHref, groupsOf, qualiopiFigure } from './partials.mjs';
 import { img, visual, sectionVisual, formationCard, faqHTML, faqLD, mapFigure, ctaBand } from './home.mjs';
 import { centreImages, qualiopiLogo } from './media.mjs';
@@ -68,7 +68,7 @@ function packCard(p, k) {
   return `<article class="fcard fcard--pack reveal">
   ${visual(p, k, { cls: 'fcard__media', extra: '<span class="fcard__type">Pack</span>' })}
   <div class="fcard__body">
-    <p class="fcard__meta"><span class="fcard__dur">${icon('clock', 'icon icon--xs')}${dureeHTML(k.duree, 'todo--xs')}</span>${savingBadge(k.tarif)}</p>
+    <p class="fcard__meta"><span class="fcard__dur">${icon('clock', 'icon icon--xs')}${dureeHTML(k.duree, 'todo--xs')}</span></p>
     <h3 class="fcard__title"><a href="${p}${k.page}">${esc(name)}</a></h3>
     ${sub ? `<p class="fcard__sub">${esc(sub)}</p>` : ''}
     <p class="fcard__sum">${esc(k.modules_publies.join(' · '))}</p>
@@ -114,7 +114,11 @@ export function catalogue(data) {
     station: 'Catalogue',
     title: 'Toutes les formations ferroviaires',
     lead: `${data.formations.length} formations et ${packs.length} packs, filtrables par type, thème et durée. Les tarifs affichés sont TTC, par personne.`,
-    aside: `<div class="page-hero__help"><p>Pas sûr de la formation à choisir ?</p><a class="page-hero__phone" href="tel:${data.organisme.telephone_e164}">${icon('phone', 'icon icon--sm')}${esc(data.organisme.telephone)}</a><a class="link-arrow" href="${devisHref(p)}">Décrire mon besoin${icon('arrow', 'icon icon--sm')}</a></div>`,
+    aside: (() => {
+      const o = data.organisme;
+      const g = (o.telephones || [])[2] || { e164: o.telephone_e164, affichage: o.telephone, label: '' };
+      return `<div class="page-hero__help"><p>Pas sûr de la formation à choisir ? Parlez-en au ${esc(g.label.toLowerCase())}.</p><a class="page-hero__phone" href="tel:${g.e164}">${icon('phone', 'icon icon--sm')}${esc(g.affichage)}</a><p class="page-hero__alt">Standard : <a href="tel:${o.telephone_e164}">${esc(o.telephone)}</a></p><a class="link-arrow" href="${devisHref(p)}">Décrire mon besoin${icon('arrow', 'icon icon--sm')}</a></div>`;
+    })(),
   });
 
   const body = `${hero}
@@ -213,7 +217,7 @@ export function aPropos(data) {
       <p class="about__lead">C’est là que se tiennent les sessions inter-entreprises d’Île-de-France : salles équipées pour la théorie, supports et matériel pour les exercices pratiques.</p>
       <dl class="spec spec--wide">
         <div><dt>Adresse</dt><dd>${esc(o.adresse_centre)}</dd></div>
-        <div><dt>Téléphone</dt><dd><a href="tel:${o.telephone_e164}">${esc(o.telephone)}</a></dd></div>
+        <div><dt>Téléphone</dt><dd>${(o.telephones || []).map((t) => `<span class="facts__line"><a href="tel:${t.e164}">${esc(t.affichage)}</a> <small>(${esc(t.label)})</small></span>`).join('')}</dd></div>
         <div><dt>Accès</dt><dd><a href="${esc(o.maps_url)}" target="_blank" rel="noopener">Itinéraire Google Maps<span class="sr-only"> (nouvel onglet)</span></a></dd></div>
       </dl>
     </div>
@@ -297,6 +301,7 @@ export function contact(data) {
       <div class="contact__card contact__card--phone">
         <p class="contact__label">Par téléphone</p>
         <a class="contact__phone" href="tel:${o.telephone_e164}">${icon('phone', 'icon')}${esc(o.telephone)}</a>
+        ${phoneLinks(o, { cls: 'phones phones--dark', skipFirst: true })}
         <p class="contact__small">Numéro non surtaxé</p>
       </div>
       <div class="contact__card">
@@ -342,7 +347,7 @@ export function contact(data) {
           '@context': 'https://schema.org',
           '@type': 'ContactPage',
           name: 'Contact Digiferro',
-          mainEntity: { '@type': 'Organization', name: 'DIGIVODA', telephone: o.telephone_e164, email: o.email, address: { '@type': 'PostalAddress', streetAddress: '4 allée des Garays', postalCode: '91120', addressLocality: 'Palaiseau', addressCountry: 'FR' } },
+          mainEntity: { '@type': 'Organization', name: 'DIGIVODA', telephone: o.telephone_e164, email: o.email, contactPoint: (o.telephones || []).map((t) => ({ '@type': 'ContactPoint', telephone: t.e164, contactType: t.label, areaServed: 'FR', availableLanguage: 'French' })), address: { '@type': 'PostalAddress', streetAddress: '4 allée des Garays', postalCode: '91120', addressLocality: 'Palaiseau', addressCountry: 'FR' } },
         }),
         jsonld(faqLD(CONTACT_FAQ)),
         jsonld(breadcrumbLD(data, trail)),
@@ -501,7 +506,7 @@ function legalPage(data, { path, title, seoTitle, description, lead, sections })
   };
 }
 
-const contactLinks = (o) => `<a href="tel:${o.telephone_e164}">${esc(o.telephone)}</a> · <a href="mailto:${esc(o.email)}">${esc(o.email)}</a>`;
+const contactLinks = (o) => `${(o.telephones || []).map((t) => `<a href="tel:${t.e164}">${esc(t.affichage)}</a>`).join(' · ')} · <a href="mailto:${esc(o.email)}">${esc(o.email)}</a>`;
 
 export function mentions(data) {
   const o = data.organisme;

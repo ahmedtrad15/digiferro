@@ -1,6 +1,6 @@
 // En-tête, méga-menu, tiroir mobile, pied de page et sprite SVG.
 // Le balisage est identique sur toutes les pages : seul le préfixe de chemin (p) change.
-import { esc, icon, dureeHTML, savingBadge, priceHTML, todo } from './util.mjs';
+import { esc, icon, dureeHTML, priceHTML, todo, phoneLinks } from './util.mjs';
 import { qualiopiLogo, photoTag, photoSize } from './media.mjs';
 
 // Logo Qualiopi officiel (media/…qualiopi…) sinon emplacement réservé ; jamais redessiné
@@ -68,7 +68,7 @@ const megaItem = (p, f) =>
   `<li><a class="mega__link" href="${p}${f.page}"><span class="mega__name">${esc(f.titre_court)}</span><span class="mega__meta">${f.code !== f.titre_court ? `<span class="code">${esc(f.code)}</span>` : ''}<span class="mega__dur">${dureeHTML(f.duree, 'todo--xs')}</span></span></a></li>`;
 
 const megaPack = (p, k) =>
-  `<li><a class="mega__link mega__link--pack" href="${p}${k.page}"><span class="mega__name">${esc(k.titre_court)}</span><span class="mega__meta"><span class="mega__dur">${dureeHTML(k.duree, 'todo--xs')}</span>${savingBadge(k.tarif)}</span></a></li>`;
+  `<li><a class="mega__link mega__link--pack" href="${p}${k.page}"><span class="mega__name">${esc(k.titre_court)}</span><span class="mega__meta"><span class="mega__dur">${dureeHTML(k.duree, 'todo--xs')}</span></span></a></li>`;
 
 export function header(ctx, data) {
   const { p } = ctx;
@@ -93,6 +93,7 @@ export function header(ctx, data) {
       <p>Session en centre ou sur votre site : décrivez votre besoin, Digivoda vous répond avec un devis.</p>
       <a class="btn btn--signal btn--sm" href="${devisHref(p)}">Demander un devis</a>
       <a class="mega__phone" href="tel:${o.telephone_e164}">${icon('phone', 'icon icon--sm')} ${esc(o.telephone)}</a>
+      ${phoneLinks({ telephones: (o.telephones || []).slice(2) }, { cls: 'phones phones--compact' })}
     </div>
   </div>
   <div class="mega__foot"><div class="wrap"><a href="${p}formations/index.html">Voir tout le catalogue ${icon('arrow', 'icon icon--sm')}</a></div></div>
@@ -105,7 +106,7 @@ export function header(ctx, data) {
   const dItem = (f) =>
     `<li><a href="${p}${f.page}"><span>${esc(f.titre_court)}</span><span class="drawer__meta">${esc(f.code || '')} · ${dureeHTML(f.duree, 'todo--xs')}</span></a></li>`;
   const dPack = (k) =>
-    `<li><a href="${p}${k.page}"><span>${esc(k.titre_court)}</span><span class="drawer__meta">${dureeHTML(k.duree, 'todo--xs')} ${savingBadge(k.tarif)}</span></a></li>`;
+    `<li><a href="${p}${k.page}"><span>${esc(k.titre_court)}</span><span class="drawer__meta">${dureeHTML(k.duree, 'todo--xs')}</span></a></li>`;
 
   const drawer = `<div class="drawer" id="drawer" data-drawer hidden>
   <div class="drawer__panel" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
@@ -137,6 +138,7 @@ ${SPRITE}
     <p>Formations dispensées par <strong>DIGIVODA</strong>, organisme certifié Qualiopi</p>
     <ul class="topbar__links">
       <li><a href="tel:${o.telephone_e164}">${icon('phone', 'icon icon--xs')}${esc(o.telephone)}</a></li>
+      ${(o.telephones || []).slice(2).map((t) => `<li><a href="tel:${t.e164}">${icon('phone', 'icon icon--xs')}<span class="topbar__label">Formations ferroviaires :</span>${esc(t.affichage)}</a></li>`).join('')}
       <li><a href="mailto:${esc(o.email)}">${icon('mail', 'icon icon--xs')}${esc(o.email)}</a></li>
     </ul>
   </div>
@@ -203,6 +205,7 @@ export function footer(ctx, data) {
     <div class="site-footer__col site-footer__contact">
       <p class="site-footer__title">Contact</p>
       <p><a class="site-footer__phone" href="tel:${o.telephone_e164}">${icon('phone', 'icon icon--sm')}${esc(o.telephone)}</a></p>
+      ${phoneLinks(o, { cls: 'phones phones--dark', skipFirst: true })}
       <p><a href="mailto:${esc(o.email)}">${icon('mail', 'icon icon--sm')}${esc(o.email)}</a></p>
       <p class="site-footer__addr"><span>Siège</span>${esc(o.adresse_siege)}</p>
       <p class="site-footer__addr"><span>Centre de formation</span>${esc(o.adresse_centre)}</p>

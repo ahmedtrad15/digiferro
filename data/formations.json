@@ -57,8 +57,7 @@
     "a_verifier": [
       "Éditeur du site : DIGIVODA, par défaut. À changer si Digiferro est édité par une autre entité.",
       "Hébergeur : coordonnées à ajouter dans les mentions légales une fois l'hébergement choisi (obligation LCEN).",
-      "Numéro de déclaration d'activité (DRIEETS) à ajouter s'il doit apparaître.",
-      "Deux numéros publiés : 01 89 70 55 70 (utilisé) et 01 87 65 34 43."
+      "Numéro de déclaration d'activité (DRIEETS) à ajouter s'il doit apparaître."
     ],
     "maps_url": "https://maps.app.goo.gl/EfiFFjgDfot81GYq5",
     "maps_embed": "https://www.google.com/maps?q=4+all%C3%A9e+des+Garays,+91120+Palaiseau&output=embed",
@@ -72,7 +71,24 @@
     ],
     "siren": "488 347 444",
     "declaration_activite": "Organisme de formation enregistré auprès de la DRIEETS Île-de-France. Cet enregistrement ne vaut pas agrément de l'État.",
-    "legal_statut": "SIREN, SIRET, RCS, forme et capital : annuaire-entreprises.data.gouv.fr et mentions légales de digivoda.com (31/10/2026)."
+    "legal_statut": "SIREN, SIRET, RCS, forme et capital : annuaire-entreprises.data.gouv.fr et mentions légales de digivoda.com (31/10/2026).",
+    "telephones": [
+      {
+        "label": "Standard",
+        "affichage": "01 89 70 55 70",
+        "e164": "+33189705570"
+      },
+      {
+        "label": "Mobile",
+        "affichage": "07 80 98 89 20",
+        "e164": "+33780988920"
+      },
+      {
+        "label": "Gestionnaire de formations ferroviaires",
+        "affichage": "07 44 30 73 56",
+        "e164": "+33744307356"
+      }
+    ]
   },
   "themes": [
     {
@@ -2608,7 +2624,6 @@
       "a_verifier": [
         "Composition C0 + TCS M confirmée par le client.",
         "Répartition des journées entre C0 et TCS M non publiée.",
-        "Aucun prix barré ni remise publiés pour ce pack : pas de badge d'économie.",
         "Avec les tarifs du 31/10/2026, le pack (1 080 €) coûte exactement C0 (180 €) + TCS M (900 €) : aucune économie à l'achat groupé."
       ],
       "prerequis_note": "Le pack inclut la TCS M : ses prérequis publiés s'appliquent.",
