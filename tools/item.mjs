@@ -36,28 +36,35 @@ function facts(rows) {
 export function formBox(data, selectedId, p = P) {
   const groups = groupsOf(data);
   const packs = data.packs.slice().sort((a, b) => a.ordre - b.ordre);
-  const opt = (x) => `<option value="${x.id}"${x.id === selectedId ? ' selected' : ''}>${esc(x.titre_court)}</option>`;
+  const opt = (x) => `<option value="${esc(x.titre_court)}" data-id="${x.id}"${x.id === selectedId ? ' selected' : ''}>${esc(x.titre_court)}</option>`;
+  const cfg = data.site.formulaire || {};
+  // Envoi via Web3Forms : sans JavaScript, le formulaire est posté directement à l'API ;
+  // avec JavaScript, form.js valide les champs puis envoie en JSON et affiche le message de succès.
   return `<div class="devis__box">
-      <form class="form" action="#" method="post" data-form data-endpoint="">
-        <div class="form__hp" aria-hidden="true"><label for="f-site">Laissez ce champ vide</label><input id="f-site" name="site_web" type="text" tabindex="-1" autocomplete="off"></div>
+      <form class="form" action="${esc(cfg.endpoint || '#')}" method="post" data-form data-endpoint="${esc(cfg.endpoint || '')}">
+        <input type="hidden" name="access_key" value="${esc(cfg.access_key || '')}">
+        <input type="hidden" name="subject" value="${esc(cfg.objet || 'Demande de devis')}" data-subject>
+        <input type="hidden" name="from_name" value="${esc(cfg.from_name || 'Site Digiferro')}">
+        <div class="form__hp" aria-hidden="true"><label for="f-botcheck">Ne pas cocher</label><input id="f-botcheck" name="botcheck" type="checkbox" tabindex="-1" autocomplete="off"></div>
         <div class="form__row">
-          <div class="field"><label for="f-nom">Nom et prénom <span class="field__req" aria-hidden="true">*</span></label><input id="f-nom" name="nom" type="text" autocomplete="name" required aria-describedby="f-nom-err"><p class="field__err" id="f-nom-err"></p></div>
-          <div class="field"><label for="f-entreprise">Entreprise</label><input id="f-entreprise" name="entreprise" type="text" autocomplete="organization"></div>
+          <div class="field"><label for="f-nom">Nom et prénom <span class="field__req" aria-hidden="true">*</span></label><input id="f-nom" name="Nom" type="text" autocomplete="name" required aria-describedby="f-nom-err"><p class="field__err" id="f-nom-err"></p></div>
+          <div class="field"><label for="f-entreprise">Entreprise</label><input id="f-entreprise" name="Entreprise" type="text" autocomplete="organization"></div>
         </div>
         <div class="form__row">
           <div class="field"><label for="f-email">E-mail <span class="field__req" aria-hidden="true">*</span></label><input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="f-email-err"><p class="field__err" id="f-email-err"></p></div>
-          <div class="field"><label for="f-tel">Téléphone <span class="field__req" aria-hidden="true">*</span></label><input id="f-tel" name="telephone" type="tel" autocomplete="tel" required inputmode="tel" aria-describedby="f-tel-hint f-tel-err"><p class="field__hint" id="f-tel-hint">Pour vous rappeler au sujet du devis.</p><p class="field__err" id="f-tel-err"></p></div>
+          <div class="field"><label for="f-tel">Téléphone <span class="field__req" aria-hidden="true">*</span></label><input id="f-tel" name="Téléphone" type="tel" autocomplete="tel" required inputmode="tel" aria-describedby="f-tel-hint f-tel-err"><p class="field__hint" id="f-tel-hint">Pour vous rappeler au sujet du devis.</p><p class="field__err" id="f-tel-err"></p></div>
         </div>
         <div class="form__row form__row--wide">
           <div class="field"><label for="f-formation">Formation ou pack <span class="field__req" aria-hidden="true">*</span></label>
-            <select id="f-formation" name="formation" required aria-describedby="f-formation-err">
+            <select id="f-formation" name="Formation" required aria-describedby="f-formation-err">
               <option value="">Choisir dans la liste</option>
               ${groups.map((g) => `<optgroup label="${esc(g.label)}">${g.items.map(opt).join('')}</optgroup>`).join('')}
               <optgroup label="Packs">${packs.map(opt).join('')}</optgroup>
             </select><p class="field__err" id="f-formation-err"></p></div>
-          <div class="field field--short"><label for="f-nb">Participants <span class="field__req" aria-hidden="true">*</span></label><input id="f-nb" name="participants" type="number" min="1" max="500" step="1" value="1" required inputmode="numeric" aria-describedby="f-nb-hint f-nb-err"><p class="field__hint" id="f-nb-hint">Nombre d’agents</p><p class="field__err" id="f-nb-err"></p></div>
+          <div class="field field--short"><label for="f-nb">Participants <span class="field__req" aria-hidden="true">*</span></label><input id="f-nb" name="Participants" type="number" min="1" max="500" step="1" value="1" required inputmode="numeric" aria-describedby="f-nb-hint f-nb-err"><p class="field__hint" id="f-nb-hint">Nombre d’agents</p><p class="field__err" id="f-nb-err"></p></div>
         </div>
-        <div class="field"><label for="f-msg">Votre message</label><textarea id="f-msg" name="message" rows="4" placeholder="Période souhaitée, lieu, centre ou intra…"></textarea></div>
+        <div class="field"><label for="f-msg">Votre message</label><textarea id="f-msg" name="Message" rows="4" placeholder="Période souhaitée, lieu, centre ou intra…"></textarea></div>
+        <input type="hidden" name="Page" value="" data-page>
         <p class="form__legal"><span aria-hidden="true">*</span> Champs obligatoires. Vos données servent uniquement à répondre à votre demande : voir la <a href="${p}politique-confidentialite.html">politique de confidentialité</a>.</p>
         <button class="btn btn--signal btn--lg" type="submit">Envoyer la demande${icon('arrow', 'icon icon--sm')}</button>
         <p class="form__status" role="status" aria-live="polite"></p>

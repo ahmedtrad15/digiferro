@@ -9,6 +9,7 @@ Aucun encadré « [À COMPLÉTER] » n’apparaît sur le site.
 - Éditeur du site : DIGIVODA, par défaut. À changer si Digiferro est édité par une autre entité.
 - Hébergeur : coordonnées à ajouter dans les mentions légales une fois l'hébergement choisi (obligation LCEN).
 - Numéro de déclaration d'activité (DRIEETS) à ajouter s'il doit apparaître.
+- Formulaire de devis (Web3Forms) : faire un envoi réel une fois le site en ligne, et vérifier qu'il arrive à l'adresse liée à la clé d'accès. Vérifier aussi où le service traite les données : en cas de transfert hors Union européenne, le préciser dans la politique de confidentialité.
 
 # Valeurs provisoires à confirmer
 

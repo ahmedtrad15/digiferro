@@ -1,5 +1,18 @@
 # Changelog Digiferro
 
+## 0.6.2 — 2026-10-31 · Formulaire relié à Web3Forms
+
+- **Formulaire de devis relié à Web3Forms** sur la page Contact et sur les 17 fiches formation et pack. Les demandes partent par e-mail à l'adresse liée à la clé d'accès, réglée dans `site.formulaire` (`data/formations.json`).
+- **E-mails lisibles** :
+  - objet « Demande de devis : <formation> (<n> participants) » ;
+  - champs en français (Nom, Entreprise, Téléphone, Formation, Participants, Message) ;
+  - formation en toutes lettres, page d'origine en fin de message ;
+  - réponse directe au demandeur.
+- **Anti-robot** : case piège `botcheck` recommandée par Web3Forms. La pré-sélection `?formation=<id>` fonctionne toujours. Sans JavaScript, le formulaire est envoyé directement au service.
+- **Erreurs** : un refus du service (clé invalide, limite atteinte) affiche le message d'échec avec le numéro à appeler, au lieu d'un faux succès.
+- **Politique de confidentialité** : Web3Forms est nommé parmi les sous-traitants. Un envoi réel de vérification est ajouté aux points à confirmer.
+- **Contrôles** : envoi réussi, envoi refusé, champs manquants et case piège testés dans le navigateur, avec des réponses du service simulées.
+
 ## 0.6.1 — 2026-10-31 · Badges retirés, nouveaux numéros
 
 - Badges d'économie (« −X € ») retirés partout : cartes, billets de pack, méga-menu, tiroir mobile, panneau devis, catalogue, tableau de prix des packs. Les prix barrés publiés restent affichés. Sur les fiches pack, l'économie réelle par rapport à l'achat à l'unité (Premium, Caténaire) apparaît en texte simple.

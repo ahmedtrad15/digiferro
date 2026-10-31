@@ -57,7 +57,8 @@
     "a_verifier": [
       "Éditeur du site : DIGIVODA, par défaut. À changer si Digiferro est édité par une autre entité.",
       "Hébergeur : coordonnées à ajouter dans les mentions légales une fois l'hébergement choisi (obligation LCEN).",
-      "Numéro de déclaration d'activité (DRIEETS) à ajouter s'il doit apparaître."
+      "Numéro de déclaration d'activité (DRIEETS) à ajouter s'il doit apparaître.",
+      "Formulaire de devis (Web3Forms) : faire un envoi réel une fois le site en ligne, et vérifier qu'il arrive à l'adresse liée à la clé d'accès. Vérifier aussi où le service traite les données : en cas de transfert hors Union européenne, le préciser dans la politique de confidentialité."
     ],
     "maps_url": "https://maps.app.goo.gl/EfiFFjgDfot81GYq5",
     "maps_embed": "https://www.google.com/maps?q=4+all%C3%A9e+des+Garays,+91120+Palaiseau&output=embed",
@@ -3139,6 +3140,13 @@
       "intra": "assets/img/formation-tes-c-direction-travaux-ferroviaires.jpg",
       "distance": "assets/img/securite-ferroviaire.jpg",
       "menu": "assets/img/tes-m-certification.jpg"
+    },
+    "formulaire": {
+      "service": "Web3Forms",
+      "endpoint": "https://api.web3forms.com/submit",
+      "access_key": "d33ba72e-5d6a-4821-b46b-e06e239d8b81",
+      "from_name": "Site Digiferro",
+      "objet": "Demande de devis Digiferro"
     }
   },
   "photos": {

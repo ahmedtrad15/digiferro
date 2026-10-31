@@ -378,26 +378,30 @@
       </ul>
     </div>
     <div class="devis__box">
-      <form class="form" action="#" method="post" data-form data-endpoint="">
-        <div class="form__hp" aria-hidden="true"><label for="f-site">Laissez ce champ vide</label><input id="f-site" name="site_web" type="text" tabindex="-1" autocomplete="off"></div>
+      <form class="form" action="https://api.web3forms.com/submit" method="post" data-form data-endpoint="https://api.web3forms.com/submit">
+        <input type="hidden" name="access_key" value="d33ba72e-5d6a-4821-b46b-e06e239d8b81">
+        <input type="hidden" name="subject" value="Demande de devis Digiferro" data-subject>
+        <input type="hidden" name="from_name" value="Site Digiferro">
+        <div class="form__hp" aria-hidden="true"><label for="f-botcheck">Ne pas cocher</label><input id="f-botcheck" name="botcheck" type="checkbox" tabindex="-1" autocomplete="off"></div>
         <div class="form__row">
-          <div class="field"><label for="f-nom">Nom et prénom <span class="field__req" aria-hidden="true">*</span></label><input id="f-nom" name="nom" type="text" autocomplete="name" required aria-describedby="f-nom-err"><p class="field__err" id="f-nom-err"></p></div>
-          <div class="field"><label for="f-entreprise">Entreprise</label><input id="f-entreprise" name="entreprise" type="text" autocomplete="organization"></div>
+          <div class="field"><label for="f-nom">Nom et prénom <span class="field__req" aria-hidden="true">*</span></label><input id="f-nom" name="Nom" type="text" autocomplete="name" required aria-describedby="f-nom-err"><p class="field__err" id="f-nom-err"></p></div>
+          <div class="field"><label for="f-entreprise">Entreprise</label><input id="f-entreprise" name="Entreprise" type="text" autocomplete="organization"></div>
         </div>
         <div class="form__row">
           <div class="field"><label for="f-email">E-mail <span class="field__req" aria-hidden="true">*</span></label><input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="f-email-err"><p class="field__err" id="f-email-err"></p></div>
-          <div class="field"><label for="f-tel">Téléphone <span class="field__req" aria-hidden="true">*</span></label><input id="f-tel" name="telephone" type="tel" autocomplete="tel" required inputmode="tel" aria-describedby="f-tel-hint f-tel-err"><p class="field__hint" id="f-tel-hint">Pour vous rappeler au sujet du devis.</p><p class="field__err" id="f-tel-err"></p></div>
+          <div class="field"><label for="f-tel">Téléphone <span class="field__req" aria-hidden="true">*</span></label><input id="f-tel" name="Téléphone" type="tel" autocomplete="tel" required inputmode="tel" aria-describedby="f-tel-hint f-tel-err"><p class="field__hint" id="f-tel-hint">Pour vous rappeler au sujet du devis.</p><p class="field__err" id="f-tel-err"></p></div>
         </div>
         <div class="form__row form__row--wide">
           <div class="field"><label for="f-formation">Formation ou pack <span class="field__req" aria-hidden="true">*</span></label>
-            <select id="f-formation" name="formation" required aria-describedby="f-formation-err">
+            <select id="f-formation" name="Formation" required aria-describedby="f-formation-err">
               <option value="">Choisir dans la liste</option>
-              <optgroup label="Sécurité ferroviaire"><option value="secufer">SECUFER</option><option value="recyclage-secufer">Recyclage SECUFER</option><option value="secufer-e-learning">SECUFER e-learning</option></optgroup><optgroup label="Sentinelle &amp; personnel"><option value="tcs-m">TCS M</option><option value="recyclage-tcs-m">Recyclage TCS M</option></optgroup><optgroup label="Prestations connexes &amp; électrique"><option value="tsae-prestations-connexes">TSAE C0 / LAM / S9</option><option value="risques-electriques-c0">Risques électriques C0</option><option value="agent-s9a3">Agent S9A3</option></optgroup><optgroup label="Représentation &amp; réseaux"><option value="rso">RSO</option><option value="aipr">AIPR</option><option value="tes-f">TES F</option></optgroup><optgroup label="Caténaire"><option value="percheur-catenaire">Percheur CH1-CB1</option></optgroup>
-              <optgroup label="Packs"><option value="pack-prestations-connexes" selected>Pack Prestations Connexes</option><option value="pack-sentinelle-complet">Pack Sentinelle Complet</option><option value="pack-rso">Pack RSO</option><option value="pack-ferroviaire-premium">Pack Premium</option><option value="pack-catenaire">Pack Caténaire</option></optgroup>
+              <optgroup label="Sécurité ferroviaire"><option value="SECUFER" data-id="secufer">SECUFER</option><option value="Recyclage SECUFER" data-id="recyclage-secufer">Recyclage SECUFER</option><option value="SECUFER e-learning" data-id="secufer-e-learning">SECUFER e-learning</option></optgroup><optgroup label="Sentinelle &amp; personnel"><option value="TCS M" data-id="tcs-m">TCS M</option><option value="Recyclage TCS M" data-id="recyclage-tcs-m">Recyclage TCS M</option></optgroup><optgroup label="Prestations connexes &amp; électrique"><option value="TSAE C0 / LAM / S9" data-id="tsae-prestations-connexes">TSAE C0 / LAM / S9</option><option value="Risques électriques C0" data-id="risques-electriques-c0">Risques électriques C0</option><option value="Agent S9A3" data-id="agent-s9a3">Agent S9A3</option></optgroup><optgroup label="Représentation &amp; réseaux"><option value="RSO" data-id="rso">RSO</option><option value="AIPR" data-id="aipr">AIPR</option><option value="TES F" data-id="tes-f">TES F</option></optgroup><optgroup label="Caténaire"><option value="Percheur CH1-CB1" data-id="percheur-catenaire">Percheur CH1-CB1</option></optgroup>
+              <optgroup label="Packs"><option value="Pack Prestations Connexes" data-id="pack-prestations-connexes" selected>Pack Prestations Connexes</option><option value="Pack Sentinelle Complet" data-id="pack-sentinelle-complet">Pack Sentinelle Complet</option><option value="Pack RSO" data-id="pack-rso">Pack RSO</option><option value="Pack Premium" data-id="pack-ferroviaire-premium">Pack Premium</option><option value="Pack Caténaire" data-id="pack-catenaire">Pack Caténaire</option></optgroup>
             </select><p class="field__err" id="f-formation-err"></p></div>
-          <div class="field field--short"><label for="f-nb">Participants <span class="field__req" aria-hidden="true">*</span></label><input id="f-nb" name="participants" type="number" min="1" max="500" step="1" value="1" required inputmode="numeric" aria-describedby="f-nb-hint f-nb-err"><p class="field__hint" id="f-nb-hint">Nombre d’agents</p><p class="field__err" id="f-nb-err"></p></div>
+          <div class="field field--short"><label for="f-nb">Participants <span class="field__req" aria-hidden="true">*</span></label><input id="f-nb" name="Participants" type="number" min="1" max="500" step="1" value="1" required inputmode="numeric" aria-describedby="f-nb-hint f-nb-err"><p class="field__hint" id="f-nb-hint">Nombre d’agents</p><p class="field__err" id="f-nb-err"></p></div>
         </div>
-        <div class="field"><label for="f-msg">Votre message</label><textarea id="f-msg" name="message" rows="4" placeholder="Période souhaitée, lieu, centre ou intra…"></textarea></div>
+        <div class="field"><label for="f-msg">Votre message</label><textarea id="f-msg" name="Message" rows="4" placeholder="Période souhaitée, lieu, centre ou intra…"></textarea></div>
+        <input type="hidden" name="Page" value="" data-page>
         <p class="form__legal"><span aria-hidden="true">*</span> Champs obligatoires. Vos données servent uniquement à répondre à votre demande : voir la <a href="../politique-confidentialite.html">politique de confidentialité</a>.</p>
         <button class="btn btn--signal btn--lg" type="submit">Envoyer la demande<svg class="icon icon--sm" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></button>
         <p class="form__status" role="status" aria-live="polite"></p>

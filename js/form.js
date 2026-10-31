@@ -1,27 +1,27 @@
 /* Digiferro · formulaire de devis
-   Validation en français, champ piège anti-robot, pré-remplissage par ?formation=<id>.
+   Validation en français, case piège anti-robot (botcheck), pré-remplissage par ?formation=<id>.
 
-   BRANCHER L'ENVOI : renseigner l'attribut data-endpoint du <form>, par exemple
-     - Formspree : data-endpoint="https://formspree.io/f/VOTRE_ID"
-     - Netlify Forms : ajouter data-netlify="true" et name="devis" au <form>, et data-endpoint="/"
-     - Backend maison : URL qui accepte un POST multipart/form-data et répond 2xx
-   Sans data-endpoint, l'envoi est simulé (rien ne part) : à remplacer avant la mise en ligne. */
+   ENVOI : Web3Forms (https://web3forms.com). Le point d'envoi (data-endpoint) et la clé d'accès
+   (champ caché access_key) viennent de site.formulaire dans data/formations.json. La clé est
+   publique par conception : elle ne sert qu'à désigner l'adresse e-mail qui reçoit les demandes.
+   Sans data-endpoint, l'envoi est simulé (rien ne part). */
 (() => {
   const forms = document.querySelectorAll('[data-form]');
   if (!forms.length) return;
 
+  // Messages d'erreur, indexés par identifiant de champ
   const MSG = {
-    nom: { valueMissing: 'Indiquez votre nom et votre prénom.' },
-    email: {
+    'f-nom': { valueMissing: 'Indiquez votre nom et votre prénom.' },
+    'f-email': {
       valueMissing: 'Indiquez votre adresse e-mail.',
       typeMismatch: 'Cette adresse e-mail ne semble pas valide (exemple : prenom.nom@entreprise.fr).',
     },
-    telephone: {
+    'f-tel': {
       valueMissing: 'Indiquez un numéro de téléphone pour vous rappeler.',
       invalid: 'Ce numéro ne semble pas valide (exemple : 06 12 34 56 78).',
     },
-    formation: { valueMissing: 'Choisissez une formation ou un pack dans la liste.' },
-    participants: {
+    'f-formation': { valueMissing: 'Choisissez une formation ou un pack dans la liste.' },
+    'f-nb': {
       valueMissing: 'Indiquez le nombre de participants.',
       badInput: 'Indiquez un nombre.',
       rangeUnderflow: 'Il faut au moins 1 participant.',
@@ -39,14 +39,15 @@
 
     // Pré-sélection de la formation depuis l'URL (contact.html?formation=tcs-m#devis)
     const pre = new URLSearchParams(location.search).get('formation');
-    const select = form.querySelector('select[name="formation"]');
-    if (pre && select && [...select.options].some((o) => o.value === pre)) select.value = pre;
+    const select = form.querySelector('#f-formation');
+    const match = pre && select && [...select.options].find((o) => o.dataset.id === pre);
+    if (match) match.selected = true;
 
     const check = (el) => {
       const field = el.closest('.field');
       const err = field && field.querySelector('.field__err');
       if (!err) return true;
-      const m = MSG[el.name] || {};
+      const m = MSG[el.id] || {};
       const v = el.validity;
       let msg = '';
       if (v.valueMissing || (el.required && !el.value.trim())) msg = m.valueMissing || 'Ce champ est obligatoire.';
@@ -56,7 +57,7 @@
       else if (v.rangeUnderflow) msg = m.rangeUnderflow;
       else if (v.rangeOverflow) msg = m.rangeOverflow;
       else if (v.stepMismatch) msg = m.stepMismatch;
-      else if (el.name === 'telephone' && !phoneOk(el.value)) msg = m.invalid;
+      else if (el.type === 'tel' && !phoneOk(el.value)) msg = m.invalid;
       err.textContent = msg;
       field.classList.toggle('is-invalid', Boolean(msg));
       el.setAttribute('aria-invalid', msg ? 'true' : 'false');
@@ -108,9 +109,16 @@
         invalid[0].focus();
         return;
       }
-      // Champ piège rempli : probablement un robot. On affiche le succès sans rien envoyer.
-      const trap = form.querySelector('[name="site_web"]');
-      if (trap && trap.value) return done();
+      // Case piège cochée : probablement un robot. On affiche le succès sans rien envoyer.
+      const trap = form.querySelector('[name="botcheck"]');
+      if (trap && trap.checked) return done();
+
+      // Objet de l'e-mail et page d'origine, pour que la demande soit lisible d'un coup d'œil
+      const subject = form.querySelector('[data-subject]');
+      const nb = form.querySelector('#f-nb');
+      if (subject && select && select.value) subject.value = `Demande de devis : ${select.value} (${nb ? nb.value : 1} participant${nb && +nb.value > 1 ? 's' : ''})`;
+      const page = form.querySelector('[data-page]');
+      if (page) page.value = location.href;
 
       const endpoint = form.dataset.endpoint;
       const btn = form.querySelector('button[type="submit"]');
@@ -120,8 +128,15 @@
       btn.firstChild.textContent = 'Envoi en cours…';
       try {
         if (endpoint) {
-          const res = await fetch(endpoint, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
-          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const payload = Object.fromEntries(new FormData(form));
+          delete payload.botcheck;
+          const res = await fetch(endpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify(payload),
+          });
+          const json = await res.json().catch(() => ({}));
+          if (!res.ok || json.success === false) throw new Error(json.message || `HTTP ${res.status}`);
         } else {
           await new Promise((r) => setTimeout(r, 400));
           console.info('[Digiferro] Formulaire valide, mais aucun data-endpoint n’est configuré : rien n’a été envoyé.');

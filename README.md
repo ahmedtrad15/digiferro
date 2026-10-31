@@ -89,13 +89,26 @@ Puis ouvrez http://localhost:8080.
 
 ## Formulaire de devis
 
-Le formulaire valide les champs en français, à la volée. En cas d’erreur, un résumé en tête de formulaire renvoie à chaque champ fautif, et le bouton indique « Envoi en cours… » pendant l’envoi. Un champ piège bloque les robots, et la formation est pré-sélectionnée via `?formation=<id>`. Sans point d'envoi configuré, **rien n'est envoyé** : le message de succès est simulé.
+Le formulaire (contact et fiches formation et pack) est relié à **Web3Forms**, qui transmet chaque demande par e-mail à l'adresse associée à la clé d'accès. Le réglage se trouve dans `data/formations.json`, rubrique `site.formulaire` :
 
-Pour le brancher, renseignez `data-endpoint` sur la balise `<form>` dans `tools/item.mjs` (fonction `formBox`, utilisée par toutes les pages), puis régénérez :
+- `endpoint` : adresse d'envoi (`https://api.web3forms.com/submit`) ;
+- `access_key` : clé d'accès Web3Forms. Elle est publique par conception : elle ne permet que d'envoyer un message vers votre adresse, pas de lire les demandes. Pour changer l'adresse de réception, créez une nouvelle clé sur web3forms.com et remplacez-la ici ;
+- `from_name` et `objet` : nom de l'expéditeur et objet par défaut de l'e-mail.
 
-- **Formspree** : `data-endpoint="https://formspree.io/f/VOTRE_ID"` et `action` identique.
-- **Netlify Forms** : ajoutez `name="devis" data-netlify="true"` au `<form>` et `data-endpoint="/"`.
-- **Backend maison** : toute URL qui accepte un POST `multipart/form-data` et répond 2xx.
+Après une modification, régénérez le site (`node tools/build.mjs`).
+
+Chaque e-mail indique la formation et le nombre de participants dans son objet. Il reprend ensuite les champs dans l'ordre du formulaire, puis la page d'origine. Le bouton « Répondre » écrit directement au demandeur.
+
+Côté visiteur :
+
+- les champs sont validés en français, à la volée ;
+- en cas d'erreur, un résumé en tête du formulaire renvoie à chaque champ fautif ;
+- le bouton indique « Envoi en cours… » pendant l'envoi ;
+- en cas d'échec, un message invite à réessayer ou à appeler.
+
+Une case piège (`botcheck`) bloque les robots, et la formation est pré-sélectionnée via `?formation=<id>`. Sans JavaScript, le formulaire est envoyé directement à Web3Forms, qui affiche sa propre page de confirmation. Si `endpoint` est vide, rien n'est envoyé et le message de succès est simulé.
+
+Après la mise en ligne, faites un envoi réel pour vérifier la réception (pensez aux courriers indésirables).
 
 ## Plan d'accès
 
