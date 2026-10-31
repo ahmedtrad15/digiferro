@@ -318,7 +318,7 @@ export function contact(data) {
       ${mapsAccess(o)}
     </div>
     <div class="contact__form" id="devis">
-      <h2 class="contact__form-title">Demande de devis</h2>
+      <h2 class="contact__form-title">Inscription et devis</h2>
       <p class="contact__form-lead">Tous les champs marqués d’un astérisque sont obligatoires. La formation choisie sur une fiche est déjà présélectionnée.</p>
       ${formBox(data, null, p)}
     </div>

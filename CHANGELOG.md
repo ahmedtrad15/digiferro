@@ -1,5 +1,12 @@
 # Changelog Digiferro
 
+## 0.6.3 — 2026-10-31 · Boutons « S’inscrire »
+
+- Les boutons « Demander un devis » deviennent « S’inscrire » partout : en-tête, barre mobile, tiroir, méga-menu, accueil, bandeaux d’appel, fiches formation (héros et panneau latéral). Les boutons « Réserver ce pack » restent inchangés.
+- Le bloc formulaire des fiches s’intitule « Inscription » (par exemple « S’inscrire à la TCS M »), et celui de la page Contact « Inscription et devis ». Le devis reste mentionné pour les sessions en intra.
+- L’objet de l’e-mail devient « Demande d’inscription : <formation> (<n> participants) ».
+- Le message de confirmation indique « Digiferro vous recontacte par e-mail ou par téléphone ».
+
 ## 0.6.2 — 2026-10-31 · Formulaire relié à Web3Forms
 
 - **Formulaire de devis relié à Web3Forms** sur la page Contact et sur les 17 fiches formation et pack. Les demandes partent par e-mail à l'adresse liée à la clé d'accès, réglée dans `site.formulaire` (`data/formations.json`).

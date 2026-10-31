@@ -116,7 +116,7 @@
       // Objet de l'e-mail et page d'origine, pour que la demande soit lisible d'un coup d'œil
       const subject = form.querySelector('[data-subject]');
       const nb = form.querySelector('#f-nb');
-      if (subject && select && select.value) subject.value = `Demande de devis : ${select.value} (${nb ? nb.value : 1} participant${nb && +nb.value > 1 ? 's' : ''})`;
+      if (subject && select && select.value) subject.value = `Demande d’inscription : ${select.value} (${nb ? nb.value : 1} participant${nb && +nb.value > 1 ? 's' : ''})`;
       const page = form.querySelector('[data-page]');
       if (page) page.value = location.href;
 

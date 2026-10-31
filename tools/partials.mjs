@@ -90,8 +90,8 @@ export function header(ctx, data) {
     <div class="mega__aside">
       ${data.site.photos?.menu ? photoTag(p, data.site.photos.menu, { sizes: '16rem' }) : `<img src="${p}assets/img/ph-agent-epi.svg" alt="Agent en équipement de protection au bord d'une voie ferrée" width="480" height="320" loading="lazy" decoding="async">`}
       <p class="mega__aside-title">Une équipe entière à habiliter ?</p>
-      <p>Session en centre ou sur votre site : décrivez votre besoin, Digivoda vous répond avec un devis.</p>
-      <a class="btn btn--signal btn--sm" href="${devisHref(p)}">Demander un devis</a>
+      <p>Session en centre ou sur votre site : inscrivez vos agents, Digivoda vous confirme les dates ou vous envoie un devis pour l’intra.</p>
+      <a class="btn btn--signal btn--sm" href="${devisHref(p)}">S’inscrire</a>
       <a class="mega__phone" href="tel:${o.telephone_e164}">${icon('phone', 'icon icon--sm')} ${esc(o.telephone)}</a>
       ${phoneLinks(o, { cls: 'phones phones--compact', skipFirst: true })}
     </div>
@@ -126,7 +126,7 @@ export function header(ctx, data) {
     </nav>
     <div class="drawer__foot">
       <a class="btn btn--ghost" href="tel:${o.telephone_e164}">${icon('phone', 'icon icon--sm')} Appeler</a>
-      <a class="btn btn--signal" href="${devisHref(p)}">Demander un devis</a>
+      <a class="btn btn--signal" href="${devisHref(p)}">S’inscrire</a>
     </div>
   </div>
 </div>`;
@@ -160,7 +160,7 @@ ${SPRITE}
     </nav>
     <div class="site-header__actions">
       <a class="site-header__phone" href="tel:${o.telephone_e164}">${icon('phone', 'icon icon--sm')}<span>${esc(o.telephone)}</span></a>
-      <a class="btn btn--signal btn--sm site-header__cta" href="${ctx.devis || devisHref(p)}">Demander un devis</a>
+      <a class="btn btn--signal btn--sm site-header__cta" href="${ctx.devis || devisHref(p)}">S’inscrire</a>
       <a class="burger" href="#plan-du-site" data-drawer-open aria-controls="drawer">${icon('menu')}<span class="burger__label">Menu</span></a>
     </div>
   </div>
@@ -209,7 +209,7 @@ export function footer(ctx, data) {
       <p><a href="mailto:${esc(o.email)}">${icon('mail', 'icon icon--sm')}${esc(o.email)}</a></p>
       <p class="site-footer__addr"><span>Siège</span>${esc(o.adresse_siege)}</p>
       <p class="site-footer__addr"><span>Centre de formation</span>${esc(o.adresse_centre)}</p>
-      <a class="btn btn--signal btn--sm" href="${devisHref(p)}">Demander un devis</a>
+      <a class="btn btn--signal btn--sm" href="${devisHref(p)}">S’inscrire</a>
     </div>
   </div>
   <div class="site-footer__legal">
@@ -225,7 +225,7 @@ export function footer(ctx, data) {
 </footer>
 <nav class="mobile-bar" aria-label="Actions rapides">
   <a class="mobile-bar__btn" href="tel:${o.telephone_e164}">${icon('phone', 'icon icon--sm')}Appeler</a>
-  <a class="mobile-bar__btn mobile-bar__btn--signal" href="${ctx.devis || devisHref(p)}">${icon('doc', 'icon icon--sm')}Devis</a>
+  <a class="mobile-bar__btn mobile-bar__btn--signal" href="${ctx.devis || devisHref(p)}">${icon('doc', 'icon icon--sm')}S’inscrire</a>
 </nav>
 <button class="to-top" type="button" data-to-top hidden>${icon('up')}<span class="sr-only">Revenir en haut de la page</span></button>`;
 }

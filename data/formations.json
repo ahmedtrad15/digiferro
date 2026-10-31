@@ -260,7 +260,7 @@
         "lead": "Avant de poser un pied sur les emprises, chaque intervenant doit connaître les règles qui le protègent des circulations. La SECUFER pose ce socle. Elle ouvre aussi la TCS M et le Pack RSO.",
         "programme_intro": "Le contenu ci-dessous est celui de la journée SECUFER publiée en ouverture du programme TCS M.",
         "validite_texte": "L'attestation se renouvelle par un recyclage d'une demi-journée, ouvert jusqu'à 6 mois après son expiration.",
-        "devis_titre": "Demander un devis pour la SECUFER",
+        "devis_titre": "S'inscrire à la SECUFER",
         "devis_texte": "Un agent ou toute une équipe : indiquez le nombre de participants et le format souhaité, en centre, en intra ou à distance.",
         "faq_titre": "Questions fréquentes : SECUFER",
         "faq": [
@@ -454,7 +454,7 @@
         },
         "modalites_intro": "Le format le plus souple du catalogue : en salle, chez vous ou à distance.",
         "validite_texte": "Notez la date d'expiration de vos attestations : passé 6 mois, le recyclage n'est plus possible.",
-        "devis_titre": "Demander un devis pour le recyclage SECUFER",
+        "devis_titre": "S'inscrire au recyclage SECUFER",
         "devis_texte": "Précisez le nombre d'agents à recycler et leurs dates d'expiration : la session sera calée en conséquence.",
         "faq_titre": "Questions fréquentes : Recyclage SECUFER",
         "faq": [
@@ -644,7 +644,7 @@
           ]
         },
         "modalites_intro": "Une formation suivie en ligne : pas de salle à réserver, pas de déplacement.",
-        "devis_titre": "Demander un accès à la SECUFER en e-learning",
+        "devis_titre": "S'inscrire à la SECUFER en e-learning",
         "devis_texte": "Indiquez le nombre d'agents à inscrire : Digivoda revient vers vous avec les modalités d'accès.",
         "faq_titre": "Questions fréquentes : SECUFER e-learning",
         "faq": [
@@ -906,7 +906,7 @@
           }
         ],
         "faq_titre": "Questions fréquentes : TCS M",
-        "devis_titre": "Demander un devis pour la TCS M"
+        "devis_titre": "S'inscrire à la TCS M"
       },
       "validite_court": "Évaluation annuelle",
       "provisoire": [
@@ -1027,7 +1027,7 @@
           ]
         },
         "validite_texte": "Planifiez l'évaluation avant la date anniversaire de l'habilitation, pour ne pas immobiliser un agent.",
-        "devis_titre": "Planifier un recyclage TCS M",
+        "devis_titre": "S'inscrire au recyclage TCS M",
         "devis_texte": "Indiquez le nombre d'annonceurs et d'ASP à évaluer, et les dates d'échéance de leurs habilitations.",
         "faq_titre": "Questions fréquentes : recyclage TCS M",
         "faq": [
@@ -1209,7 +1209,7 @@
         "seo_description": "TSAE prestations connexes : risques électriques C0, Agent prestataire LAM et S9 dans une même formation. Contenu, packs associés et devis Digivoda.",
         "titre_h1": "TSAE prestations connexes : C0, Agent prestataire LAM et S9",
         "lead": "Trois compétences réunies dans une même formation : le risque électrique C0, l'Agent prestataire LAM et le S9. De quoi préparer une équipe de prestations connexes sans multiplier les inscriptions.",
-        "devis_titre": "Demander un devis pour la TSAE",
+        "devis_titre": "S'inscrire à la TSAE",
         "devis_texte": "Précisez si vos agents ont besoin des trois modules ou seulement du C0, et combien ils sont.",
         "faq_titre": "Questions fréquentes : TSAE C0 / LAM / S9",
         "faq": [
@@ -1407,7 +1407,7 @@
         "titre_h1": "Risques électriques C0",
         "lead": "Une caténaire sous tension ne prévient pas. La formation C0 apprend à repérer les installations électriques de traction et à travailler à leur proximité en sécurité : caténaire, sous-stations, rail conducteur.",
         "validite_texte": "L'organisme délivre l'attestation de formation ; l'habilitation reste à la charge de l'employeur.",
-        "devis_titre": "Demander un devis pour le C0",
+        "devis_titre": "S'inscrire au C0",
         "devis_texte": "Seul, en complément de la TCS M ou dans un pack : dites-nous ce que vos agents ont déjà suivi.",
         "faq_titre": "Questions fréquentes : Risques électriques C0",
         "faq": [
@@ -1597,7 +1597,7 @@
         "seo_description": "RSO, Représentant Sécurité Opérationnelle : coordonner la sécurité des opérations sur les chantiers ferroviaires. Aussi en Pack RSO avec SECUFER et TCS M.",
         "titre_h1": "RSO : Représentant Sécurité Opérationnelle",
         "lead": "Sur un chantier ferroviaire, quelqu'un doit tenir le fil de la sécurité d'un bout à l'autre des opérations. C'est le rôle du RSO, au contact des équipes et des autres intervenants.",
-        "devis_titre": "Demander un devis pour la RSO",
+        "devis_titre": "S'inscrire à la RSO",
         "devis_texte": "Formation seule ou parcours complet avec le Pack RSO : précisez le profil de vos agents.",
         "faq_titre": "Questions fréquentes : RSO",
         "faq": [
@@ -1785,7 +1785,7 @@
         "seo_description": "AIPR, Autorisation d'Intervention à Proximité des Réseaux : se former pour travailler près des réseaux enterrés ou aériens. Devis auprès de Digivoda.",
         "titre_h1": "AIPR : Autorisation d'Intervention à Proximité des Réseaux",
         "lead": "Un câble ou une canalisation touchés pendant des travaux, et c'est tout le chantier qui s'arrête. L'AIPR atteste que l'intervenant sait travailler à proximité des réseaux sans les endommager.",
-        "devis_titre": "Demander un devis pour l'AIPR",
+        "devis_titre": "S'inscrire à l'AIPR",
         "devis_texte": "Indiquez le nombre d'agents et le rôle de chacun sur vos chantiers.",
         "faq_titre": "Questions fréquentes : AIPR",
         "faq": [
@@ -1961,7 +1961,7 @@
         "seo_description": "Formation TES F : assurer la protection des passages à niveau pendant les travaux ferroviaires. Modalités, lieux et demande de devis auprès de Digivoda.",
         "titre_h1": "TES F : protection des passages à niveau",
         "lead": "Un passage à niveau en travaux reste un point de croisement entre la route et le rail. La TES F prépare les agents chargés d'en assurer la protection tant que le chantier est ouvert.",
-        "devis_titre": "Demander un devis pour la TES F",
+        "devis_titre": "S'inscrire à la TES F",
         "devis_texte": "Précisez le nombre d'agents et la période de vos travaux sur passage à niveau.",
         "faq_titre": "Questions fréquentes : TES F",
         "faq": [
@@ -2143,7 +2143,7 @@
         "seo_description": "Formation Agent S9A3 couvrant les fonctions RZT, AGEC/R et APN. Modalités en centre Digivoda ou en intra sur votre site, et demande de devis.",
         "titre_h1": "Agent S9A3 : RZT, AGEC/R et APN",
         "lead": "Une seule formation pour les trois fonctions de l'agent S9A3 : RZT, AGEC/R et APN. Pratique quand un même agent doit pouvoir tenir plusieurs rôles d'un chantier à l'autre.",
-        "devis_titre": "Demander un devis pour l'Agent S9A3",
+        "devis_titre": "S'inscrire à la formation Agent S9A3",
         "devis_texte": "Indiquez les fonctions visées (RZT, AGEC/R, APN) et le nombre d'agents.",
         "faq_titre": "Questions fréquentes : Agent S9A3",
         "faq": [
@@ -2319,7 +2319,7 @@
         "titre_h1": "Percheur / Aide Monteur Caténaire CH1-CB1",
         "lead": "Sur un chantier caténaire, le percheur et l'aide monteur travaillent au plus près des installations électriques. Une fonction exposée, qui se prépare avant de monter sur le chantier.",
         "validite_texte": "L'organisme délivre l'attestation de formation ; l'habilitation reste délivrée par l'employeur.",
-        "devis_titre": "Demander un devis : percheur CH1-CB1",
+        "devis_titre": "S'inscrire à la formation percheur CH1-CB1",
         "devis_texte": "Précisez le nombre d'agents et la nature de vos chantiers caténaire.",
         "faq_titre": "Questions fréquentes : Percheur CH1-CB1",
         "faq": [
@@ -3146,7 +3146,7 @@
       "endpoint": "https://api.web3forms.com/submit",
       "access_key": "d33ba72e-5d6a-4821-b46b-e06e239d8b81",
       "from_name": "Site Digiferro",
-      "objet": "Demande de devis Digiferro"
+      "objet": "Demande d'inscription Digiferro"
     }
   },
   "photos": {

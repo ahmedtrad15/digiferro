@@ -43,7 +43,7 @@ export function formBox(data, selectedId, p = P) {
   return `<div class="devis__box">
       <form class="form" action="${esc(cfg.endpoint || '#')}" method="post" data-form data-endpoint="${esc(cfg.endpoint || '')}">
         <input type="hidden" name="access_key" value="${esc(cfg.access_key || '')}">
-        <input type="hidden" name="subject" value="${esc(cfg.objet || 'Demande de devis')}" data-subject>
+        <input type="hidden" name="subject" value="${esc(cfg.objet || 'Demande d’inscription')}" data-subject>
         <input type="hidden" name="from_name" value="${esc(cfg.from_name || 'Site Digiferro')}">
         <div class="form__hp" aria-hidden="true"><label for="f-botcheck">Ne pas cocher</label><input id="f-botcheck" name="botcheck" type="checkbox" tabindex="-1" autocomplete="off"></div>
         <div class="form__row">
@@ -52,7 +52,7 @@ export function formBox(data, selectedId, p = P) {
         </div>
         <div class="form__row">
           <div class="field"><label for="f-email">E-mail <span class="field__req" aria-hidden="true">*</span></label><input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="f-email-err"><p class="field__err" id="f-email-err"></p></div>
-          <div class="field"><label for="f-tel">Téléphone <span class="field__req" aria-hidden="true">*</span></label><input id="f-tel" name="Téléphone" type="tel" autocomplete="tel" required inputmode="tel" aria-describedby="f-tel-hint f-tel-err"><p class="field__hint" id="f-tel-hint">Pour vous rappeler au sujet du devis.</p><p class="field__err" id="f-tel-err"></p></div>
+          <div class="field"><label for="f-tel">Téléphone <span class="field__req" aria-hidden="true">*</span></label><input id="f-tel" name="Téléphone" type="tel" autocomplete="tel" required inputmode="tel" aria-describedby="f-tel-hint f-tel-err"><p class="field__hint" id="f-tel-hint">Pour vous rappeler au sujet de votre inscription.</p><p class="field__err" id="f-tel-err"></p></div>
         </div>
         <div class="form__row form__row--wide">
           <div class="field"><label for="f-formation">Formation ou pack <span class="field__req" aria-hidden="true">*</span></label>
@@ -72,7 +72,7 @@ export function formBox(data, selectedId, p = P) {
       <div class="form-success" tabindex="-1" hidden>
         ${icon('check', 'icon icon--lg')}
         <p class="form-success__title">Demande envoyée</p>
-        <p>Merci. Votre demande est bien partie : Digivoda vous recontacte par e-mail ou par téléphone.</p>
+        <p>Merci. Votre demande est bien partie : Digiferro vous recontacte par e-mail ou par téléphone.</p>
       </div>
     </div>`;
 }
@@ -82,7 +82,7 @@ export function devisForm(data, selectedId, { title, text, p = P } = {}) {
   return `<section class="section band band--night devis" id="devis" aria-labelledby="devis-title">
   <div class="wrap devis__grid">
     <div class="devis__intro">
-      <p class="station station--light">Devis</p>
+      <p class="station station--light">Inscription</p>
       <h2 id="devis-title">${esc(title)}</h2>
       <p>${esc(text)}</p>
       <ul class="devis__contact">
@@ -96,7 +96,7 @@ export function devisForm(data, selectedId, { title, text, p = P } = {}) {
 </section>`;
 }
 
-function aside(f, data, { packIds = [], devisLabel = 'Demander un devis' } = {}) {
+function aside(f, data, { packIds = [], devisLabel = 'S’inscrire' } = {}) {
   const o = data.organisme;
   const packs = packIds.map((id) => data.packs.find((k) => k.id === id)).filter(Boolean);
   return `<aside class="item-aside" aria-label="Réserver">
@@ -184,7 +184,7 @@ export function formationPage(data, f) {
         <p class="item-hero__lead">${esc(e.lead || f.resume)}</p>
         ${e.regle ? regleHTML(e.regle) : ''}
         <div class="item-hero__cta">
-          <a class="btn btn--signal btn--lg" href="#devis">Demander un devis</a>
+          <a class="btn btn--signal btn--lg" href="#devis">S’inscrire</a>
           <a class="link-arrow" href="#programme">Voir le programme${icon('arrow', 'icon icon--sm')}</a>
         </div>
       </div>
@@ -295,7 +295,7 @@ ${main}
 ${aside(f, data, { packIds: f.packs })}
 </div>
 ${relatedSec}
-${devisForm(data, f.id, { title: e.devis_titre || `Demander un devis : ${f.titre_court}`, text: e.devis_texte || '' })}`;
+${devisForm(data, f.id, { title: e.devis_titre || `S’inscrire : ${f.titre_court}`, text: e.devis_texte || '' })}`;
 
   return {
     ctx: {
