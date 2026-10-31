@@ -811,3 +811,5 @@
 .cta-band__phone--group .cta-band__nums { display: flex; flex-wrap: wrap; gap: 0 1rem; }
 .cta-band__phone--group a { color: var(--night); text-decoration: none; }
 .cta-band__phone--group a:hover { text-decoration: underline; }
+.cta-band__phone--group .cta-band__nums a { display: inline-flex; align-items: center; min-height: 44px; }
+.cta-band__phone--group small { margin-bottom: -0.35rem; }
