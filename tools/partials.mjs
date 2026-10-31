@@ -53,7 +53,7 @@ export const LOGO_MARK = `<svg class="brand__mark" viewBox="0 0 40 40" aria-hidd
 
 export const brand = (p, tag = true) => `<a class="brand" href="${p}index.html">${LOGO_MARK}<span class="brand__text"><span class="brand__word">Digi<b>ferro</b></span>${tag ? '<span class="brand__tag">Formations ferroviaires</span>' : ''}</span><span class="sr-only">, retour à l'accueil</span></a>`;
 
-const devisHref = (p, id) => `${p}contact.html${id ? `?formation=${encodeURIComponent(id)}` : ''}#devis`;
+const devisHref = (p, id) => `${p}contact.html${id ? `?formation=${encodeURIComponent(id)}` : ''}#inscription`;
 export { devisHref };
 
 function groupsOf(data) {
@@ -198,7 +198,7 @@ export function footer(ctx, data) {
           <li><a href="${p}formations/index.html">Catalogue</a></li>
           <li><a href="${p}a-propos.html">À propos</a></li>
           <li><a href="${p}faq.html">FAQ</a></li>
-          <li><a href="${p}contact.html">Contact et devis</a></li>
+          <li><a href="${p}contact.html">Contact et inscription</a></li>
         </ul>
       </nav>
     </div>

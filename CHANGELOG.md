@@ -1,5 +1,22 @@
 # Changelog Digiferro
 
+## 0.6.4 — 2026-10-31 · Formulaire d’inscription
+
+- Le formulaire de devis devient un formulaire d’inscription :
+  - titre « Inscription » sur la page Contact ;
+  - bouton « Envoyer mon inscription » ;
+  - confirmation « Inscription envoyée » ;
+  - mention des données « pour traiter votre inscription » ;
+  - section « Avant d’envoyer votre inscription ».
+- L’ancre du formulaire passe de `#devis` à `#inscription` (par exemple `contact.html?formation=tcs-m#inscription`).
+- Les textes qui renvoient au formulaire parlent d’inscription :
+  - accroches des blocs formulaire et réponses FAQ « Inscrivez-vous en ligne ou appelez… » ;
+  - question « Comment s’inscrire ? » ;
+  - descriptions de page ;
+  - lien « Contact et inscription » du pied de page ;
+  - mentions dans les CGV et la politique de confidentialité.
+- « Sur devis » reste affiché pour les tarifs intra. Le devis TTC reste mentionné comme base des demandes de prise en charge du financement.
+
 ## 0.6.3 — 2026-10-31 · Boutons « S’inscrire »
 
 - Les boutons « Demander un devis » deviennent « S’inscrire » partout : en-tête, barre mobile, tiroir, méga-menu, accueil, bandeaux d’appel, fiches formation (héros et panneau latéral). Les boutons « Réserver ce pack » restent inchangés.

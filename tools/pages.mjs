@@ -256,7 +256,7 @@ export function aPropos(data) {
       ${qualiopiFigure(p, o, 'qualiopi qualiopi--light')}
       <div class="commitments__access">
         <h3>Personnes en situation de handicap</h3>
-        <p>Digivoda dispose d’un référent handicap et publie un registre public d’accessibilité. Signalez votre besoin dès la demande de devis : la session peut être adaptée.</p>
+        <p>Digivoda dispose d’un référent handicap et publie un registre public d’accessibilité. Signalez votre besoin dès l’inscription : la session peut être adaptée.</p>
         <p>Pour joindre le référent handicap : <a href="mailto:${esc(o.email)}">${esc(o.email)}</a> ou <a href="tel:${o.telephone_e164}">${esc(o.telephone)}</a>.</p>
         <a class="link-arrow" href="${esc(o.sources.referent_handicap)}" rel="noopener">Registre d’accessibilité (digivoda.com)${icon('arrow', 'icon icon--sm')}</a>
       </div>
@@ -293,7 +293,7 @@ export function contact(data) {
   const body = `${pageHero(p, trail, {
     station: 'Contact',
     title: 'Parlons de votre besoin de formation',
-    lead: 'Un agent à habiliter, une équipe à former avant un chantier, un recyclage à planifier : décrivez votre besoin, Digivoda vous répond avec un devis.',
+    lead: 'Un agent à habiliter, une équipe à former avant un chantier, un recyclage à planifier : inscrivez-vous en ligne, Digivoda vous confirme votre inscription et les dates.',
   })}
 <section class="section contact" aria-label="Coordonnées et formulaire">
   <div class="wrap contact__grid">
@@ -317,8 +317,8 @@ export function contact(data) {
       </div>
       ${mapsAccess(o)}
     </div>
-    <div class="contact__form" id="devis">
-      <h2 class="contact__form-title">Inscription et devis</h2>
+    <div class="contact__form" id="inscription">
+      <h2 class="contact__form-title">Inscription</h2>
       <p class="contact__form-lead">Tous les champs marqués d’un astérisque sont obligatoires. La formation choisie sur une fiche est déjà présélectionnée.</p>
       ${formBox(data, null, p)}
     </div>
@@ -327,7 +327,7 @@ export function contact(data) {
 <section class="section band band--steel contact-more" aria-labelledby="contact-faq">
   <div class="wrap faq-home__grid">
     <div class="faq-home__head">
-      <h2 id="contact-faq">Avant d’envoyer votre demande</h2>
+      <h2 id="contact-faq">Avant d’envoyer votre inscription</h2>
       <a class="link-arrow" href="faq.html">Toutes les questions${icon('arrow', 'icon icon--sm')}</a>
     </div>
     ${faqHTML(CONTACT_FAQ, 'faq-contact')}
@@ -337,11 +337,11 @@ export function contact(data) {
     ctx: {
       p,
       path: 'contact.html',
-      title: 'Contact et demande de devis | Digiferro',
-      description: `Demandez un devis pour une formation ferroviaire : SECUFER, TCS M, C0, RSO, packs. Téléphone ${o.telephone}, e-mail ou formulaire, réponse de Digivoda.`,
+      title: 'Contact et inscription | Digiferro',
+      description: `Inscrivez-vous à une formation ferroviaire : SECUFER, TCS M, C0, RSO, packs. Téléphone ${o.telephone}, e-mail ou formulaire, réponse de Digivoda.`,
       bodyClass: 'page-contact',
       scripts: ['form'],
-      devis: '#devis',
+      devis: '#inscription',
       jsonld: [
         jsonld({
           '@context': 'https://schema.org',
@@ -376,7 +376,7 @@ export const FAQ_GROUPS = [
     id: 'inscription',
     title: 'Inscription, délais et tarifs',
     items: [
-      { q: 'Comment demander un devis ?', a: 'Par le formulaire de contact ou au 01 89 70 55 70. Indiquez la formation ou le pack, le nombre d’agents et le format souhaité : centre, classe virtuelle, intra ou e-learning.' },
+      { q: 'Comment s’inscrire ?', a: 'Par le formulaire d’inscription de la page Contact ou au 01 89 70 55 70. Indiquez la formation ou le pack, le nombre d’agents et le format souhaité : centre, classe virtuelle, intra ou e-learning.' },
       { q: 'Sous quel délai s’inscrire à une session inter-entreprises ?', a: 'Au moins 11 jours ouvrés avant la date de la session.' },
       { q: 'Combien de temps faut-il pour organiser une session intra ?', a: 'Comptez 30 à 45 jours pour organiser une session sur votre site.' },
       { q: 'Les tarifs affichés sont-ils HT ou TTC ?', a: 'TTC, par personne, pour les sessions inter-entreprises, en classe virtuelle ou en e-learning.' },
@@ -466,7 +466,7 @@ export function faqPage(data) {
     </div>
   </div>
 </section>
-${ctaBand(p, data.organisme, { title: 'Votre question n’est pas dans la liste ?', text: 'Posez-la directement : par téléphone ou dans le message du formulaire de devis.' })}`;
+${ctaBand(p, data.organisme, { title: 'Votre question n’est pas dans la liste ?', text: 'Posez-la directement : par téléphone ou dans le message du formulaire d’inscription.' })}`;
   return {
     ctx: {
       p,
@@ -549,7 +549,7 @@ export function mentions(data) {
       },
       {
         title: 'Données personnelles et cookies',
-        html: `<p>Le traitement des données transmises par le formulaire de devis est décrit dans la <a href="politique-confidentialite.html">politique de confidentialité</a>.</p>
+        html: `<p>Le traitement des données transmises par le formulaire d’inscription est décrit dans la <a href="politique-confidentialite.html">politique de confidentialité</a>.</p>
 <p>Ce site ne dépose aucun cookie de mesure d’audience ni de cookie publicitaire.</p>`,
       },
       {
@@ -570,13 +570,13 @@ export function cgv(data) {
     lead: 'Conditions applicables aux formations présentées sur Digiferro et dispensées par DIGIVODA.',
     sections: [
       { title: 'Objet', html: `<p>Les présentes conditions générales de vente s’appliquent à toutes les formations présentées sur le site Digiferro et dispensées par DIGIVODA : sessions inter-entreprises, sessions intra-entreprise, classes virtuelles et parcours en e-learning. Toute inscription implique leur acceptation sans réserve.</p>` },
-      { title: 'Inscription', html: `<p>La demande d’inscription se fait par le formulaire de devis du site, par téléphone ou par e-mail. Pour une session inter-entreprises, elle doit parvenir au moins 11 jours ouvrés avant la date de la session ; une session intra s’organise en 30 à 45 jours.</p><p>L’inscription devient définitive à la signature du devis et de la convention de formation (entreprise) ou du contrat de formation (particulier). Une convocation précisant le lieu, les horaires et les modalités d’accès est ensuite adressée au stagiaire.</p>` },
+      { title: 'Inscription', html: `<p>La demande d’inscription se fait par le formulaire d’inscription du site, par téléphone ou par e-mail. Pour une session inter-entreprises, elle doit parvenir au moins 11 jours ouvrés avant la date de la session ; une session intra s’organise en 30 à 45 jours.</p><p>L’inscription devient définitive à la signature du devis et de la convention de formation (entreprise) ou du contrat de formation (particulier). Une convocation précisant le lieu, les horaires et les modalités d’accès est ensuite adressée au stagiaire.</p>` },
       { title: 'Tarifs', html: `<p>Les tarifs affichés sur le site sont exprimés TTC, par personne, pour les sessions inter-entreprises, les classes virtuelles et l’e-learning.</p><p>Les sessions intra-entreprise font l’objet d’un devis, établi selon la formation, le nombre d’agents, le lieu et les éventuels frais de déplacement. Le devis précise sa durée de validité.</p>` },
       { title: 'Paiement', html: `<p>Les modalités de paiement (échéances, moyens de paiement) figurent sur le devis et la convention ou le contrat de formation.</p><p>Pour les clients professionnels, tout retard de paiement entraîne l’application des pénalités prévues à l’article L. 441-10 du Code de commerce, ainsi que de l’indemnité forfaitaire de 40 € pour frais de recouvrement.</p>` },
       { title: 'Annulation, report et absence', html: `<p>Toute demande d’annulation ou de report doit être adressée par écrit, par e-mail à <a href="mailto:${esc(o.email)}">${esc(o.email)}</a>, avant le début de la formation. Les conditions applicables, notamment les délais et les éventuels frais, sont précisées dans la convention ou le contrat de formation.</p><p>Une personne qui finance elle-même sa formation dispose d’un délai de rétractation de dix jours à compter de la signature du contrat (article L. 6353-5 du Code du travail).</p><p>DIGIVODA peut reporter une session en cas de nombre de participants insuffisant ou de force majeure. Les stagiaires sont alors prévenus au plus tôt et une nouvelle date leur est proposée.</p>` },
       { title: 'Prise en charge par un financeur', html: `<p>Lorsque la formation est financée par un OPCO ou un autre organisme, il appartient au client d’effectuer la demande de prise en charge avant le début de la formation et de l’indiquer lors de l’inscription. Le devis TTC sert de base à cette demande.</p><p>En cas de prise en charge partielle ou de refus du financeur, le montant restant est facturé au client.</p>` },
       { title: 'Attestation de formation', html: `<p>Une attestation de formation est remise au stagiaire à l’issue de la formation. L’habilitation éventuelle est délivrée par l’employeur, sur la base de cette attestation.</p>` },
-      { title: 'Accessibilité', html: `<p>Les personnes en situation de handicap peuvent signaler leur besoin dès la demande de devis. Le référent handicap de DIGIVODA étudie avec elles les adaptations possibles : contact par e-mail à <a href="mailto:${esc(o.email)}">${esc(o.email)}</a> ou au <a href="tel:${o.telephone_e164}">${esc(o.telephone)}</a>.</p>` },
+      { title: 'Accessibilité', html: `<p>Les personnes en situation de handicap peuvent signaler leur besoin dès l’inscription. Le référent handicap de DIGIVODA étudie avec elles les adaptations possibles : contact par e-mail à <a href="mailto:${esc(o.email)}">${esc(o.email)}</a> ou au <a href="tel:${o.telephone_e164}">${esc(o.telephone)}</a>.</p>` },
       { title: 'Supports pédagogiques', html: `<p>Les supports remis aux stagiaires sont réservés à leur usage personnel. Toute reproduction, diffusion ou exploitation commerciale sans autorisation écrite de DIGIVODA est interdite.</p>` },
       { title: 'Données personnelles', html: `<p>Voir la <a href="politique-confidentialite.html">politique de confidentialité</a>.</p>` },
       { title: 'Droit applicable et litiges', html: `<p>Les présentes conditions sont soumises au droit français. En cas de différend, les parties recherchent d’abord une solution amiable. Le client consommateur peut recourir gratuitement à un médiateur de la consommation.</p><p>À défaut d’accord, les tribunaux compétents sont ceux du ressort du siège de DIGIVODA, sous réserve des règles protectrices applicables aux consommateurs.</p>` },
@@ -590,12 +590,12 @@ export function confidentialite(data) {
     path: 'politique-confidentialite.html',
     title: 'Politique de confidentialité',
     seoTitle: 'Politique de confidentialité | Digiferro',
-    description: 'Données collectées par le formulaire de devis Digiferro, finalités, durée de conservation, destinataires et droits RGPD : accès, rectification, effacement.',
-    lead: 'Ce que deviennent les informations que vous transmettez par le formulaire de devis.',
+    description: 'Données collectées par le formulaire d’inscription Digiferro, finalités, durée de conservation, destinataires et droits RGPD : accès, rectification, effacement.',
+    lead: 'Ce que deviennent les informations que vous transmettez par le formulaire d’inscription.',
     sections: [
       { title: 'Responsable du traitement', html: `<p>Le responsable du traitement est <strong>DIGIVODA</strong>, ${esc(o.forme_juridique)}, dont le siège est situé ${esc(o.adresse_siege)} (${esc(o.rcs)}).</p><p>Pour toute question sur vos données : <a href="mailto:${esc(o.email)}">${esc(o.email)}</a>.</p>` },
-      { title: 'Données collectées', html: `<p>Le formulaire de devis recueille votre nom, votre adresse e-mail, votre numéro de téléphone, le nom de votre entreprise, la formation ou le pack choisi, le nombre de participants et votre message. Aucun compte n’est créé, aucune autre donnée n’est collectée.</p>` },
-      { title: 'Finalités et base légale', html: `<p>Ces données servent à répondre à votre demande de devis et, si vous donnez suite, à organiser la formation. Le traitement repose sur les mesures précontractuelles prises à votre demande (article 6.1.b du RGPD).</p>` },
+      { title: 'Données collectées', html: `<p>Le formulaire d’inscription recueille votre nom, votre adresse e-mail, votre numéro de téléphone, le nom de votre entreprise, la formation ou le pack choisi, le nombre de participants et votre message. Aucun compte n’est créé, aucune autre donnée n’est collectée.</p>` },
+      { title: 'Finalités et base légale', html: `<p>Ces données servent à traiter votre demande d’inscription et, si vous donnez suite, à organiser la formation. Le traitement repose sur les mesures précontractuelles prises à votre demande (article 6.1.b du RGPD).</p>` },
       { title: 'Destinataires', html: `<p>Les données sont destinées à DIGIVODA, qui dispense les formations. Elles peuvent être traitées par ses sous-traitants techniques, uniquement pour les besoins de leur mission : l’hébergeur du site, et Web3Forms, le service qui transmet par e-mail les demandes envoyées depuis le formulaire. Elles ne sont ni vendues ni cédées.</p>` },
       { title: 'Durée de conservation', html: `<p>Les données d’une demande sans suite sont conservées 3 ans à compter du dernier contact. Si vous devenez client, elles sont conservées pendant la durée de la relation, puis archivées selon les obligations légales applicables.</p>` },
       { title: 'Vos droits', html: `<p>Vous disposez d’un droit d’accès, de rectification, d’effacement, d’opposition, de limitation du traitement et de portabilité de vos données. Pour l’exercer, écrivez à <a href="mailto:${esc(o.email)}">${esc(o.email)}</a>.</p><p>Vous pouvez aussi adresser une réclamation à la CNIL (<a href="https://www.cnil.fr" rel="noopener">cnil.fr</a>).</p>` },

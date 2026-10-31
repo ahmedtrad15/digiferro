@@ -87,7 +87,7 @@ python3 -m http.server 8080
 
 Puis ouvrez http://localhost:8080.
 
-## Formulaire de devis
+## Formulaire d'inscription
 
 Le formulaire (contact et fiches formation et pack) est relié à **Web3Forms**, qui transmet chaque demande par e-mail à l'adresse associée à la clé d'accès. Le réglage se trouve dans `data/formations.json`, rubrique `site.formulaire` :
 

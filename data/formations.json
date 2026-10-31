@@ -58,7 +58,7 @@
       "Éditeur du site : DIGIVODA, par défaut. À changer si Digiferro est édité par une autre entité.",
       "Hébergeur : coordonnées à ajouter dans les mentions légales une fois l'hébergement choisi (obligation LCEN).",
       "Numéro de déclaration d'activité (DRIEETS) à ajouter s'il doit apparaître.",
-      "Formulaire de devis (Web3Forms) : faire un envoi réel une fois le site en ligne, et vérifier qu'il arrive à l'adresse liée à la clé d'accès. Vérifier aussi où le service traite les données : en cas de transfert hors Union européenne, le préciser dans la politique de confidentialité."
+      "Formulaire d'inscription (Web3Forms) : faire un envoi réel une fois le site en ligne, et vérifier qu'il arrive à l'adresse liée à la clé d'accès. Vérifier aussi où le service traite les données : en cas de transfert hors Union européenne, le préciser dans la politique de confidentialité."
     ],
     "maps_url": "https://maps.app.goo.gl/EfiFFjgDfot81GYq5",
     "maps_embed": "https://www.google.com/maps?q=4+all%C3%A9e+des+Garays,+91120+Palaiseau&output=embed",
@@ -255,7 +255,7 @@
       "resume_source": "editorial (dérivé de l'intitulé)",
       "editorial": {
         "seo_title": "Formation SECUFER sécurité ferroviaire | Digiferro",
-        "seo_description": "Formation SECUFER : les règles de sécurité ferroviaire à connaître avant d'accéder aux voies. Contenu, validité de 3 ans, recyclage et devis.",
+        "seo_description": "Formation SECUFER : les règles de sécurité ferroviaire à connaître avant d'accéder aux voies. Contenu, validité de 3 ans, recyclage et inscription.",
         "titre_h1": "SECUFER : la sécurité ferroviaire de base",
         "lead": "Avant de poser un pied sur les emprises, chaque intervenant doit connaître les règles qui le protègent des circulations. La SECUFER pose ce socle. Elle ouvre aussi la TCS M et le Pack RSO.",
         "programme_intro": "Le contenu ci-dessous est celui de la journée SECUFER publiée en ouverture du programme TCS M.",
@@ -306,7 +306,7 @@
           },
           {
             "q": "Comment s'inscrire, et sous quel délai ?",
-            "a": "Faites une demande de devis en ligne ou appelez le 01 89 70 55 70. Pour une session inter-entreprises, inscrivez-vous au moins 11 jours ouvrés avant la date. Pour une session intra sur votre site, comptez 30 à 45 jours d'organisation."
+            "a": "Inscrivez-vous en ligne ou appelez le 01 89 70 55 70. Pour une session inter-entreprises, inscrivez-vous au moins 11 jours ouvrés avant la date. Pour une session intra sur votre site, comptez 30 à 45 jours d'organisation."
           },
           {
             "q": "Comment financer la formation ?",
@@ -500,7 +500,7 @@
           },
           {
             "q": "Comment s'inscrire, et sous quel délai ?",
-            "a": "Faites une demande de devis en ligne ou appelez le 01 89 70 55 70. Pour une session inter-entreprises, inscrivez-vous au moins 11 jours ouvrés avant la date. Pour une session intra sur votre site, comptez 30 à 45 jours d'organisation."
+            "a": "Inscrivez-vous en ligne ou appelez le 01 89 70 55 70. Pour une session inter-entreprises, inscrivez-vous au moins 11 jours ouvrés avant la date. Pour une session intra sur votre site, comptez 30 à 45 jours d'organisation."
           },
           {
             "q": "Comment financer la formation ?",
@@ -632,7 +632,7 @@
       "resume_source": "editorial (dérivé de l'intitulé)",
       "editorial": {
         "seo_title": "SECUFER en e-learning, à distance | Digiferro",
-        "seo_description": "La formation SECUFER en e-learning : se former à la sécurité ferroviaire à distance. Public, accès, validité et demande de devis auprès de Digivoda.",
+        "seo_description": "La formation SECUFER en e-learning : se former à la sécurité ferroviaire à distance. Public, accès, validité et inscription auprès de Digivoda.",
         "titre_h1": "SECUFER en e-learning",
         "lead": "Le socle de sécurité ferroviaire, suivi depuis un ordinateur. Une option pour les agents éloignés d'un centre, ou difficiles à libérer une journée entière sur le chantier.",
         "regle": {
@@ -690,7 +690,7 @@
           },
           {
             "q": "Peut-on inscrire plusieurs agents d'un coup ?",
-            "a": "Oui. Indiquez le nombre d'agents dans votre demande de devis : chacun reçoit ses propres accès."
+            "a": "Oui. Indiquez le nombre d'agents dans votre demande d'inscription : chacun reçoit ses propres accès."
           }
         ],
         "illustration": "laptop"
@@ -1057,7 +1057,7 @@
           },
           {
             "q": "Quand planifier le recyclage ?",
-            "a": "Avant la date anniversaire de l'habilitation, pour ne pas immobiliser l'agent. Indiquez les dates d'échéance dans votre demande de devis."
+            "a": "Avant la date anniversaire de l'habilitation, pour ne pas immobiliser l'agent. Indiquez les dates d'échéance dans votre demande d'inscription."
           },
           {
             "q": "Peut-on recycler toute une équipe sur notre site ?",
@@ -1069,7 +1069,7 @@
           },
           {
             "q": "Comment s'inscrire, et sous quel délai ?",
-            "a": "Par le formulaire de devis ou au 01 89 70 55 70. Pour une session inter-entreprises, inscrivez-vous au moins 11 jours ouvrés avant la date. Pour une session intra sur votre site, comptez 30 à 45 jours d'organisation."
+            "a": "Par le formulaire d'inscription ou au 01 89 70 55 70. Pour une session inter-entreprises, inscrivez-vous au moins 11 jours ouvrés avant la date. Pour une session intra sur votre site, comptez 30 à 45 jours d'organisation."
           },
           {
             "q": "Le recyclage peut-il être financé ?",
@@ -1206,7 +1206,7 @@
       "resume_source": "editorial (dérivé de l'intitulé)",
       "editorial": {
         "seo_title": "Formation TSAE prestations connexes C0, LAM, S9 | Digiferro",
-        "seo_description": "TSAE prestations connexes : risques électriques C0, Agent prestataire LAM et S9 dans une même formation. Contenu, packs associés et devis Digivoda.",
+        "seo_description": "TSAE prestations connexes : risques électriques C0, Agent prestataire LAM et S9 dans une même formation. Contenu, packs associés et inscription.",
         "titre_h1": "TSAE prestations connexes : C0, Agent prestataire LAM et S9",
         "lead": "Trois compétences réunies dans une même formation : le risque électrique C0, l'Agent prestataire LAM et le S9. De quoi préparer une équipe de prestations connexes sans multiplier les inscriptions.",
         "devis_titre": "S'inscrire à la TSAE",
@@ -1255,7 +1255,7 @@
           },
           {
             "q": "Comment s'inscrire, et sous quel délai ?",
-            "a": "Faites une demande de devis en ligne ou appelez le 01 89 70 55 70. Pour une session inter-entreprises, inscrivez-vous au moins 11 jours ouvrés avant la date. Pour une session intra sur votre site, comptez 30 à 45 jours d'organisation."
+            "a": "Inscrivez-vous en ligne ou appelez le 01 89 70 55 70. Pour une session inter-entreprises, inscrivez-vous au moins 11 jours ouvrés avant la date. Pour une session intra sur votre site, comptez 30 à 45 jours d'organisation."
           },
           {
             "q": "Comment financer la formation ?",
@@ -1403,7 +1403,7 @@
       "resume_source": "editorial (dérivé de l'intitulé)",
       "editorial": {
         "seo_title": "Formation risques électriques C0 ferroviaire | Digiferro",
-        "seo_description": "Formation risques électriques C0 : travailler en sécurité près de la caténaire, des sous-stations et du rail conducteur. Packs associés et devis.",
+        "seo_description": "Formation risques électriques C0 : travailler en sécurité près de la caténaire, des sous-stations et du rail conducteur. Packs associés et inscription.",
         "titre_h1": "Risques électriques C0",
         "lead": "Une caténaire sous tension ne prévient pas. La formation C0 apprend à repérer les installations électriques de traction et à travailler à leur proximité en sécurité : caténaire, sous-stations, rail conducteur.",
         "validite_texte": "L'organisme délivre l'attestation de formation ; l'habilitation reste à la charge de l'employeur.",
@@ -1453,7 +1453,7 @@
           },
           {
             "q": "Comment s'inscrire, et sous quel délai ?",
-            "a": "Faites une demande de devis en ligne ou appelez le 01 89 70 55 70. Pour une session inter-entreprises, inscrivez-vous au moins 11 jours ouvrés avant la date. Pour une session intra sur votre site, comptez 30 à 45 jours d'organisation."
+            "a": "Inscrivez-vous en ligne ou appelez le 01 89 70 55 70. Pour une session inter-entreprises, inscrivez-vous au moins 11 jours ouvrés avant la date. Pour une session intra sur votre site, comptez 30 à 45 jours d'organisation."
           },
           {
             "q": "Comment financer la formation ?",
@@ -1639,7 +1639,7 @@
           },
           {
             "q": "Comment s'inscrire, et sous quel délai ?",
-            "a": "Faites une demande de devis en ligne ou appelez le 01 89 70 55 70. Pour une session inter-entreprises, inscrivez-vous au moins 11 jours ouvrés avant la date. Pour une session intra sur votre site, comptez 30 à 45 jours d'organisation."
+            "a": "Inscrivez-vous en ligne ou appelez le 01 89 70 55 70. Pour une session inter-entreprises, inscrivez-vous au moins 11 jours ouvrés avant la date. Pour une session intra sur votre site, comptez 30 à 45 jours d'organisation."
           },
           {
             "q": "Comment financer la formation ?",
@@ -1782,7 +1782,7 @@
       "resume_source": "editorial (dérivé de l'intitulé)",
       "editorial": {
         "seo_title": "Formation AIPR, intervention près des réseaux | Digiferro",
-        "seo_description": "AIPR, Autorisation d'Intervention à Proximité des Réseaux : se former pour travailler près des réseaux enterrés ou aériens. Devis auprès de Digivoda.",
+        "seo_description": "AIPR, Autorisation d'Intervention à Proximité des Réseaux : se former pour travailler près des réseaux enterrés ou aériens. Inscription auprès de Digivoda.",
         "titre_h1": "AIPR : Autorisation d'Intervention à Proximité des Réseaux",
         "lead": "Un câble ou une canalisation touchés pendant des travaux, et c'est tout le chantier qui s'arrête. L'AIPR atteste que l'intervenant sait travailler à proximité des réseaux sans les endommager.",
         "devis_titre": "S'inscrire à l'AIPR",
@@ -1831,7 +1831,7 @@
           },
           {
             "q": "Comment s'inscrire, et sous quel délai ?",
-            "a": "Faites une demande de devis en ligne ou appelez le 01 89 70 55 70. Pour une session inter-entreprises, inscrivez-vous au moins 11 jours ouvrés avant la date. Pour une session intra sur votre site, comptez 30 à 45 jours d'organisation."
+            "a": "Inscrivez-vous en ligne ou appelez le 01 89 70 55 70. Pour une session inter-entreprises, inscrivez-vous au moins 11 jours ouvrés avant la date. Pour une session intra sur votre site, comptez 30 à 45 jours d'organisation."
           },
           {
             "q": "Comment financer la formation ?",
@@ -1958,7 +1958,7 @@
       "resume_source": "editorial (dérivé de l'intitulé)",
       "editorial": {
         "seo_title": "TES F : protection des passages à niveau | Digiferro",
-        "seo_description": "Formation TES F : assurer la protection des passages à niveau pendant les travaux ferroviaires. Modalités, lieux et demande de devis auprès de Digivoda.",
+        "seo_description": "Formation TES F : assurer la protection des passages à niveau pendant les travaux ferroviaires. Modalités, lieux et inscription auprès de Digivoda.",
         "titre_h1": "TES F : protection des passages à niveau",
         "lead": "Un passage à niveau en travaux reste un point de croisement entre la route et le rail. La TES F prépare les agents chargés d'en assurer la protection tant que le chantier est ouvert.",
         "devis_titre": "S'inscrire à la TES F",
@@ -2007,7 +2007,7 @@
           },
           {
             "q": "Comment s'inscrire, et sous quel délai ?",
-            "a": "Faites une demande de devis en ligne ou appelez le 01 89 70 55 70. Pour une session inter-entreprises, inscrivez-vous au moins 11 jours ouvrés avant la date. Pour une session intra sur votre site, comptez 30 à 45 jours d'organisation."
+            "a": "Inscrivez-vous en ligne ou appelez le 01 89 70 55 70. Pour une session inter-entreprises, inscrivez-vous au moins 11 jours ouvrés avant la date. Pour une session intra sur votre site, comptez 30 à 45 jours d'organisation."
           },
           {
             "q": "Comment financer la formation ?",
@@ -2140,7 +2140,7 @@
       "resume_source": "editorial (dérivé de l'intitulé)",
       "editorial": {
         "seo_title": "Formation Agent S9A3 : RZT, AGEC/R et APN | Digiferro",
-        "seo_description": "Formation Agent S9A3 couvrant les fonctions RZT, AGEC/R et APN. Modalités en centre Digivoda ou en intra sur votre site, et demande de devis.",
+        "seo_description": "Formation Agent S9A3 couvrant les fonctions RZT, AGEC/R et APN. Modalités en centre Digivoda ou en intra sur votre site, et inscription.",
         "titre_h1": "Agent S9A3 : RZT, AGEC/R et APN",
         "lead": "Une seule formation pour les trois fonctions de l'agent S9A3 : RZT, AGEC/R et APN. Pratique quand un même agent doit pouvoir tenir plusieurs rôles d'un chantier à l'autre.",
         "devis_titre": "S'inscrire à la formation Agent S9A3",
@@ -2185,7 +2185,7 @@
           },
           {
             "q": "Comment s'inscrire, et sous quel délai ?",
-            "a": "Faites une demande de devis en ligne ou appelez le 01 89 70 55 70. Pour une session inter-entreprises, inscrivez-vous au moins 11 jours ouvrés avant la date. Pour une session intra sur votre site, comptez 30 à 45 jours d'organisation."
+            "a": "Inscrivez-vous en ligne ou appelez le 01 89 70 55 70. Pour une session inter-entreprises, inscrivez-vous au moins 11 jours ouvrés avant la date. Pour une session intra sur votre site, comptez 30 à 45 jours d'organisation."
           },
           {
             "q": "Comment financer la formation ?",
@@ -2315,7 +2315,7 @@
       "resume_source": "editorial (dérivé de l'intitulé)",
       "editorial": {
         "seo_title": "Percheur / aide monteur caténaire CH1-CB1 | Digiferro",
-        "seo_description": "Formation percheur et aide monteur caténaire, niveau CH1-CB1 : intervenir en sécurité sur les chantiers caténaire. Pack Premium et devis Digivoda.",
+        "seo_description": "Formation percheur et aide monteur caténaire, niveau CH1-CB1 : intervenir en sécurité sur les chantiers caténaire. Pack Premium et inscription.",
         "titre_h1": "Percheur / Aide Monteur Caténaire CH1-CB1",
         "lead": "Sur un chantier caténaire, le percheur et l'aide monteur travaillent au plus près des installations électriques. Une fonction exposée, qui se prépare avant de monter sur le chantier.",
         "validite_texte": "L'organisme délivre l'attestation de formation ; l'habilitation reste délivrée par l'employeur.",
@@ -2361,7 +2361,7 @@
           },
           {
             "q": "Comment s'inscrire, et sous quel délai ?",
-            "a": "Faites une demande de devis en ligne ou appelez le 01 89 70 55 70. Pour une session inter-entreprises, inscrivez-vous au moins 11 jours ouvrés avant la date. Pour une session intra sur votre site, comptez 30 à 45 jours d'organisation."
+            "a": "Inscrivez-vous en ligne ou appelez le 01 89 70 55 70. Pour une session inter-entreprises, inscrivez-vous au moins 11 jours ouvrés avant la date. Pour une session intra sur votre site, comptez 30 à 45 jours d'organisation."
           },
           {
             "q": "Comment financer la formation ?",
@@ -2489,7 +2489,7 @@
         "lead": "Pour une entreprise de prestations connexes qui part sur un chantier du Réseau Ferré National, ce pack réunit l'essentiel : la TCS M complète, le risque électrique C0, et les fonctions d'Agent prestataire LAM et S9.",
         "incluses_intro": "Les quatre modules du pack, et les fiches où retrouver le détail de chacun.",
         "parcours_intro": "L'ordre reprend celui de la présentation du pack.",
-        "devis_texte": "Indiquez le nombre d'agents et la date de démarrage de votre chantier : Digivoda vous répond avec un devis et les prochaines sessions.",
+        "devis_texte": "Indiquez le nombre d'agents et la date de démarrage de votre chantier : Digivoda vous confirme votre inscription et les prochaines sessions.",
         "faq": [
           {
             "q": "Pour quels chantiers ?",
@@ -2637,7 +2637,7 @@
         "incluses_intro": "Deux formations, un seul groupe, une seule inscription. Chacune a sa fiche détaillée.",
         "parcours_intro": "L'ordre suit l'intitulé du pack : le risque électrique d'abord, puis la protection contre les circulations.",
         "prix_intro": "Le pack est facturé 1 080 € TTC par personne. Voici ce que coûtent les mêmes formations prises séparément.",
-        "devis_texte": "Pour réserver le pack, indiquez le nombre d'agents et la période souhaitée. Digivoda revient vers vous avec un devis et les prochaines dates.",
+        "devis_texte": "Pour réserver le pack, indiquez le nombre d'agents et la période souhaitée. Digivoda vous confirme votre inscription et les prochaines dates.",
         "faq": [
           {
             "q": "À qui s'adresse ce pack ?",
@@ -3078,7 +3078,7 @@
         "lead": "Sur un chantier caténaire, deux risques se cumulent : le train qui arrive et la ligne sous tension au-dessus des têtes. Ce pack forme l'agent aux deux, avec la TCS M complète et la protection électrique caténaire (APEC).",
         "incluses_intro": "Deux formations enchaînées, une seule inscription.",
         "parcours_intro": "La protection contre les circulations d'abord, la protection électrique ensuite.",
-        "devis_texte": "Indiquez le nombre d'agents et la période de votre chantier caténaire : Digivoda vous répond avec un devis et les prochaines sessions.",
+        "devis_texte": "Indiquez le nombre d'agents et la période de votre chantier caténaire : Digivoda vous confirme votre inscription et les prochaines sessions.",
         "faq": [
           {
             "q": "Que contient le Pack Caténaire ?",

@@ -1,4 +1,4 @@
-/* Digiferro · formulaire de devis
+/* Digiferro · formulaire d’inscription
    Validation en français, case piège anti-robot (botcheck), pré-remplissage par ?formation=<id>.
 
    ENVOI : Web3Forms (https://web3forms.com). Le point d'envoi (data-endpoint) et la clé d'accès
@@ -37,7 +37,7 @@
     const status = form.querySelector('.form__status');
     const success = form.parentElement.querySelector('.form-success');
 
-    // Pré-sélection de la formation depuis l'URL (contact.html?formation=tcs-m#devis)
+    // Pré-sélection de la formation depuis l'URL (contact.html?formation=tcs-m#inscription)
     const pre = new URLSearchParams(location.search).get('formation');
     const select = form.querySelector('#f-formation');
     const match = pre && select && [...select.options].find((o) => o.dataset.id === pre);

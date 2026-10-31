@@ -65,21 +65,21 @@ export function formBox(data, selectedId, p = P) {
         </div>
         <div class="field"><label for="f-msg">Votre message</label><textarea id="f-msg" name="Message" rows="4" placeholder="Période souhaitée, lieu, centre ou intra…"></textarea></div>
         <input type="hidden" name="Page" value="" data-page>
-        <p class="form__legal"><span aria-hidden="true">*</span> Champs obligatoires. Vos données servent uniquement à répondre à votre demande : voir la <a href="${p}politique-confidentialite.html">politique de confidentialité</a>.</p>
-        <button class="btn btn--signal btn--lg" type="submit">Envoyer la demande${icon('arrow', 'icon icon--sm')}</button>
+        <p class="form__legal"><span aria-hidden="true">*</span> Champs obligatoires. Vos données servent uniquement à traiter votre inscription : voir la <a href="${p}politique-confidentialite.html">politique de confidentialité</a>.</p>
+        <button class="btn btn--signal btn--lg" type="submit">Envoyer mon inscription${icon('arrow', 'icon icon--sm')}</button>
         <p class="form__status" role="status" aria-live="polite"></p>
       </form>
       <div class="form-success" tabindex="-1" hidden>
         ${icon('check', 'icon icon--lg')}
-        <p class="form-success__title">Demande envoyée</p>
-        <p>Merci. Votre demande est bien partie : Digiferro vous recontacte par e-mail ou par téléphone.</p>
+        <p class="form-success__title">Inscription envoyée</p>
+        <p>Merci. Votre inscription est bien partie : Digiferro vous recontacte par e-mail ou par téléphone.</p>
       </div>
     </div>`;
 }
 
 export function devisForm(data, selectedId, { title, text, p = P } = {}) {
   const o = data.organisme;
-  return `<section class="section band band--night devis" id="devis" aria-labelledby="devis-title">
+  return `<section class="section band band--night devis" id="inscription" aria-labelledby="devis-title">
   <div class="wrap devis__grid">
     <div class="devis__intro">
       <p class="station station--light">Inscription</p>
@@ -107,7 +107,7 @@ function aside(f, data, { packIds = [], devisLabel = 'S’inscrire' } = {}) {
       <li>${icon('clock', 'icon icon--sm')}${dureeHTML(f.duree)}</li>
       <li>${icon('calendar', 'icon icon--sm')}${show(f.modalites?.dates, 'dates')}</li>
     </ul>
-    <a class="btn btn--signal btn--block" href="#devis">${devisLabel}</a>
+    <a class="btn btn--signal btn--block" href="#inscription">${devisLabel}</a>
     <a class="devis-panel__phone" href="tel:${o.telephone_e164}">${icon('phone', 'icon icon--sm')}${esc(o.telephone)}</a>
     ${phoneLinks(o, { cls: 'phones phones--compact', skipFirst: true })}
     ${
@@ -184,7 +184,7 @@ export function formationPage(data, f) {
         <p class="item-hero__lead">${esc(e.lead || f.resume)}</p>
         ${e.regle ? regleHTML(e.regle) : ''}
         <div class="item-hero__cta">
-          <a class="btn btn--signal btn--lg" href="#devis">S’inscrire</a>
+          <a class="btn btn--signal btn--lg" href="#inscription">S’inscrire</a>
           <a class="link-arrow" href="#programme">Voir le programme${icon('arrow', 'icon icon--sm')}</a>
         </div>
       </div>
@@ -305,7 +305,7 @@ ${devisForm(data, f.id, { title: e.devis_titre || `S’inscrire : ${f.titre_cour
       description: e.seo_description || f.resume,
       bodyClass: 'page-item page-formation',
       scripts: ['map', 'form'],
-      devis: '#devis',
+      devis: '#inscription',
       ogType: 'article',
       jsonld: [jsonld(courseLD(data, f)), jsonld(breadcrumbLD(data, trail)), ...(faq.length ? [jsonld(faqLD(faq))] : [])],
     },
@@ -341,7 +341,7 @@ export function packPage(data, k) {
         <h1>${esc(e.titre_h1 || k.titre)}</h1>
         <p class="item-hero__lead">${esc(e.lead || k.resume)}</p>
         <div class="item-hero__cta">
-          <a class="btn btn--signal btn--lg" href="#devis">Réserver ce pack</a>
+          <a class="btn btn--signal btn--lg" href="#inscription">Réserver ce pack</a>
           <a class="link-arrow" href="#incluses">Formations incluses${icon('arrow', 'icon icon--sm')}</a>
         </div>
       </div>
@@ -456,7 +456,7 @@ ${devisForm(data, k.id, { title: `Réserver le ${k.titre_court}`, text: e.devis_
       description: e.seo_description || k.resume,
       bodyClass: 'page-item page-pack',
       scripts: ['map', 'form'],
-      devis: '#devis',
+      devis: '#inscription',
       ogType: 'article',
       jsonld: [
         jsonld(

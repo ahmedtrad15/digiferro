@@ -365,7 +365,7 @@ export function home(data) {
   };
 }
 
-export function ctaBand(p, o, { title = 'Un démarrage de chantier approche ?', text = 'Indiquez la formation, le nombre d’agents et le lieu. Digivoda vous répond avec un devis.', href } = {}) {
+export function ctaBand(p, o, { title = 'Un démarrage de chantier approche ?', text = 'Indiquez la formation, le nombre d’agents et le lieu. Digivoda vous confirme votre inscription et les prochaines sessions.', href } = {}) {
   return `<section class="cta-band" aria-labelledby="cta-title">
   <svg class="cta-band__rails" viewBox="0 0 800 400" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
     <path d="M370 0 L120 400 M430 0 L680 400"/>
