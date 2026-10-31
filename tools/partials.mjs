@@ -1,6 +1,18 @@
 // En-tête, méga-menu, tiroir mobile, pied de page et sprite SVG.
 // Le balisage est identique sur toutes les pages : seul le préfixe de chemin (p) change.
 import { esc, icon, dureeHTML, savingBadge, priceHTML, todo } from './util.mjs';
+import { qualiopiLogo } from './media.mjs';
+
+// Logo Qualiopi officiel (media/…qualiopi…) sinon emplacement réservé ; jamais redessiné
+export function qualiopiFigure(p, o, cls = 'qualiopi') {
+  const logo = qualiopiLogo();
+  const src = logo ? logo.src : o.qualiopi.logo;
+  const h = logo ? Math.round((200 * logo.h) / logo.w) : 104;
+  return `<figure class="${cls}">
+        <img src="${p}${esc(src)}" alt="Logo Qualiopi, processus certifié, République française" width="200" height="${h}" loading="lazy" decoding="async">
+        <figcaption>${esc(o.qualiopi.mention)}</figcaption>
+      </figure>`;
+}
 
 // Pictogrammes : grille 48×48, trait 2, extrémités arrondies, sans remplissage.
 // Les éléments .a reçoivent la couleur d'accent via la variable --accent.
@@ -163,10 +175,7 @@ export function footer(ctx, data) {
     <div class="site-footer__brand">
       ${brand(p)}
       <p>Digiferro présente les formations à la sécurité ferroviaire et aux habilitations dispensées par DIGIVODA : SECUFER, TCS M, C0, RSO, AIPR, caténaire. Pour les entreprises du ferroviaire, leurs sous-traitants et les agents qui interviennent sur les voies.</p>
-      <figure class="qualiopi">
-        <img src="${p}${esc(o.qualiopi.logo)}" alt="Logo Qualiopi, processus certifié, République française" width="200" height="104" loading="lazy" decoding="async">
-        <figcaption>${esc(o.qualiopi.mention)}</figcaption>
-      </figure>
+      ${qualiopiFigure(p, o)}
     </div>
     <nav class="site-footer__col site-footer__col--wide" aria-labelledby="ft-formations">
       <p class="site-footer__title" id="ft-formations">Formations</p>

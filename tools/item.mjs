@@ -1,7 +1,7 @@
 // Pages formation et pack.
-import { esc, icon, todo, isMissing, show, priceHTML, dureeHTML, savingBadge, listHTML, jsonld, eur } from './util.mjs';
+import { esc, icon, todo, isMissing, show, priceHTML, dureeHTML, savingBadge, listHTML, jsonld, eur, tarifNote } from './util.mjs';
 import { breadcrumb, devisHref, groupsOf } from './partials.mjs';
-import { img, formationCard, packTicket, faqHTML, faqLD, mapFigure, IMG_ALT } from './home.mjs';
+import { img, visual, formationCard, packTicket, faqHTML, faqLD, mapFigure, IMG_ALT } from './home.mjs';
 
 const P = '../';
 const WIRES = `<svg class="page-hero__wires" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 18 Q360 58 720 18 T1440 18"/><path d="M0 42 H1440"/><path d="M180 34 V42 M360 38 V42 M540 34 V42 M900 34 V42 M1080 38 V42 M1260 34 V42"/></svg>`;
@@ -88,7 +88,7 @@ function aside(f, data, { packIds = [], devisLabel = 'Demander un devis' } = {})
   return `<aside class="item-aside" aria-label="Réserver">
   <div class="devis-panel">
     <p class="devis-panel__kicker"><span class="code">${esc(f.code || 'Pack')}</span>${savingBadge(f.tarif)}</p>
-    <p class="devis-panel__price">${priceHTML(f.tarif, { size: 'lg' })}</p>
+    <p class="devis-panel__price">${priceHTML(f.tarif, { size: 'lg' })}${tarifNote(f.tarif)}</p>
     <ul class="devis-panel__facts">
       <li>${icon('clock', 'icon icon--sm')}${dureeHTML(f.duree)}</li>
       <li>${icon('calendar', 'icon icon--sm')}${show(f.modalites?.dates, 'dates')}</li>
@@ -173,14 +173,11 @@ export function formationPage(data, f) {
           <a class="link-arrow" href="#programme">Voir le programme${icon('arrow', 'icon icon--sm')}</a>
         </div>
       </div>
-      <figure class="item-hero__media" data-ph>
-        ${img(P, key, { w: 720, h: 480, eager: true })}
-        <span class="item-hero__badge">${illus(e.illustration || 'rails')}</span>
-      </figure>
+      ${visual(P, f, { tag: 'figure', cls: 'item-hero__media', w: 720, h: 480, eager: true, extra: `<span class="item-hero__badge">${illus(e.illustration || 'rails')}</span>` })}
     </div>
     ${facts([
       ['clock', 'Durée', dureeHTML(f.duree)],
-      ['euro', 'Tarif', priceHTML(f.tarif)],
+      ['euro', 'Tarif', priceHTML(f.tarif) + tarifNote(f.tarif)],
       ['pin', 'Lieu', lieuxHTML(f.modalites, data)],
       ['users', 'Effectif', show(f.effectif, 'effectif')],
       ['shield', 'Validité', isMissing(f.validite) ? todo('validité') : `<a href="#validite">${esc(f.validite_court || 'Voir les règles')}</a>`],
@@ -332,14 +329,11 @@ export function packPage(data, k) {
           <a class="link-arrow" href="#incluses">Formations incluses${icon('arrow', 'icon icon--sm')}</a>
         </div>
       </div>
-      <figure class="item-hero__media" data-ph>
-        ${img(P, key, { w: 720, h: 480, eager: true })}
-        <span class="item-hero__badge">${illus(e.illustration || 'train')}</span>
-      </figure>
+      ${visual(P, k, { tag: 'figure', cls: 'item-hero__media', w: 720, h: 480, eager: true, extra: `<span class="item-hero__badge">${illus(e.illustration || 'train')}</span>` })}
     </div>
     ${facts([
       ['clock', 'Durée totale', dureeHTML(k.duree)],
-      ['euro', 'Tarif du pack', priceHTML(k.tarif)],
+      ['euro', 'Tarif du pack', priceHTML(k.tarif) + tarifNote(k.tarif)],
       ['doc', 'Formations incluses', String(incl.length)],
       ['pin', 'Lieu', lieuxHTML(k.modalites, data)],
       ['users', 'Effectif', show(k.effectif, 'effectif')],
@@ -387,9 +381,9 @@ export function packPage(data, k) {
         .map((x) => `<tr><th scope="row"><a href="${P}${x.page}">${esc(x.titre_court)}</a></th><td>${dureeHTML(x.duree, 'todo--xs')}</td><td>${priceHTML(x.tarif)}</td></tr>`)
         .join('')}</tbody>
       <tfoot>
-        ${sum != null ? `<tr><th scope="row">Somme des tarifs à l’unité</th><td></td><td><strong>${eur(sum)}</strong> TTC</td></tr>` : ''}
+        ${sum != null && diff > 0 ? `<tr><th scope="row">Somme des tarifs à l’unité</th><td></td><td><strong>${eur(sum)}</strong> TTC</td></tr>` : ''}
         <tr class="price-table__pack"><th scope="row">${esc(k.titre_court)}</th><td>${dureeHTML(k.duree)}</td><td>${priceHTML(k.tarif, { size: 'lg' })}</td></tr>
-        ${k.tarif?.remise ? `<tr><th scope="row">Économie affichée</th><td></td><td>${savingBadge(k.tarif)}</td></tr>` : diff != null ? `<tr><th scope="row">Écart avec l’achat à l’unité</th><td></td><td>${eur(diff)}</td></tr>` : ''}
+        ${diff > 0 ? `<tr><th scope="row">Économie par rapport à l’achat à l’unité</th><td></td><td><span class="saving">−${eur(diff)}</span></td></tr>` : k.tarif?.remise ? `<tr><th scope="row">Remise sur le prix initial</th><td></td><td>${savingBadge(k.tarif)}</td></tr>` : ''}
       </tfoot>
     </table>
   </section>

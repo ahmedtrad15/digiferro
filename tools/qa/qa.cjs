@@ -96,7 +96,7 @@ const run = (name) => !only.length || only.includes(name);
       const ids = await p.$$eval('.subnav a', (as) => as.map((a) => a.hash.slice(1)));
       for (const id of [ids[2], ids[ids.length - 1]]) {
         await p.locator(`.subnav a[href="#${id}"]`).click({ force: true });
-        await p.waitForTimeout(1800);
+        await p.waitForTimeout(2600);
         const gap = await p.evaluate((id) => Math.round(document.getElementById(id).getBoundingClientRect().top - document.querySelector('.subnav').getBoundingClientRect().bottom), id);
         if (gap < 0 || gap > 80) subBad.push(`${w}px ${u} #${id} (écart ${gap} px)`);
       }

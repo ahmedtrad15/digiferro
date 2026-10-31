@@ -5,16 +5,16 @@ HTML, CSS et JavaScript natifs, sans framework ni dépendance. Seules les police
 
 ## État actuel
 
-Les 25 pages sont en place :
+Les 26 pages sont en place :
 
 - accueil ;
 - catalogue filtrable ;
-- 12 fiches formation et 4 fiches pack ;
+- 12 fiches formation et 5 fiches pack ;
 - à propos, contact, FAQ ;
 - mentions légales, CGV, politique de confidentialité ;
 - page 404.
 
-Les 16 fiches formation et pack sont entièrement remplies. Une partie de leur contenu est provisoire (durées, « Sur devis » à la place des tarifs non publiés, programmes détaillés…) et s’affiche normalement sur le site. Chaque fiche liste ses champs provisoires dans le champ `provisoire` de `data/formations.json`.
+Les 17 fiches formation et pack sont entièrement remplies, avec les tarifs TTC fournis par le client (intra sur devis) et 9 à 13 questions fréquentes chacune. Une partie du contenu reste provisoire (durées, programmes détaillés…) : chaque fiche liste ses champs provisoires dans le champ `provisoire` de `data/formations.json`.
 
 `A-COMPLETER.md`, régénéré à chaque build, récapitule :
 
@@ -33,6 +33,10 @@ assets/                img · video · svg · favicon · CREDITS.md
 A-COMPLETER.md                    liste des contenus manquants, générée
 sitemap.xml, robots.txt           générés avec les pages
 ```
+
+## Photos
+
+Déposez les photos dans `media/`, puis régénérez le site : elles remplacent automatiquement les visuels provisoires des fiches, des cartes, de la galerie du centre de Palaiseau et du logo Qualiopi. Les règles de nommage sont dans `media/README.md`. La vidéo du héros n'est pas concernée.
 
 ## Modifier le contenu
 
@@ -72,6 +76,10 @@ Pour le brancher, renseignez `data-endpoint` sur la balise `<form>` dans `tools/
 - **Formspree** : `data-endpoint="https://formspree.io/f/VOTRE_ID"` et `action` identique.
 - **Netlify Forms** : ajoutez `name="devis" data-netlify="true"` au `<form>` et `data-endpoint="/"`.
 - **Backend maison** : toute URL qui accepte un POST `multipart/form-data` et répond 2xx.
+
+## Plan d'accès
+
+Les pages Contact et À propos affichent l'adresse du centre de Palaiseau, avec un lien Google Maps (`organisme.maps_url`). La carte intégrée (`organisme.maps_embed`) ne se charge qu'au clic sur « Afficher la carte » : aucun cookie Google n'est déposé avant. La politique de confidentialité le mentionne.
 
 ## Catalogue
 

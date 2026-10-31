@@ -1,7 +1,8 @@
 // Pages transverses : catalogue filtrable, à propos, contact, FAQ, pages légales, 404.
 import { esc, icon, todo, show, priceHTML, dureeHTML, savingBadge, jsonld } from './util.mjs';
-import { breadcrumb, devisHref, groupsOf } from './partials.mjs';
-import { img, formationCard, faqHTML, faqLD, mapFigure, ctaBand } from './home.mjs';
+import { breadcrumb, devisHref, groupsOf, qualiopiFigure } from './partials.mjs';
+import { img, visual, sectionVisual, formationCard, faqHTML, faqLD, mapFigure, ctaBand } from './home.mjs';
+import { centreImages, qualiopiLogo } from './media.mjs';
 import { formBox } from './item.mjs';
 
 const breadcrumbLD = (data, trail) => ({
@@ -65,7 +66,7 @@ const TYPES = [
 function packCard(p, k) {
   const [name, sub] = k.titre.split(' – ');
   return `<article class="fcard fcard--pack reveal">
-  <div class="fcard__media" data-ph>${img(p, k.images?.[0] || 'ph-train-face')}<span class="fcard__type">Pack</span></div>
+  ${visual(p, k, { cls: 'fcard__media', extra: '<span class="fcard__type">Pack</span>' })}
   <div class="fcard__body">
     <p class="fcard__meta"><span class="fcard__dur">${icon('clock', 'icon icon--xs')}${dureeHTML(k.duree, 'todo--xs')}</span>${savingBadge(k.tarif)}</p>
     <h3 class="fcard__title"><a href="${p}${k.page}">${esc(name)}</a></h3>
@@ -173,32 +174,50 @@ ${ctaBand(p, data.organisme, { title: 'Vous formez toute une équipe ?', text: '
 
 /* ---------------------------------------------------------------- À propos */
 
+// Plan d'accès Google Maps chargé seulement à la demande (pas de cookie tiers avant le clic)
+export function mapsAccess(o, { title = 'Plan d’accès au centre Digivoda de Palaiseau' } = {}) {
+  return `<div class="maps-access" data-maps-embed="${esc(o.maps_embed)}" data-maps-title="${esc(title)}">
+  <svg class="maps-access__grid" viewBox="0 0 400 220" preserveAspectRatio="none" aria-hidden="true"><path d="M0 160 L400 120 M0 60 L400 90 M120 0 L160 220 M300 0 L260 220"/><path class="maps-access__rail" d="M0 190 C120 170 220 150 400 40"/></svg>
+  <span class="maps-access__pin">${icon('pin', 'icon')}</span>
+  <div class="maps-access__body">
+    <p class="maps-access__addr"><strong>Centre de formation Digivoda</strong><br>${esc(o.adresse_centre)}</p>
+    <div class="maps-access__actions">
+      <button class="btn btn--signal btn--sm" type="button" data-maps-load>Afficher la carte</button>
+      <a class="link-arrow" href="${esc(o.maps_url)}" target="_blank" rel="noopener">Ouvrir dans Google Maps${icon('arrow', 'icon icon--sm')}<span class="sr-only"> (nouvel onglet)</span></a>
+    </div>
+    <p class="maps-access__note">La carte est fournie par Google : elle ne se charge qu’après votre clic.</p>
+  </div>
+</div>`;
+}
+
 export function aPropos(data) {
   const p = '';
   const o = data.organisme;
   const trail = crumbs('À propos', 'a-propos.html');
+  const photos = centreImages();
+  const ALTS = ['Salle de formation du centre Digivoda de Palaiseau', 'Espace de formation du centre de Palaiseau', 'Équipements pédagogiques du centre de Palaiseau', 'Accueil du centre Digivoda de Palaiseau'];
+  const gallery = (photos.length ? photos : [null, null, null])
+    .slice(0, 6)
+    .map((ph, i) => sectionVisual(p, ph, ['ph-salle-formation', 'ph-agent-epi', 'ph-e-learning'][i % 3], { tag: 'figure', cls: `centre-gallery__item centre-gallery__item--${i + 1}`, w: 720, h: 480, alt: ALTS[i % ALTS.length] }))
+    .join('');
   const body = `${pageHero(p, trail, {
     station: 'À propos',
     title: 'Qui forme vos équipes ?',
-    lead: 'Digiferro présente l’offre ferroviaire de DIGIVODA, organisme de formation certifié Qualiopi. Les sessions sont assurées par Digivoda, dans ses centres ou sur le site de ses clients.',
+    lead: 'Digiferro présente l’offre ferroviaire de DIGIVODA, organisme de formation certifié Qualiopi. Les sessions ont lieu dans ses centres, en classe virtuelle ou sur le site de ses clients.',
   })}
-<section class="section about" aria-labelledby="about-who">
-  <div class="wrap about__grid">
-    <div>
+<section class="section centre" aria-labelledby="about-centre">
+  <div class="wrap centre__grid">
+    <div class="centre__text">
       <span class="pk" aria-hidden="true"><small>PK</small>01</span>
-      <h2 id="about-who">Digiferro et Digivoda</h2>
-      <p class="about__lead">Deux noms, deux rôles. Le site vous aide à choisir. L’organisme de formation, lui, forme vos agents et remet les attestations.</p>
+      <h2 id="about-centre">Le centre de Palaiseau</h2>
+      <p class="about__lead">C’est là que se tiennent les sessions inter-entreprises d’Île-de-France : salles équipées pour la théorie, supports et matériel pour les exercices pratiques.</p>
+      <dl class="spec spec--wide">
+        <div><dt>Adresse</dt><dd>${esc(o.adresse_centre)}</dd></div>
+        <div><dt>Téléphone</dt><dd><a href="tel:${o.telephone_e164}">${esc(o.telephone)}</a></dd></div>
+        <div><dt>Accès</dt><dd><a href="${esc(o.maps_url)}" target="_blank" rel="noopener">Itinéraire Google Maps<span class="sr-only"> (nouvel onglet)</span></a></dd></div>
+      </dl>
     </div>
-    <dl class="roles">
-      <div class="roles__item">
-        <dt><span class="station">Digiferro</span></dt>
-        <dd>Le site dédié aux formations ferroviaires : catalogue, packs, demandes de devis. ${todo('statut juridique de Digiferro et lien avec Digivoda')}</dd>
-      </div>
-      <div class="roles__item roles__item--dark">
-        <dt><span class="station station--light">DIGIVODA</span></dt>
-        <dd>L’organisme de formation qui dispense les sessions et remet les attestations. Certification Qualiopi au titre des actions de formation et des actions de formation par apprentissage.</dd>
-      </div>
-    </dl>
+    <div class="centre-gallery centre-gallery--n${Math.min(photos.length || 3, 6)}">${gallery}</div>
   </div>
 </section>
 <section class="section band band--steel principles" aria-labelledby="about-how">
@@ -206,8 +225,8 @@ export function aPropos(data) {
     <header class="principles__head"><h2 id="about-how">Notre façon de former</h2><span class="pk pk--steel" aria-hidden="true"><small>PK</small>02</span></header>
     <ol class="principles__list">
       <li><h3>Le terrain comme référence</h3><p>La TCS M se termine par une mise en situation sur chantier pédagogique. Une annonce se travaille au bord d’une voie, pas seulement au tableau.</p></li>
-      <li><h3>Trois formats</h3><p>En centre Digivoda avec d’autres entreprises, sur votre site en intra, ou en e-learning pour les modules qui le permettent.</p></li>
-      <li><h3>Des prix lisibles</h3><p>Les tarifs sont affichés TTC, par personne. Les packs indiquent leur prix initial et la remise appliquée.</p></li>
+      <li><h3>Plusieurs formats</h3><p>En centre Digivoda avec d’autres entreprises, en classe virtuelle, sur votre site en intra, ou en e-learning pour les modules qui le permettent.</p></li>
+      <li><h3>Des prix lisibles</h3><p>Les tarifs sont affichés TTC, par personne. En intra, le prix est établi sur devis selon le nombre d’agents et le lieu.</p></li>
       <li><h3>Une attestation à la clé</h3><p>Chaque formation donne lieu à une attestation. L’employeur s’appuie dessus pour délivrer l’habilitation.</p></li>
     </ol>
   </div>
@@ -218,13 +237,8 @@ export function aPropos(data) {
     <div>
       <span class="pk" aria-hidden="true"><small>PK</small>03</span>
       <h2 id="about-where">Où ont lieu les formations</h2>
-      <p class="about__lead">Dans les centres Digivoda partout en France, ou directement sur le site du client en intra.</p>
-      <dl class="spec spec--wide">
-        <div><dt>Siège</dt><dd>${esc(o.adresse_siege)}</dd></div>
-        <div><dt>Centre de formation</dt><dd>${esc(o.adresse_centre)}</dd></div>
-        <div><dt>Autres centres</dt><dd>${todo('liste des centres Digivoda')}</dd></div>
-        <div><dt>Intra</dt><dd>Sur votre site, partout en France</dd></div>
-      </dl>
+      <p class="about__lead">Dans les centres Digivoda partout en France, en classe virtuelle, ou directement sur le site du client en intra.</p>
+      ${mapsAccess(o)}
     </div>
   </div>
 </section>
@@ -235,10 +249,7 @@ export function aPropos(data) {
       <h2 id="about-quality">Qualité et accessibilité</h2>
     </div>
     <div class="commitments__body">
-      <figure class="qualiopi qualiopi--light">
-        <img src="${p}${esc(o.qualiopi.logo)}" alt="Logo Qualiopi, processus certifié, République française" width="200" height="104" loading="lazy" decoding="async">
-        <figcaption>${esc(o.qualiopi.mention)}</figcaption>
-      </figure>
+      ${qualiopiFigure(p, o, 'qualiopi qualiopi--light')}
       <div class="commitments__access">
         <h3>Personnes en situation de handicap</h3>
         <p>Digivoda dispose d’un référent handicap et publie un registre public d’accessibilité. Signalez votre besoin dès la demande de devis : la session peut être adaptée.</p>
@@ -253,8 +264,8 @@ ${ctaBand(p, o, { title: 'Une question avant de vous lancer ?', text: 'Appelez o
     ctx: {
       p,
       path: 'a-propos.html',
-      title: 'À propos : Digiferro et Digivoda | Digiferro',
-      description: 'Digiferro présente les formations ferroviaires de DIGIVODA, organisme certifié Qualiopi : centres partout en France, intra sur site, e-learning.',
+      title: 'À propos : le centre de formation Digivoda | Digiferro',
+      description: 'Digiferro présente les formations ferroviaires de DIGIVODA, organisme certifié Qualiopi : centre de Palaiseau, classe virtuelle, intra sur site, e-learning.',
       bodyClass: 'page-about',
       scripts: ['map'],
       jsonld: [jsonld(breadcrumbLD(data, trail))],
@@ -275,7 +286,6 @@ export function contact(data) {
   const p = '';
   const o = data.organisme;
   const trail = crumbs('Contact', 'contact.html');
-  const osm = `https://www.openstreetmap.org/search?query=${encodeURIComponent(o.adresse_centre)}`;
   const body = `${pageHero(p, trail, {
     station: 'Contact',
     title: 'Parlons de votre besoin de formation',
@@ -300,12 +310,7 @@ export function contact(data) {
           <div><dt>Centre</dt><dd>${esc(o.adresse_centre)}</dd></div>
         </dl>
       </div>
-      <div class="map-ph">
-        <svg class="map-ph__grid" viewBox="0 0 400 220" preserveAspectRatio="none" aria-hidden="true"><path d="M0 160 L400 120 M0 60 L400 90 M120 0 L160 220 M300 0 L260 220"/><path class="map-ph__rail" d="M0 190 C120 170 220 150 400 40"/></svg>
-        <span class="map-ph__pin">${icon('pin', 'icon')}</span>
-        <p class="map-ph__text">${todo('plan d’accès (carte interactive) du centre')}</p>
-        <a class="link-arrow" href="${osm}" rel="noopener">Ouvrir dans OpenStreetMap${icon('arrow', 'icon icon--sm')}</a>
-      </div>
+      ${mapsAccess(o)}
     </div>
     <div class="contact__form" id="devis">
       <h2 class="contact__form-title">Demande de devis</h2>
@@ -351,50 +356,81 @@ export function contact(data) {
 
 export const FAQ_GROUPS = [
   {
-    id: 'inscription',
-    title: 'Inscription et délais',
+    id: 'choisir',
+    title: 'Choisir sa formation',
     items: [
-      { q: 'Comment demander un devis ?', a: 'Par le formulaire de contact ou par téléphone. Indiquez la formation ou le pack, le nombre d’agents et le format souhaité : centre, intra ou e-learning.' },
-      { q: 'Sous quel délai s’inscrire à une session inter-entreprises ?', a: 'Pour la TCS M et le recyclage SECUFER, au moins 11 jours ouvrés avant la session.' },
-      { q: 'Combien de temps faut-il pour organiser une session intra ?', a: 'Comptez 30 à 45 jours pour organiser une session intra sur votre site.' },
-      { q: 'Les tarifs affichés sont-ils HT ou TTC ?', a: 'TTC, par personne.' },
+      { q: 'Par quelle formation commencer quand on débute dans le ferroviaire ?', a: 'Par la SECUFER : c’est le socle de sécurité demandé à tout intervenant sur les emprises. Elle ouvre ensuite la voie aux habilitations de poste : TCS M, TES F, LAM, S9, caténaire.' },
+      { q: 'Quelle différence entre la SECUFER et la TCS M ?', a: 'La SECUFER donne les règles de sécurité de base à tout intervenant. La TCS M forme à un poste précis : Annonceur Sentinelle et Agent Sécurité du Personnel, chargés de protéger l’équipe des circulations.' },
+      { q: 'Annonceur Sentinelle ou ASP : quelle différence ?', a: 'L’Annonceur Sentinelle surveille les circulations et donne l’alerte. L’Agent Sécurité du Personnel organise la protection du personnel sur le chantier. La TCS M prépare aux deux missions.' },
+      { q: 'C0 ou caténaire CH1-CB1 : laquelle choisir ?', a: 'Le C0 suffit pour travailler à proximité des installations électriques sans y intervenir. La formation Percheur / Aide Monteur CH1-CB1 prépare aux opérations de perchage et de protection électrique de la caténaire.' },
+      { q: 'Quelle formation pour protéger un passage à niveau ?', a: 'La TES F, qui forme à protéger les circulations ferroviaires vis-à-vis des circulations routières, et réciproquement, aux passages à niveau.' },
+      { q: 'Qui doit avoir l’AIPR ?', a: 'Toute personne qui intervient à proximité de réseaux enterrés ou aériens, y compris sur les emprises ferroviaires : opérateurs, conducteurs d’engins, encadrants, concepteurs. Elle est obligatoire depuis le 1er janvier 2018.' },
+    ],
+  },
+  {
+    id: 'inscription',
+    title: 'Inscription, délais et tarifs',
+    items: [
+      { q: 'Comment demander un devis ?', a: 'Par le formulaire de contact ou au 01 89 70 55 70. Indiquez la formation ou le pack, le nombre d’agents et le format souhaité : centre, classe virtuelle, intra ou e-learning.' },
+      { q: 'Sous quel délai s’inscrire à une session inter-entreprises ?', a: 'Au moins 11 jours ouvrés avant la date de la session.' },
+      { q: 'Combien de temps faut-il pour organiser une session intra ?', a: 'Comptez 30 à 45 jours pour organiser une session sur votre site.' },
+      { q: 'Les tarifs affichés sont-ils HT ou TTC ?', a: 'TTC, par personne, pour les sessions inter-entreprises, en classe virtuelle ou en e-learning.' },
+      { q: 'Comment est calculé le prix d’une session intra ?', a: 'Sur devis, selon le nombre d’agents, la formation choisie et le lieu de la session.' },
+      { q: 'Un particulier peut-il s’inscrire ?', a: 'Oui. Un demandeur d’emploi peut aussi solliciter une prise en charge par France Travail, selon son éligibilité.' },
+    ],
+  },
+  {
+    id: 'prerequis',
+    title: 'Prérequis et aptitude',
+    items: [
+      { q: 'Faut-il une aptitude médicale ?', a: 'Oui pour intervenir sur les voies. Pour la TCS M, la TES F et l’Agent S9A3, une aptitude médicale et psychotechnique délivrée par un médecin du travail est demandée.' },
+      { q: 'Quel niveau de français est demandé ?', a: 'Le niveau B1 à l’oral et à l’écrit pour les tâches de sécurité comme la TCS M : il faut comprendre les consignes et se faire comprendre sans ambiguïté.' },
+      { q: 'Faut-il un diplôme ?', a: 'Non, aucune de ces formations n’exige de diplôme. Pour la TCS M, il faut être majeur.' },
+      { q: 'Faut-il une expérience du ferroviaire ?', a: 'Pas pour la SECUFER ni pour la TCS M, souvent la porte d’entrée dans le métier. La RSO s’adresse en revanche à des agents expérimentés.' },
+    ],
+  },
+  {
+    id: 'deroulement',
+    title: 'Déroulement et évaluation',
+    items: [
+      { q: 'Où ont lieu les formations ?', a: 'Dans les centres Digivoda partout en France, dont le centre de Palaiseau, ou sur le site du client en intra. La SECUFER existe aussi en classe virtuelle et en e-learning.' },
+      { q: 'Comment se passe une classe virtuelle ?', a: 'La session a lieu en direct avec le formateur, à distance. Il faut un ordinateur avec caméra, micro et connexion internet.' },
+      { q: 'Quelles formations existent à distance ?', a: 'La SECUFER en classe virtuelle ou en e-learning, et le recyclage SECUFER à distance ou en e-learning.' },
+      { q: 'Y a-t-il de la pratique ?', a: 'Oui. La TCS M se termine par une mise en situation sur chantier pédagogique ; la plupart des formations de poste comportent des exercices et des mises en situation.' },
+      { q: 'Comment est-on évalué ?', a: 'Selon la formation : QCM, évaluation pratique, ou les deux. Pour la TCS M, trois modules certificatifs avec au moins 12/20 à chacun.' },
+      { q: 'Combien de stagiaires par session ?', a: 'En général de 4 à 12 stagiaires ; une douzaine en moyenne pour la TCS M.' },
     ],
   },
   {
     id: 'validite',
-    title: 'Validité et recyclage',
+    title: 'Attestations, validité et recyclage',
     items: [
+      { q: 'Qui délivre l’habilitation : l’organisme ou l’employeur ?', a: 'L’organisme de formation remet l’attestation de formation. L’habilitation est délivrée par l’employeur, sur la base de cette attestation.' },
       { q: 'Combien de temps l’attestation SECUFER reste-t-elle valable ?', a: 'Trois ans. Le recyclage SECUFER, une demi-journée de 3 h 30, la renouvelle pour trois ans de plus.' },
       { q: 'Jusqu’à quand peut-on faire le recyclage SECUFER ?', a: 'Avec une attestation initiale encore valide, ou expirée depuis moins de 6 mois, et une aptitude médicale en cours de validité.' },
-      { q: 'La TCS M doit-elle être renouvelée ?', a: 'Oui. Une évaluation annuelle des compétences est obligatoire pour que l’employeur maintienne l’habilitation Annonceur Sentinelle / ASP.' },
-      { q: 'Qui délivre l’habilitation : l’organisme ou l’employeur ?', a: 'L’organisme de formation remet l’attestation de formation. L’habilitation est délivrée par l’employeur.' },
-    ],
-  },
-  {
-    id: 'modalites',
-    title: 'Lieux et modalités',
-    items: [
-      { q: 'Où ont lieu les formations ?', a: 'Dans les centres Digivoda partout en France, ou sur le site du client en intra.' },
-      { q: 'Quelles formations existent à distance ?', a: 'La SECUFER existe en e-learning. Le recyclage SECUFER peut se suivre en présentiel, à distance ou en e-learning.' },
-      { q: 'Combien de stagiaires par session ?', a: 'Le recyclage SECUFER accueille 4 à 12 stagiaires. La TCS M réunit en moyenne une douzaine de stagiaires.' },
-      { q: 'Quelles conditions pour suivre la TCS M ?', a: 'Une aptitude médicale et psychotechnique délivrée par un médecin du travail, un niveau de français B1 à l’oral et à l’écrit, et être majeur. Aucun diplôme n’est requis.' },
+      { q: 'La TCS M doit-elle être renouvelée ?', a: 'Oui. Une évaluation annuelle des compétences est obligatoire pour que l’employeur maintienne l’habilitation : c’est le recyclage TCS M.' },
+      { q: 'Combien de temps l’AIPR est-elle valable ?', a: '5 ans au maximum. Elle se renouvelle par un nouvel examen.' },
+      { q: 'Faut-il recycler le C0 et la formation caténaire ?', a: 'Un recyclage tous les 3 ans est recommandé, comme le prévoit la norme NF C 18-510 pour les habilitations électriques.' },
     ],
   },
   {
     id: 'financement',
     title: 'Financement',
     items: [
-      { q: 'Qui peut financer la formation ?', a: 'Pour un salarié, l’OPCO de l’entreprise ou le plan de développement des compétences de l’employeur. Pour la TCS M, un financement par France Travail est aussi mentionné pour les demandeurs d’emploi.' },
+      { q: 'Qui peut financer la formation ?', a: 'Pour un salarié, l’OPCO de l’entreprise ou le plan de développement des compétences de l’employeur. Pour un demandeur d’emploi, France Travail, selon son éligibilité.' },
       { q: 'Le devis suffit-il pour une demande de prise en charge ?', a: 'Le devis TTC sert de base à la demande de prise en charge auprès de votre financeur.' },
+      { q: 'Les formations en e-learning sont-elles finançables ?', a: 'Oui, dans les mêmes conditions que les formations en salle.' },
     ],
   },
   {
     id: 'packs',
     title: 'Packs',
     items: [
-      { q: 'Qu’est-ce qu’un pack ?', a: 'Plusieurs formations enchaînées dans un même parcours, avec une seule inscription. Trois des quatre packs affichent une remise sur leur prix initial.' },
+      { q: 'Qu’est-ce qu’un pack ?', a: 'Plusieurs formations enchaînées dans un même parcours, avec une seule inscription.' },
       { q: 'Que contient le Pack Sentinelle Complet ?', a: 'La formation aux risques électriques C0 et la TCS M complète (Annonceur + ASP), en 5 jours, pour 1 080 € TTC.' },
+      { q: 'Que contient le Pack Caténaire ?', a: 'La TCS M complète et l’Agent de Protection Électrique Caténaire (APEC), pour 1 800 € TTC.' },
       { q: 'Quel est le pack le plus complet ?', a: 'Le Pack Ferroviaire Premium : 10 jours, TCS M + ASP, Agent prestataire LAM et S9, et APEC CH1-CB1, pour 2 500 € TTC au lieu de 2 900 €.' },
+      { q: 'Peut-on suivre un pack en intra ?', a: 'Oui, sur votre site ; le tarif est alors établi sur devis.' },
     ],
   },
 ];
@@ -406,15 +442,22 @@ export function faqPage(data) {
   const body = `${pageHero(p, trail, {
     station: 'FAQ',
     title: 'Questions fréquentes',
-    lead: 'Inscription, validité des attestations, lieux, financement, packs : les réponses aux questions posées le plus souvent avant une formation.',
+    lead: 'Choisir sa formation, prérequis, déroulement, validité des attestations, financement, packs : les réponses aux questions posées le plus souvent avant une formation ferroviaire.',
   })}
 <section class="section faq-page" aria-label="Questions par thème">
   <div class="wrap faq-page__grid">
     <nav class="faq-page__nav line-index" aria-label="Thèmes de la FAQ">
-      <ol>${FAQ_GROUPS.map((g) => `<li><a href="#${g.id}"><span class="line-index__stop" aria-hidden="true"></span><span>${esc(g.title)}</span><span class="line-index__n">${g.items.length}</span></a></li>`).join('')}</ol>
+      <ol>${FAQ_GROUPS.map((g) => `<li><a href="#${g.id}"><span class="line-index__stop" aria-hidden="true"></span><span>${esc(g.title)}</span><span class="line-index__n">${g.items.length}</span></a></li>`).join('')}<li><a href="#par-formation"><span class="line-index__stop" aria-hidden="true"></span><span>FAQ par formation</span><span class="line-index__n">${data.formations.length + data.packs.length}</span></a></li></ol>
     </nav>
     <div class="faq-page__groups">
       ${FAQ_GROUPS.map((g) => `<section class="faq-page__group" aria-labelledby="${g.id}"><h2 id="${g.id}">${esc(g.title)}</h2>${faqHTML(g.items, 'faq-' + g.id).replace(' open', '')}</section>`).join('\n')}
+      <section class="faq-page__group" aria-labelledby="par-formation">
+        <h2 id="par-formation">FAQ par formation</h2>
+        <p class="faq-page__intro">Chaque fiche a ses propres questions fréquentes : contenu, prérequis, évaluation, tarif, validité.</p>
+        <ul class="faq-index">${[...groupsOf(data).flatMap((g) => g.items), ...data.packs.slice().sort((a, b) => a.ordre - b.ordre)]
+          .map((x) => `<li><a href="${x.page}#faq"><span class="code">${esc(x.code || 'Pack')}</span><span>${esc(x.titre_court)}</span><small>${(x.editorial?.faq || []).length} questions</small></a></li>`)
+          .join('')}</ul>
+      </section>
     </div>
   </div>
 </section>
@@ -554,7 +597,7 @@ export function confidentialite(data) {
       { title: 'Destinataires', html: `<p>DIGIVODA, organisme qui dispense les formations. ${todo('prestataire d’envoi du formulaire (Formspree, Netlify…) et hébergeur')}</p>` },
       { title: 'Durée de conservation', html: `<p>${todo('durée de conservation ; la CNIL retient en général 3 ans après le dernier contact pour un prospect')}</p>` },
       { title: 'Vos droits', html: `<p>Vous disposez d’un droit d’accès, de rectification, d’effacement, d’opposition, de limitation du traitement et de portabilité de vos données. Pour l’exercer, écrivez à <a href="mailto:${esc(o.email)}">${esc(o.email)}</a>.</p><p>Vous pouvez aussi adresser une réclamation à la CNIL (<a href="https://www.cnil.fr" rel="noopener">cnil.fr</a>).</p>` },
-      { title: 'Cookies et services tiers', html: `<p>Ce site ne dépose aucun cookie de mesure d’audience ni de cookie publicitaire. La vidéo et les images sont hébergées sur le site lui-même.</p><p>Les polices de caractères sont chargées depuis les serveurs de Google Fonts, ce qui transmet votre adresse IP à Google. ${todo('héberger les polices sur le site, ou le mentionner ici comme sous-traitant')}</p>` },
+      { title: 'Cookies et services tiers', html: `<p>Ce site ne dépose aucun cookie de mesure d’audience ni de cookie publicitaire. La vidéo et les images sont hébergées sur le site lui-même.</p><p>Le plan d’accès Google Maps des pages Contact et À propos ne se charge que si vous cliquez sur « Afficher la carte ». Google peut alors déposer ses propres cookies et recevoir votre adresse IP, selon sa politique de confidentialité.</p><p>Les polices de caractères sont chargées depuis les serveurs de Google Fonts, ce qui transmet votre adresse IP à Google. ${todo('héberger les polices sur le site, ou le mentionner ici comme sous-traitant')}</p>` },
     ],
   });
 }

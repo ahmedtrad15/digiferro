@@ -204,6 +204,7 @@ small { font-size: var(--fs-xs); }
   line-height: 1.5;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
+  overflow-wrap: anywhere;
 }
 .todo--xs { font-size: 0.75rem; padding: 0 0.3em; }
 

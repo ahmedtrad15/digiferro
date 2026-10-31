@@ -57,3 +57,9 @@ export const truncateAt = (s, max) => {
 
 export const jsonld = (obj) =>
   `<script type="application/ld+json">${JSON.stringify(obj).replace(/</g, '\\u003c')}</script>`;
+
+// Précisions sous un prix : format concerné et « Intra : sur devis »
+export const tarifNote = (t) => {
+  const parts = [t?.mention, t?.intra === 'Sur devis' ? 'Intra : sur devis' : null].filter(Boolean);
+  return parts.length ? `<span class="price-note">${parts.map(esc).join(' · ')}</span>` : '';
+};

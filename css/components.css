@@ -460,7 +460,7 @@
 .spec { display: grid; border-top: 2px solid var(--night); }
 .spec > div { display: grid; grid-template-columns: 8.5rem 1fr; gap: 1rem; padding: 0.7rem 0; border-bottom: 1px solid var(--line); }
 .spec dt { font-family: var(--font-display); font-weight: 700; font-size: 0.88rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--steel-700); }
-.spec dd { margin: 0; }
+.spec dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
 .spec .facts__line { font-size: inherit; }
 @media (max-width: 29.99em) { .spec > div { grid-template-columns: 1fr; gap: 0.15rem; } }
 
@@ -652,3 +652,7 @@
 .cards > :nth-child(3n + 2), .catalogue__list > :nth-child(3n + 2) > .fcard, .tickets > :nth-child(2n) { --d: 60ms; }
 .cards > :nth-child(3n + 3), .catalogue__list > :nth-child(3n + 3) > .fcard { --d: 120ms; }
 .js .fcard.reveal.is-visible:hover { transform: translateY(-3px); }
+
+/* Précision sous un prix (format, intra sur devis) */
+.price-note { display: block; margin-top: 0.25rem; font-family: var(--font-body); font-size: var(--fs-xs); font-weight: 600; color: var(--text-muted); letter-spacing: 0; }
+.facts .price-note, .band--night .price-note { color: var(--steel-300); }

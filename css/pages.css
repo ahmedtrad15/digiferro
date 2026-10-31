@@ -696,13 +696,6 @@
 .contact__form-title { font-size: var(--fs-xl); }
 .contact__form-lead { margin-block: 0.75rem 1.25rem; color: var(--text-muted); max-width: 55ch; }
 .contact__form .devis__box { background: var(--white); border: 1px solid var(--line); border-top: 6px solid var(--signal); }
-.map-ph { position: relative; display: grid; gap: 0.5rem; justify-items: start; padding: 1.25rem 1.4rem; min-height: 13rem; align-content: end; background: var(--steel-100); border: 2px dashed var(--steel-300); overflow: hidden; }
-.map-ph__grid { position: absolute; inset: 0; width: 100%; height: 100%; fill: none; stroke: var(--steel-300); stroke-width: 6; }
-.map-ph__rail { stroke: var(--steel-500); stroke-width: 4; stroke-dasharray: 2 6; }
-.map-ph__pin { position: absolute; left: 50%; top: 22%; color: var(--rail-red); }
-.map-ph__pin .icon { width: 2.25rem; height: 2.25rem; }
-.map-ph > *:not(svg):not(.map-ph__pin) { position: relative; }
-.map-ph__text, .map-ph .link-arrow { background: var(--steel-100); padding-inline: 0.3rem; }
 @media (min-width: 64em) {
   .contact__grid { grid-template-columns: 0.85fr 1.15fr; gap: 4rem; align-items: start; }
 }
@@ -744,3 +737,47 @@
 .item-hero > .wrap { position: relative; }
 .item-hero .page-hero__wires { top: 0; }
 .objectives .todo { justify-self: start; }
+
+/* ---------- Plan d'accès (Google Maps au clic) ---------- */
+.maps-access { position: relative; display: grid; align-content: end; min-height: 15rem; padding: 1.25rem 1.4rem; margin-top: 1.5rem; background: var(--steel-100); border: 2px solid var(--steel-300); overflow: hidden; }
+.maps-access__grid { position: absolute; inset: 0; width: 100%; height: 100%; fill: none; stroke: var(--steel-300); stroke-width: 6; }
+.maps-access__rail { stroke: var(--steel-500); stroke-width: 4; stroke-dasharray: 2 6; }
+.maps-access__pin { position: absolute; left: 50%; top: 18%; color: var(--rail-red); }
+.maps-access__pin .icon { width: 2.25rem; height: 2.25rem; }
+.maps-access__body { position: relative; display: grid; gap: 0.6rem; padding: 0.9rem 1rem; background: var(--white); border-left: 5px solid var(--signal); }
+.maps-access__addr { line-height: 1.4; }
+.maps-access__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.25rem; }
+.maps-access__note { font-size: var(--fs-xs); color: var(--text-muted); }
+.no-js [data-maps-load] { display: none; }
+.maps-access.is-loaded { padding: 0; min-height: 0; align-content: stretch; }
+.maps-access.is-loaded .maps-access__grid, .maps-access.is-loaded .maps-access__pin, .maps-access.is-loaded .maps-access__note { display: none; }
+.maps-access__frame { display: block; width: 100%; height: 22rem; border: 0; }
+.maps-access.is-loaded .maps-access__body { border-left: 0; border-top: 5px solid var(--signal); }
+.contact__info .maps-access { margin-top: 0; }
+
+/* ---------- À propos : centre de Palaiseau ---------- */
+.centre__grid { display: grid; gap: 2.5rem; }
+.centre h2 { margin-top: 1rem; }
+.centre .spec { margin-top: 1.5rem; }
+.centre-gallery { display: grid; gap: 0.75rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.centre-gallery__item { margin: 0; overflow: hidden; background: var(--steel-900); }
+.centre-gallery__item img { width: 100%; height: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.centre-gallery__item--1 { grid-column: 1 / -1; }
+.centre-gallery--n2 .centre-gallery__item--1 { grid-column: auto; }
+@media (min-width: 64em) {
+  .centre__grid { grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: 4rem; align-items: start; }
+  .centre-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .centre-gallery__item--1 { grid-column: span 2; grid-row: span 2; }
+  .centre-gallery__item--1 img { aspect-ratio: auto; min-height: 100%; }
+  .centre-gallery--n1 { grid-template-columns: 1fr; }
+  .centre-gallery--n2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .centre-gallery--n2 .centre-gallery__item--1 { grid-column: auto; grid-row: auto; }
+}
+
+/* FAQ : index des questions par formation */
+.faq-page__intro { margin-bottom: 1rem; color: var(--text-muted); }
+.faq-index { list-style: none; display: grid; gap: 0.5rem; }
+.faq-index a { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 0.75rem; min-height: 52px; padding: 0.5rem 0.9rem; background: var(--white); border: 1px solid var(--line); border-left: 4px solid var(--night); color: var(--text); font-weight: 600; text-decoration: none; transition: border-color var(--dur-1); }
+.faq-index a:hover { border-left-color: var(--signal); }
+.faq-index small { color: var(--text-muted); font-weight: 400; }
+@media (min-width: 48em) { .faq-index { grid-template-columns: 1fr 1fr; } }

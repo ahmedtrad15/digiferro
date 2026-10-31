@@ -1,6 +1,7 @@
 import { esc, icon, priceHTML, dureeHTML, savingBadge, jsonld, isMissing } from './util.mjs';
 import { groupsOf, devisHref } from './partials.mjs';
 import { franceMap } from './map.mjs';
+import { mediaFor, centreImages } from './media.mjs';
 
 export const IMG_ALT = {
   'ph-voie-perspective': 'Voie ferrée en perspective, rails et traverses sur ballast',
@@ -20,10 +21,26 @@ export const IMG_ALT = {
 export const img = (p, key, { w = 600, h = 400, cls = '', eager = false, alt } = {}) =>
   `<img${cls ? ` class="${cls}"` : ''} src="${p}assets/img/${key}.svg" alt="${esc(alt ?? IMG_ALT[key] ?? '')}" width="${w}" height="${h}"${eager ? '' : ' loading="lazy"'} decoding="async">`;
 
+// Visuel d'une formation ou d'un pack : photo du dossier media/ si elle existe, sinon visuel provisoire.
+// Renvoie le conteneur complet ; la mention « Photo à fournir » (data-ph) n'apparaît que sur les provisoires.
+export function visual(p, item, { tag = 'div', cls = '', w = 600, h = 400, eager = false, extra = '', photo } = {}) {
+  const m = photo || mediaFor(item)[0];
+  const alt = item.image_alt || `Formation ${item.titre_court}`;
+  const image = m
+    ? `<img src="${p}${m.src}" alt="${esc(alt)}" width="${m.w}" height="${m.h}"${eager ? ' fetchpriority="high"' : ' loading="lazy"'} decoding="async">`
+    : img(p, item.images?.[0] || 'ph-voie-perspective', { w, h, eager });
+  return `<${tag} class="${cls}"${m ? '' : ' data-ph'}>${image}${extra}</${tag}>`;
+}
+
+// Photo générique d'une section (centre, intra…) : photo fournie sinon visuel provisoire
+export const sectionVisual = (p, photo, key, { tag = 'div', cls = '', w = 480, h = 320, alt } = {}) =>
+  photo
+    ? `<${tag} class="${cls}"><img src="${p}${photo.src}" alt="${esc(alt || IMG_ALT[key] || '')}" width="${photo.w}" height="${photo.h}" loading="lazy" decoding="async"></${tag}>`
+    : `<${tag} class="${cls}" data-ph>${img(p, key, { w, h, alt })}</${tag}>`;
+
 export function formationCard(p, f, { heading = 'h4' } = {}) {
-  const key = f.images?.[0] || 'ph-voie-perspective';
   return `<article class="fcard reveal${f.type !== 'formation' ? ' fcard--' + f.type : ''}">
-  <div class="fcard__media" data-ph>${img(p, key)}${f.type !== 'formation' ? `<span class="fcard__type">${f.type === 'recyclage' ? 'Recyclage' : 'E-learning'}</span>` : ''}</div>
+  ${visual(p, f, { cls: 'fcard__media', extra: f.type !== 'formation' ? `<span class="fcard__type">${f.type === 'recyclage' ? 'Recyclage' : 'E-learning'}</span>` : '' })}
   <div class="fcard__body">
     <p class="fcard__meta"><span class="code">${esc(f.code)}</span><span class="fcard__dur">${icon('clock', 'icon icon--xs')}${dureeHTML(f.duree, 'todo--xs')}</span></p>
     <${heading} class="fcard__title"><a href="${p}${f.page}">${esc(f.titre)}</a></${heading}>
@@ -120,7 +137,7 @@ export function home(data) {
   <div class="wrap hero__in">
     <p class="station station--light">Formations sécurité ferroviaire</p>
     <h1 class="hero__title" id="hero-title">Former vos équipes avant qu’elles ne posent le pied sur la voie.</h1>
-    <p class="hero__lead">SECUFER, TCS M, risques électriques C0, RSO, AIPR, caténaire : 12 formations et 4 packs pour les entreprises ferroviaires, leurs sous-traitants et les agents qui travaillent sur le réseau. Les sessions sont assurées par DIGIVODA.</p>
+    <p class="hero__lead">SECUFER, TCS M, risques électriques C0, RSO, AIPR, caténaire : ${data.formations.length} formations et ${data.packs.length} packs pour les entreprises ferroviaires, leurs sous-traitants et les agents qui travaillent sur le réseau. Les sessions sont assurées par DIGIVODA.</p>
     <div class="hero__cta">
       <a class="btn btn--signal btn--lg" href="#formations">Voir les formations${icon('arrow', 'icon icon--sm')}</a>
       <a class="btn btn--ghost-light btn--lg" href="${devisHref(p)}">Demander un devis</a>
@@ -251,7 +268,7 @@ export function home(data) {
       <h2 id="modes-title">En centre, sur votre site ou à distance</h2>
       <p class="modes__intro">Trois façons de suivre une formation. Le choix dépend surtout du nombre d’agents et de vos contraintes de chantier.</p>
       <article class="mode">
-        <div class="mode__media" data-ph>${img(p, 'ph-salle-formation', { w: 480, h: 320 })}</div>
+        ${sectionVisual(p, centreImages()[0], 'ph-salle-formation', { cls: 'mode__media', alt: 'Salle du centre de formation Digivoda de Palaiseau' })}
         <div class="mode__body">
           <h3>Centres Digivoda partout en France</h3>
           <p>Sessions inter-entreprises : vos agents rejoignent un groupe déjà constitué. C’est la formule la plus simple pour une ou deux personnes. Le centre de Palaiseau accueille les stagiaires au 4 allée des Garays.</p>
@@ -332,7 +349,7 @@ export function home(data) {
       path: 'index.html',
       title: 'Formations sécurité ferroviaire SECUFER, TCS M | Digiferro',
       description:
-        'SECUFER, TCS M, C0, RSO, AIPR, caténaire : 12 formations et 4 packs ferroviaires, en centre, en intra ou en e-learning. Tarifs TTC. Formations Digivoda.',
+        `SECUFER, TCS M, C0, RSO, AIPR, caténaire : ${data.formations.length} formations et ${data.packs.length} packs ferroviaires, en centre, en intra ou en e-learning. Tarifs TTC.`,
       bodyClass: 'page-home',
       scripts: ['video', 'map'],
       jsonld: ld,

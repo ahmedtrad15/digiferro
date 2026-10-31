@@ -124,25 +124,48 @@
     subUl.addEventListener('scroll', edges, { passive: true });
     addEventListener('resize', edges, { passive: true });
     edges();
+    // Défilement géré ici plutôt que par l'ancre native : position exacte sous la barre collante,
+    // vérification en fin de défilement, puis focus sur le titre de section (lecteurs d'écran).
+    const GAP = 24;
+    const condensedHeader = () => parseFloat(getComputedStyle(document.documentElement).fontSize) * 3.5 + 1;
+    const offset = () => condensedHeader() + nav.offsetHeight + GAP;
+    const settle = (target, tries = 0) => {
+      const gap = target.getBoundingClientRect().top - nav.getBoundingClientRect().bottom;
+      if (gap < 0 || gap > GAP * 2.5) {
+        // « instant » et non « auto » : html a scroll-behavior: smooth, qui rendrait la correction lente
+        scrollBy({ top: gap - GAP, behavior: 'instant' });
+        // Un défilement concurrent (geste en cours, autre script) peut encore déplacer la page : on revérifie
+        if (tries < 3) return setTimeout(() => settle(target, tries + 1), 200);
+      }
+      spyLockedUntil = 0;
+      if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+      target.focus({ preventScroll: true });
+    };
     subUl.addEventListener('click', (e) => {
       const a = e.target.closest('a[href^="#"]');
       if (!a) return;
+      const target = document.getElementById(decodeURIComponent(a.hash.slice(1)));
+      if (!target) return;
+      e.preventDefault();
       subUl.querySelectorAll('a').forEach((x) => x.classList.toggle('is-current', x === a));
       centerInSubnav(a);
-      // Pendant le défilement vers l'ancre, le repérage automatique est suspendu
-      spyLockedUntil = Date.now() + 1500;
-      const target = document.getElementById(decodeURIComponent(a.hash.slice(1)));
-      addEventListener(
-        'scrollend',
-        () => {
-          spyLockedUntil = 0;
-          // Si la mise en page a bougé pendant le défilement (polices, images), on recale le titre
-          if (!target) return;
-          const gap = target.getBoundingClientRect().top - nav.getBoundingClientRect().bottom;
-          if (gap < -2 || gap > 64) target.scrollIntoView({ block: 'start' });
-        },
-        { once: true }
-      );
+      history.replaceState(null, '', a.hash);
+      // Pendant le défilement vers la section, le repérage automatique est suspendu
+      spyLockedUntil = Date.now() + 2000;
+      const y = target.getBoundingClientRect().top + scrollY - offset();
+      let done = false;
+      const finish = () => {
+        if (done) return;
+        done = true;
+        settle(target);
+      };
+      scrollTo({ top: Math.max(0, y), behavior: reduced.matches ? 'instant' : 'smooth' });
+      // scrollend marque la fin réelle du défilement (écouté après son lancement, pour ignorer
+      // la fin d'un défilement précédent) ; le minuteur ne sert qu'aux navigateurs qui ne le connaissent pas
+      requestAnimationFrame(() => {
+        if ('onscrollend' in window && !reduced.matches) addEventListener('scrollend', finish, { once: true });
+        else setTimeout(finish, reduced.matches ? 50 : 1200);
+      });
     });
   }
 
@@ -174,4 +197,22 @@
     );
     byId.forEach((_, el) => io.observe(el));
   }
+
+  // Plan d'accès : l'iframe Google Maps n'est créée qu'après un clic (respect de la vie privée)
+  document.querySelectorAll('[data-maps-embed]').forEach((box) => {
+    const btn = box.querySelector('[data-maps-load]');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      const frame = document.createElement('iframe');
+      frame.src = box.dataset.mapsEmbed;
+      frame.title = box.dataset.mapsTitle || 'Carte';
+      frame.className = 'maps-access__frame';
+      frame.referrerPolicy = 'no-referrer-when-downgrade';
+      frame.setAttribute('allowfullscreen', '');
+      box.classList.add('is-loaded');
+      box.prepend(frame);
+      btn.remove();
+      frame.focus();
+    });
+  });
 })();

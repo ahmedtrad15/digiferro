@@ -1,5 +1,20 @@
 # Changelog Digiferro
 
+## 0.5.0 — 2026-10-31 · Tarifs, Pack Caténaire, photos, FAQ
+
+- **Tarifs du client (TTC, intra sur devis)** :
+  - SECUFER 160 € en classe virtuelle, SECUFER e-learning 150 €, recyclage SECUFER 130 € ;
+  - TCS M 900 € au lieu de 1 100 €, recyclage TCS M 450 € ;
+  - TSAE 900 €, C0 180 €, RSO 800 €, AIPR 250 €, TES F 900 €, Agent S9A3 900 €, Percheur CH1-CB1 1 100 €.
+  La mention « Intra : sur devis » apparaît sous chaque prix, et la SECUFER indique le format classe virtuelle.
+- **Nouveau Pack Caténaire (TCS M + APEC, 1 800 € TTC)** : fiche complète, présent dans le catalogue, le méga-menu, le pied de page et le formulaire. L'APEC est rattaché à la fiche Percheur CH1-CB1 : les organismes du secteur présentent les deux intitulés comme une même fonction.
+- **Prix des packs** : le tableau ne montre la somme des tarifs à l'unité et l'économie que lorsque l'achat groupé est réellement moins cher. Les incohérences relevées avec les nouveaux tarifs sont listées dans les données (`a_verifier`).
+- **Photos** : dossier `media/` branché sur tout le site (fiches, cartes, galerie du centre, logo Qualiopi), avec les dimensions réelles et la priorité au nom exact. La vidéo du héros est inchangée.
+- **À propos** : la section « Digiferro et Digivoda » est retirée. Ajout de la galerie du centre de Palaiseau et du plan d'accès Google Maps, chargé au clic, aussi sur la page Contact. La politique de confidentialité le mentionne.
+- **FAQ** : 11 à 13 questions par formation et 9 par pack, nourries par les fiches et par les questions les plus posées sur ces formations (décret 2017-694, arrêté du 7 mai 2015, examen AIPR, NF C 18-510, LAM, S9, perchage). La page FAQ passe à 36 questions en 7 thèmes, plus un index « FAQ par formation ».
+- **Sous-navigation des fiches** : défilement entièrement géré en JavaScript (position exacte sous la barre, vérification en fin de défilement, focus sur le titre de section). 68 clics testés, tous au bon endroit.
+- **Divers** : les mots longs ne débordent plus pendant le chargement des polices (`overflow-wrap`).
+
 ## 0.4.0 — 2026-10-30 · Fiches complètes, typographie lisible
 
 - **Fiches formation et pack** : les 16 fiches sont entièrement remplies (objectifs, public, prérequis, programme jour par jour ou par module, méthodes, évaluation, validité, effectif, accessibilité, délais, financement). Les durées et les contenus non publiés par Digivoda sont **provisoires** ; les tarifs inconnus s’affichent « Sur devis ». Chaque fiche liste ses champs provisoires (`provisoire` dans les données), récapitulés dans `A-COMPLETER.md`.

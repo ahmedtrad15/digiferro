@@ -8,6 +8,7 @@ import { page, SPRITE } from './partials.mjs';
 import { home } from './home.mjs';
 import { formationPage, packPage } from './item.mjs';
 import { catalogue, aPropos, contact, faqPage, mentions, cgv, confidentialite, notFound } from './pages.mjs';
+import { mediaReport } from './media.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const data = JSON.parse(readFileSync(join(ROOT, 'data/formations.json'), 'utf8'));
@@ -54,6 +55,9 @@ for (const x of [...data.formations, ...data.packs]) {
   if (x.provisoire?.length) lines.push(`- **${x.titre_court}** (\`${x.page}\`) : ${x.provisoire.map((k) => LABELS[k] || k).join(', ')}`);
 }
 lines.push('');
+const media = mediaReport();
+lines.push('# Photos', '', media.total ? `${media.total} photo(s) dans media/.` : 'Aucune photo dans media/ : les visuels provisoires sont utilisés partout (voir media/README.md).', '');
+if (media.unused.length) lines.push('Photos qui ne correspondent à aucune fiche (vérifier leur nom) :', '', ...media.unused.map((f) => `- ${f}`), '');
 writeFileSync(join(ROOT, 'A-COMPLETER.md'), lines.join('\n'));
 
 // Pictogrammes : copie autonome du sprite, réutilisable hors du site

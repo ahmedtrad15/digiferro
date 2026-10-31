@@ -4,6 +4,10 @@ Aucun fichier de ce dossier ne provient d'une banque d'images. Les sites Pexels,
 
 Aucune image de Digivoda n'est utilisée. Pour en reprendre, il faut l'accord écrit du client.
 
+## Photos du client
+
+Les photos déposées dans `media/` (voir `media/README.md`) remplacent automatiquement les visuels provisoires ci-dessous. Notez ici leur origine et leurs droits d'utilisation.
+
 ## Photos provisoires (SVG, 1200 × 800, ratio 3:2)
 
 Chaque visuel porte la mention « Photo à fournir » dans le site. Pour la retirer, supprimez la règle `[data-ph]::after` dans `css/components.css`.
@@ -23,7 +27,7 @@ Chaque visuel porte la mention « Photo à fournir » dans le site. Pour la reti
 | `img/ph-train-face.svg` | Train vu de face | Agent S9A3, Pack Premium |
 | `img/ph-catenaire-perche.svg` | Intervention caténaire, perche de mise à la terre | Percheur CH1-CB1 |
 
-Pour les remplacer : gardez le même nom de base, exportez en WebP (1200 × 800, qualité 70 à 80) et changez l'extension `.svg` en `.webp` dans `tools/home.mjs` (fonction `img`). Sources libres conseillées : Pexels (licence Pexels), Pixabay (licence Pixabay), Unsplash (licence Unsplash). Notez ici l'URL d'origine, l'auteur et la licence de chaque photo.
+Pour les remplacer, déposez la photo dans `media/` en la nommant d'après la formation (voir `media/README.md`), puis lancez `node tools/build.mjs`. Sources libres conseillées : Pexels (licence Pexels), Pixabay (licence Pixabay), Unsplash (licence Unsplash). Notez ici l'URL d'origine, l'auteur et la licence de chaque photo.
 
 ## Vidéo du héros
 
@@ -37,11 +41,11 @@ Il s'agit d'une animation générée (voie de nuit, traverses et poteaux qui dé
 
 ## Logo Qualiopi
 
-`img/qualiopi-logo-a-fournir.svg` est un **emplacement**, pas le logo. Déposez le fichier officiel (fourni par le certificateur de Digivoda) sans le modifier, puis mettez à jour `organisme.qualiopi.logo` dans `data/formations.json`.
+`img/qualiopi-logo-a-fournir.svg` est un **emplacement**, pas le logo. Déposez le fichier officiel, sans le modifier, dans `media/` sous un nom contenant « qualiopi » : il est repris automatiquement au prochain build.
 
 ## Autres fichiers
 
 - `favicon/` : favicon SVG, PNG 32 px et icône Apple 180 px, dessinés pour Digiferro.
 - `img/og-digiferro.jpg` : image de partage (1200 × 630), composée à partir de l'affiche vidéo.
 - `svg/pictogrammes.svg` : pictogrammes au trait (train, rails, caténaire, signal, casque, gilet, agent, passage à niveau, trompe), dessinés pour Digiferro.
-- Polices : Barlow Condensed et Barlow (Google Fonts, licence SIL Open Font License 1.1).
+- Polices : Lexend et Source Sans 3 (Google Fonts, licence SIL Open Font License 1.1).

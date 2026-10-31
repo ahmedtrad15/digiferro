@@ -5,14 +5,11 @@ Chaque ligne correspond à un encadré « [À COMPLÉTER] » visible sur le site
 
 ## a-propos.html
 
-- statut juridique de Digiferro et lien avec Digivoda
-- liste des centres Digivoda
 - coordonnées du référent handicap
 
 ## contact.html
 
 - horaires d’ouverture
-- plan d’accès (carte interactive) du centre
 
 ## mentions-legales.html
 
@@ -56,19 +53,24 @@ Chaque ligne correspond à un encadré « [À COMPLÉTER] » visible sur le site
 
 Rédigées pour compléter les fiches en attendant les informations de Digivoda. Elles s’affichent normalement sur le site : à vérifier et corriger dans `data/formations.json` (champ `provisoire` de chaque fiche).
 
-- **SECUFER** (`formations/secufer-securite-ferroviaire.html`) : délai d’accès, durée, effectif, évaluation, financement, méthodes pédagogiques, modalités et lieux, objectifs, prérequis, programme, public, tarif (« Sur devis »)
+- **SECUFER** (`formations/secufer-securite-ferroviaire.html`) : délai d’accès, durée, effectif, évaluation, financement, méthodes pédagogiques, modalités et lieux, objectifs, prérequis, programme, public
 - **Recyclage SECUFER** (`formations/recyclage-secufer.html`) : financement, méthodes pédagogiques, dates, programme
-- **SECUFER e-learning** (`formations/secufer-e-learning.html`) : délai d’accès, durée, effectif, évaluation, financement, méthodes pédagogiques, modalités et lieux, objectifs, prérequis, programme, public, tarif (« Sur devis »), validité
+- **SECUFER e-learning** (`formations/secufer-e-learning.html`) : délai d’accès, durée, effectif, évaluation, financement, méthodes pédagogiques, modalités et lieux, objectifs, prérequis, programme, public, validité
 - **TCS M** (`formations/tcs-m-annonceur-sentinelle-asp.html`) : dates
-- **Recyclage TCS M** (`formations/recyclage-tcs-m.html`) : délai d’accès, durée, effectif, évaluation, financement, méthodes pédagogiques, modalités et lieux, objectifs, prérequis, programme, tarif (« Sur devis »)
-- **TSAE C0 / LAM / S9** (`formations/tsae-prestations-connexes-c0-lam-s9.html`) : délai d’accès, durée, effectif, évaluation, financement, méthodes pédagogiques, modalités et lieux, objectifs, prérequis, programme, public, tarif (« Sur devis »), validité
-- **Risques électriques C0** (`formations/risques-electriques-c0.html`) : délai d’accès, durée, effectif, évaluation, financement, méthodes pédagogiques, modalités et lieux, objectifs, prérequis, programme, public, tarif (« Sur devis »), validité
-- **RSO** (`formations/rso-representant-securite-operationnelle.html`) : délai d’accès, durée, effectif, évaluation, financement, méthodes pédagogiques, modalités et lieux, objectifs, prérequis, programme, public, tarif (« Sur devis »), validité
-- **AIPR** (`formations/aipr-intervention-proximite-reseaux.html`) : délai d’accès, durée, effectif, évaluation, financement, méthodes pédagogiques, modalités et lieux, objectifs, prérequis, programme, public, tarif (« Sur devis »), validité
-- **TES F** (`formations/tes-f-protection-passages-a-niveau.html`) : délai d’accès, durée, effectif, évaluation, financement, méthodes pédagogiques, modalités et lieux, objectifs, prérequis, programme, public, tarif (« Sur devis »), validité
-- **Agent S9A3** (`formations/agent-s9a3-rzt-agec-apn.html`) : délai d’accès, durée, effectif, évaluation, financement, méthodes pédagogiques, modalités et lieux, objectifs, prérequis, programme, public, tarif (« Sur devis »), validité
-- **Percheur CH1-CB1** (`formations/percheur-aide-monteur-catenaire-ch1-cb1.html`) : délai d’accès, durée, effectif, évaluation, financement, méthodes pédagogiques, modalités et lieux, objectifs, prérequis, programme, public, tarif (« Sur devis »), validité
+- **Recyclage TCS M** (`formations/recyclage-tcs-m.html`) : délai d’accès, durée, effectif, évaluation, financement, méthodes pédagogiques, modalités et lieux, objectifs, prérequis, programme
+- **TSAE C0 / LAM / S9** (`formations/tsae-prestations-connexes-c0-lam-s9.html`) : délai d’accès, durée, effectif, évaluation, financement, méthodes pédagogiques, modalités et lieux, objectifs, prérequis, programme, public, validité
+- **Risques électriques C0** (`formations/risques-electriques-c0.html`) : délai d’accès, durée, effectif, évaluation, financement, méthodes pédagogiques, modalités et lieux, objectifs, prérequis, programme, public, validité
+- **RSO** (`formations/rso-representant-securite-operationnelle.html`) : délai d’accès, durée, effectif, évaluation, financement, méthodes pédagogiques, modalités et lieux, objectifs, prérequis, programme, public, validité
+- **AIPR** (`formations/aipr-intervention-proximite-reseaux.html`) : délai d’accès, durée, effectif, évaluation, financement, méthodes pédagogiques, modalités et lieux, objectifs, prérequis, programme, public, validité
+- **TES F** (`formations/tes-f-protection-passages-a-niveau.html`) : délai d’accès, durée, effectif, évaluation, financement, méthodes pédagogiques, modalités et lieux, objectifs, prérequis, programme, public, validité
+- **Agent S9A3** (`formations/agent-s9a3-rzt-agec-apn.html`) : délai d’accès, durée, effectif, évaluation, financement, méthodes pédagogiques, modalités et lieux, objectifs, prérequis, programme, public, validité
+- **Percheur CH1-CB1** (`formations/percheur-aide-monteur-catenaire-ch1-cb1.html`) : délai d’accès, durée, effectif, évaluation, financement, méthodes pédagogiques, modalités et lieux, objectifs, prérequis, programme, public, validité
 - **Pack Prestations Connexes** (`packs/pack-prestations-connexes.html`) : durée, effectif, financement, dates, objectifs, note de planning du parcours, prérequis
 - **Pack Sentinelle Complet** (`packs/pack-sentinelle-complet.html`) : effectif, financement, dates, note de planning du parcours, prérequis
 - **Pack RSO** (`packs/pack-rso.html`) : durée, effectif, financement, dates, objectifs, note de planning du parcours, prérequis
 - **Pack Premium** (`packs/pack-ferroviaire-premium.html`) : effectif, financement, dates, objectifs, note de planning du parcours, prérequis
+- **Pack Caténaire** (`packs/pack-catenaire-tcs-m-apec.html`) : durée, effectif, dates, financement, prérequis, note de planning du parcours, objectifs
+
+# Photos
+
+Aucune photo dans media/ : les visuels provisoires sont utilisés partout (voir media/README.md).

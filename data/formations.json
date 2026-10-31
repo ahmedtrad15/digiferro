@@ -59,7 +59,9 @@
       "Liste des autres centres Digivoda à placer sur la carte (un campus à Noisy-le-Sec est cité).",
       "Identifiants légaux (SIREN/SIRET, NDA, UAI) à recopier depuis la page Mentions légales en ligne.",
       "Référent handicap : coordonnées publiées sur la page « Référent handicap & Registre public d'accessibilité »."
-    ]
+    ],
+    "maps_url": "https://maps.app.goo.gl/EfiFFjgDfot81GYq5",
+    "maps_embed": "https://www.google.com/maps?q=4+all%C3%A9e+des+Garays,+91120+Palaiseau&output=embed"
   },
   "themes": [
     {
@@ -168,25 +170,27 @@
         "libelle": "1 jour (7 h)"
       },
       "tarif": {
-        "montant": null,
+        "montant": 160,
         "regime": "TTC",
         "ancien_prix": null,
         "remise": null,
-        "inter": null,
-        "intra": null,
-        "sur_devis": true,
-        "libelle": "Sur devis"
+        "inter": 160,
+        "intra": "Sur devis",
+        "libelle": "160 € TTC / pers. en classe virtuelle",
+        "mention": "Classe virtuelle"
       },
       "modalites": {
         "centre": true,
         "intra": true,
         "e_learning": true,
         "lieux": [
+          "Classe virtuelle, à distance",
           "Centres Digivoda partout en France",
           "Sur site client en intra"
         ],
         "dates": "Sessions régulières, calendrier sur demande",
-        "libelle": "Présentiel, en inter-entreprises ou en intra. Existe aussi en e-learning."
+        "libelle": "Classe virtuelle (à distance, en direct avec le formateur), ou en intra sur votre site. Existe aussi en e-learning.",
+        "classe_virtuelle": true
       },
       "effectif": "4 à 12 stagiaires",
       "methodes": [
@@ -230,19 +234,59 @@
         "validite_texte": "L'attestation se renouvelle par un recyclage d'une demi-journée, ouvert jusqu'à 6 mois après son expiration.",
         "devis_titre": "Demander un devis pour la SECUFER",
         "devis_texte": "Un agent ou toute une équipe : indiquez le nombre de participants et le format souhaité, en centre, en intra ou à distance.",
-        "faq_titre": "Questions sur la SECUFER",
+        "faq_titre": "Questions fréquentes : SECUFER",
         "faq": [
           {
-            "q": "Combien de temps l'attestation SECUFER est-elle valable ?",
-            "a": "Trois ans. Elle se renouvelle ensuite par le recyclage SECUFER, une demi-journée de 3 h 30."
+            "q": "Qu'est-ce que la formation SECUFER ?",
+            "a": "La formation de base à la sécurité ferroviaire, pour toute personne qui intervient sur les emprises : risques liés aux circulations et aux installations, règles de comportement, conduite à tenir. Elle s'appuie sur le décret n° 2017-694 du 2 mai 2017 relatif à la protection des travailleurs intervenant sur les systèmes de transport ferroviaire ou guidé."
           },
           {
-            "q": "Peut-on suivre la SECUFER à distance ?",
-            "a": "Oui, une version en e-learning existe. Le recyclage SECUFER peut lui aussi se suivre à distance."
+            "q": "La SECUFER est-elle obligatoire ?",
+            "a": "Elle est demandée à tout intervenant qui accède aux emprises ferroviaires, et elle sert de socle aux autres habilitations : TCS M, TES F, LAM, S9. L'autorisation d'accès est ensuite délivrée selon les règles de l'employeur et du donneur d'ordre."
           },
           {
-            "q": "La SECUFER fait-elle partie d'un pack ?",
-            "a": "Oui, du Pack RSO, avec la TCS M / ASP et la RSO. Elle ouvre aussi le programme de la TCS M, au jour 1."
+            "q": "Comment se passe la SECUFER en classe virtuelle ?",
+            "a": "Vous suivez la journée en direct avec le formateur, à distance, depuis un ordinateur équipé d'une caméra, d'un micro et d'une connexion internet. Le contenu et le QCM de validation sont les mêmes qu'en salle."
+          },
+          {
+            "q": "Quelle différence avec la SECUFER en e-learning ?",
+            "a": "En classe virtuelle (160 € TTC), un formateur anime la journée en direct et répond à vos questions. En e-learning (150 € TTC), vous avancez seul, à votre rythme, sur une plateforme en ligne."
+          },
+          {
+            "q": "Combien de temps l'attestation SECUFER reste-t-elle valable ?",
+            "a": "Trois ans. Elle se renouvelle ensuite par le recyclage SECUFER, une demi-journée de 3 h 30, ouvert jusqu'à 6 mois après l'expiration."
+          },
+          {
+            "q": "Comment se passe l'évaluation ?",
+            "a": "Par un QCM de validation en fin de journée. L'attestation de formation est remise au stagiaire en cas de réussite."
+          },
+          {
+            "q": "Faut-il un diplôme ou une expérience du ferroviaire ?",
+            "a": "Non. Il faut comprendre le français à l'oral et à l'écrit, et disposer d'une aptitude médicale en cours de validité."
+          },
+          {
+            "q": "Combien coûte la formation SECUFER ?",
+            "a": "160 € TTC par personne en classe virtuelle. En intra, sur votre site, le tarif est établi sur devis selon le nombre d'agents et le lieu."
+          },
+          {
+            "q": "Combien de temps dure la formation SECUFER ?",
+            "a": "1 jour (7 h). Le programme détaillé figure plus haut sur cette page."
+          },
+          {
+            "q": "Où se déroule la formation SECUFER ?",
+            "a": "Dans les centres Digivoda partout en France, en classe virtuelle, ou directement sur votre site en intra si vous formez un groupe d'agents."
+          },
+          {
+            "q": "Comment s'inscrire, et sous quel délai ?",
+            "a": "Faites une demande de devis en ligne ou appelez le 01 89 70 55 70. Pour une session inter-entreprises, inscrivez-vous au moins 11 jours ouvrés avant la date. Pour une session intra sur votre site, comptez 30 à 45 jours d'organisation."
+          },
+          {
+            "q": "Comment financer la formation ?",
+            "a": "Pour un salarié : l'OPCO de l'entreprise ou le plan de développement des compétences. Pour un demandeur d'emploi : France Travail, selon votre éligibilité. Le devis TTC sert de base à la demande de prise en charge."
+          },
+          {
+            "q": "La formation SECUFER existe-t-elle en pack ?",
+            "a": "Oui. Elle fait partie du pack : Pack RSO. Les packs enchaînent plusieurs formations avec une seule inscription."
           }
         ],
         "illustration": "rails"
@@ -259,9 +303,9 @@
         "objectifs",
         "prerequis",
         "programme",
-        "public",
-        "tarif"
-      ]
+        "public"
+      ],
+      "tarif_statut": "confirme_client"
     },
     {
       "id": "recyclage-secufer",
@@ -318,8 +362,8 @@
         "regime": "TTC",
         "ancien_prix": null,
         "remise": null,
-        "inter": null,
-        "intra": null,
+        "inter": 130,
+        "intra": "Sur devis",
         "libelle": "130 € TTC / pers."
       },
       "modalites": {
@@ -379,19 +423,55 @@
         "validite_texte": "Notez la date d'expiration de vos attestations : passé 6 mois, le recyclage n'est plus possible.",
         "devis_titre": "Demander un devis pour le recyclage SECUFER",
         "devis_texte": "Précisez le nombre d'agents à recycler et leurs dates d'expiration : la session sera calée en conséquence.",
-        "faq_titre": "Questions sur le recyclage SECUFER",
+        "faq_titre": "Questions fréquentes : Recyclage SECUFER",
         "faq": [
+          {
+            "q": "Qui doit suivre le recyclage SECUFER ?",
+            "a": "Les titulaires d'une attestation SECUFER qui arrive à échéance. Le recyclage la renouvelle pour 3 ans."
+          },
           {
             "q": "Mon attestation a expiré il y a trois mois. Puis-je faire le recyclage ?",
             "a": "Oui. Le recyclage reste ouvert jusqu'à 6 mois après l'expiration de l'attestation initiale, avec une aptitude médicale en cours de validité."
           },
           {
-            "q": "Comment se passe l'évaluation ?",
-            "a": "Par un QCM final de 15 questions. Il faut 11 bonnes réponses sur 15. L'attestation est délivrée sous 48 h."
+            "q": "Et si mon attestation a expiré depuis plus de 6 mois ?",
+            "a": "Le recyclage n'est plus ouvert : il faut repasser la SECUFER complète, en classe virtuelle, en e-learning ou en intra."
           },
           {
-            "q": "Faut-il se déplacer ?",
-            "a": "Pas forcément : le recyclage se suit en présentiel (inter ou intra), à distance ou en e-learning."
+            "q": "Comment se passe l'évaluation ?",
+            "a": "Par un QCM final de 15 questions. Il faut au moins 11 bonnes réponses sur 15."
+          },
+          {
+            "q": "Quand reçoit-on la nouvelle attestation ?",
+            "a": "Elle est délivrée sous 48 h après la réussite au QCM."
+          },
+          {
+            "q": "Peut-on faire le recyclage à distance ?",
+            "a": "Oui. Le recyclage se suit en présentiel (inter ou intra), à distance ou en e-learning."
+          },
+          {
+            "q": "Combien de stagiaires par session ?",
+            "a": "De 4 à 12 stagiaires."
+          },
+          {
+            "q": "Combien coûte la formation Recyclage SECUFER ?",
+            "a": "130 € TTC par personne. En intra, sur votre site, le tarif est établi sur devis selon le nombre d'agents et le lieu."
+          },
+          {
+            "q": "Combien de temps dure la formation Recyclage SECUFER ?",
+            "a": "3 h 30 (demi-journée). Le programme détaillé figure plus haut sur cette page."
+          },
+          {
+            "q": "Où se déroule la formation Recyclage SECUFER ?",
+            "a": "Dans les centres Digivoda partout en France, à distance, ou directement sur votre site en intra si vous formez un groupe d'agents."
+          },
+          {
+            "q": "Comment s'inscrire, et sous quel délai ?",
+            "a": "Faites une demande de devis en ligne ou appelez le 01 89 70 55 70. Pour une session inter-entreprises, inscrivez-vous au moins 11 jours ouvrés avant la date. Pour une session intra sur votre site, comptez 30 à 45 jours d'organisation."
+          },
+          {
+            "q": "Comment financer la formation ?",
+            "a": "Pour un salarié : l'OPCO de l'entreprise ou le plan de développement des compétences. Pour un demandeur d'emploi : France Travail, selon votre éligibilité. Le devis TTC sert de base à la demande de prise en charge."
           }
         ],
         "illustration": "shield"
@@ -401,7 +481,8 @@
         "methodes",
         "modalites.dates",
         "programme"
-      ]
+      ],
+      "tarif_statut": "confirme_client"
     },
     {
       "id": "secufer-e-learning",
@@ -464,14 +545,13 @@
         "libelle": "7 h, à votre rythme"
       },
       "tarif": {
-        "montant": null,
+        "montant": 150,
         "regime": "TTC",
         "ancien_prix": null,
         "remise": null,
-        "inter": null,
+        "inter": 150,
         "intra": null,
-        "sur_devis": true,
-        "libelle": "Sur devis"
+        "libelle": "150 € TTC / pers."
       },
       "modalites": {
         "centre": false,
@@ -528,15 +608,51 @@
         "modalites_intro": "Une formation suivie en ligne : pas de salle à réserver, pas de déplacement.",
         "devis_titre": "Demander un accès à la SECUFER en e-learning",
         "devis_texte": "Indiquez le nombre d'agents à inscrire : Digivoda revient vers vous avec les modalités d'accès.",
-        "faq_titre": "Questions sur la SECUFER en e-learning",
+        "faq_titre": "Questions fréquentes : SECUFER e-learning",
         "faq": [
           {
-            "q": "Le recyclage SECUFER existe-t-il aussi à distance ?",
-            "a": "Oui. Le recyclage SECUFER se suit en présentiel, à distance ou en e-learning."
+            "q": "À qui s'adresse la SECUFER en e-learning ?",
+            "a": "Aux intervenants qui doivent obtenir la SECUFER sans pouvoir se libérer une journée entière : agents en horaires décalés, éloignés d'un centre ou répartis sur plusieurs sites."
           },
           {
-            "q": "Comment obtenir un accès ?",
-            "a": "Faites une demande de devis en indiquant le nombre d'agents. Digivoda revient vers vous avec les modalités d'accès."
+            "q": "Combien coûte la SECUFER en e-learning ?",
+            "a": "150 € TTC par personne."
+          },
+          {
+            "q": "Combien de temps faut-il prévoir ?",
+            "a": "Environ 7 heures de modules, à suivre à votre rythme. Vous pouvez vous arrêter et reprendre plus tard."
+          },
+          {
+            "q": "De quel matériel a-t-on besoin ?",
+            "a": "Un ordinateur ou une tablette avec une connexion internet, et une adresse e-mail pour recevoir les accès."
+          },
+          {
+            "q": "Quand l'accès est-il ouvert ?",
+            "a": "Dès que l'inscription est validée. Vous démarrez quand vous voulez."
+          },
+          {
+            "q": "Comment est-on évalué ?",
+            "a": "Par un quiz de validation en fin de parcours. L'attestation est délivrée après réussite."
+          },
+          {
+            "q": "L'attestation a-t-elle la même valeur qu'en présentiel ?",
+            "a": "Elle porte sur le même socle de sécurité ferroviaire et se renouvelle de la même façon, au bout de 3 ans, par le recyclage SECUFER."
+          },
+          {
+            "q": "Peut-on poser des questions à un formateur ?",
+            "a": "Oui, une assistance pédagogique répond par e-mail pendant le parcours."
+          },
+          {
+            "q": "Quelle différence avec la classe virtuelle ?",
+            "a": "En classe virtuelle (160 € TTC), la journée est animée en direct par un formateur. En e-learning, vous êtes autonome sur la plateforme."
+          },
+          {
+            "q": "Comment financer l'e-learning ?",
+            "a": "Comme une formation en salle : OPCO ou plan de développement des compétences pour un salarié, France Travail selon votre éligibilité pour un demandeur d'emploi."
+          },
+          {
+            "q": "Peut-on inscrire plusieurs agents d'un coup ?",
+            "a": "Oui. Indiquez le nombre d'agents dans votre demande de devis : chacun reçoit ses propres accès."
           }
         ],
         "illustration": "laptop"
@@ -554,9 +670,9 @@
         "prerequis",
         "programme",
         "public",
-        "tarif",
         "validite"
-      ]
+      ],
+      "tarif_statut": "confirme_client"
     },
     {
       "id": "tcs-m",
@@ -623,13 +739,13 @@
         "libelle": "5 jours (35 h)"
       },
       "tarif": {
-        "montant": 1390,
+        "montant": 900,
         "regime": "TTC",
-        "ancien_prix": 1450,
-        "remise": 60,
-        "inter": 1390,
-        "intra": null,
-        "libelle": "1 390 € TTC / pers. en inter"
+        "ancien_prix": 1100,
+        "remise": 200,
+        "inter": 900,
+        "intra": "Sur devis",
+        "libelle": "900 € TTC / pers."
       },
       "modalites": {
         "centre": true,
@@ -668,20 +784,21 @@
         "pack-prestations-connexes",
         "pack-sentinelle-complet",
         "pack-rso",
-        "pack-ferroviaire-premium"
+        "pack-ferroviaire-premium",
+        "pack-catenaire"
       ],
       "a_verifier": [
         "Intitulé « TCS M » confirmé par le client (la page Digivoda dit encore « TES M »).",
         "Le programme publié intègre une journée SECUFER (jour 1) : confirmer qu'elle fait partie de la formation TCS M vendue seule.",
-        "Tarif publié : 1 390 € (barré 1 450 €), affiché TTC selon le client ; une autre mention dit HT.",
         "Périodicité du recyclage : « annuelle » sur une page, « tous les 3 ans » sur une autre.",
-        "Méthodes pédagogiques non publiées en tant que telles : déduites du programme."
+        "Méthodes pédagogiques non publiées en tant que telles : déduites du programme.",
+        "Tarif fixé par le client le 31/10/2026 : 900 € TTC (barré 1 100 €), intra sur devis."
       ],
       "objectifs_note": "Reformulés à partir du programme publié.",
       "methodes_note": "Déduites du programme publié : à confirmer.",
       "editorial": {
         "seo_title": "Formation TCS M Annonceur Sentinelle et ASP | Digiferro",
-        "seo_description": "TCS M en 5 jours (35 h) : Annonceur Sentinelle et Agent Sécurité du Personnel. Programme, prérequis, évaluation, 1 390 € TTC, en centre ou en intra.",
+        "seo_description": "TCS M en 5 jours (35 h) : Annonceur Sentinelle et Agent Sécurité du Personnel. Programme, prérequis, évaluation, 900 € TTC, en centre ou en intra.",
         "titre_h1": "TCS M : Annonceur Sentinelle et Agent Sécurité du Personnel",
         "illustration": "horn",
         "lead": "Sur un chantier ferroviaire, l'annonceur voit arriver le train avant tout le monde. En cinq jours, vous apprenez à calculer la distance d'annonce, à donner l'alerte au bon moment et à tenir le rôle d'Agent Sécurité du Personnel auprès de l'équipe.",
@@ -693,6 +810,18 @@
         "validite_texte": "L'habilitation n'est pas acquise une fois pour toutes. L'employeur ne peut la maintenir qu'après une évaluation annuelle des compétences : c'est le rôle du recyclage TCS M.",
         "devis_texte": "Une personne ou une équipe entière, en centre ou sur votre site : précisez le nombre d'agents et la période visée.",
         "faq": [
+          {
+            "q": "Que fait un Annonceur Sentinelle ?",
+            "a": "Il surveille l'arrivée des trains et donne l'alerte à temps pour que l'équipe dégage la voie avant le passage. C'est lui qui calcule la distance d'annonce (CADA) adaptée au chantier."
+          },
+          {
+            "q": "Quelle différence entre Annonceur Sentinelle et ASP ?",
+            "a": "L'Annonceur Sentinelle surveille les circulations et alerte l'équipe. L'Agent Sécurité du Personnel (ASP) organise la protection du personnel sur le chantier et veille au respect des mesures de sécurité. La TCS M prépare aux deux missions."
+          },
+          {
+            "q": "TCS M ou TES M, est-ce la même formation ?",
+            "a": "Oui : les deux intitulés désignent la même tâche essentielle de sécurité, encadrée par l'arrêté du 7 mai 2015."
+          },
           {
             "q": "Faut-il déjà avoir la SECUFER pour suivre la TCS M ?",
             "a": "Le programme publié commence par une journée SECUFER de 7 heures, le jour 1. Elle est validée par un QCM avant d'aborder les missions d'annonceur et d'ASP."
@@ -712,15 +841,36 @@
           {
             "q": "Peut-on organiser la TCS M dans nos locaux ?",
             "a": "Oui, en intra sur votre site. Comptez 30 à 45 jours pour organiser la session."
+          },
+          {
+            "q": "Quelles sont les conditions pour s'inscrire ?",
+            "a": "Une aptitude médicale et psychotechnique délivrée par un médecin du travail, un niveau de français B1 à l'oral et à l'écrit, et être majeur. Aucun diplôme n'est requis."
+          },
+          {
+            "q": "Combien coûte la TCS M ?",
+            "a": "900 € TTC par personne en inter-entreprises, au lieu de 1 100 €. En intra, sur votre site, le tarif est établi sur devis."
+          },
+          {
+            "q": "Combien de temps dure la TCS M ?",
+            "a": "5 jours, soit 35 heures : une journée SECUFER, puis quatre jours consacrés aux missions d'annonceur et d'ASP, jusqu'à la mise en situation."
+          },
+          {
+            "q": "La TCS M peut-elle être financée ?",
+            "a": "Oui : par l'OPCO de l'entreprise pour un salarié, ou par France Travail pour un demandeur d'emploi."
+          },
+          {
+            "q": "Existe-t-il des packs avec la TCS M ?",
+            "a": "Oui, elle figure dans les cinq packs : Prestations Connexes, Sentinelle Complet, RSO, Ferroviaire Premium et Caténaire."
           }
         ],
-        "faq_titre": "Questions sur la TCS M",
+        "faq_titre": "Questions fréquentes : TCS M",
         "devis_titre": "Demander un devis pour la TCS M"
       },
       "validite_court": "Évaluation annuelle",
       "provisoire": [
         "modalites.dates"
-      ]
+      ],
+      "tarif_statut": "confirme_client"
     },
     {
       "id": "recyclage-tcs-m",
@@ -768,14 +918,13 @@
         "libelle": "1 jour (7 h)"
       },
       "tarif": {
-        "montant": null,
+        "montant": 450,
         "regime": "TTC",
         "ancien_prix": null,
         "remise": null,
-        "inter": null,
-        "intra": null,
-        "sur_devis": true,
-        "libelle": "Sur devis"
+        "inter": 450,
+        "intra": "Sur devis",
+        "libelle": "450 € TTC / pers."
       },
       "modalites": {
         "centre": true,
@@ -832,15 +981,51 @@
         "validite_texte": "Planifiez l'évaluation avant la date anniversaire de l'habilitation, pour ne pas immobiliser un agent.",
         "devis_titre": "Planifier un recyclage TCS M",
         "devis_texte": "Indiquez le nombre d'annonceurs et d'ASP à évaluer, et les dates d'échéance de leurs habilitations.",
-        "faq_titre": "Questions sur le recyclage TCS M",
+        "faq_titre": "Questions fréquentes : recyclage TCS M",
         "faq": [
           {
-            "q": "Que se passe-t-il sans évaluation annuelle ?",
-            "a": "L'évaluation annuelle des compétences conditionne le maintien de l'habilitation par l'employeur. Sans elle, l'habilitation ne peut pas être maintenue."
+            "q": "Pourquoi un recyclage TCS M chaque année ?",
+            "a": "L'évaluation annuelle des compétences est obligatoire pour que l'employeur maintienne l'habilitation Annonceur Sentinelle / ASP."
           },
           {
-            "q": "Où se déroule l'évaluation ?",
-            "a": "Dans les centres Digivoda partout en France, ou sur votre site en intra si vous formez un groupe d'agents."
+            "q": "Que se passe-t-il sans évaluation annuelle ?",
+            "a": "L'employeur ne peut pas maintenir l'habilitation. L'agent ne peut plus tenir le poste tant que ses compétences n'ont pas été réévaluées."
+          },
+          {
+            "q": "Que contient le recyclage ?",
+            "a": "Des rappels réglementaires et des retours d'expérience le matin ; des exercices de calcul de distance d'annonce, des mises en situation et l'évaluation l'après-midi."
+          },
+          {
+            "q": "Combien coûte le recyclage TCS M ?",
+            "a": "450 € TTC par personne. En intra, sur votre site, le tarif est établi sur devis."
+          },
+          {
+            "q": "Combien de temps dure-t-il ?",
+            "a": "Une journée, soit 7 heures."
+          },
+          {
+            "q": "Qui peut s'inscrire ?",
+            "a": "Les agents déjà habilités Annonceur Sentinelle et/ou ASP, avec une aptitude médicale et psychotechnique en cours de validité."
+          },
+          {
+            "q": "Quand planifier le recyclage ?",
+            "a": "Avant la date anniversaire de l'habilitation, pour ne pas immobiliser l'agent. Indiquez les dates d'échéance dans votre demande de devis."
+          },
+          {
+            "q": "Peut-on recycler toute une équipe sur notre site ?",
+            "a": "Oui, en intra. La session se tient chez vous et ne réunit que vos agents."
+          },
+          {
+            "q": "Où se déroule le recyclage ?",
+            "a": "Dans les centres Digivoda partout en France, ou sur votre site en intra."
+          },
+          {
+            "q": "Comment s'inscrire, et sous quel délai ?",
+            "a": "Par le formulaire de devis ou au 01 89 70 55 70. Pour une session inter-entreprises, inscrivez-vous au moins 11 jours ouvrés avant la date. Pour une session intra sur votre site, comptez 30 à 45 jours d'organisation."
+          },
+          {
+            "q": "Le recyclage peut-il être financé ?",
+            "a": "Oui, comme la formation initiale : OPCO ou plan de développement des compétences pour un salarié."
           }
         ],
         "illustration": "worker"
@@ -856,9 +1041,9 @@
         "modalites",
         "objectifs",
         "prerequis",
-        "programme",
-        "tarif"
-      ]
+        "programme"
+      ],
+      "tarif_statut": "confirme_client"
     },
     {
       "id": "tsae-prestations-connexes",
@@ -915,14 +1100,13 @@
         "libelle": "3 jours (21 h)"
       },
       "tarif": {
-        "montant": null,
+        "montant": 900,
         "regime": "TTC",
         "ancien_prix": null,
         "remise": null,
-        "inter": null,
-        "intra": null,
-        "sur_devis": true,
-        "libelle": "Sur devis"
+        "inter": 900,
+        "intra": "Sur devis",
+        "libelle": "900 € TTC / pers."
       },
       "modalites": {
         "centre": true,
@@ -974,19 +1158,59 @@
         "lead": "Trois compétences réunies dans une même formation : le risque électrique C0, l'Agent prestataire LAM et le S9. De quoi préparer une équipe de prestations connexes sans multiplier les inscriptions.",
         "devis_titre": "Demander un devis pour la TSAE",
         "devis_texte": "Précisez si vos agents ont besoin des trois modules ou seulement du C0, et combien ils sont.",
-        "faq_titre": "Questions sur la TSAE",
+        "faq_titre": "Questions fréquentes : TSAE C0 / LAM / S9",
         "faq": [
           {
-            "q": "La TSAE fait-elle partie d'un pack ?",
-            "a": "Ses modules LAM et S9 figurent dans le Pack Prestations Connexes et dans le Pack Ferroviaire Premium, avec la TCS M."
+            "q": "Que couvre la formation TSAE prestations connexes ?",
+            "a": "Trois modules : le risque électrique C0, l'Agent prestataire LAM et l'Agent prestataire S9. Ensemble, ils préparent une équipe de prestations connexes à intervenir sur le Réseau Ferré National."
+          },
+          {
+            "q": "Que fait un agent prestataire LAM ?",
+            "a": "Il accompagne les lorrys automoteurs et les engins rail-route : entrée et sortie du chantier, organisation et suivi de leurs déplacements, en lien avec les équipes."
+          },
+          {
+            "q": "Que fait un agent prestataire S9 ?",
+            "a": "Il intervient sur la protection des zones de travaux : fermeture des zones, utilisation des outils de signalisation et de protection, conduite à tenir en cas d'incident."
+          },
+          {
+            "q": "Pourquoi le module C0 ?",
+            "a": "Sur les voies électrifiées, la caténaire et le rail conducteur sont sous tension. Le C0 apprend à repérer ces installations et à travailler à leur proximité en sécurité."
           },
           {
             "q": "Peut-on suivre seulement le module C0 ?",
-            "a": "Oui : la formation Risques électriques C0 existe aussi seule."
+            "a": "Oui : la formation Risques électriques C0 existe seule, en une journée, à 180 € TTC."
           },
           {
-            "q": "Où se déroule la formation ?",
-            "a": "Dans les centres Digivoda partout en France, ou sur votre site en intra si vous formez un groupe d'agents."
+            "q": "Comment se passe l'évaluation ?",
+            "a": "Chaque module est évalué par un QCM et une mise en situation. Une attestation est remise pour chaque module validé."
+          },
+          {
+            "q": "Quels sont les prérequis ?",
+            "a": "Une aptitude médicale en cours de validité et un niveau de français B1. La SECUFER à jour est recommandée."
+          },
+          {
+            "q": "Combien coûte la formation TSAE ?",
+            "a": "900 € TTC par personne. En intra, sur votre site, le tarif est établi sur devis selon le nombre d'agents et le lieu."
+          },
+          {
+            "q": "Combien de temps dure la formation TSAE ?",
+            "a": "3 jours (21 h). Le programme détaillé figure plus haut sur cette page."
+          },
+          {
+            "q": "Où se déroule la formation TSAE ?",
+            "a": "Dans les centres Digivoda partout en France, ou directement sur votre site en intra si vous formez un groupe d'agents."
+          },
+          {
+            "q": "Comment s'inscrire, et sous quel délai ?",
+            "a": "Faites une demande de devis en ligne ou appelez le 01 89 70 55 70. Pour une session inter-entreprises, inscrivez-vous au moins 11 jours ouvrés avant la date. Pour une session intra sur votre site, comptez 30 à 45 jours d'organisation."
+          },
+          {
+            "q": "Comment financer la formation ?",
+            "a": "Pour un salarié : l'OPCO de l'entreprise ou le plan de développement des compétences. Pour un demandeur d'emploi : France Travail, selon votre éligibilité. Le devis TTC sert de base à la demande de prise en charge."
+          },
+          {
+            "q": "La formation TSAE existe-t-elle en pack ?",
+            "a": "Oui. Elle fait partie des packs : Pack Prestations Connexes, Pack Premium. Les packs enchaînent plusieurs formations avec une seule inscription."
           }
         ],
         "illustration": "train"
@@ -1004,9 +1228,9 @@
         "prerequis",
         "programme",
         "public",
-        "tarif",
         "validite"
-      ]
+      ],
+      "tarif_statut": "confirme_client"
     },
     {
       "id": "risques-electriques-c0",
@@ -1068,14 +1292,13 @@
         "libelle": "1 jour (7 h)"
       },
       "tarif": {
-        "montant": null,
+        "montant": 180,
         "regime": "TTC",
         "ancien_prix": null,
         "remise": null,
-        "inter": null,
-        "intra": null,
-        "sur_devis": true,
-        "libelle": "Sur devis"
+        "inter": 180,
+        "intra": "Sur devis",
+        "libelle": "180 € TTC / pers."
       },
       "modalites": {
         "centre": true,
@@ -1128,19 +1351,59 @@
         "validite_texte": "L'organisme délivre l'attestation de formation ; l'habilitation reste à la charge de l'employeur.",
         "devis_titre": "Demander un devis pour le C0",
         "devis_texte": "Seul, en complément de la TCS M ou dans un pack : dites-nous ce que vos agents ont déjà suivi.",
-        "faq_titre": "Questions sur le C0",
+        "faq_titre": "Questions fréquentes : Risques électriques C0",
         "faq": [
           {
+            "q": "Que signifie « C0 » ?",
+            "a": "Le « 0 » désigne une personne non électricienne. Le C0 s'adresse à ceux qui travaillent à proximité d'installations électriques sans intervenir dessus : sentinelles, agents de voie, agents de chantier."
+          },
+          {
+            "q": "Quels risques électriques sur le réseau ferré ?",
+            "a": "Les installations de traction : caténaire (1 500 V continu ou 25 kV alternatif selon les lignes), sous-stations et rail conducteur. Le danger existe même sans contact direct."
+          },
+          {
             "q": "Le C0 donne-t-il une habilitation ?",
-            "a": "La formation donne lieu à une attestation. L'habilitation, elle, est délivrée par l'employeur."
+            "a": "La formation donne lieu à une attestation. L'habilitation, elle, est délivrée par l'employeur, sur la base de cette attestation."
           },
           {
-            "q": "Existe-t-il un pack avec le C0 ?",
-            "a": "Oui : le Pack Sentinelle Complet (C0 + TCS M, 5 jours, 1 080 € TTC) et le Pack Prestations Connexes, qui réunit TCS M, C0, LAM et S9."
+            "q": "Faut-il des connaissances en électricité ?",
+            "a": "Non. La formation part des bases : effets du courant, zones d'environnement, distances à respecter."
           },
           {
-            "q": "Où se déroule la formation ?",
-            "a": "Dans les centres Digivoda partout en France, ou sur votre site en intra si vous formez un groupe d'agents."
+            "q": "Tous les combien faut-il se recycler ?",
+            "a": "Un recyclage tous les 3 ans est recommandé, comme le prévoit la norme NF C 18-510 pour les habilitations électriques."
+          },
+          {
+            "q": "Quelle différence avec la formation caténaire CH1-CB1 ?",
+            "a": "Le C0 permet de travailler à proximité des installations. La formation Percheur / Aide Monteur CH1-CB1 prépare aux opérations de perchage et de protection électrique de la caténaire."
+          },
+          {
+            "q": "Le C0 se combine-t-il avec la TCS M ?",
+            "a": "Oui : le Pack Sentinelle Complet réunit le C0 et la TCS M en 5 jours, pour 1 080 € TTC."
+          },
+          {
+            "q": "Combien coûte la formation C0 ?",
+            "a": "180 € TTC par personne. En intra, sur votre site, le tarif est établi sur devis selon le nombre d'agents et le lieu."
+          },
+          {
+            "q": "Combien de temps dure la formation C0 ?",
+            "a": "1 jour (7 h). Le programme détaillé figure plus haut sur cette page."
+          },
+          {
+            "q": "Où se déroule la formation C0 ?",
+            "a": "Dans les centres Digivoda partout en France, ou directement sur votre site en intra si vous formez un groupe d'agents."
+          },
+          {
+            "q": "Comment s'inscrire, et sous quel délai ?",
+            "a": "Faites une demande de devis en ligne ou appelez le 01 89 70 55 70. Pour une session inter-entreprises, inscrivez-vous au moins 11 jours ouvrés avant la date. Pour une session intra sur votre site, comptez 30 à 45 jours d'organisation."
+          },
+          {
+            "q": "Comment financer la formation ?",
+            "a": "Pour un salarié : l'OPCO de l'entreprise ou le plan de développement des compétences. Pour un demandeur d'emploi : France Travail, selon votre éligibilité. Le devis TTC sert de base à la demande de prise en charge."
+          },
+          {
+            "q": "La formation C0 existe-t-elle en pack ?",
+            "a": "Oui. Elle fait partie du pack : Pack Sentinelle Complet. Les packs enchaînent plusieurs formations avec une seule inscription."
           }
         ],
         "illustration": "signal"
@@ -1158,9 +1421,9 @@
         "prerequis",
         "programme",
         "public",
-        "tarif",
         "validite"
-      ]
+      ],
+      "tarif_statut": "confirme_client"
     },
     {
       "id": "rso",
@@ -1217,14 +1480,13 @@
         "libelle": "3 jours (21 h)"
       },
       "tarif": {
-        "montant": null,
+        "montant": 800,
         "regime": "TTC",
         "ancien_prix": null,
         "remise": null,
-        "inter": null,
-        "intra": null,
-        "sur_devis": true,
-        "libelle": "Sur devis"
+        "inter": 800,
+        "intra": "Sur devis",
+        "libelle": "800 € TTC / pers."
       },
       "modalites": {
         "centre": true,
@@ -1274,15 +1536,55 @@
         "lead": "Sur un chantier ferroviaire, quelqu'un doit tenir le fil de la sécurité d'un bout à l'autre des opérations. C'est le rôle du RSO, au contact des équipes et des autres intervenants.",
         "devis_titre": "Demander un devis pour la RSO",
         "devis_texte": "Formation seule ou parcours complet avec le Pack RSO : précisez le profil de vos agents.",
-        "faq_titre": "Questions sur la RSO",
+        "faq_titre": "Questions fréquentes : RSO",
         "faq": [
           {
-            "q": "Existe-t-il un parcours complet vers le poste de RSO ?",
-            "a": "Oui. Le Pack RSO enchaîne SECUFER, TCS M / ASP et RSO, à 1 900 € TTC au lieu de 2 290 €."
+            "q": "Quel est le rôle du Représentant Sécurité Opérationnelle ?",
+            "a": "Il tient le fil de la sécurité des opérations sur le chantier : préparation, briefings, coordination des intervenants et remontée d'information en cas d'incident."
           },
           {
-            "q": "Où se déroule la formation ?",
-            "a": "Dans les centres Digivoda partout en France, ou sur votre site en intra si vous formez un groupe d'agents."
+            "q": "À qui s'adresse la formation RSO ?",
+            "a": "Aux chefs d'équipe et chefs de chantier ferroviaire, et aux agents expérimentés (annonceurs, ASP) qui évoluent vers des fonctions de coordination."
+          },
+          {
+            "q": "Quels sont les prérequis ?",
+            "a": "Une SECUFER à jour et une aptitude médicale en cours de validité. La TCS M / ASP est recommandée."
+          },
+          {
+            "q": "Que contient le programme ?",
+            "a": "Organisation de la sécurité et documents du chantier, analyse des risques et plan de prévention, animation des briefings, gestion de la coactivité, situations dégradées et remontée d'information."
+          },
+          {
+            "q": "Comment se passe l'évaluation ?",
+            "a": "Par une évaluation continue et une mise en situation finale. Une attestation de formation est remise au stagiaire."
+          },
+          {
+            "q": "Existe-t-il un parcours complet vers le poste de RSO ?",
+            "a": "Oui : le Pack RSO enchaîne SECUFER, TCS M / ASP et RSO avec une seule inscription."
+          },
+          {
+            "q": "Combien coûte la formation RSO ?",
+            "a": "800 € TTC par personne. En intra, sur votre site, le tarif est établi sur devis selon le nombre d'agents et le lieu."
+          },
+          {
+            "q": "Combien de temps dure la formation RSO ?",
+            "a": "3 jours (21 h). Le programme détaillé figure plus haut sur cette page."
+          },
+          {
+            "q": "Où se déroule la formation RSO ?",
+            "a": "Dans les centres Digivoda partout en France, ou directement sur votre site en intra si vous formez un groupe d'agents."
+          },
+          {
+            "q": "Comment s'inscrire, et sous quel délai ?",
+            "a": "Faites une demande de devis en ligne ou appelez le 01 89 70 55 70. Pour une session inter-entreprises, inscrivez-vous au moins 11 jours ouvrés avant la date. Pour une session intra sur votre site, comptez 30 à 45 jours d'organisation."
+          },
+          {
+            "q": "Comment financer la formation ?",
+            "a": "Pour un salarié : l'OPCO de l'entreprise ou le plan de développement des compétences. Pour un demandeur d'emploi : France Travail, selon votre éligibilité. Le devis TTC sert de base à la demande de prise en charge."
+          },
+          {
+            "q": "La formation RSO existe-t-elle en pack ?",
+            "a": "Oui. Elle fait partie du pack : Pack RSO. Les packs enchaînent plusieurs formations avec une seule inscription."
           }
         ],
         "illustration": "vest"
@@ -1300,9 +1602,9 @@
         "prerequis",
         "programme",
         "public",
-        "tarif",
         "validite"
-      ]
+      ],
+      "tarif_statut": "confirme_client"
     },
     {
       "id": "aipr",
@@ -1364,14 +1666,13 @@
         "libelle": "1 jour (7 h)"
       },
       "tarif": {
-        "montant": null,
+        "montant": 250,
         "regime": "TTC",
         "ancien_prix": null,
         "remise": null,
-        "inter": null,
-        "intra": null,
-        "sur_devis": true,
-        "libelle": "Sur devis"
+        "inter": 250,
+        "intra": "Sur devis",
+        "libelle": "250 € TTC / pers."
       },
       "modalites": {
         "centre": true,
@@ -1418,15 +1719,55 @@
         "lead": "Un câble ou une canalisation touchés pendant des travaux, et c'est tout le chantier qui s'arrête. L'AIPR atteste que l'intervenant sait travailler à proximité des réseaux sans les endommager.",
         "devis_titre": "Demander un devis pour l'AIPR",
         "devis_texte": "Indiquez le nombre d'agents et le rôle de chacun sur vos chantiers.",
-        "faq_titre": "Questions sur l'AIPR",
+        "faq_titre": "Questions fréquentes : AIPR",
         "faq": [
           {
-            "q": "L'AIPR concerne-t-elle les chantiers ferroviaires ?",
-            "a": "Oui, dès que des travaux ont lieu près de réseaux enterrés ou aériens, sur les emprises ferroviaires comme ailleurs."
+            "q": "Qu'est-ce que l'AIPR ?",
+            "a": "L'Autorisation d'Intervention à Proximité des Réseaux. Elle atteste qu'un intervenant connaît les règles pour travailler près des réseaux enterrés ou aériens sans les endommager."
           },
           {
-            "q": "Où se déroule la formation ?",
-            "a": "Dans les centres Digivoda partout en France, ou sur votre site en intra si vous formez un groupe d'agents."
+            "q": "L'AIPR est-elle obligatoire ?",
+            "a": "Oui, depuis le 1er janvier 2018, pour les personnes qui interviennent à proximité des réseaux, y compris sur les emprises ferroviaires."
+          },
+          {
+            "q": "Quel profil choisir : opérateur, encadrant ou concepteur ?",
+            "a": "Opérateur pour les conducteurs d'engins et les intervenants ; encadrant pour les chefs de chantier ; concepteur pour ceux qui préparent les projets. Précisez le profil visé dans votre demande."
+          },
+          {
+            "q": "Comment se passe l'examen ?",
+            "a": "Par un QCM officiel passé sur la plateforme de l'État : 30 questions pour le profil opérateur, 40 pour les profils encadrant et concepteur."
+          },
+          {
+            "q": "Combien de temps l'AIPR est-elle valable ?",
+            "a": "5 ans au maximum. Elle se renouvelle par un nouvel examen."
+          },
+          {
+            "q": "Qui délivre l'AIPR ?",
+            "a": "L'employeur, sur la base de l'attestation de réussite à l'examen."
+          },
+          {
+            "q": "Que contient la préparation ?",
+            "a": "La réglementation DT-DICT, la lecture des plans et du marquage-piquetage, les techniques de travail adaptées et la conduite à tenir en cas d'endommagement d'un réseau."
+          },
+          {
+            "q": "Combien coûte la formation AIPR ?",
+            "a": "250 € TTC par personne. En intra, sur votre site, le tarif est établi sur devis selon le nombre d'agents et le lieu."
+          },
+          {
+            "q": "Combien de temps dure la formation AIPR ?",
+            "a": "1 jour (7 h). Le programme détaillé figure plus haut sur cette page."
+          },
+          {
+            "q": "Où se déroule la formation AIPR ?",
+            "a": "Dans les centres Digivoda partout en France, ou directement sur votre site en intra si vous formez un groupe d'agents."
+          },
+          {
+            "q": "Comment s'inscrire, et sous quel délai ?",
+            "a": "Faites une demande de devis en ligne ou appelez le 01 89 70 55 70. Pour une session inter-entreprises, inscrivez-vous au moins 11 jours ouvrés avant la date. Pour une session intra sur votre site, comptez 30 à 45 jours d'organisation."
+          },
+          {
+            "q": "Comment financer la formation ?",
+            "a": "Pour un salarié : l'OPCO de l'entreprise ou le plan de développement des compétences. Pour un demandeur d'emploi : France Travail, selon votre éligibilité. Le devis TTC sert de base à la demande de prise en charge."
           }
         ],
         "illustration": "network"
@@ -1444,9 +1785,9 @@
         "prerequis",
         "programme",
         "public",
-        "tarif",
         "validite"
-      ]
+      ],
+      "tarif_statut": "confirme_client"
     },
     {
       "id": "tes-f",
@@ -1496,14 +1837,13 @@
         "libelle": "2 jours (14 h)"
       },
       "tarif": {
-        "montant": null,
+        "montant": 900,
         "regime": "TTC",
         "ancien_prix": null,
         "remise": null,
-        "inter": null,
-        "intra": null,
-        "sur_devis": true,
-        "libelle": "Sur devis"
+        "inter": 900,
+        "intra": "Sur devis",
+        "libelle": "900 € TTC / pers."
       },
       "modalites": {
         "centre": true,
@@ -1550,15 +1890,55 @@
         "lead": "Un passage à niveau en travaux reste un point de croisement entre la route et le rail. La TES F prépare les agents chargés d'en assurer la protection tant que le chantier est ouvert.",
         "devis_titre": "Demander un devis pour la TES F",
         "devis_texte": "Précisez le nombre d'agents et la période de vos travaux sur passage à niveau.",
-        "faq_titre": "Questions sur la TES F",
+        "faq_titre": "Questions fréquentes : TES F",
         "faq": [
           {
-            "q": "Quelle différence entre la TES F et la TCS M ?",
-            "a": "La TCS M porte sur l'annonce des circulations et la sécurité du personnel. La TES F porte sur la protection des passages à niveau."
+            "q": "Que recouvre la TES F ?",
+            "a": "Assurer la protection des circulations ferroviaires vis-à-vis des circulations routières, et réciproquement, aux passages à niveau. C'est une tâche essentielle pour la sécurité au sens de l'arrêté du 7 mai 2015."
           },
           {
-            "q": "Où se déroule la formation ?",
-            "a": "Dans les centres Digivoda partout en France, ou sur votre site en intra si vous formez un groupe d'agents."
+            "q": "Quand faut-il un agent TES F ?",
+            "a": "Dès qu'un chantier ou une situation dégradée oblige à protéger un passage à niveau : équipements hors service, travaux à proximité, circulation à gérer."
+          },
+          {
+            "q": "Quelle différence avec la TCS M ?",
+            "a": "La TCS M porte sur l'annonce des circulations et la sécurité du personnel. La TES F porte sur la protection des passages à niveau et la gestion des usagers de la route."
+          },
+          {
+            "q": "Quels sont les prérequis ?",
+            "a": "Une aptitude médicale et psychotechnique en cours de validité, un niveau de français B1 et une SECUFER à jour."
+          },
+          {
+            "q": "Que contient le programme ?",
+            "a": "Le cadre réglementaire, les différents types de passages à niveau et leurs équipements, les procédures de protection, la gestion des usagers et les situations dégradées."
+          },
+          {
+            "q": "Comment se passe l'évaluation ?",
+            "a": "Par une évaluation théorique et pratique en fin de formation. Une attestation est remise au stagiaire."
+          },
+          {
+            "q": "Les compétences doivent-elles être réévaluées ?",
+            "a": "Oui, les compétences font l'objet d'un suivi périodique, selon les exigences de l'employeur."
+          },
+          {
+            "q": "Combien coûte la formation TES F ?",
+            "a": "900 € TTC par personne. En intra, sur votre site, le tarif est établi sur devis selon le nombre d'agents et le lieu."
+          },
+          {
+            "q": "Combien de temps dure la formation TES F ?",
+            "a": "2 jours (14 h). Le programme détaillé figure plus haut sur cette page."
+          },
+          {
+            "q": "Où se déroule la formation TES F ?",
+            "a": "Dans les centres Digivoda partout en France, ou directement sur votre site en intra si vous formez un groupe d'agents."
+          },
+          {
+            "q": "Comment s'inscrire, et sous quel délai ?",
+            "a": "Faites une demande de devis en ligne ou appelez le 01 89 70 55 70. Pour une session inter-entreprises, inscrivez-vous au moins 11 jours ouvrés avant la date. Pour une session intra sur votre site, comptez 30 à 45 jours d'organisation."
+          },
+          {
+            "q": "Comment financer la formation ?",
+            "a": "Pour un salarié : l'OPCO de l'entreprise ou le plan de développement des compétences. Pour un demandeur d'emploi : France Travail, selon votre éligibilité. Le devis TTC sert de base à la demande de prise en charge."
           }
         ],
         "illustration": "pn"
@@ -1576,9 +1956,9 @@
         "prerequis",
         "programme",
         "public",
-        "tarif",
         "validite"
-      ]
+      ],
+      "tarif_statut": "confirme_client"
     },
     {
       "id": "agent-s9a3",
@@ -1634,14 +2014,13 @@
         "libelle": "3 jours (21 h)"
       },
       "tarif": {
-        "montant": null,
+        "montant": 900,
         "regime": "TTC",
         "ancien_prix": null,
         "remise": null,
-        "inter": null,
-        "intra": null,
-        "sur_devis": true,
-        "libelle": "Sur devis"
+        "inter": 900,
+        "intra": "Sur devis",
+        "libelle": "900 € TTC / pers."
       },
       "modalites": {
         "centre": true,
@@ -1688,15 +2067,51 @@
         "lead": "Une seule formation pour les trois fonctions de l'agent S9A3 : RZT, AGEC/R et APN. Pratique quand un même agent doit pouvoir tenir plusieurs rôles d'un chantier à l'autre.",
         "devis_titre": "Demander un devis pour l'Agent S9A3",
         "devis_texte": "Indiquez les fonctions visées (RZT, AGEC/R, APN) et le nombre d'agents.",
-        "faq_titre": "Questions sur l'Agent S9A3",
+        "faq_titre": "Questions fréquentes : Agent S9A3",
         "faq": [
+          {
+            "q": "Que couvre la formation Agent S9A3 ?",
+            "a": "Les fonctions RZT, AGEC/R et APN, dans une même formation : leurs rôles, les procédures, les documents à renseigner et la communication avec les équipes."
+          },
+          {
+            "q": "À qui s'adresse-t-elle ?",
+            "a": "Aux agents de chantier appelés à tenir une ou plusieurs de ces fonctions, dans les entreprises de travaux ferroviaires."
+          },
+          {
+            "q": "Quels sont les prérequis ?",
+            "a": "Une SECUFER à jour, une aptitude médicale et psychotechnique en cours de validité et un niveau de français B1."
+          },
+          {
+            "q": "Quel lien avec l'agent prestataire S9 de la TSAE ?",
+            "a": "La TSAE prépare à la fonction d'agent prestataire S9. La formation Agent S9A3 porte sur les fonctions RZT, AGEC/R et APN."
+          },
+          {
+            "q": "Comment se passe l'évaluation ?",
+            "a": "Par une évaluation théorique et pratique le dernier jour, après les exercices et les études de cas."
+          },
           {
             "q": "Peut-on former plusieurs agents en même temps ?",
             "a": "Oui, en intra sur votre site ou en inter dans un centre Digivoda. Indiquez le nombre de participants dans votre demande."
           },
           {
-            "q": "Où se déroule la formation ?",
-            "a": "Dans les centres Digivoda partout en France, ou sur votre site en intra si vous formez un groupe d'agents."
+            "q": "Combien coûte la formation Agent S9A3 ?",
+            "a": "900 € TTC par personne. En intra, sur votre site, le tarif est établi sur devis selon le nombre d'agents et le lieu."
+          },
+          {
+            "q": "Combien de temps dure la formation Agent S9A3 ?",
+            "a": "3 jours (21 h). Le programme détaillé figure plus haut sur cette page."
+          },
+          {
+            "q": "Où se déroule la formation Agent S9A3 ?",
+            "a": "Dans les centres Digivoda partout en France, ou directement sur votre site en intra si vous formez un groupe d'agents."
+          },
+          {
+            "q": "Comment s'inscrire, et sous quel délai ?",
+            "a": "Faites une demande de devis en ligne ou appelez le 01 89 70 55 70. Pour une session inter-entreprises, inscrivez-vous au moins 11 jours ouvrés avant la date. Pour une session intra sur votre site, comptez 30 à 45 jours d'organisation."
+          },
+          {
+            "q": "Comment financer la formation ?",
+            "a": "Pour un salarié : l'OPCO de l'entreprise ou le plan de développement des compétences. Pour un demandeur d'emploi : France Travail, selon votre éligibilité. Le devis TTC sert de base à la demande de prise en charge."
           }
         ],
         "illustration": "helmet"
@@ -1714,9 +2129,9 @@
         "prerequis",
         "programme",
         "public",
-        "tarif",
         "validite"
-      ]
+      ],
+      "tarif_statut": "confirme_client"
     },
     {
       "id": "percheur-catenaire",
@@ -1766,14 +2181,13 @@
         "libelle": "2 jours (14 h)"
       },
       "tarif": {
-        "montant": null,
+        "montant": 1100,
         "regime": "TTC",
         "ancien_prix": null,
         "remise": null,
-        "inter": null,
-        "intra": null,
-        "sur_devis": true,
-        "libelle": "Sur devis"
+        "inter": 1100,
+        "intra": "Sur devis",
+        "libelle": "1100 € TTC / pers."
       },
       "modalites": {
         "centre": true,
@@ -1809,10 +2223,11 @@
         "tsae-prestations-connexes"
       ],
       "packs": [
-        "pack-ferroviaire-premium"
+        "pack-ferroviaire-premium",
+        "pack-catenaire"
       ],
       "a_verifier": [
-        "Le Pack Premium cite « APEC CH1-CB1 » : confirmer s'il s'agit de cette formation."
+        "Les organismes du secteur présentent « percheur caténaire » et « Agent de Protection Électrique CH1-CB1 » comme la même fonction."
       ],
       "resume_source": "editorial (dérivé de l'intitulé)",
       "editorial": {
@@ -1823,15 +2238,55 @@
         "validite_texte": "L'organisme délivre l'attestation de formation ; l'habilitation reste délivrée par l'employeur.",
         "devis_titre": "Demander un devis : percheur CH1-CB1",
         "devis_texte": "Précisez le nombre d'agents et la nature de vos chantiers caténaire.",
-        "faq_titre": "Questions sur la formation caténaire",
+        "faq_titre": "Questions fréquentes : Percheur CH1-CB1",
         "faq": [
           {
-            "q": "Existe-t-il un pack autour de la caténaire ?",
-            "a": "Le Pack Ferroviaire Premium, en 10 jours, inclut l'Agent de Protection Électrique Caténaire (APEC) CH1-CB1, avec la TCS M, LAM et S9."
+            "q": "Que fait un percheur caténaire ?",
+            "a": "Il met en place le perchage de la caténaire lors d'une consignation : pose des perches de mise à la terre selon le plan de perchage, et des dispositifs de protection, avant que l'équipe intervienne."
           },
           {
-            "q": "Où se déroule la formation ?",
-            "a": "Dans les centres Digivoda partout en France, ou sur votre site en intra si vous formez un groupe d'agents."
+            "q": "Percheur CH1-CB1 et Agent de Protection Électrique Caténaire (APEC), est-ce la même chose ?",
+            "a": "Oui, les deux intitulés désignent la même fonction de protection électrique de la caténaire, au niveau CH1-CB1."
+          },
+          {
+            "q": "Quelles tensions rencontre-t-on ?",
+            "a": "Selon les lignes, 1 500 V continu ou 25 kV alternatif. D'où l'importance de la consignation et du perchage avant toute intervention."
+          },
+          {
+            "q": "Quels sont les prérequis ?",
+            "a": "Une aptitude médicale en cours de validité et une SECUFER à jour. La formation aux risques électriques C0 est recommandée ; certains employeurs demandent aussi une aptitude au travail en hauteur."
+          },
+          {
+            "q": "Comment se passe l'évaluation ?",
+            "a": "Par un QCM et une évaluation pratique. L'organisme remet l'attestation ; l'habilitation est délivrée par l'employeur."
+          },
+          {
+            "q": "Tous les combien faut-il se recycler ?",
+            "a": "Un recyclage tous les 3 ans est recommandé, comme pour les habilitations électriques."
+          },
+          {
+            "q": "Combien coûte la formation Percheur CH1-CB1 ?",
+            "a": "1 100 € TTC par personne. En intra, sur votre site, le tarif est établi sur devis selon le nombre d'agents et le lieu."
+          },
+          {
+            "q": "Combien de temps dure la formation Percheur CH1-CB1 ?",
+            "a": "2 jours (14 h). Le programme détaillé figure plus haut sur cette page."
+          },
+          {
+            "q": "Où se déroule la formation Percheur CH1-CB1 ?",
+            "a": "Dans les centres Digivoda partout en France, ou directement sur votre site en intra si vous formez un groupe d'agents."
+          },
+          {
+            "q": "Comment s'inscrire, et sous quel délai ?",
+            "a": "Faites une demande de devis en ligne ou appelez le 01 89 70 55 70. Pour une session inter-entreprises, inscrivez-vous au moins 11 jours ouvrés avant la date. Pour une session intra sur votre site, comptez 30 à 45 jours d'organisation."
+          },
+          {
+            "q": "Comment financer la formation ?",
+            "a": "Pour un salarié : l'OPCO de l'entreprise ou le plan de développement des compétences. Pour un demandeur d'emploi : France Travail, selon votre éligibilité. Le devis TTC sert de base à la demande de prise en charge."
+          },
+          {
+            "q": "La formation Percheur CH1-CB1 existe-t-elle en pack ?",
+            "a": "Oui. Elle fait partie des packs : Pack Premium, Pack Caténaire. Les packs enchaînent plusieurs formations avec une seule inscription."
           }
         ],
         "illustration": "pylon"
@@ -1849,9 +2304,9 @@
         "prerequis",
         "programme",
         "public",
-        "tarif",
         "validite"
-      ]
+      ],
+      "tarif_statut": "confirme_client"
     }
   ],
   "packs": [
@@ -1903,7 +2358,8 @@
         "regime": "TTC",
         "ancien_prix": 2250,
         "remise": 450,
-        "libelle": "1 800 € TTC"
+        "libelle": "1 800 € TTC",
+        "intra": "Sur devis"
       },
       "somme_prix_individuels": null,
       "modalites": {
@@ -1934,7 +2390,8 @@
       },
       "a_verifier": [
         "Correspondance modules → formations à confirmer (C0/LAM/S9 = formation TSAE n°6 ?).",
-        "Prix barré 2 250 € relevé dans l'index (non lisible sur la capture)."
+        "Prix barré 2 250 € relevé dans l'index (non lisible sur la capture).",
+        "Avec les tarifs du 31/10/2026, le pack (1 800 €) coûte exactement TCS M (900 €) + TSAE (900 €), alors qu'il affiche « −450 € » sur un prix initial de 2 250 €."
       ],
       "editorial": {
         "seo_title": "Pack Prestations Connexes TCS M, C0, LAM, S9 | Digiferro",
@@ -1947,16 +2404,40 @@
         "devis_texte": "Indiquez le nombre d'agents et la date de démarrage de votre chantier : Digivoda vous répond avec un devis et les prochaines sessions.",
         "faq": [
           {
-            "q": "Combien coûte le pack ?",
-            "a": "1 800 € TTC par personne, au lieu de 2 250 € : une remise de 450 €."
+            "q": "Pour quels chantiers ?",
+            "a": "Le pack est pensé pour les entreprises de prestations connexes qui interviennent sur les chantiers du Réseau Ferré National."
           },
           {
-            "q": "Pour quels chantiers ?",
-            "a": "Le pack est présenté pour les chantiers du Réseau Ferré National."
+            "q": "Que contient le pack ?",
+            "a": "La TCS M complète (Annonceur + ASP), le risque électrique C0, et les fonctions d'agent prestataire LAM et S9 de la TSAE."
+          },
+          {
+            "q": "Combien coûte le Pack Prestations Connexes ?",
+            "a": "1 800 € TTC par personne, au lieu de 2 250 €. En intra, le tarif est établi sur devis."
+          },
+          {
+            "q": "Combien de temps dure le pack ?",
+            "a": "8 jours au total. Le planning détaillé est remis avec la convocation."
+          },
+          {
+            "q": "Peut-on suivre les formations du pack séparément ?",
+            "a": "Oui, chacune a sa propre fiche et son propre tarif : TCS M (900 €), TSAE C0 / LAM / S9 (900 €)."
+          },
+          {
+            "q": "Quels sont les prérequis ?",
+            "a": "Le pack inclut la TCS M : aptitude médicale et psychotechnique, français niveau B1 et être majeur. Aucun diplôme n'est requis."
+          },
+          {
+            "q": "Que reçoit-on à la fin du pack ?",
+            "a": "Une attestation pour chaque formation validée. L'employeur s'appuie dessus pour délivrer les habilitations."
           },
           {
             "q": "Peut-on suivre le pack en intra ?",
-            "a": "Oui, sur votre site, ou dans un centre Digivoda."
+            "a": "Oui, sur votre site, ou dans un centre Digivoda. En intra, le tarif est établi sur devis."
+          },
+          {
+            "q": "Comment financer le pack ?",
+            "a": "OPCO ou plan de développement des compétences pour un salarié ; France Travail selon votre éligibilité pour un demandeur d'emploi."
           }
         ]
       },
@@ -2019,7 +2500,8 @@
         "regime": "TTC",
         "ancien_prix": null,
         "remise": null,
-        "libelle": "1 080 € TTC"
+        "libelle": "1 080 € TTC",
+        "intra": "Sur devis"
       },
       "somme_prix_individuels": null,
       "modalites": {
@@ -2051,9 +2533,9 @@
       },
       "a_verifier": [
         "Composition C0 + TCS M confirmée par le client.",
-        "Le pack (1 080 €, 5 jours, C0 inclus) coûte moins cher que la fiche TCS M seule (1 390 €, 5 jours) : vérifier les deux tarifs.",
         "Répartition des journées entre C0 et TCS M non publiée.",
-        "Aucun prix barré ni remise publiés pour ce pack : pas de badge d'économie."
+        "Aucun prix barré ni remise publiés pour ce pack : pas de badge d'économie.",
+        "Avec les tarifs du 31/10/2026, le pack (1 080 €) coûte exactement C0 (180 €) + TCS M (900 €) : aucune économie à l'achat groupé."
       ],
       "prerequis_note": "Le pack inclut la TCS M : ses prérequis publiés s'appliquent.",
       "editorial": {
@@ -2072,16 +2554,36 @@
             "a": "Aux agents qui tiendront un poste de sentinelle ou d'ASP près d'installations électriques de traction : caténaire, sous-stations, rail conducteur."
           },
           {
-            "q": "Faut-il remplir des conditions pour s'inscrire ?",
-            "a": "Le pack inclut la TCS M : ses prérequis s'appliquent. Aptitude médicale et psychotechnique, français niveau B1, être majeur."
+            "q": "Que contient le pack ?",
+            "a": "La formation aux risques électriques C0 et la TCS M complète, Annonceur et ASP."
+          },
+          {
+            "q": "Combien coûte le Pack Sentinelle Complet ?",
+            "a": "1 080 € TTC par personne. En intra, le tarif est établi sur devis."
+          },
+          {
+            "q": "Combien de temps dure le pack ?",
+            "a": "5 jours au total. Le planning détaillé est remis avec la convocation."
+          },
+          {
+            "q": "Peut-on suivre les formations du pack séparément ?",
+            "a": "Oui, chacune a sa propre fiche et son propre tarif : Risques électriques C0 (180 €), TCS M (900 €)."
+          },
+          {
+            "q": "Quels sont les prérequis ?",
+            "a": "Le pack inclut la TCS M : aptitude médicale et psychotechnique, français niveau B1 et être majeur. Aucun diplôme n'est requis."
+          },
+          {
+            "q": "Que reçoit-on à la fin du pack ?",
+            "a": "Une attestation pour chaque formation validée. L'employeur s'appuie dessus pour délivrer les habilitations."
           },
           {
             "q": "Peut-on suivre le pack en intra ?",
-            "a": "Oui. Le pack peut être organisé sur le site du client, en intra, ou suivi dans un centre Digivoda."
+            "a": "Oui, sur votre site, ou dans un centre Digivoda. En intra, le tarif est établi sur devis."
           },
           {
-            "q": "Le prix est-il HT ou TTC ?",
-            "a": "TTC, par personne : 1 080 €."
+            "q": "Comment financer le pack ?",
+            "a": "OPCO ou plan de développement des compétences pour un salarié ; France Travail selon votre éligibilité pour un demandeur d'emploi."
           }
         ]
       },
@@ -2143,7 +2645,8 @@
         "regime": "TTC",
         "ancien_prix": 2290,
         "remise": 390,
-        "libelle": "1 900 € TTC"
+        "libelle": "1 900 € TTC",
+        "intra": "Sur devis"
       },
       "somme_prix_individuels": null,
       "modalites": {
@@ -2174,7 +2677,8 @@
       },
       "a_verifier": [
         "Prix barré 2 290 € relevé dans l'index (non lisible sur la capture).",
-        "Durée totale non publiée."
+        "Durée totale non publiée.",
+        "Avec les tarifs du 31/10/2026, le pack (1 900 €) coûte plus que SECUFER (160 €) + TCS M (900 €) + RSO (800 €) = 1 860 €, alors qu'il affiche « −390 € »."
       ],
       "editorial": {
         "seo_title": "Pack RSO : SECUFER, TCS M / ASP et RSO | Digiferro",
@@ -2187,16 +2691,40 @@
         "devis_texte": "Indiquez le nombre de futurs RSO et la période visée.",
         "faq": [
           {
-            "q": "Combien coûte le pack ?",
-            "a": "1 900 € TTC par personne, au lieu de 2 290 € : une remise de 390 €."
+            "q": "Faut-il déjà avoir la SECUFER ?",
+            "a": "Non. Elle fait partie du pack : c'est la première étape du parcours."
           },
           {
-            "q": "Faut-il déjà avoir la SECUFER ?",
-            "a": "Non. Elle fait partie du pack, c'est la première étape du parcours."
+            "q": "Que contient le pack ?",
+            "a": "La SECUFER, la TCS M / ASP et la formation RSO, du socle de sécurité jusqu'à la coordination des opérations."
+          },
+          {
+            "q": "Combien coûte le Pack RSO ?",
+            "a": "1 900 € TTC par personne, au lieu de 2 290 €. En intra, le tarif est établi sur devis."
+          },
+          {
+            "q": "Combien de temps dure le pack ?",
+            "a": "8 jours au total. Le planning détaillé est remis avec la convocation."
+          },
+          {
+            "q": "Peut-on suivre les formations du pack séparément ?",
+            "a": "Oui, chacune a sa propre fiche et son propre tarif : SECUFER (160 €), TCS M (900 €), RSO (800 €)."
+          },
+          {
+            "q": "Quels sont les prérequis ?",
+            "a": "Le pack inclut la TCS M : aptitude médicale et psychotechnique, français niveau B1 et être majeur. Aucun diplôme n'est requis."
+          },
+          {
+            "q": "Que reçoit-on à la fin du pack ?",
+            "a": "Une attestation pour chaque formation validée. L'employeur s'appuie dessus pour délivrer les habilitations."
           },
           {
             "q": "Peut-on suivre le pack en intra ?",
-            "a": "Oui, sur votre site, ou dans un centre Digivoda."
+            "a": "Oui, sur votre site, ou dans un centre Digivoda. En intra, le tarif est établi sur devis."
+          },
+          {
+            "q": "Comment financer le pack ?",
+            "a": "OPCO ou plan de développement des compétences pour un salarié ; France Travail selon votre éligibilité pour un demandeur d'emploi."
           }
         ]
       },
@@ -2262,7 +2790,8 @@
         "regime": "TTC",
         "ancien_prix": 2900,
         "remise": 400,
-        "libelle": "2 500 € TTC"
+        "libelle": "2 500 € TTC",
+        "intra": "Sur devis"
       },
       "somme_prix_individuels": null,
       "modalites": {
@@ -2293,7 +2822,6 @@
         "description": "Protection des équipes contre les circulations, procédures LAM et S9, protection électrique des chantiers caténaire."
       },
       "a_verifier": [
-        "APEC CH1-CB1 = formation « Percheur / Aide Monteur Caténaire CH1-CB1 » ? À confirmer.",
         "Le pack cite LAM et S9 mais pas C0 : la référence à la formation TSAE (qui inclut C0) est-elle exacte ?",
         "Prix barré 2 900 € relevé dans l'index (non lisible sur la capture)."
       ],
@@ -2308,16 +2836,40 @@
         "devis_texte": "Dix jours se préparent : indiquez le nombre d'agents et la fenêtre de dates possible.",
         "faq": [
           {
-            "q": "Combien coûte le pack ?",
-            "a": "2 500 € TTC par personne, au lieu de 2 900 € : une remise de 400 €."
-          },
-          {
             "q": "Que couvre la partie caténaire ?",
             "a": "L'Agent de Protection Électrique Caténaire (APEC) CH1-CB1 : la protection électrique des chantiers caténaire."
           },
           {
+            "q": "Pour qui est le pack le plus complet ?",
+            "a": "Pour un agent qui doit pouvoir tenir plusieurs postes : sentinelle, LAM, S9 et protection électrique caténaire."
+          },
+          {
+            "q": "Combien coûte le Pack Premium ?",
+            "a": "2 500 € TTC par personne, au lieu de 2 900 €. Prises séparément, les mêmes formations coûteraient 2 900 €. En intra, le tarif est établi sur devis."
+          },
+          {
+            "q": "Combien de temps dure le pack ?",
+            "a": "10 jours au total. Le planning détaillé est remis avec la convocation."
+          },
+          {
+            "q": "Peut-on suivre les formations du pack séparément ?",
+            "a": "Oui, chacune a sa propre fiche et son propre tarif : TCS M (900 €), TSAE C0 / LAM / S9 (900 €), Percheur CH1-CB1 (1 100 €)."
+          },
+          {
+            "q": "Quels sont les prérequis ?",
+            "a": "Le pack inclut la TCS M : aptitude médicale et psychotechnique, français niveau B1 et être majeur. Aucun diplôme n'est requis."
+          },
+          {
+            "q": "Que reçoit-on à la fin du pack ?",
+            "a": "Une attestation pour chaque formation validée. L'employeur s'appuie dessus pour délivrer les habilitations."
+          },
+          {
             "q": "Peut-on suivre le pack en intra ?",
-            "a": "Oui, sur votre site, ou dans un centre Digivoda."
+            "a": "Oui, sur votre site, ou dans un centre Digivoda. En intra, le tarif est établi sur devis."
+          },
+          {
+            "q": "Comment financer le pack ?",
+            "a": "OPCO ou plan de développement des compétences pour un salarié ; France Travail selon votre éligibilité pour un demandeur d'emploi."
           }
         ]
       },
@@ -2332,6 +2884,141 @@
         "parcours_note",
         "prerequis"
       ]
+    },
+    {
+      "id": "pack-catenaire",
+      "ordre": 5,
+      "slug": "pack-catenaire-tcs-m-apec",
+      "page": "packs/pack-catenaire-tcs-m-apec.html",
+      "titre": "Pack Caténaire – TCS M + APEC",
+      "titre_court": "Pack Caténaire",
+      "type": "pack",
+      "source_url": null,
+      "statut_verification": "confirme_client",
+      "formations_incluses": [
+        "tcs-m",
+        "percheur-catenaire"
+      ],
+      "modules_publies": [
+        "TCS M Annonceur Sentinelle + ASP",
+        "Agent de Protection Électrique Caténaire (APEC)"
+      ],
+      "resume": "La TCS M complète et la protection électrique caténaire (APEC) dans un même parcours, pour les agents des chantiers caténaire.",
+      "objectifs": [
+        "Protéger les équipes contre les circulations ferroviaires",
+        "Tenir les missions d'Annonceur Sentinelle et d'ASP",
+        "Assurer la protection électrique d'un chantier caténaire"
+      ],
+      "duree": {
+        "heures": 49,
+        "jours": 7,
+        "libelle": "7 jours"
+      },
+      "tarif": {
+        "montant": 1800,
+        "regime": "TTC",
+        "ancien_prix": null,
+        "remise": null,
+        "intra": "Sur devis",
+        "libelle": "1 800 € TTC"
+      },
+      "somme_prix_individuels": null,
+      "modalites": {
+        "centre": true,
+        "intra": true,
+        "lieux": [
+          "Centres Digivoda partout en France",
+          "Sur site client en intra"
+        ],
+        "dates": "Sessions régulières, calendrier sur demande"
+      },
+      "effectif": "4 à 12 stagiaires",
+      "validite": "Selon chaque formation incluse : voir les fiches correspondantes.",
+      "financement": [
+        "OPCO",
+        "Plan de développement des compétences",
+        "France Travail (selon éligibilité)"
+      ],
+      "images": [
+        "ph-catenaire-perche"
+      ],
+      "public": [
+        "Demandeurs d'emploi en reconversion",
+        "Salariés du BTP et des travaux publics qui visent les chantiers du Réseau Ferré National",
+        "Sous-traitants ferroviaires",
+        "Nouveaux entrants dans les grands groupes d'infrastructure"
+      ],
+      "public_note": "Le pack inclut la TCS M : public repris de sa fiche.",
+      "prerequis": [
+        "Aptitude médicale et psychotechnique délivrée par un médecin du travail",
+        "Français niveau B1 minimum, à l'oral et à l'écrit",
+        "Être majeur (18 ans minimum)",
+        "Aucun diplôme requis ; permis B recommandé pour les déplacements sur chantier"
+      ],
+      "prerequis_note": "Le pack inclut la TCS M : ses prérequis publiés s'appliquent.",
+      "parcours_note": "Le planning détaillé, jour par jour, est remis avec la convocation.",
+      "constat_capture": null,
+      "a_verifier": [
+        "Pack ajouté par le client le 31/10/2026 (1 800 € TTC).",
+        "Durée de 7 jours provisoire (TCS M 5 jours + caténaire 2 jours)."
+      ],
+      "provisoire": [
+        "duree",
+        "effectif",
+        "modalites.dates",
+        "financement",
+        "prerequis",
+        "parcours_note",
+        "objectifs"
+      ],
+      "editorial": {
+        "seo_title": "Pack Caténaire TCS M + APEC, 1 800 € TTC | Digiferro",
+        "seo_description": "Pack Caténaire : TCS M Annonceur Sentinelle + ASP et Agent de Protection Électrique Caténaire (APEC) en un parcours, 1 800 € TTC par personne.",
+        "titre_h1": "Pack Caténaire : TCS M + APEC",
+        "illustration": "pylon",
+        "lead": "Sur un chantier caténaire, deux risques se cumulent : le train qui arrive et la ligne sous tension au-dessus des têtes. Ce pack forme l'agent aux deux, avec la TCS M complète et la protection électrique caténaire (APEC).",
+        "incluses_intro": "Deux formations enchaînées, une seule inscription.",
+        "parcours_intro": "La protection contre les circulations d'abord, la protection électrique ensuite.",
+        "devis_texte": "Indiquez le nombre d'agents et la période de votre chantier caténaire : Digivoda vous répond avec un devis et les prochaines sessions.",
+        "faq": [
+          {
+            "q": "Que contient le Pack Caténaire ?",
+            "a": "La TCS M complète (Annonceur + ASP) et l'Agent de Protection Électrique Caténaire (APEC), préparé par la formation Percheur / Aide Monteur CH1-CB1."
+          },
+          {
+            "q": "À qui s'adresse-t-il ?",
+            "a": "Aux agents des chantiers caténaire, exposés à la fois aux circulations et à la ligne sous tension."
+          },
+          {
+            "q": "Combien coûte le Pack Caténaire ?",
+            "a": "1 800 € TTC par personne. Prises séparément, les mêmes formations coûteraient 2 000 €. En intra, le tarif est établi sur devis."
+          },
+          {
+            "q": "Combien de temps dure le pack ?",
+            "a": "7 jours au total. Le planning détaillé est remis avec la convocation."
+          },
+          {
+            "q": "Peut-on suivre les formations du pack séparément ?",
+            "a": "Oui, chacune a sa propre fiche et son propre tarif : TCS M (900 €), Percheur CH1-CB1 (1 100 €)."
+          },
+          {
+            "q": "Quels sont les prérequis ?",
+            "a": "Le pack inclut la TCS M : aptitude médicale et psychotechnique, français niveau B1 et être majeur. Aucun diplôme n'est requis."
+          },
+          {
+            "q": "Que reçoit-on à la fin du pack ?",
+            "a": "Une attestation pour chaque formation validée. L'employeur s'appuie dessus pour délivrer les habilitations."
+          },
+          {
+            "q": "Peut-on suivre le pack en intra ?",
+            "a": "Oui, sur votre site, ou dans un centre Digivoda. En intra, le tarif est établi sur devis."
+          },
+          {
+            "q": "Comment financer le pack ?",
+            "a": "OPCO ou plan de développement des compétences pour un salarié ; France Travail selon votre éligibilité pour un demandeur d'emploi."
+          }
+        ]
+      }
     }
   ],
   "site": {
