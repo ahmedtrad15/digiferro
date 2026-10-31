@@ -93,7 +93,7 @@ export function header(ctx, data) {
       <p>Session en centre ou sur votre site : décrivez votre besoin, Digivoda vous répond avec un devis.</p>
       <a class="btn btn--signal btn--sm" href="${devisHref(p)}">Demander un devis</a>
       <a class="mega__phone" href="tel:${o.telephone_e164}">${icon('phone', 'icon icon--sm')} ${esc(o.telephone)}</a>
-      ${phoneLinks({ telephones: (o.telephones || []).slice(2) }, { cls: 'phones phones--compact' })}
+      ${phoneLinks(o, { cls: 'phones phones--compact', skipFirst: true })}
     </div>
   </div>
   <div class="mega__foot"><div class="wrap"><a href="${p}formations/index.html">Voir tout le catalogue ${icon('arrow', 'icon icon--sm')}</a></div></div>
@@ -138,7 +138,7 @@ ${SPRITE}
     <p>Formations dispensées par <strong>DIGIVODA</strong>, organisme certifié Qualiopi</p>
     <ul class="topbar__links">
       <li><a href="tel:${o.telephone_e164}">${icon('phone', 'icon icon--xs')}${esc(o.telephone)}</a></li>
-      ${(o.telephones || []).slice(2).map((t) => `<li><a href="tel:${t.e164}">${icon('phone', 'icon icon--xs')}<span class="topbar__label">Formations ferroviaires :</span>${esc(t.affichage)}</a></li>`).join('')}
+      ${(o.telephones || []).length > 1 ? `<li class="topbar__group"><span class="topbar__label">${icon('phone', 'icon icon--xs')}Formations ferroviaires :</span>${o.telephones.slice(1).map((t) => `<a href="tel:${t.e164}">${esc(t.affichage)}</a>`).join('<span aria-hidden="true">·</span>')}</li>` : ''}
       <li><a href="mailto:${esc(o.email)}">${icon('mail', 'icon icon--xs')}${esc(o.email)}</a></li>
     </ul>
   </div>

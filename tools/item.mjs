@@ -1,5 +1,5 @@
 // Pages formation et pack.
-import { esc, icon, todo, isMissing, show, priceHTML, dureeHTML, listHTML, jsonld, eur, tarifNote, phoneLinks } from './util.mjs';
+import { esc, icon, todo, isMissing, show, priceHTML, dureeHTML, listHTML, jsonld, eur, tarifNote, phoneLinks, phoneGroups } from './util.mjs';
 import { breadcrumb, devisHref, groupsOf } from './partials.mjs';
 import { img, visual, formationCard, packTicket, faqHTML, faqLD, mapFigure, IMG_ALT, HERO_SIZES } from './home.mjs';
 import { photoTag } from './media.mjs';
@@ -79,7 +79,8 @@ export function devisForm(data, selectedId, { title, text, p = P } = {}) {
       <h2 id="devis-title">${esc(title)}</h2>
       <p>${esc(text)}</p>
       <ul class="devis__contact">
-        ${(o.telephones || []).map((t, i) => `<li><a href="tel:${t.e164}">${icon('phone', 'icon icon--sm')}${i ? `<span class="devis__label">${esc(t.label)} :</span>` : ''}${esc(t.affichage)}</a></li>`).join('')}
+        <li><a href="tel:${o.telephone_e164}">${icon('phone', 'icon icon--sm')}${esc(o.telephone)}</a></li>
+        ${phoneGroups((o.telephones || []).slice(1)).map((g) => `<li class="devis__group"><span class="devis__label">${esc(g.label)}</span>${g.items.map((t) => `<a href="tel:${t.e164}">${icon('phone', 'icon icon--sm')}${esc(t.affichage)}</a>`).join('')}</li>`).join('')}
         <li><a href="mailto:${esc(o.email)}">${icon('mail', 'icon icon--sm')}${esc(o.email)}</a></li>
       </ul>
     </div>

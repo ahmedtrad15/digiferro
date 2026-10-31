@@ -59,10 +59,19 @@ export const tarifNote = (t) => {
   return parts.length ? `<span class="price-note">${parts.map(esc).join(' · ')}</span>` : '';
 };
 
-// Numéros de contact (organisme.telephones) : liste avec libellé
-export const phoneLinks = (o, { cls = 'phones', iconCls = 'icon icon--sm', skipFirst = false } = {}) => {
-  const list = (o.telephones || []).slice(skipFirst ? 1 : 0);
-  return `<ul class="${cls}">${list
-    .map((t) => `<li><a href="tel:${t.e164}"><svg class="${iconCls}" aria-hidden="true" focusable="false"><use href="#i-phone"></use></svg><span><small>${esc(t.label)}</small>${esc(t.affichage)}</span></a></li>`)
+// Numéros de contact (organisme.telephones), regroupés par libellé :
+// les deux lignes du gestionnaire de formations ferroviaires partagent un seul titre.
+export const phoneGroups = (list) =>
+  list.reduce((groups, t) => {
+    const last = groups[groups.length - 1];
+    if (last && last.label === t.label) last.items.push(t);
+    else groups.push({ label: t.label, items: [t] });
+    return groups;
+  }, []);
+
+const phoneIcon = (cls) => `<svg class="${cls}" aria-hidden="true" focusable="false"><use href="#i-phone"></use></svg>`;
+
+export const phoneLinks = (o, { cls = 'phones', iconCls = 'icon icon--sm', skipFirst = false } = {}) =>
+  `<ul class="${cls}">${phoneGroups((o.telephones || []).slice(skipFirst ? 1 : 0))
+    .map((g) => `<li><small>${esc(g.label)}</small>${g.items.map((t) => `<a href="tel:${t.e164}">${phoneIcon(iconCls)}${esc(t.affichage)}</a>`).join('')}</li>`)
     .join('')}</ul>`;
-};

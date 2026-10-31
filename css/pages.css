@@ -805,3 +805,9 @@
 .devis__label { font-weight: 400; color: var(--steel-300); margin-right: 0.35rem; }
 .cta-band__actions .cta-band__phone + .cta-band__phone span { font-size: 1.375rem; }
 .devis-panel .phones--compact { justify-items: center; }
+.devis__group { display: grid; margin-top: 0.4rem; }
+.devis__group .devis__label { font-size: var(--fs-sm); }
+.page-hero__help .page-hero__phone + .page-hero__phone { margin-top: -0.25rem; }
+.cta-band__phone--group .cta-band__nums { display: flex; flex-wrap: wrap; gap: 0 1rem; }
+.cta-band__phone--group a { color: var(--night); text-decoration: none; }
+.cta-band__phone--group a:hover { text-decoration: underline; }

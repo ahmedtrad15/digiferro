@@ -3,10 +3,11 @@
 ## 0.6.1 — 2026-10-31 · Badges retirés, nouveaux numéros
 
 - Badges d'économie (« −X € ») retirés partout : cartes, billets de pack, méga-menu, tiroir mobile, panneau devis, catalogue, tableau de prix des packs. Les prix barrés publiés restent affichés. Sur les fiches pack, l'économie réelle par rapport à l'achat à l'unité (Premium, Caténaire) apparaît en texte simple.
-- Deux numéros ajoutés, avec leur libellé, sur la page Contact, dans le pied de page, les blocs devis, le panneau devis des fiches, la page À propos, les mentions légales et le JSON-LD (`contactPoint`) :
-  - Mobile : 07 80 98 89 20 ;
-  - Gestionnaire de formations ferroviaires : 07 44 30 73 56.
-  Le gestionnaire apparaît aussi dans le bandeau supérieur, le méga-menu, le bandeau d'appel de l'accueil et l'aide du catalogue (« Pas sûr de la formation à choisir ? »). Le 01 89 70 55 70 reste le numéro principal des boutons « Appeler ».
+- Deux numéros du gestionnaire de formations ferroviaires ajoutés : 07 80 98 89 20 et 07 44 30 73 56. Ils sont regroupés sous un seul libellé, partout :
+  - page Contact, pied de page, blocs devis, panneau devis des fiches ;
+  - page À propos, mentions légales, JSON-LD (`contactPoint`) ;
+  - bandeau supérieur, méga-menu, bandeau d'appel de l'accueil et aide du catalogue.
+  Le 01 89 70 55 70 reste le numéro principal des boutons « Appeler ». Dans le bandeau supérieur, les numéros ne se coupent plus, et la phrase d'introduction est masquée sous 1 280 px.
 
 ## 0.6.0 — 2026-10-31 · Photos du client, plus aucun « À compléter »
 

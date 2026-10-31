@@ -377,7 +377,7 @@ export function ctaBand(p, o, { title = 'Un démarrage de chantier approche ?', 
     <div class="cta-band__actions">
       <a class="btn btn--signal btn--lg" href="${href || devisHref(p)}">Demander un devis</a>
       <a class="cta-band__phone" href="tel:${o.telephone_e164}">${icon('phone', 'icon')}<span><small>Par téléphone</small>${esc(o.telephone)}</span></a>
-      ${(o.telephones || []).slice(2).map((t) => `<a class="cta-band__phone" href="tel:${t.e164}">${icon('phone', 'icon')}<span><small>${esc(t.label)}</small>${esc(t.affichage)}</span></a>`).join('')}
+      ${(o.telephones || []).length > 1 ? `<div class="cta-band__phone cta-band__phone--group">${icon('phone', 'icon')}<span><small>${esc(o.telephones[1].label)}</small><span class="cta-band__nums">${o.telephones.slice(1).map((t) => `<a href="tel:${t.e164}">${esc(t.affichage)}</a>`).join('')}</span></span></div>` : ''}
     </div>
   </div>
 </section>`;

@@ -1,5 +1,5 @@
 // Pages transverses : catalogue filtrable, à propos, contact, FAQ, pages légales, 404.
-import { esc, icon, todo, show, priceHTML, dureeHTML, jsonld, phoneLinks } from './util.mjs';
+import { esc, icon, todo, show, priceHTML, dureeHTML, jsonld, phoneLinks, phoneGroups } from './util.mjs';
 import { breadcrumb, devisHref, groupsOf, qualiopiFigure } from './partials.mjs';
 import { img, visual, sectionVisual, formationCard, faqHTML, faqLD, mapFigure, ctaBand } from './home.mjs';
 import { centreImages, qualiopiLogo } from './media.mjs';
@@ -116,8 +116,8 @@ export function catalogue(data) {
     lead: `${data.formations.length} formations et ${packs.length} packs, filtrables par type, thème et durée. Les tarifs affichés sont TTC, par personne.`,
     aside: (() => {
       const o = data.organisme;
-      const g = (o.telephones || [])[2] || { e164: o.telephone_e164, affichage: o.telephone, label: '' };
-      return `<div class="page-hero__help"><p>Pas sûr de la formation à choisir ? Parlez-en au ${esc(g.label.toLowerCase())}.</p><a class="page-hero__phone" href="tel:${g.e164}">${icon('phone', 'icon icon--sm')}${esc(g.affichage)}</a><p class="page-hero__alt">Standard : <a href="tel:${o.telephone_e164}">${esc(o.telephone)}</a></p><a class="link-arrow" href="${devisHref(p)}">Décrire mon besoin${icon('arrow', 'icon icon--sm')}</a></div>`;
+      const gest = (o.telephones || []).slice(1);
+      return `<div class="page-hero__help"><p>Pas sûr de la formation à choisir ? Parlez-en au gestionnaire de formations ferroviaires.</p>${gest.map((t) => `<a class="page-hero__phone" href="tel:${t.e164}">${icon('phone', 'icon icon--sm')}${esc(t.affichage)}</a>`).join('')}<p class="page-hero__alt">Standard : <a href="tel:${o.telephone_e164}">${esc(o.telephone)}</a></p><a class="link-arrow" href="${devisHref(p)}">Décrire mon besoin${icon('arrow', 'icon icon--sm')}</a></div>`;
     })(),
   });
 
@@ -217,7 +217,7 @@ export function aPropos(data) {
       <p class="about__lead">C’est là que se tiennent les sessions inter-entreprises d’Île-de-France : salles équipées pour la théorie, supports et matériel pour les exercices pratiques.</p>
       <dl class="spec spec--wide">
         <div><dt>Adresse</dt><dd>${esc(o.adresse_centre)}</dd></div>
-        <div><dt>Téléphone</dt><dd>${(o.telephones || []).map((t) => `<span class="facts__line"><a href="tel:${t.e164}">${esc(t.affichage)}</a> <small>(${esc(t.label)})</small></span>`).join('')}</dd></div>
+        <div><dt>Téléphone</dt><dd>${phoneGroups(o.telephones || []).map((g) => `<span class="facts__line">${g.items.map((t) => `<a href="tel:${t.e164}">${esc(t.affichage)}</a>`).join(' · ')} <small>(${esc(g.label)})</small></span>`).join('')}</dd></div>
         <div><dt>Accès</dt><dd><a href="${esc(o.maps_url)}" target="_blank" rel="noopener">Itinéraire Google Maps<span class="sr-only"> (nouvel onglet)</span></a></dd></div>
       </dl>
     </div>

@@ -652,3 +652,7 @@
 .phones--dark .icon { color: var(--signal); }
 .phones--compact { margin: 0; gap: 0; }
 .phones--compact a { min-height: 40px; font-size: var(--fs-sm); color: var(--text); }
+/* Numéros regroupés : un libellé, plusieurs lignes */
+.phones li { display: grid; }
+.phones li > small { margin-top: 0.25rem; }
+.phones li > a { min-height: 40px; font-weight: 600; }
