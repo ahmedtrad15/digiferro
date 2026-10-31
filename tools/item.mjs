@@ -1,7 +1,13 @@
 // Pages formation et pack.
 import { esc, icon, todo, isMissing, show, priceHTML, dureeHTML, savingBadge, listHTML, jsonld, eur, tarifNote } from './util.mjs';
 import { breadcrumb, devisHref, groupsOf } from './partials.mjs';
-import { img, visual, formationCard, packTicket, faqHTML, faqLD, mapFigure, IMG_ALT } from './home.mjs';
+import { img, visual, formationCard, packTicket, faqHTML, faqLD, mapFigure, IMG_ALT, HERO_SIZES } from './home.mjs';
+import { photoTag } from './media.mjs';
+
+const gallery = (photos) =>
+  photos?.length > 1
+    ? `<div class="item-gallery item-gallery--n${Math.min(photos.length - 1, 3)}" role="group" aria-label="Photos">${photos.slice(1, 4).map((f) => `<figure>${photoTag(P, f, { sizes: '(min-width: 64em) 18rem, 50vw' })}</figure>`).join('')}</div>`
+    : '';
 
 const P = '../';
 const WIRES = `<svg class="page-hero__wires" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 18 Q360 58 720 18 T1440 18"/><path d="M0 42 H1440"/><path d="M180 34 V42 M360 38 V42 M540 34 V42 M900 34 V42 M1080 38 V42 M1260 34 V42"/></svg>`;
@@ -173,7 +179,7 @@ export function formationPage(data, f) {
           <a class="link-arrow" href="#programme">Voir le programme${icon('arrow', 'icon icon--sm')}</a>
         </div>
       </div>
-      ${visual(P, f, { tag: 'figure', cls: 'item-hero__media', w: 720, h: 480, eager: true, extra: `<span class="item-hero__badge">${illus(e.illustration || 'rails')}</span>` })}
+      ${visual(P, f, { tag: 'figure', cls: 'item-hero__media', w: 720, h: 480, eager: true, sizes: HERO_SIZES, extra: `<span class="item-hero__badge">${illus(e.illustration || 'rails')}</span>` })}
     </div>
     ${facts([
       ['clock', 'Durée', dureeHTML(f.duree)],
@@ -213,6 +219,7 @@ export function formationPage(data, f) {
     ${secHead('03', 'programme', 'Programme', e.programme_intro)}
     ${prog}
     ${f.programme_note ? `<p class="sec-note">${esc(f.programme_note)}</p>` : ''}
+    ${gallery(f.photos)}
   </section>
   <section class="item-sec" aria-labelledby="modalites">
     ${secHead('04', 'modalites', 'Modalités et lieux', e.modalites_intro)}
@@ -329,7 +336,7 @@ export function packPage(data, k) {
           <a class="link-arrow" href="#incluses">Formations incluses${icon('arrow', 'icon icon--sm')}</a>
         </div>
       </div>
-      ${visual(P, k, { tag: 'figure', cls: 'item-hero__media', w: 720, h: 480, eager: true, extra: `<span class="item-hero__badge">${illus(e.illustration || 'train')}</span>` })}
+      ${visual(P, k, { tag: 'figure', cls: 'item-hero__media', w: 720, h: 480, eager: true, sizes: HERO_SIZES, extra: `<span class="item-hero__badge">${illus(e.illustration || 'train')}</span>` })}
     </div>
     ${facts([
       ['clock', 'Durée totale', dureeHTML(k.duree)],

@@ -16,10 +16,11 @@ Les 26 pages sont en place :
 
 Les 17 fiches formation et pack sont entièrement remplies, avec les tarifs TTC fournis par le client (intra sur devis) et 9 à 13 questions fréquentes chacune. Une partie du contenu reste provisoire (durées, programmes détaillés…) : chaque fiche liste ses champs provisoires dans le champ `provisoire` de `data/formations.json`.
 
-`A-COMPLETER.md`, régénéré à chaque build, récapitule :
+Aucun encadré `[À COMPLÉTER]` n'apparaît plus sur le site. `A-COMPLETER.md`, régénéré à chaque build, récapitule :
 
-- les encadrés `[À COMPLÉTER: …]` qui restent sur les autres pages (mentions légales, CGV, coordonnées…) ;
-- les valeurs provisoires des fiches.
+- les points à confirmer avant la mise en ligne (hébergeur, éditeur, numéro de déclaration d'activité) ;
+- les valeurs provisoires des fiches ;
+- les photos utilisées.
 
 ## Arborescence
 
@@ -36,7 +37,26 @@ sitemap.xml, robots.txt           générés avec les pages
 
 ## Photos
 
-Déposez les photos dans `media/`, puis régénérez le site : elles remplacent automatiquement les visuels provisoires des fiches, des cartes, de la galerie du centre de Palaiseau et du logo Qualiopi. Les règles de nommage sont dans `media/README.md`. La vidéo du héros n'est pas concernée.
+Les photos du client sont dans `assets/img/`. Leur répartition se fait dans `data/formations.json` :
+
+- `photos` de chaque fiche : la 1re sert pour la carte et le héros, les suivantes pour la bande de photos sous le programme ;
+- `organisme.centre_photos` : galerie du centre de Palaiseau (page À propos) ;
+- `site.photos` : sections de l’accueil et méga-menu ;
+- `photos` (à la racine) : texte alternatif de chaque photo.
+
+Après un ajout ou un remplacement de photo, lancez l'optimisation, puis régénérez le site :
+
+```bash
+python3 tools/photos.py
+```
+
+```bash
+node tools/build.mjs
+```
+
+`tools/photos.py` (Pillow) crée des copies WebP de 600 px et pleine largeur dans `assets/photos/`, servies avec `srcset` : un mobile télécharge la petite version.
+
+Une photo déposée dans `media/` et nommée d'après une fiche est aussi reprise automatiquement (voir `media/README.md`). La vidéo du héros n'est pas concernée.
 
 ## Modifier le contenu
 

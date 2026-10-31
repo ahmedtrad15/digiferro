@@ -1,16 +1,20 @@
 # Crédits des visuels
 
-Aucun fichier de ce dossier ne provient d'une banque d'images. Les sites Pexels, Pixabay, Unsplash et Wikimedia n'étaient pas joignables depuis l'environnement de développement. Tous les visuels sont donc **provisoires** et ont été créés pour Digiferro. Ils sont à remplacer par de vraies photos.
-
-Aucune image de Digivoda n'est utilisée. Pour en reprendre, il faut l'accord écrit du client.
-
 ## Photos du client
 
-Les photos déposées dans `media/` (voir `media/README.md`) remplacent automatiquement les visuels provisoires ci-dessous. Notez ici leur origine et leurs droits d'utilisation.
+Les 59 photos de `assets/img/` (ajoutées le 31/10/2026), y compris celles du centre de Palaiseau et le logo Qualiopi officiel, ont été fournies par le client. Elles sont utilisées sur tout le site, dans des copies WebP générées par `tools/photos.py` (`assets/photos/`). Le client doit disposer des droits d'utilisation de chaque image ; notez ici leur origine (banque d'images, licence, photographe) :
 
-## Photos provisoires (SVG, 1200 × 800, ratio 3:2)
+| Photos | Origine et licence |
+|---|---|
+| `palaiseau_campus-*.jpg` | Centre Digivoda de Palaiseau, photos du client |
+| `logo-qualiopi.png` | Logo officiel Qualiopi, reproduit sans modification |
+| Autres photos de chantier et de formation | À préciser par le client |
 
-Chaque visuel porte la mention « Photo à fournir » dans le site. Pour la retirer, supprimez la règle `[data-ph]::after` dans `css/components.css`.
+Les visuels ci-dessous ont été créés pour Digiferro et ne servent plus que de secours si une photo manque.
+
+## Visuels de secours (SVG, 1200 × 800, ratio 3:2)
+
+Utilisés seulement quand une fiche n'a pas de photo ; ils portent alors la mention « Photo à fournir ». Aujourd'hui, aucune page ne les affiche.
 
 | Fichier | Photo attendue | Utilisé sur |
 |---|---|---|
@@ -41,7 +45,7 @@ Il s'agit d'une animation générée (voie de nuit, traverses et poteaux qui dé
 
 ## Logo Qualiopi
 
-`img/qualiopi-logo-a-fournir.svg` est un **emplacement**, pas le logo. Déposez le fichier officiel, sans le modifier, dans `media/` sous un nom contenant « qualiopi » : il est repris automatiquement au prochain build.
+Le logo officiel fourni par le client (`img/logo-qualiopi.png`) est utilisé tel quel dans le pied de page et la page À propos. `img/qualiopi-logo-a-fournir.svg` ne sert plus que d'emplacement de secours.
 
 ## Autres fichiers
 

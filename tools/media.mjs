@@ -109,3 +109,33 @@ export function qualiopiLogo() {
 }
 
 export const mediaReport = () => ({ total: files.length, unused: files.filter((f) => !used.has(f.src)).map((f) => f.src) });
+
+// Photos référencées dans data/formations.json (champ « photos » des fiches, galerie du centre…).
+// Le manifeste produit par tools/photos.py fournit des variantes WebP (600 px, pleine largeur) ;
+// sans manifeste, l'original est servi tel quel.
+const MANIFEST_FILE = join(ROOT, 'assets/photos/manifest.json');
+const manifest = existsSync(MANIFEST_FILE) ? JSON.parse(readFileSync(MANIFEST_FILE, 'utf8')) : {};
+const DATA = JSON.parse(readFileSync(join(ROOT, 'data/formations.json'), 'utf8'));
+export const altFor = (file) => DATA.photos?.[file] || '';
+
+const attr = (s) => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+const url = (s) => s.split('/').map(encodeURIComponent).join('/');
+
+export function photoTag(p, file, { alt, sizes = '100vw', eager = false, cls = '' } = {}) {
+  const m = manifest[file];
+  let src = p + url(file);
+  let srcset = '';
+  let w = 1200;
+  let h = 800;
+  if (m) {
+    const vs = Object.entries(m.variants).sort((a, b) => +a[0] - +b[0]);
+    src = p + vs[vs.length - 1][1];
+    srcset = vs.map(([vw, f]) => `${p}${f} ${vw}w`).join(', ');
+    ({ width: w, height: h } = m);
+  } else if (existsSync(join(ROOT, file))) {
+    ({ w, h } = imageSize(join(ROOT, file)));
+  }
+  return `<img${cls ? ` class="${cls}"` : ''} src="${src}"${srcset ? ` srcset="${srcset}" sizes="${sizes}"` : ''} alt="${attr(alt ?? altFor(file))}" width="${w}" height="${h}"${eager ? ' fetchpriority="high"' : ' loading="lazy"'} decoding="async">`;
+}
+
+export const photoSize = (file) => (manifest[file] ? { w: manifest[file].width, h: manifest[file].height } : existsSync(join(ROOT, file)) ? imageSize(join(ROOT, file)) : null);

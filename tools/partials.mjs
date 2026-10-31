@@ -1,16 +1,18 @@
 // En-tête, méga-menu, tiroir mobile, pied de page et sprite SVG.
 // Le balisage est identique sur toutes les pages : seul le préfixe de chemin (p) change.
 import { esc, icon, dureeHTML, savingBadge, priceHTML, todo } from './util.mjs';
-import { qualiopiLogo } from './media.mjs';
+import { qualiopiLogo, photoTag, photoSize } from './media.mjs';
 
 // Logo Qualiopi officiel (media/…qualiopi…) sinon emplacement réservé ; jamais redessiné
 export function qualiopiFigure(p, o, cls = 'qualiopi') {
+  // Le logo officiel porte déjà la mention des catégories : elle passe dans le texte alternatif
   const logo = qualiopiLogo();
   const src = logo ? logo.src : o.qualiopi.logo;
-  const h = logo ? Math.round((200 * logo.h) / logo.w) : 104;
-  return `<figure class="${cls}">
-        <img src="${p}${esc(src)}" alt="Logo Qualiopi, processus certifié, République française" width="200" height="${h}" loading="lazy" decoding="async">
-        <figcaption>${esc(o.qualiopi.mention)}</figcaption>
+  const dim = logo || photoSize(src) || { w: 200, h: 104 };
+  const official = !/a-fournir/.test(src);
+  return `<figure class="${cls}${official ? ' qualiopi--official' : ''}">
+        <img src="${p}${src.split('/').map(encodeURIComponent).join('/')}" alt="Qualiopi, processus certifié, République française. ${esc(o.qualiopi.mention)}" width="${dim.w}" height="${dim.h}" loading="lazy" decoding="async">
+        ${official ? '' : `<figcaption>${esc(o.qualiopi.mention)}</figcaption>`}
       </figure>`;
 }
 
@@ -86,7 +88,7 @@ export function header(ctx, data) {
     </div>
     <div class="mega__packs"><p class="mega__title" id="mg-packs">Packs</p><ul aria-labelledby="mg-packs">${packs.map((k) => megaPack(p, k)).join('')}</ul></div>
     <div class="mega__aside">
-      <img src="${p}assets/img/ph-agent-epi.svg" alt="Agent en équipement de protection au bord d'une voie ferrée" width="480" height="320" loading="lazy" decoding="async">
+      ${data.site.photos?.menu ? photoTag(p, data.site.photos.menu, { sizes: '16rem' }) : `<img src="${p}assets/img/ph-agent-epi.svg" alt="Agent en équipement de protection au bord d'une voie ferrée" width="480" height="320" loading="lazy" decoding="async">`}
       <p class="mega__aside-title">Une équipe entière à habiliter ?</p>
       <p>Session en centre ou sur votre site : décrivez votre besoin, Digivoda vous répond avec un devis.</p>
       <a class="btn btn--signal btn--sm" href="${devisHref(p)}">Demander un devis</a>

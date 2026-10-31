@@ -22,13 +22,13 @@
     "email": "contact@digivoda.com",
     "adresse_siege": "5 rue Jules Barbier, 92290 Châtenay-Malabry",
     "adresse_centre": "4 allée des Garays, 91120 Palaiseau",
-    "forme_juridique": "[À COMPLÉTER: forme juridique et capital]",
-    "rcs": "[À COMPLÉTER: RCS]",
-    "siret": "[À COMPLÉTER: SIRET]",
+    "forme_juridique": "SAS au capital de 10 000 €",
+    "rcs": "RCS Nanterre 488 347 444",
+    "siret": "488 347 444 00033",
     "numero_declaration_activite": "[À COMPLÉTER: numéro de déclaration d'activité]",
     "tva": "[À COMPLÉTER: régime de TVA]",
     "hebergeur": "[À COMPLÉTER: hébergeur du site]",
-    "directeur_publication": "[À COMPLÉTER: directeur de la publication]",
+    "directeur_publication": "Le Président de DIGIVODA",
     "qualiopi": {
       "mention": "La certification qualité a été délivrée au titre des catégories d'actions suivantes : actions de formation ; actions de formation par apprentissage.",
       "categories": [
@@ -36,8 +36,8 @@
         "Actions de formation par apprentissage"
       ],
       "certificateur": "[À COMPLÉTER: organisme certificateur]",
-      "logo": "assets/img/qualiopi-logo-a-fournir.svg",
-      "logo_statut": "à fournir par le client (logo officiel, non modifié)",
+      "logo": "assets/img/logo-qualiopi.png",
+      "logo_statut": "logo officiel fourni par le client",
       "mention_statut": "index_recherche"
     },
     "sources": {
@@ -55,13 +55,24 @@
     "telephone_e164": "+33189705570",
     "telephone_statut": "index_recherche",
     "a_verifier": [
-      "Deux numéros publiés : 01 89 70 55 70 (page contact, mentions légales) et 01 87 65 34 43 (autres pages). Lequel afficher ?",
-      "Liste des autres centres Digivoda à placer sur la carte (un campus à Noisy-le-Sec est cité).",
-      "Identifiants légaux (SIREN/SIRET, NDA, UAI) à recopier depuis la page Mentions légales en ligne.",
-      "Référent handicap : coordonnées publiées sur la page « Référent handicap & Registre public d'accessibilité »."
+      "Éditeur du site : DIGIVODA, par défaut. À changer si Digiferro est édité par une autre entité.",
+      "Hébergeur : coordonnées à ajouter dans les mentions légales une fois l'hébergement choisi (obligation LCEN).",
+      "Numéro de déclaration d'activité (DRIEETS) à ajouter s'il doit apparaître.",
+      "Deux numéros publiés : 01 89 70 55 70 (utilisé) et 01 87 65 34 43."
     ],
     "maps_url": "https://maps.app.goo.gl/EfiFFjgDfot81GYq5",
-    "maps_embed": "https://www.google.com/maps?q=4+all%C3%A9e+des+Garays,+91120+Palaiseau&output=embed"
+    "maps_embed": "https://www.google.com/maps?q=4+all%C3%A9e+des+Garays,+91120+Palaiseau&output=embed",
+    "centre_photos": [
+      "assets/img/palaiseau_campus-7.jpg",
+      "assets/img/palaiseau_campus-12.jpg",
+      "assets/img/palaiseau_campus-13 (1).jpg",
+      "assets/img/palaiseau_campus-2.jpg",
+      "assets/img/palaiseau_campus-6.jpg",
+      "assets/img/palaiseau_campus-8.jpg"
+    ],
+    "siren": "488 347 444",
+    "declaration_activite": "Organisme de formation enregistré auprès de la DRIEETS Île-de-France. Cet enregistrement ne vaut pas agrément de l'État.",
+    "legal_statut": "SIREN, SIRET, RCS, forme et capital : annuaire-entreprises.data.gouv.fr et mentions légales de digivoda.com (31/10/2026)."
   },
   "themes": [
     {
@@ -305,7 +316,12 @@
         "programme",
         "public"
       ],
-      "tarif_statut": "confirme_client"
+      "tarif_statut": "confirme_client",
+      "photos": [
+        "assets/img/secufer.jpg",
+        "assets/img/formation-Sécurité ferroviaire.jpg",
+        "assets/img/Sécurité-ferroviaire.jpg"
+      ]
     },
     {
       "id": "recyclage-secufer",
@@ -482,7 +498,12 @@
         "modalites.dates",
         "programme"
       ],
-      "tarif_statut": "confirme_client"
+      "tarif_statut": "confirme_client",
+      "photos": [
+        "assets/img/recyclage-secufer.jpg",
+        "assets/img/recyclage-secufer-digivoda.jpg",
+        "assets/img/formation-recyclage-secufer-digivoda.jpg"
+      ]
     },
     {
       "id": "secufer-e-learning",
@@ -672,7 +693,11 @@
         "public",
         "validite"
       ],
-      "tarif_statut": "confirme_client"
+      "tarif_statut": "confirme_client",
+      "photos": [
+        "assets/img/formation-secufer-elearning.jpg",
+        "assets/img/securite-ferroviaire.jpg"
+      ]
     },
     {
       "id": "tcs-m",
@@ -870,7 +895,13 @@
       "provisoire": [
         "modalites.dates"
       ],
-      "tarif_statut": "confirme_client"
+      "tarif_statut": "confirme_client",
+      "photos": [
+        "assets/img/formation-tes-m-ferroviaire.jpg",
+        "assets/img/tes-m-certification.jpg",
+        "assets/img/tes-m-formation.jpg",
+        "assets/img/surveillance-chantier-ferroviaire-annonceur-asp.jpg"
+      ]
     },
     {
       "id": "recyclage-tcs-m",
@@ -1043,7 +1074,12 @@
         "prerequis",
         "programme"
       ],
-      "tarif_statut": "confirme_client"
+      "tarif_statut": "confirme_client",
+      "photos": [
+        "assets/img/evaluation-annuelle-tes-m-annonceur-sentinelle-asp.jpg",
+        "assets/img/formation-tes-m-annonceur-sentinelle.jpg",
+        "assets/img/agent-tcs-m.jpg"
+      ]
     },
     {
       "id": "tsae-prestations-connexes",
@@ -1230,7 +1266,12 @@
         "public",
         "validite"
       ],
-      "tarif_statut": "confirme_client"
+      "tarif_statut": "confirme_client",
+      "photos": [
+        "assets/img/maintenance-voie-signalisation-securite-ferroviaire.jpg",
+        "assets/img/equipements-protection-individuelle-ferroviaire.jpg",
+        "assets/img/habilitation-electrique-h0b0-environnement-ferroviaire.jpg"
+      ]
     },
     {
       "id": "risques-electriques-c0",
@@ -1423,7 +1464,12 @@
         "public",
         "validite"
       ],
-      "tarif_statut": "confirme_client"
+      "tarif_statut": "confirme_client",
+      "photos": [
+        "assets/img/formation-h0b0-ferroviaire.jpg",
+        "assets/img/formation-Risques-Électriques-C0.jpg",
+        "assets/img/formation-risque-électrique-c0-digivoda.jpg"
+      ]
     },
     {
       "id": "rso",
@@ -1604,7 +1650,12 @@
         "public",
         "validite"
       ],
-      "tarif_statut": "confirme_client"
+      "tarif_statut": "confirme_client",
+      "photos": [
+        "assets/img/formation-rso-representant-securite-operationnelle.jpg",
+        "assets/img/supervision-chantier-ferroviaire-rso.jpg",
+        "assets/img/chef-chantier-infrastructure-ferroviaire-tes-c.jpg"
+      ]
     },
     {
       "id": "aipr",
@@ -1787,7 +1838,12 @@
         "public",
         "validite"
       ],
-      "tarif_statut": "confirme_client"
+      "tarif_statut": "confirme_client",
+      "photos": [
+        "assets/img/autorisation-intervention-proximite-reseaux-ferroviaire.jpg",
+        "assets/img/formation-aipr-ferroviaire.jpg",
+        "assets/img/formation-aipr-operateur-ferroviaire.jpg"
+      ]
     },
     {
       "id": "tes-f",
@@ -1958,7 +2014,12 @@
         "public",
         "validite"
       ],
-      "tarif_statut": "confirme_client"
+      "tarif_statut": "confirme_client",
+      "photos": [
+        "assets/img/intervention-aiguillage-signalisation-ferroviaire.jpg",
+        "assets/img/maintenance-signalisation-voie-ferree-tes-d.jpg",
+        "assets/img/intervention-signalisation-ferroviaire-tes-d.jpg"
+      ]
     },
     {
       "id": "agent-s9a3",
@@ -2131,7 +2192,12 @@
         "public",
         "validite"
       ],
-      "tarif_statut": "confirme_client"
+      "tarif_statut": "confirme_client",
+      "photos": [
+        "assets/img/agent-securite-personnel-ferroviaire-s9a3.jpg",
+        "assets/img/annonceur-sentinelle-asp-chantier-s9a3.jpg",
+        "assets/img/coordination-travaux-securite-ferroviaire-rzt.jpg"
+      ]
     },
     {
       "id": "percheur-catenaire",
@@ -2306,7 +2372,12 @@
         "public",
         "validite"
       ],
-      "tarif_statut": "confirme_client"
+      "tarif_statut": "confirme_client",
+      "photos": [
+        "assets/img/percheur-aide-monteur-catenaire-ch1-cb1.jpg",
+        "assets/img/ravaux-catenaire-ferroviaire-ch1-cb1.jpg",
+        "assets/img/technicien-catenaire-habilitation-kh3.jpg"
+      ]
     }
   ],
   "packs": [
@@ -2452,6 +2523,9 @@
         "objectifs",
         "parcours_note",
         "prerequis"
+      ],
+      "photos": [
+        "assets/img/formation-tes-c-direction-travaux-ferroviaires.jpg"
       ]
     },
     {
@@ -2595,6 +2669,9 @@
         "modalites.dates",
         "parcours_note",
         "prerequis"
+      ],
+      "photos": [
+        "assets/img/formation-tes-d-composants-critiques-voie-signalisation-digivoda.jpg"
       ]
     },
     {
@@ -2739,6 +2816,9 @@
         "objectifs",
         "parcours_note",
         "prerequis"
+      ],
+      "photos": [
+        "assets/img/chef-chantier-infrastructure-ferroviaire-tes-c.jpg"
       ]
     },
     {
@@ -2883,6 +2963,9 @@
         "objectifs",
         "parcours_note",
         "prerequis"
+      ],
+      "photos": [
+        "assets/img/electricien-ferroviaire-haute-tension-kh2.jpg"
       ]
     },
     {
@@ -3018,7 +3101,10 @@
             "a": "OPCO ou plan de développement des compétences pour un salarié ; France Travail selon votre éligibilité pour un demandeur d'emploi."
           }
         ]
-      }
+      },
+      "photos": [
+        "assets/img/pack-catenaire-digivoda.jpg"
+      ]
     }
   ],
   "site": {
@@ -3031,6 +3117,62 @@
       "Centres Digivoda partout en France",
       "Sur site client en intra"
     ],
-    "lieux_statut": "confirme_client"
+    "lieux_statut": "confirme_client",
+    "photos": {
+      "pourquoi": "assets/img/agent-securite-personnel-asp-ferroviaire.jpg",
+      "centre": "assets/img/palaiseau_campus-7.jpg",
+      "intra": "assets/img/formation-tes-c-direction-travaux-ferroviaires.jpg",
+      "distance": "assets/img/securite-ferroviaire.jpg",
+      "menu": "assets/img/tes-m-certification.jpg"
+    }
+  },
+  "photos": {
+    "assets/img/secufer.jpg": "Agent en gilet orange avec une tablette au milieu des voies d'un faisceau ferroviaire",
+    "assets/img/formation-Sécurité ferroviaire.jpg": "Deux agents en casque et gilet haute visibilité devant une locomotive orange",
+    "assets/img/Sécurité-ferroviaire.jpg": "Agente en casque et gilet haute visibilité consultant un plan au bord des voies",
+    "assets/img/recyclage-secufer.jpg": "Agent en casque blanc accroupi près d'une locomotive, au bord de la voie",
+    "assets/img/recyclage-secufer-digivoda.jpg": "Agent en gilet orange marchant sur une voie ferrée bordée de végétation",
+    "assets/img/formation-recyclage-secufer-digivoda.jpg": "Train à grande vitesse circulant sur une voie, vu d'en haut",
+    "assets/img/formation-secufer-elearning.jpg": "Deux agents en gilet haute visibilité contrôlant la voie sous un viaduc",
+    "assets/img/securite-ferroviaire.jpg": "Vue aérienne d'un faisceau de voies au coucher du soleil, avec un train en circulation",
+    "assets/img/formation-tes-m-ferroviaire.jpg": "Agent en tenue orange haute visibilité marchant sur la voie entre deux rames de wagons",
+    "assets/img/tes-m-certification.jpg": "Deux agents en tenue orange haute visibilité sur les voies d'un faisceau ferroviaire",
+    "assets/img/tes-m-formation.jpg": "Agent en tenue orange haute visibilité avec une radio, au bord d'un train de marchandises",
+    "assets/img/surveillance-chantier-ferroviaire-annonceur-asp.jpg": "Agent en casque jaune remplissant une fiche au bord d'un train de wagons",
+    "assets/img/evaluation-annuelle-tes-m-annonceur-sentinelle-asp.jpg": "Agent en gilet jaune avec un carnet, à côté d'un wagon-citerne sur la voie",
+    "assets/img/formation-tes-m-annonceur-sentinelle.jpg": "Agent en gilet orange sur un quai au passage d'une rame",
+    "assets/img/agent-tcs-m.jpg": "Agent en gilet orange observant l'arrivée de trains en gare",
+    "assets/img/maintenance-voie-signalisation-securite-ferroviaire.jpg": "Deux agents en casque et gilet haute visibilité sur un chantier de voie ferrée",
+    "assets/img/equipements-protection-individuelle-ferroviaire.jpg": "Mains gantées posant des outils sur un rail lors de travaux de voie",
+    "assets/img/habilitation-electrique-h0b0-environnement-ferroviaire.jpg": "Agent en gilet haute visibilité marchant le long des voies devant des locomotives",
+    "assets/img/formation-h0b0-ferroviaire.jpg": "Agents en équipement de protection dans un atelier de maintenance de rames",
+    "assets/img/formation-Risques-Électriques-C0.jpg": "Train de voyageurs sur une ligne électrifiée, vu d'en haut",
+    "assets/img/formation-risque-électrique-c0-digivoda.jpg": "Faisceau de voies ferrées électrifiées",
+    "assets/img/formation-rso-representant-securite-operationnelle.jpg": "Chef d'équipe en casque jaune prenant des notes au bord d'un train de wagons",
+    "assets/img/supervision-chantier-ferroviaire-rso.jpg": "Trains à grande vitesse en gare sous une verrière",
+    "assets/img/chef-chantier-infrastructure-ferroviaire-tes-c.jpg": "Agent en gilet orange sur une voie ferrée au pied d'une passerelle métallique",
+    "assets/img/autorisation-intervention-proximite-reseaux-ferroviaire.jpg": "Agent en gilet haute visibilité parlant à la radio au bord des voies",
+    "assets/img/formation-aipr-ferroviaire.jpg": "Deux agents en casque et gilet contrôlant la voie avec un appareil de mesure",
+    "assets/img/formation-aipr-operateur-ferroviaire.jpg": "Agente en gilet jaune près d'un train de marchandises",
+    "assets/img/intervention-aiguillage-signalisation-ferroviaire.jpg": "Barrière et croix de Saint-André d'un passage à niveau",
+    "assets/img/maintenance-signalisation-voie-ferree-tes-d.jpg": "Signalisation d'un passage à niveau avec croix de Saint-André",
+    "assets/img/intervention-signalisation-ferroviaire-tes-d.jpg": "Feu de signalisation ferroviaire au rouge sous la caténaire",
+    "assets/img/agent-securite-personnel-ferroviaire-s9a3.jpg": "Agent en casque blanc parlant à la radio sur un chantier ferroviaire",
+    "assets/img/annonceur-sentinelle-asp-chantier-s9a3.jpg": "Deux agents en gilet orange marchant entre les voies sous un portique",
+    "assets/img/coordination-travaux-securite-ferroviaire-rzt.jpg": "Deux agents en casque échangeant sur un chantier",
+    "assets/img/percheur-aide-monteur-catenaire-ch1-cb1.jpg": "Monteur en casque rouge intervenant sur un support de ligne aérienne",
+    "assets/img/ravaux-catenaire-ferroviaire-ch1-cb1.jpg": "Monteur intervenant en hauteur sur un poteau de ligne aérienne",
+    "assets/img/technicien-catenaire-habilitation-kh3.jpg": "Isolateurs et fils d'une ligne aérienne vus du sol",
+    "assets/img/formation-tes-c-direction-travaux-ferroviaires.jpg": "Équipe de chantier sur une voie ferrée en travaux",
+    "assets/img/formation-tes-d-composants-critiques-voie-signalisation-digivoda.jpg": "Équipe en gilets orange sur un chantier ferroviaire sous la caténaire",
+    "assets/img/electricien-ferroviaire-haute-tension-kh2.jpg": "Silhouettes de monteurs caténaire au travail au coucher du soleil",
+    "assets/img/pack-catenaire-digivoda.jpg": "Agent en tenue orange et casque blanc observant la caténaire au passage d'un train",
+    "assets/img/agent-securite-personnel-asp-ferroviaire.jpg": "Agent en casque bleu et gilet orange au bord de la voie",
+    "assets/img/palaiseau_campus-7.jpg": "Salle de formation équipée de tables et d'un écran, au centre de Palaiseau",
+    "assets/img/palaiseau_campus-12.jpg": "Espace d'accueil vitré du centre de Palaiseau",
+    "assets/img/palaiseau_campus-13 (1).jpg": "Salle de cours du centre de Palaiseau",
+    "assets/img/palaiseau_campus-2.jpg": "Couloir du centre de Palaiseau avec mur végétal et salles vitrées",
+    "assets/img/palaiseau_campus-6.jpg": "Accueil du centre de formation de Palaiseau",
+    "assets/img/palaiseau_campus-8.jpg": "Couloir desservant les salles de formation du centre de Palaiseau"
   }
 }

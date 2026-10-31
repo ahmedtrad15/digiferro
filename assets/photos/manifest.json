@@ -1,0 +1,465 @@
+{
+ "assets/img/Sécurité-ferroviaire.jpg": {
+  "width": 1000,
+  "height": 667,
+  "variants": {
+   "600": "assets/photos/securite-ferroviaire-600.webp",
+   "1000": "assets/photos/securite-ferroviaire-1000.webp"
+  }
+ },
+ "assets/img/agent-securite-personnel-asp-ferroviaire.jpg": {
+  "width": 1000,
+  "height": 1500,
+  "variants": {
+   "600": "assets/photos/agent-securite-personnel-asp-ferroviaire-600.webp",
+   "1000": "assets/photos/agent-securite-personnel-asp-ferroviaire-1000.webp"
+  }
+ },
+ "assets/img/agent-securite-personnel-ferroviaire-s9a3.jpg": {
+  "width": 800,
+  "height": 533,
+  "variants": {
+   "600": "assets/photos/agent-securite-personnel-ferroviaire-s9a3-600.webp",
+   "800": "assets/photos/agent-securite-personnel-ferroviaire-s9a3-800.webp"
+  }
+ },
+ "assets/img/agent-tcs-m.jpg": {
+  "width": 1000,
+  "height": 668,
+  "variants": {
+   "600": "assets/photos/agent-tcs-m-600.webp",
+   "1000": "assets/photos/agent-tcs-m-1000.webp"
+  }
+ },
+ "assets/img/annonceur-sentinelle-asp-chantier-s9a3.jpg": {
+  "width": 800,
+  "height": 533,
+  "variants": {
+   "600": "assets/photos/annonceur-sentinelle-asp-chantier-s9a3-600.webp",
+   "800": "assets/photos/annonceur-sentinelle-asp-chantier-s9a3-800.webp"
+  }
+ },
+ "assets/img/autorisation-intervention-proximite-reseaux-ferroviaire.jpg": {
+  "width": 1000,
+  "height": 667,
+  "variants": {
+   "600": "assets/photos/autorisation-intervention-proximite-reseaux-ferroviaire-600.webp",
+   "1000": "assets/photos/autorisation-intervention-proximite-reseaux-ferroviaire-1000.webp"
+  }
+ },
+ "assets/img/chef-chantier-infrastructure-ferroviaire-tes-c.jpg": {
+  "width": 1000,
+  "height": 1250,
+  "variants": {
+   "600": "assets/photos/chef-chantier-infrastructure-ferroviaire-tes-c-600.webp",
+   "1000": "assets/photos/chef-chantier-infrastructure-ferroviaire-tes-c-1000.webp"
+  }
+ },
+ "assets/img/coordination-travaux-securite-ferroviaire-rzt.jpg": {
+  "width": 800,
+  "height": 1200,
+  "variants": {
+   "600": "assets/photos/coordination-travaux-securite-ferroviaire-rzt-600.webp",
+   "800": "assets/photos/coordination-travaux-securite-ferroviaire-rzt-800.webp"
+  }
+ },
+ "assets/img/electricien-ferroviaire-haute-tension-kh2.jpg": {
+  "width": 1000,
+  "height": 669,
+  "variants": {
+   "600": "assets/photos/electricien-ferroviaire-haute-tension-kh2-600.webp",
+   "1000": "assets/photos/electricien-ferroviaire-haute-tension-kh2-1000.webp"
+  }
+ },
+ "assets/img/equipements-protection-individuelle-ferroviaire.jpg": {
+  "width": 1000,
+  "height": 664,
+  "variants": {
+   "600": "assets/photos/equipements-protection-individuelle-ferroviaire-600.webp",
+   "1000": "assets/photos/equipements-protection-individuelle-ferroviaire-1000.webp"
+  }
+ },
+ "assets/img/evaluation-annuelle-tes-m-annonceur-sentinelle-asp.jpg": {
+  "width": 1000,
+  "height": 667,
+  "variants": {
+   "600": "assets/photos/evaluation-annuelle-tes-m-annonceur-sentinelle-asp-600.webp",
+   "1000": "assets/photos/evaluation-annuelle-tes-m-annonceur-sentinelle-asp-1000.webp"
+  }
+ },
+ "assets/img/formation-Risques-Électriques-C0.jpg": {
+  "width": 800,
+  "height": 1168,
+  "variants": {
+   "600": "assets/photos/formation-risques-electriques-c0-600.webp",
+   "800": "assets/photos/formation-risques-electriques-c0-800.webp"
+  }
+ },
+ "assets/img/formation-Sécurité ferroviaire.jpg": {
+  "width": 1000,
+  "height": 667,
+  "variants": {
+   "600": "assets/photos/formation-securite-ferroviaire-600.webp",
+   "1000": "assets/photos/formation-securite-ferroviaire-1000.webp"
+  }
+ },
+ "assets/img/formation-aipr-ferroviaire.jpg": {
+  "width": 1000,
+  "height": 575,
+  "variants": {
+   "600": "assets/photos/formation-aipr-ferroviaire-600.webp",
+   "1000": "assets/photos/formation-aipr-ferroviaire-1000.webp"
+  }
+ },
+ "assets/img/formation-aipr-operateur-ferroviaire.jpg": {
+  "width": 1000,
+  "height": 667,
+  "variants": {
+   "600": "assets/photos/formation-aipr-operateur-ferroviaire-600.webp",
+   "1000": "assets/photos/formation-aipr-operateur-ferroviaire-1000.webp"
+  }
+ },
+ "assets/img/formation-h0b0-ferroviaire.jpg": {
+  "width": 1000,
+  "height": 667,
+  "variants": {
+   "600": "assets/photos/formation-h0b0-ferroviaire-600.webp",
+   "1000": "assets/photos/formation-h0b0-ferroviaire-1000.webp"
+  }
+ },
+ "assets/img/formation-pemp-travaux-hauteur-ferroviaire.jpg": {
+  "width": 1000,
+  "height": 667,
+  "variants": {
+   "600": "assets/photos/formation-pemp-travaux-hauteur-ferroviaire-600.webp",
+   "1000": "assets/photos/formation-pemp-travaux-hauteur-ferroviaire-1000.webp"
+  }
+ },
+ "assets/img/formation-recyclage-secufer-digivoda.jpg": {
+  "width": 1000,
+  "height": 669,
+  "variants": {
+   "600": "assets/photos/formation-recyclage-secufer-digivoda-600.webp",
+   "1000": "assets/photos/formation-recyclage-secufer-digivoda-1000.webp"
+  }
+ },
+ "assets/img/formation-risque-électrique-c0-digivoda.jpg": {
+  "width": 1000,
+  "height": 1250,
+  "variants": {
+   "600": "assets/photos/formation-risque-electrique-c0-digivoda-600.webp",
+   "1000": "assets/photos/formation-risque-electrique-c0-digivoda-1000.webp"
+  }
+ },
+ "assets/img/formation-rso-representant-securite-operationnelle.jpg": {
+  "width": 1000,
+  "height": 667,
+  "variants": {
+   "600": "assets/photos/formation-rso-representant-securite-operationnelle-600.webp",
+   "1000": "assets/photos/formation-rso-representant-securite-operationnelle-1000.webp"
+  }
+ },
+ "assets/img/formation-secufer-elearning.jpg": {
+  "width": 1000,
+  "height": 667,
+  "variants": {
+   "600": "assets/photos/formation-secufer-elearning-600.webp",
+   "1000": "assets/photos/formation-secufer-elearning-1000.webp"
+  }
+ },
+ "assets/img/formation-tes-c-direction-travaux-ferroviaires.jpg": {
+  "width": 800,
+  "height": 1200,
+  "variants": {
+   "600": "assets/photos/formation-tes-c-direction-travaux-ferroviaires-600.webp",
+   "800": "assets/photos/formation-tes-c-direction-travaux-ferroviaires-800.webp"
+  }
+ },
+ "assets/img/formation-tes-d-composants-critiques-voie-signalisation-digivoda.jpg": {
+  "width": 800,
+  "height": 533,
+  "variants": {
+   "600": "assets/photos/formation-tes-d-composants-critiques-voie-signalisation-digivoda-600.webp",
+   "800": "assets/photos/formation-tes-d-composants-critiques-voie-signalisation-digivoda-800.webp"
+  }
+ },
+ "assets/img/formation-tes-m-annonceur-sentinelle.jpg": {
+  "width": 1000,
+  "height": 750,
+  "variants": {
+   "600": "assets/photos/formation-tes-m-annonceur-sentinelle-600.webp",
+   "1000": "assets/photos/formation-tes-m-annonceur-sentinelle-1000.webp"
+  }
+ },
+ "assets/img/formation-tes-m-ferroviaire.jpg": {
+  "width": 1000,
+  "height": 666,
+  "variants": {
+   "600": "assets/photos/formation-tes-m-ferroviaire-600.webp",
+   "1000": "assets/photos/formation-tes-m-ferroviaire-1000.webp"
+  }
+ },
+ "assets/img/habilitation-electrique-h0b0-environnement-ferroviaire.jpg": {
+  "width": 1000,
+  "height": 667,
+  "variants": {
+   "600": "assets/photos/habilitation-electrique-h0b0-environnement-ferroviaire-600.webp",
+   "1000": "assets/photos/habilitation-electrique-h0b0-environnement-ferroviaire-1000.webp"
+  }
+ },
+ "assets/img/habilitation-electrique-kh0v-kh3-ferroviaire.jpg": {
+  "width": 1000,
+  "height": 667,
+  "variants": {
+   "600": "assets/photos/habilitation-electrique-kh0v-kh3-ferroviaire-600.webp",
+   "1000": "assets/photos/habilitation-electrique-kh0v-kh3-ferroviaire-1000.webp"
+  }
+ },
+ "assets/img/intervention-aiguillage-signalisation-ferroviaire.jpg": {
+  "width": 800,
+  "height": 1200,
+  "variants": {
+   "600": "assets/photos/intervention-aiguillage-signalisation-ferroviaire-600.webp",
+   "800": "assets/photos/intervention-aiguillage-signalisation-ferroviaire-800.webp"
+  }
+ },
+ "assets/img/intervention-ligne-aerienne-catenaire-ferroviaire.jpg": {
+  "width": 1000,
+  "height": 667,
+  "variants": {
+   "600": "assets/photos/intervention-ligne-aerienne-catenaire-ferroviaire-600.webp",
+   "1000": "assets/photos/intervention-ligne-aerienne-catenaire-ferroviaire-1000.webp"
+  }
+ },
+ "assets/img/intervention-signalisation-ferroviaire-tes-d.jpg": {
+  "width": 1000,
+  "height": 1500,
+  "variants": {
+   "600": "assets/photos/intervention-signalisation-ferroviaire-tes-d-600.webp",
+   "1000": "assets/photos/intervention-signalisation-ferroviaire-tes-d-1000.webp"
+  }
+ },
+ "assets/img/logo-qualiopi.png": {
+  "width": 643,
+  "height": 458,
+  "variants": {
+   "600": "assets/photos/logo-qualiopi-600.webp",
+   "643": "assets/photos/logo-qualiopi-643.webp"
+  }
+ },
+ "assets/img/maintenance-signalisation-voie-ferree-tes-d.jpg": {
+  "width": 800,
+  "height": 1200,
+  "variants": {
+   "600": "assets/photos/maintenance-signalisation-voie-ferree-tes-d-600.webp",
+   "800": "assets/photos/maintenance-signalisation-voie-ferree-tes-d-800.webp"
+  }
+ },
+ "assets/img/maintenance-voie-signalisation-securite-ferroviaire.jpg": {
+  "width": 1000,
+  "height": 667,
+  "variants": {
+   "600": "assets/photos/maintenance-voie-signalisation-securite-ferroviaire-600.webp",
+   "1000": "assets/photos/maintenance-voie-signalisation-securite-ferroviaire-1000.webp"
+  }
+ },
+ "assets/img/pack-catenaire-digivoda.jpg": {
+  "width": 1000,
+  "height": 667,
+  "variants": {
+   "600": "assets/photos/pack-catenaire-digivoda-600.webp",
+   "1000": "assets/photos/pack-catenaire-digivoda-1000.webp"
+  }
+ },
+ "assets/img/palaiseau_campus-1.jpg": {
+  "width": 600,
+  "height": 800,
+  "variants": {
+   "600": "assets/photos/palaiseau-campus-1-600.webp"
+  }
+ },
+ "assets/img/palaiseau_campus-10.jpg": {
+  "width": 600,
+  "height": 800,
+  "variants": {
+   "600": "assets/photos/palaiseau-campus-10-600.webp"
+  }
+ },
+ "assets/img/palaiseau_campus-12.jpg": {
+  "width": 800,
+  "height": 600,
+  "variants": {
+   "600": "assets/photos/palaiseau-campus-12-600.webp",
+   "800": "assets/photos/palaiseau-campus-12-800.webp"
+  }
+ },
+ "assets/img/palaiseau_campus-13 (1).jpg": {
+  "width": 600,
+  "height": 800,
+  "variants": {
+   "600": "assets/photos/palaiseau-campus-13-1-600.webp"
+  }
+ },
+ "assets/img/palaiseau_campus-14.jpg": {
+  "width": 600,
+  "height": 800,
+  "variants": {
+   "600": "assets/photos/palaiseau-campus-14-600.webp"
+  }
+ },
+ "assets/img/palaiseau_campus-2 (1).jpg": {
+  "width": 600,
+  "height": 800,
+  "variants": {
+   "600": "assets/photos/palaiseau-campus-2-1-600.webp"
+  }
+ },
+ "assets/img/palaiseau_campus-2.jpg": {
+  "width": 600,
+  "height": 800,
+  "variants": {
+   "600": "assets/photos/palaiseau-campus-2-600.webp"
+  }
+ },
+ "assets/img/palaiseau_campus-4.jpg": {
+  "width": 600,
+  "height": 800,
+  "variants": {
+   "600": "assets/photos/palaiseau-campus-4-600.webp"
+  }
+ },
+ "assets/img/palaiseau_campus-6.jpg": {
+  "width": 600,
+  "height": 800,
+  "variants": {
+   "600": "assets/photos/palaiseau-campus-6-600.webp"
+  }
+ },
+ "assets/img/palaiseau_campus-7 (1).jpg": {
+  "width": 800,
+  "height": 600,
+  "variants": {
+   "600": "assets/photos/palaiseau-campus-7-1-600.webp",
+   "800": "assets/photos/palaiseau-campus-7-1-800.webp"
+  }
+ },
+ "assets/img/palaiseau_campus-7.jpg": {
+  "width": 800,
+  "height": 600,
+  "variants": {
+   "600": "assets/photos/palaiseau-campus-7-600.webp",
+   "800": "assets/photos/palaiseau-campus-7-800.webp"
+  }
+ },
+ "assets/img/palaiseau_campus-8.jpg": {
+  "width": 600,
+  "height": 800,
+  "variants": {
+   "600": "assets/photos/palaiseau-campus-8-600.webp"
+  }
+ },
+ "assets/img/percheur-aide-monteur-catenaire-ch1-cb1.jpg": {
+  "width": 1000,
+  "height": 667,
+  "variants": {
+   "600": "assets/photos/percheur-aide-monteur-catenaire-ch1-cb1-600.webp",
+   "1000": "assets/photos/percheur-aide-monteur-catenaire-ch1-cb1-1000.webp"
+  }
+ },
+ "assets/img/ravaux-catenaire-ferroviaire-ch1-cb1.jpg": {
+  "width": 1000,
+  "height": 667,
+  "variants": {
+   "600": "assets/photos/ravaux-catenaire-ferroviaire-ch1-cb1-600.webp",
+   "1000": "assets/photos/ravaux-catenaire-ferroviaire-ch1-cb1-1000.webp"
+  }
+ },
+ "assets/img/recyclage-secrutié-ferroviaires.jpg": {
+  "width": 1000,
+  "height": 667,
+  "variants": {
+   "600": "assets/photos/recyclage-secrutie-ferroviaires-600.webp",
+   "1000": "assets/photos/recyclage-secrutie-ferroviaires-1000.webp"
+  }
+ },
+ "assets/img/recyclage-secufer-digivoda.jpg": {
+  "width": 1000,
+  "height": 667,
+  "variants": {
+   "600": "assets/photos/recyclage-secufer-digivoda-600.webp",
+   "1000": "assets/photos/recyclage-secufer-digivoda-1000.webp"
+  }
+ },
+ "assets/img/recyclage-secufer.jpg": {
+  "width": 1000,
+  "height": 667,
+  "variants": {
+   "600": "assets/photos/recyclage-secufer-600.webp",
+   "1000": "assets/photos/recyclage-secufer-1000.webp"
+  }
+ },
+ "assets/img/secufer.jpg": {
+  "width": 1000,
+  "height": 667,
+  "variants": {
+   "600": "assets/photos/secufer-600.webp",
+   "1000": "assets/photos/secufer-1000.webp"
+  }
+ },
+ "assets/img/securite-ferroviaire.jpg": {
+  "width": 1000,
+  "height": 750,
+  "variants": {
+   "600": "assets/photos/securite-ferroviaire-600.webp",
+   "1000": "assets/photos/securite-ferroviaire-1000.webp"
+  }
+ },
+ "assets/img/supervision-chantier-ferroviaire-rso.jpg": {
+  "width": 1000,
+  "height": 667,
+  "variants": {
+   "600": "assets/photos/supervision-chantier-ferroviaire-rso-600.webp",
+   "1000": "assets/photos/supervision-chantier-ferroviaire-rso-1000.webp"
+  }
+ },
+ "assets/img/surveillance-chantier-ferroviaire-annonceur-asp.jpg": {
+  "width": 800,
+  "height": 533,
+  "variants": {
+   "600": "assets/photos/surveillance-chantier-ferroviaire-annonceur-asp-600.webp",
+   "800": "assets/photos/surveillance-chantier-ferroviaire-annonceur-asp-800.webp"
+  }
+ },
+ "assets/img/surveillance-chantier-ferroviaire-tes-m.jpg": {
+  "width": 1000,
+  "height": 1500,
+  "variants": {
+   "600": "assets/photos/surveillance-chantier-ferroviaire-tes-m-600.webp",
+   "1000": "assets/photos/surveillance-chantier-ferroviaire-tes-m-1000.webp"
+  }
+ },
+ "assets/img/technicien-catenaire-habilitation-kh3.jpg": {
+  "width": 1000,
+  "height": 667,
+  "variants": {
+   "600": "assets/photos/technicien-catenaire-habilitation-kh3-600.webp",
+   "1000": "assets/photos/technicien-catenaire-habilitation-kh3-1000.webp"
+  }
+ },
+ "assets/img/tes-m-certification.jpg": {
+  "width": 1000,
+  "height": 666,
+  "variants": {
+   "600": "assets/photos/tes-m-certification-600.webp",
+   "1000": "assets/photos/tes-m-certification-1000.webp"
+  }
+ },
+ "assets/img/tes-m-formation.jpg": {
+  "width": 1000,
+  "height": 667,
+  "variants": {
+   "600": "assets/photos/tes-m-formation-600.webp",
+   "1000": "assets/photos/tes-m-formation-1000.webp"
+  }
+ }
+}

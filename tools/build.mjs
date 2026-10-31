@@ -40,24 +40,31 @@ writeFileSync(join(ROOT, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${b
 
 // Liste des contenus à compléter, page par page (hors en-tête et pied communs)
 const todoRe = /<span class="todo[^"]*">\[À COMPLÉTER: ([^\]]+)\]<\/span>/g;
-const lines = ['# Contenus à compléter', '', 'Fichier généré par `node tools/build.mjs` à partir des pages : ne pas modifier à la main.', 'Chaque ligne correspond à un encadré « [À COMPLÉTER] » visible sur le site. La plupart se règlent dans `data/formations.json`.', ''];
+const lines = ['# Contenus à compléter', '', 'Fichier généré par `node tools/build.mjs` : ne pas modifier à la main.', ''];
+let todoCount = 0;
 for (const path of [...out, '404.html']) {
   const html = readFileSync(join(ROOT, path), 'utf8');
-  const mainHtml = html.slice(html.indexOf('<main'), html.indexOf('</main>'));
-  const labels = [...new Set([...mainHtml.matchAll(todoRe)].map((m) => m[1]))];
+  const labels = [...new Set([...html.matchAll(todoRe)].map((m) => m[1]))];
+  todoCount += labels.length;
   if (labels.length) lines.push(`## ${path}`, '', ...labels.map((l) => `- ${l}`), '');
 }
-const shared = [...new Set([...readFileSync(join(ROOT, 'index.html'), 'utf8').split('<main')[0].matchAll(todoRe)].map((m) => m[1]))];
-lines.push('## En-tête (méga-menu) et pied de page, communs à toutes les pages', '', ...shared.map((l) => `- ${l} (durées non publiées dans le méga-menu)`), '');
-const LABELS = { duree: 'durée', tarif: 'tarif (« Sur devis »)', objectifs: 'objectifs', public: 'public', prerequis: 'prérequis', programme: 'programme', methodes: 'méthodes pédagogiques', evaluation: 'évaluation', validite: 'validité', effectif: 'effectif', modalites: 'modalités et lieux', 'modalites.dates': 'dates', delai_acces: 'délai d’accès', financement: 'financement', parcours_note: 'note de planning du parcours' };
+if (!todoCount) lines.push('Aucun encadré « [À COMPLÉTER] » n’apparaît sur le site.', '');
+
+lines.push('# Points à confirmer avant la mise en ligne', '', ...(data.organisme.a_verifier || []).map((x) => `- ${x}`), '');
+
+const LABELS = { duree: 'durée', tarif: 'tarif', objectifs: 'objectifs', public: 'public', prerequis: 'prérequis', programme: 'programme', methodes: 'méthodes pédagogiques', evaluation: 'évaluation', validite: 'validité', effectif: 'effectif', modalites: 'modalités et lieux', 'modalites.dates': 'dates', delai_acces: 'délai d’accès', financement: 'financement', parcours_note: 'note de planning du parcours' };
 lines.push('# Valeurs provisoires à confirmer', '', 'Rédigées pour compléter les fiches en attendant les informations de Digivoda. Elles s’affichent normalement sur le site : à vérifier et corriger dans `data/formations.json` (champ `provisoire` de chaque fiche).', '');
 for (const x of [...data.formations, ...data.packs]) {
   if (x.provisoire?.length) lines.push(`- **${x.titre_court}** (\`${x.page}\`) : ${x.provisoire.map((k) => LABELS[k] || k).join(', ')}`);
 }
 lines.push('');
+
+// Photos : celles choisies dans les données, puis celles déposées dans media/
+const assigned = new Set([...data.formations, ...data.packs].flatMap((x) => x.photos || []).concat(data.organisme.centre_photos || [], Object.values(data.site.photos || {})));
 const media = mediaReport();
-lines.push('# Photos', '', media.total ? `${media.total} photo(s) dans media/.` : 'Aucune photo dans media/ : les visuels provisoires sont utilisés partout (voir media/README.md).', '');
-if (media.unused.length) lines.push('Photos qui ne correspondent à aucune fiche (vérifier leur nom) :', '', ...media.unused.map((f) => `- ${f}`), '');
+lines.push('# Photos', '', `${assigned.size} photo(s) utilisée(s) sur le site (champ \`photos\` des fiches, galerie du centre, accueil), optimisées en WebP par \`python3 tools/photos.py\`.`);
+lines.push(media.total ? `${media.total} photo(s) dans media/.` : 'Dossier media/ vide : rien à ajouter automatiquement (voir media/README.md).', '');
+if (media.unused.length) lines.push('Photos de media/ qui ne correspondent à aucune fiche (vérifier leur nom) :', '', ...media.unused.map((f) => `- ${f}`), '');
 writeFileSync(join(ROOT, 'A-COMPLETER.md'), lines.join('\n'));
 
 // Pictogrammes : copie autonome du sprite, réutilisable hors du site

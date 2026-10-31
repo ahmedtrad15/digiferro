@@ -1,5 +1,26 @@
 # Changelog Digiferro
 
+## 0.6.0 — 2026-10-31 · Photos du client, plus aucun « À compléter »
+
+- **Photos** : les 59 photos du client sont réparties sur tout le site, la vidéo du héros restant inchangée.
+  - Chaque fiche formation et pack a sa photo (cartes et héros), avec 2 à 3 photos supplémentaires dans une bande sous le programme.
+  - La page À propos montre une galerie de 6 photos du centre de Palaiseau, sans les doublons « (1) ».
+  - L'accueil et le méga-menu utilisent aussi des photos.
+  - Le choix suit le contenu des images (par exemple, les photos de passage à niveau vont à la TES F), et chaque photo a un texte alternatif descriptif.
+- **Optimisation** : `tools/photos.py` génère des copies WebP de 600 px et pleine largeur, servies avec `srcset`. L'accueil pèse 447 Ko sur mobile, et Lighthouse donne 94 à 100.
+- **Logo Qualiopi officiel** dans le pied de page et sur la page À propos, sans modification. Sa mention des catégories est reprise dans le texte alternatif.
+- **Plus aucun encadré « [À COMPLÉTER] » sur le site** :
+  - mentions légales remplies avec les données publiques de DIGIVODA (SAS au capital de 10 000 €, RCS Nanterre 488 347 444, SIRET 488 347 444 00033, siège de Châtenay-Malabry) ;
+  - CGV et politique de confidentialité rédigées sans renvoi à compléter ;
+  - bandeaux « à faire relire » retirés ;
+  - référent handicap joignable par les coordonnées générales, et mention « Numéro non surtaxé » sur la page Contact.
+  Les points à confirmer (hébergeur, éditeur, numéro de déclaration d'activité) sont listés dans `A-COMPLETER.md`.
+- **Contrôles** :
+  - 2 718 liens valides ;
+  - aucun débordement de 360 à 1 536 px ;
+  - axe sans erreur (52 contrôles) ;
+  - sous-navigation 68/68.
+
 ## 0.5.0 — 2026-10-31 · Tarifs, Pack Caténaire, photos, FAQ
 
 - **Tarifs du client (TTC, intra sur devis)** :

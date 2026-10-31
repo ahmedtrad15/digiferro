@@ -1,7 +1,7 @@
 import { esc, icon, priceHTML, dureeHTML, savingBadge, jsonld, isMissing } from './util.mjs';
 import { groupsOf, devisHref } from './partials.mjs';
 import { franceMap } from './map.mjs';
-import { mediaFor, centreImages } from './media.mjs';
+import { mediaFor, centreImages, photoTag } from './media.mjs';
 
 export const IMG_ALT = {
   'ph-voie-perspective': 'Voie ferrée en perspective, rails et traverses sur ballast',
@@ -23,7 +23,12 @@ export const img = (p, key, { w = 600, h = 400, cls = '', eager = false, alt } =
 
 // Visuel d'une formation ou d'un pack : photo du dossier media/ si elle existe, sinon visuel provisoire.
 // Renvoie le conteneur complet ; la mention « Photo à fournir » (data-ph) n'apparaît que sur les provisoires.
-export function visual(p, item, { tag = 'div', cls = '', w = 600, h = 400, eager = false, extra = '', photo } = {}) {
+export const CARD_SIZES = '(min-width: 80em) 23rem, (min-width: 40em) 45vw, 100vw';
+export const HERO_SIZES = '(min-width: 64em) 38vw, 100vw';
+
+export function visual(p, item, { tag = 'div', cls = '', w = 600, h = 400, eager = false, extra = '', photo, sizes = CARD_SIZES } = {}) {
+  // 1. photos choisies dans les données ; 2. dossier media/ ; 3. visuel provisoire
+  if (item.photos?.length) return `<${tag} class="${cls}">${photoTag(p, item.photos[0], { eager, sizes })}${extra}</${tag}>`;
   const m = photo || mediaFor(item)[0];
   const alt = item.image_alt || `Formation ${item.titre_court}`;
   const image = m
@@ -33,10 +38,12 @@ export function visual(p, item, { tag = 'div', cls = '', w = 600, h = 400, eager
 }
 
 // Photo générique d'une section (centre, intra…) : photo fournie sinon visuel provisoire
-export const sectionVisual = (p, photo, key, { tag = 'div', cls = '', w = 480, h = 320, alt } = {}) =>
-  photo
-    ? `<${tag} class="${cls}"><img src="${p}${photo.src}" alt="${esc(alt || IMG_ALT[key] || '')}" width="${photo.w}" height="${photo.h}" loading="lazy" decoding="async"></${tag}>`
-    : `<${tag} class="${cls}" data-ph>${img(p, key, { w, h, alt })}</${tag}>`;
+export const sectionVisual = (p, photo, key, { tag = 'div', cls = '', w = 480, h = 320, alt, sizes = '(min-width: 64em) 30vw, 100vw' } = {}) =>
+  typeof photo === 'string'
+    ? `<${tag} class="${cls}">${photoTag(p, photo, { sizes })}</${tag}>`
+    : photo
+      ? `<${tag} class="${cls}"><img src="${p}${photo.src}" alt="${esc(alt || IMG_ALT[key] || '')}" width="${photo.w}" height="${photo.h}" loading="lazy" decoding="async"></${tag}>`
+      : `<${tag} class="${cls}" data-ph>${img(p, key, { w, h, alt })}</${tag}>`;
 
 export function formationCard(p, f, { heading = 'h4' } = {}) {
   return `<article class="fcard reveal${f.type !== 'formation' ? ' fcard--' + f.type : ''}">
@@ -212,7 +219,7 @@ export function home(data) {
       <span class="pk" aria-hidden="true"><small>PK</small>03</span>
       <h2 id="why-title">Sur une voie ouverte aux circulations, personne ne s’improvise sentinelle.</h2>
       <p>Un train lancé met plusieurs centaines de mètres à s’arrêter. Entre l’annonce et son passage, l’équipe n’a que quelques secondes pour dégager la voie. Ce délai se calcule, il se prépare et il s’apprend en formation. C’est aussi ce que vérifie le donneur d’ordre avant d’ouvrir son chantier.</p>
-      <figure class="offset-media" data-ph>${img(p, 'ph-agent-epi', { w: 720, h: 480 })}</figure>
+      ${sectionVisual(p, data.site.photos?.pourquoi, 'ph-agent-epi', { tag: 'figure', cls: 'offset-media', w: 720, h: 480, sizes: '(min-width: 64em) 45vw, 100vw' })}
     </div>
     <div class="why__panel">
       <h3 id="why-rules" class="why__panel-title">Ce que prévoient les textes</h3>
@@ -268,21 +275,21 @@ export function home(data) {
       <h2 id="modes-title">En centre, sur votre site ou à distance</h2>
       <p class="modes__intro">Trois façons de suivre une formation. Le choix dépend surtout du nombre d’agents et de vos contraintes de chantier.</p>
       <article class="mode">
-        ${sectionVisual(p, centreImages()[0], 'ph-salle-formation', { cls: 'mode__media', alt: 'Salle du centre de formation Digivoda de Palaiseau' })}
+        ${sectionVisual(p, data.site.photos?.centre || centreImages()[0], 'ph-salle-formation', { cls: 'mode__media', alt: 'Salle du centre de formation Digivoda de Palaiseau', sizes: '11rem' })}
         <div class="mode__body">
           <h3>Centres Digivoda partout en France</h3>
           <p>Sessions inter-entreprises : vos agents rejoignent un groupe déjà constitué. C’est la formule la plus simple pour une ou deux personnes. Le centre de Palaiseau accueille les stagiaires au 4 allée des Garays.</p>
         </div>
       </article>
       <article class="mode mode--flip">
-        <div class="mode__media" data-ph>${img(p, 'ph-chantier-coordination', { w: 480, h: 320 })}</div>
+        ${sectionVisual(p, data.site.photos?.intra, 'ph-chantier-coordination', { cls: 'mode__media', sizes: '11rem' })}
         <div class="mode__body">
           <h3>Sur site client, en intra</h3>
           <p>Le formateur se déplace chez vous et la session ne réunit que vos agents. Prévoyez 30 à 45 jours pour caler la date.</p>
         </div>
       </article>
       <article class="mode mode--compact">
-        <div class="mode__media" data-ph>${img(p, 'ph-e-learning', { w: 480, h: 320 })}</div>
+        ${sectionVisual(p, data.site.photos?.distance, 'ph-e-learning', { cls: 'mode__media', sizes: '7rem' })}
         <div class="mode__body">
           <h3>E-learning</h3>
           <p>La SECUFER existe en e-learning, et le recyclage SECUFER peut aussi se suivre à distance. Pratique pour les agents en horaires décalés.</p>

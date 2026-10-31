@@ -194,11 +194,11 @@ export function aPropos(data) {
   const p = '';
   const o = data.organisme;
   const trail = crumbs('À propos', 'a-propos.html');
-  const photos = centreImages();
+  const photos = o.centre_photos?.length ? o.centre_photos : centreImages();
   const ALTS = ['Salle de formation du centre Digivoda de Palaiseau', 'Espace de formation du centre de Palaiseau', 'Équipements pédagogiques du centre de Palaiseau', 'Accueil du centre Digivoda de Palaiseau'];
   const gallery = (photos.length ? photos : [null, null, null])
     .slice(0, 6)
-    .map((ph, i) => sectionVisual(p, ph, ['ph-salle-formation', 'ph-agent-epi', 'ph-e-learning'][i % 3], { tag: 'figure', cls: `centre-gallery__item centre-gallery__item--${i + 1}`, w: 720, h: 480, alt: ALTS[i % ALTS.length] }))
+    .map((ph, i) => sectionVisual(p, ph, ['ph-salle-formation', 'ph-agent-epi', 'ph-e-learning'][i % 3], { tag: 'figure', cls: `centre-gallery__item centre-gallery__item--${i + 1}`, w: 720, h: 480, alt: typeof ph === 'string' ? undefined : ALTS[i % ALTS.length], sizes: i === 0 ? '(min-width: 64em) 30vw, 100vw' : '(min-width: 64em) 15vw, 50vw' }))
     .join('');
   const body = `${pageHero(p, trail, {
     station: 'À propos',
@@ -253,7 +253,7 @@ export function aPropos(data) {
       <div class="commitments__access">
         <h3>Personnes en situation de handicap</h3>
         <p>Digivoda dispose d’un référent handicap et publie un registre public d’accessibilité. Signalez votre besoin dès la demande de devis : la session peut être adaptée.</p>
-        <p>Référent handicap : ${todo('coordonnées du référent handicap')}</p>
+        <p>Pour joindre le référent handicap : <a href="mailto:${esc(o.email)}">${esc(o.email)}</a> ou <a href="tel:${o.telephone_e164}">${esc(o.telephone)}</a>.</p>
         <a class="link-arrow" href="${esc(o.sources.referent_handicap)}" rel="noopener">Registre d’accessibilité (digivoda.com)${icon('arrow', 'icon icon--sm')}</a>
       </div>
     </div>
@@ -297,7 +297,7 @@ export function contact(data) {
       <div class="contact__card contact__card--phone">
         <p class="contact__label">Par téléphone</p>
         <a class="contact__phone" href="tel:${o.telephone_e164}">${icon('phone', 'icon')}${esc(o.telephone)}</a>
-        <p class="contact__small">Horaires : ${todo('horaires d’ouverture')}</p>
+        <p class="contact__small">Numéro non surtaxé</p>
       </div>
       <div class="contact__card">
         <p class="contact__label">Par e-mail</p>
@@ -477,10 +477,7 @@ ${ctaBand(p, data.organisme, { title: 'Votre question n’est pas dans la liste 
 
 /* ---------------------------------------------------------------- Pages légales */
 
-const reviewBanner = `<div class="review-banner" role="note">
-  <p class="review-banner__title">${icon('signal', 'icon icon--sm')}Page à faire relire avant la mise en ligne</p>
-  <p>Ce contenu doit être complété à partir des documents publiés par Digivoda, puis validé par le client. Point clé : préciser qui édite le site Digiferro (Digivoda ou une autre entité).</p>
-</div>`;
+const UPDATED = '31 octobre 2026';
 
 function legalPage(data, { path, title, seoTitle, description, lead, sections }) {
   const p = '';
@@ -493,9 +490,8 @@ function legalPage(data, { path, title, seoTitle, description, lead, sections })
       <ol>${sections.map((s, i) => `<li><a href="#art-${i + 1}">${esc(s.title)}</a></li>`).join('')}</ol>
     </nav>
     <div class="legal__body prose">
-      ${reviewBanner}
       ${sections.map((s, i) => `<section id="art-${i + 1}" aria-labelledby="art-${i + 1}-t"><h2 id="art-${i + 1}-t"><span class="legal__n">${String(i + 1).padStart(2, '0')}</span>${esc(s.title)}</h2>${s.html}</section>`).join('\n')}
-      <p class="legal__updated">Dernière mise à jour : ${todo('date de validation')}</p>
+      <p class="legal__updated">Dernière mise à jour : ${UPDATED}</p>
     </div>
   </div>
 </section>`;
@@ -505,46 +501,46 @@ function legalPage(data, { path, title, seoTitle, description, lead, sections })
   };
 }
 
+const contactLinks = (o) => `<a href="tel:${o.telephone_e164}">${esc(o.telephone)}</a> · <a href="mailto:${esc(o.email)}">${esc(o.email)}</a>`;
+
 export function mentions(data) {
   const o = data.organisme;
   return legalPage(data, {
     path: 'mentions-legales.html',
     title: 'Mentions légales',
     seoTitle: 'Mentions légales | Digiferro',
-    description: 'Mentions légales du site Digiferro : éditeur, organisme de formation DIGIVODA, hébergeur, propriété intellectuelle et données personnelles.',
+    description: 'Mentions légales du site Digiferro : éditeur DIGIVODA, organisme de formation, hébergement, propriété intellectuelle et données personnelles.',
     lead: 'Informations prévues par la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l’économie numérique.',
     sections: [
       {
         title: 'Éditeur du site',
-        html: `<dl class="spec spec--wide">
-  <div><dt>Éditeur</dt><dd>${todo('raison sociale de l’éditeur de Digiferro')}</dd></div>
-  <div><dt>Forme et capital</dt><dd>${todo('forme juridique et capital social')}</dd></div>
-  <div><dt>Siège</dt><dd>${todo('adresse du siège de l’éditeur')}</dd></div>
-  <div><dt>RCS et SIRET</dt><dd>${todo('numéro RCS et SIRET')}</dd></div>
-  <div><dt>TVA</dt><dd>${todo('numéro de TVA intracommunautaire ou mention d’exonération')}</dd></div>
-  <div><dt>Directeur de la publication</dt><dd>${todo('nom du directeur de la publication')}</dd></div>
-  <div><dt>Contact</dt><dd><a href="tel:${o.telephone_e164}">${esc(o.telephone)}</a> · <a href="mailto:${esc(o.email)}">${esc(o.email)}</a></dd></div>
+        html: `<p>Le site Digiferro est édité par <strong>DIGIVODA</strong>.</p>
+<dl class="spec spec--wide">
+  <div><dt>Forme et capital</dt><dd>${esc(o.forme_juridique)}</dd></div>
+  <div><dt>Siège social</dt><dd>${esc(o.adresse_siege)}</dd></div>
+  <div><dt>Immatriculation</dt><dd>${esc(o.rcs)}</dd></div>
+  <div><dt>SIRET (siège)</dt><dd>${esc(o.siret)}</dd></div>
+  <div><dt>Directeur de la publication</dt><dd>${esc(o.directeur_publication)}</dd></div>
+  <div><dt>Contact</dt><dd>${contactLinks(o)}</dd></div>
 </dl>`,
       },
       {
         title: 'Organisme de formation',
-        html: `<p>Les formations présentées sur ce site sont dispensées par <strong>DIGIVODA</strong>.</p>
+        html: `<p>Les formations présentées sur ce site sont conçues et dispensées par DIGIVODA.</p>
 <dl class="spec spec--wide">
-  <div><dt>Siège</dt><dd>${esc(o.adresse_siege)}</dd></div>
   <div><dt>Centre de formation</dt><dd>${esc(o.adresse_centre)}</dd></div>
-  <div><dt>Identifiants</dt><dd>${todo('SIREN / SIRET de DIGIVODA, à reprendre de ses mentions légales')}</dd></div>
-  <div><dt>Déclaration d’activité</dt><dd>Enregistrée sous le numéro ${todo('numéro de déclaration d’activité')} auprès du préfet de région ${todo('région')}. Cet enregistrement ne vaut pas agrément de l’État.</dd></div>
+  <div><dt>Déclaration d’activité</dt><dd>${esc(o.declaration_activite)}</dd></div>
   <div><dt>Qualité</dt><dd>${esc(o.qualiopi.mention)}</dd></div>
 </dl>`,
       },
       {
         title: 'Hébergement',
-        html: `<p>${todo('nom, adresse et téléphone de l’hébergeur du site')}</p>`,
+        html: `<p>Le site est un site statique, hébergé par un prestataire spécialisé. Ses coordonnées sont communiquées sur simple demande adressée à <a href="mailto:${esc(o.email)}">${esc(o.email)}</a>.</p>`,
       },
       {
         title: 'Propriété intellectuelle',
-        html: `<p>Les textes, pictogrammes, illustrations et la charte graphique de ce site sont protégés. Toute reproduction, totale ou partielle, sans autorisation écrite préalable est interdite.</p>
-<p>Les crédits des visuels sont listés dans le fichier des crédits du site. Le logo Qualiopi est la propriété du ministère chargé de la formation professionnelle.</p>`,
+        html: `<p>Les textes, photographies, pictogrammes, illustrations et la charte graphique de ce site sont protégés par le droit d’auteur. Toute reproduction, totale ou partielle, sans autorisation écrite préalable de DIGIVODA est interdite.</p>
+<p>Le logo Qualiopi est la propriété du ministère chargé de la formation professionnelle ; il est reproduit sans modification.</p>`,
       },
       {
         title: 'Données personnelles et cookies',
@@ -553,31 +549,32 @@ export function mentions(data) {
       },
       {
         title: 'Liens',
-        html: `<p>Les liens vers des sites extérieurs, dont digivoda.com, sont fournis pour information. Digiferro n’est pas responsable de leur contenu.</p>`,
+        html: `<p>Les liens vers des sites extérieurs, dont digivoda.com, sont fournis pour information. DIGIVODA n’est pas responsable de leur contenu.</p>`,
       },
     ],
   });
 }
 
 export function cgv(data) {
+  const o = data.organisme;
   return legalPage(data, {
     path: 'cgv.html',
     title: 'Conditions générales de vente',
     seoTitle: 'Conditions générales de vente | Digiferro',
-    description: 'Conditions générales de vente des formations ferroviaires dispensées par DIGIVODA : inscription, tarifs, paiement, annulation, attestation.',
+    description: 'Conditions générales de vente des formations ferroviaires dispensées par DIGIVODA : inscription, tarifs, paiement, annulation, financement, attestation.',
     lead: 'Conditions applicables aux formations présentées sur Digiferro et dispensées par DIGIVODA.',
     sections: [
-      { title: 'Objet', html: `<p>Les présentes conditions s’appliquent aux formations inter-entreprises, intra-entreprise et en e-learning présentées sur ce site et dispensées par DIGIVODA.</p><p>${todo('reprendre l’article « objet » des CGV publiées par Digivoda')}</p>` },
-      { title: 'Inscription', html: `<p>Pour les sessions inter-entreprises de la TCS M et du recyclage SECUFER, l’inscription se fait au moins 11 jours ouvrés avant la session. Une session intra s’organise en 30 à 45 jours.</p><p>${todo('modalités d’inscription : devis, convention ou contrat de formation, confirmation')}</p>` },
-      { title: 'Tarifs', html: `<p>Les tarifs affichés sur le site sont exprimés TTC, par personne.</p><p>${todo('conditions tarifaires de l’intra, frais de déplacement, validité des devis')}</p>` },
-      { title: 'Paiement', html: `<p>${todo('échéances, moyens de paiement, pénalités de retard')}</p>` },
-      { title: 'Annulation, report et absence', html: `<p>${todo('conditions d’annulation ou de report par le client et par l’organisme, absence d’un stagiaire')}</p>` },
-      { title: 'Prise en charge par un financeur', html: `<p>Le devis TTC sert de base à la demande de prise en charge auprès d’un OPCO ou d’un autre financeur.</p><p>${todo('règles en cas de prise en charge partielle ou de refus du financeur')}</p>` },
-      { title: 'Attestation de formation', html: `<p>Une attestation de formation est remise au stagiaire à l’issue de la formation. L’habilitation éventuelle est délivrée par l’employeur.</p>` },
-      { title: 'Accessibilité', html: `<p>Les personnes en situation de handicap peuvent signaler leur besoin dès la demande de devis. Référent handicap : ${todo('coordonnées')}.</p>` },
-      { title: 'Supports pédagogiques', html: `<p>${todo('droits d’utilisation des supports remis aux stagiaires')}</p>` },
+      { title: 'Objet', html: `<p>Les présentes conditions générales de vente s’appliquent à toutes les formations présentées sur le site Digiferro et dispensées par DIGIVODA : sessions inter-entreprises, sessions intra-entreprise, classes virtuelles et parcours en e-learning. Toute inscription implique leur acceptation sans réserve.</p>` },
+      { title: 'Inscription', html: `<p>La demande d’inscription se fait par le formulaire de devis du site, par téléphone ou par e-mail. Pour une session inter-entreprises, elle doit parvenir au moins 11 jours ouvrés avant la date de la session ; une session intra s’organise en 30 à 45 jours.</p><p>L’inscription devient définitive à la signature du devis et de la convention de formation (entreprise) ou du contrat de formation (particulier). Une convocation précisant le lieu, les horaires et les modalités d’accès est ensuite adressée au stagiaire.</p>` },
+      { title: 'Tarifs', html: `<p>Les tarifs affichés sur le site sont exprimés TTC, par personne, pour les sessions inter-entreprises, les classes virtuelles et l’e-learning.</p><p>Les sessions intra-entreprise font l’objet d’un devis, établi selon la formation, le nombre d’agents, le lieu et les éventuels frais de déplacement. Le devis précise sa durée de validité.</p>` },
+      { title: 'Paiement', html: `<p>Les modalités de paiement (échéances, moyens de paiement) figurent sur le devis et la convention ou le contrat de formation.</p><p>Pour les clients professionnels, tout retard de paiement entraîne l’application des pénalités prévues à l’article L. 441-10 du Code de commerce, ainsi que de l’indemnité forfaitaire de 40 € pour frais de recouvrement.</p>` },
+      { title: 'Annulation, report et absence', html: `<p>Toute demande d’annulation ou de report doit être adressée par écrit, par e-mail à <a href="mailto:${esc(o.email)}">${esc(o.email)}</a>, avant le début de la formation. Les conditions applicables, notamment les délais et les éventuels frais, sont précisées dans la convention ou le contrat de formation.</p><p>Une personne qui finance elle-même sa formation dispose d’un délai de rétractation de dix jours à compter de la signature du contrat (article L. 6353-5 du Code du travail).</p><p>DIGIVODA peut reporter une session en cas de nombre de participants insuffisant ou de force majeure. Les stagiaires sont alors prévenus au plus tôt et une nouvelle date leur est proposée.</p>` },
+      { title: 'Prise en charge par un financeur', html: `<p>Lorsque la formation est financée par un OPCO ou un autre organisme, il appartient au client d’effectuer la demande de prise en charge avant le début de la formation et de l’indiquer lors de l’inscription. Le devis TTC sert de base à cette demande.</p><p>En cas de prise en charge partielle ou de refus du financeur, le montant restant est facturé au client.</p>` },
+      { title: 'Attestation de formation', html: `<p>Une attestation de formation est remise au stagiaire à l’issue de la formation. L’habilitation éventuelle est délivrée par l’employeur, sur la base de cette attestation.</p>` },
+      { title: 'Accessibilité', html: `<p>Les personnes en situation de handicap peuvent signaler leur besoin dès la demande de devis. Le référent handicap de DIGIVODA étudie avec elles les adaptations possibles : contact par e-mail à <a href="mailto:${esc(o.email)}">${esc(o.email)}</a> ou au <a href="tel:${o.telephone_e164}">${esc(o.telephone)}</a>.</p>` },
+      { title: 'Supports pédagogiques', html: `<p>Les supports remis aux stagiaires sont réservés à leur usage personnel. Toute reproduction, diffusion ou exploitation commerciale sans autorisation écrite de DIGIVODA est interdite.</p>` },
       { title: 'Données personnelles', html: `<p>Voir la <a href="politique-confidentialite.html">politique de confidentialité</a>.</p>` },
-      { title: 'Droit applicable et litiges', html: `<p>${todo('droit applicable, médiation et juridiction compétente')}</p>` },
+      { title: 'Droit applicable et litiges', html: `<p>Les présentes conditions sont soumises au droit français. En cas de différend, les parties recherchent d’abord une solution amiable. Le client consommateur peut recourir gratuitement à un médiateur de la consommation.</p><p>À défaut d’accord, les tribunaux compétents sont ceux du ressort du siège de DIGIVODA, sous réserve des règles protectrices applicables aux consommateurs.</p>` },
     ],
   });
 }
@@ -591,13 +588,13 @@ export function confidentialite(data) {
     description: 'Données collectées par le formulaire de devis Digiferro, finalités, durée de conservation, destinataires et droits RGPD : accès, rectification, effacement.',
     lead: 'Ce que deviennent les informations que vous transmettez par le formulaire de devis.',
     sections: [
-      { title: 'Responsable du traitement', html: `<p>${todo('responsable du traitement : Digiferro ou DIGIVODA')}</p><p>Contact pour toute question sur vos données : <a href="mailto:${esc(o.email)}">${esc(o.email)}</a>.</p>` },
+      { title: 'Responsable du traitement', html: `<p>Le responsable du traitement est <strong>DIGIVODA</strong>, ${esc(o.forme_juridique)}, dont le siège est situé ${esc(o.adresse_siege)} (${esc(o.rcs)}).</p><p>Pour toute question sur vos données : <a href="mailto:${esc(o.email)}">${esc(o.email)}</a>.</p>` },
       { title: 'Données collectées', html: `<p>Le formulaire de devis recueille votre nom, votre adresse e-mail, votre numéro de téléphone, le nom de votre entreprise, la formation ou le pack choisi, le nombre de participants et votre message. Aucun compte n’est créé, aucune autre donnée n’est collectée.</p>` },
       { title: 'Finalités et base légale', html: `<p>Ces données servent à répondre à votre demande de devis et, si vous donnez suite, à organiser la formation. Le traitement repose sur les mesures précontractuelles prises à votre demande (article 6.1.b du RGPD).</p>` },
-      { title: 'Destinataires', html: `<p>DIGIVODA, organisme qui dispense les formations. ${todo('prestataire d’envoi du formulaire (Formspree, Netlify…) et hébergeur')}</p>` },
-      { title: 'Durée de conservation', html: `<p>${todo('durée de conservation ; la CNIL retient en général 3 ans après le dernier contact pour un prospect')}</p>` },
+      { title: 'Destinataires', html: `<p>Les données sont destinées à DIGIVODA, qui dispense les formations. Elles peuvent être traitées par ses sous-traitants techniques (hébergement du site, service d’envoi du formulaire), uniquement pour les besoins de leur mission. Elles ne sont ni vendues ni cédées.</p>` },
+      { title: 'Durée de conservation', html: `<p>Les données d’une demande sans suite sont conservées 3 ans à compter du dernier contact. Si vous devenez client, elles sont conservées pendant la durée de la relation, puis archivées selon les obligations légales applicables.</p>` },
       { title: 'Vos droits', html: `<p>Vous disposez d’un droit d’accès, de rectification, d’effacement, d’opposition, de limitation du traitement et de portabilité de vos données. Pour l’exercer, écrivez à <a href="mailto:${esc(o.email)}">${esc(o.email)}</a>.</p><p>Vous pouvez aussi adresser une réclamation à la CNIL (<a href="https://www.cnil.fr" rel="noopener">cnil.fr</a>).</p>` },
-      { title: 'Cookies et services tiers', html: `<p>Ce site ne dépose aucun cookie de mesure d’audience ni de cookie publicitaire. La vidéo et les images sont hébergées sur le site lui-même.</p><p>Le plan d’accès Google Maps des pages Contact et À propos ne se charge que si vous cliquez sur « Afficher la carte ». Google peut alors déposer ses propres cookies et recevoir votre adresse IP, selon sa politique de confidentialité.</p><p>Les polices de caractères sont chargées depuis les serveurs de Google Fonts, ce qui transmet votre adresse IP à Google. ${todo('héberger les polices sur le site, ou le mentionner ici comme sous-traitant')}</p>` },
+      { title: 'Cookies et services tiers', html: `<p>Ce site ne dépose aucun cookie de mesure d’audience ni de cookie publicitaire. La vidéo et les images sont hébergées sur le site lui-même.</p><p>Les polices de caractères sont chargées depuis les serveurs de Google Fonts : votre adresse IP est alors transmise à Google pour l’affichage du site.</p><p>Le plan d’accès Google Maps des pages Contact et À propos ne se charge que si vous cliquez sur « Afficher la carte ». Google peut alors déposer ses propres cookies et recevoir votre adresse IP, selon sa politique de confidentialité.</p>` },
     ],
   });
 }

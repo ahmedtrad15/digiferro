@@ -489,3 +489,5 @@ body { padding-bottom: 56px; }
 @media (min-width: 80em) {
   .item-layout { grid-template-columns: minmax(0, 1fr) 21rem; gap: 5rem; }
 }
+/* Le bouton « retour en haut » ne recouvre pas les liens légaux */
+@media (min-width: 68.75em) { .site-footer__legal-in { padding-right: 4.5rem; } }
